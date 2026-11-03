@@ -1,0 +1,140 @@
+:root {
+  --gruen: #008c35;
+  --gruen-dunkel: #0b5e2a;
+  --akzent: #bd1521;
+  --text: #1f2421;
+  --text-leise: #5b645e;
+  --linie: #dfe3df;
+  --flaeche: #ffffff;
+  --hintergrund: #f6f5f1;
+  --belegt-1: #cfeadb;
+  --belegt-2: #7cc79b;
+  --belegt-3: #008c35;
+  --radius: 10px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--hintergrund); line-height: 1.45; }
+h1, h2, h3 { line-height: 1.2; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.hinweis { color: var(--text-leise); font-size: .9em; }
+
+/* Kopf */
+.kopf { background: #fff; color: var(--text); border-bottom: 4px solid var(--gruen); }
+.marke { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.logo { height: 64px; width: auto; display: block; }
+.kopf h1 { color: var(--gruen-dunkel); }
+.untertitel { margin: 2px 0 0; color: var(--text-leise); }
+@media (max-width: 640px) { .logo { height: 48px; } }
+.kopf-innen { max-width: 960px; margin: 0 auto; padding: 28px 16px 22px;
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.kopf h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 2.4rem); }
+.kicker { margin: 0 0 4px; text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; opacity: .85; }
+
+.knopf { display: inline-block; border: 0; border-radius: 999px; padding: 10px 18px;
+  font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
+.knopf-hell { background: var(--akzent); color: #fff; }
+.knopf-hell:hover { filter: brightness(1.1); }
+.knopf-akzent { background: var(--akzent); color: #fff; }
+.knopf-rand { background: transparent; border: 1px solid var(--linie); color: var(--text); }
+
+.seite { max-width: 960px; margin: 0 auto; padding: 16px; }
+
+/* Tabs */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--linie); margin-bottom: 16px; overflow-x: auto; }
+.tabs button { background: none; border: 0; padding: 10px 14px; font: inherit; color: var(--text-leise);
+  cursor: pointer; border-bottom: 3px solid transparent; white-space: nowrap; }
+.tabs button[aria-selected="true"] { color: var(--gruen); border-bottom-color: var(--gruen); font-weight: 600; }
+
+/* Filter */
+.filter { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; margin-bottom: 20px; }
+.filter.ohne-gemeinde { grid-template-columns: 1fr auto; }
+.filter input, .filter select { width: 100%; font: inherit; padding: 10px 12px; border: 1px solid var(--linie);
+  border-radius: var(--radius); background: var(--flaeche); color: var(--text); }
+@media (max-width: 640px) { .filter { grid-template-columns: 1fr 1fr; } .filter .suche { grid-column: 1 / -1; } }
+
+/* Liste */
+.monat-titel { font-size: 1.1rem; margin: 24px 0 8px; color: var(--gruen-dunkel); }
+.monat-titel:first-child { margin-top: 0; }
+.karten { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.karte { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: start;
+  background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius);
+  padding: 12px 14px; cursor: pointer; text-align: left; width: 100%; font: inherit; color: inherit; }
+.karte:hover, .karte:focus-visible { border-color: var(--gruen); outline: none; }
+.datum-block { text-align: center; border-radius: 8px; background: var(--hintergrund); padding: 6px 0; }
+.datum-block .tag { font-size: 1.5rem; font-weight: 700; line-height: 1; }
+.datum-block .wt { font-size: .75rem; text-transform: uppercase; color: var(--text-leise); }
+.karte h3 { margin: 0 0 2px; font-size: 1.05rem; color: var(--gruen-dunkel); }
+.meta { margin: 0; color: var(--text-leise); font-size: .92rem; }
+.etikett { display: inline-block; font-size: .75rem; padding: 2px 8px; border-radius: 999px;
+  background: #e7efe8; color: var(--gruen-dunkel); margin-top: 6px; margin-right: 4px; }
+.etikett.provisorisch { background: #fbe3e5; color: #8d0f19; }
+.leer { color: var(--text-leise); padding: 24px 0; }
+
+/* Monat */
+.monat-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; gap: 8px; }
+.monat-nav h2 { margin: 0; font-size: 1.2rem; }
+.raster { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: var(--linie);
+  border: 1px solid var(--linie); border-radius: var(--radius); overflow: hidden; }
+.raster .wt-kopf { background: var(--hintergrund); text-align: center; font-size: .78rem; padding: 6px 0;
+  color: var(--text-leise); font-weight: 600; }
+.zelle { background: var(--flaeche); min-height: 96px; padding: 4px; font: inherit; border: 0; text-align: left;
+  cursor: pointer; display: flex; flex-direction: column; gap: 2px; color: inherit; }
+.zelle.fremd { background: #fafaf8; color: #b3b8b4; }
+.zelle.heute .nr { background: var(--gruen); color: #fff; border-radius: 999px; }
+.zelle.gewaehlt { box-shadow: inset 0 0 0 2px var(--akzent); }
+.nr { font-size: .8rem; width: 22px; height: 22px; display: grid; place-items: center; }
+.chip { font-size: .72rem; background: #e7efe8; color: var(--gruen-dunkel); border-radius: 4px; padding: 1px 4px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chip.provisorisch { background: #fbe3e5; color: #8d0f19; }
+.punkte { display: none; gap: 3px; flex-wrap: wrap; }
+.punkte i { width: 6px; height: 6px; border-radius: 50%; background: var(--gruen); }
+@media (max-width: 640px) {
+  .zelle { min-height: 52px; align-items: center; }
+  .chip { display: none; }
+  .punkte { display: flex; }
+}
+.tag-liste { margin-top: 16px; }
+
+/* Planung */
+.planung-intro { background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius);
+  padding: 12px 14px; margin-bottom: 16px; }
+.planung-intro p { margin: 0 0 6px; }
+.legende { display: flex; gap: 14px; flex-wrap: wrap; font-size: .85rem; color: var(--text-leise); }
+.legende span { display: inline-flex; align-items: center; gap: 6px; }
+.legende i { width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--linie); }
+.jahr { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.mini h3 { margin: 0 0 6px; font-size: .95rem; }
+.mini .raster { border-radius: 6px; }
+.mini .wt-kopf { font-size: .65rem; padding: 2px 0; }
+.mini-tag { aspect-ratio: 1; border: 0; padding: 0; font: inherit; font-size: .7rem; cursor: pointer;
+  background: var(--flaeche); color: var(--text); }
+.mini-tag.leer-tag { background: #fafaf8; cursor: default; }
+.mini-tag.b1 { background: var(--belegt-1); }
+.mini-tag.b2 { background: var(--belegt-2); }
+.mini-tag.b3 { background: var(--belegt-3); color: #fff; }
+.mini-tag.prov { box-shadow: inset 0 0 0 2px var(--akzent); }
+.mini-tag.wochenende:not(.b1):not(.b2):not(.b3) { background: #f1f3f1; }
+.mini-tag.gewaehlt { outline: 2px solid var(--gruen); outline-offset: -2px; }
+
+/* Dialoge */
+dialog { border: 0; border-radius: 14px; padding: 20px; width: min(520px, calc(100vw - 32px));
+  box-shadow: 0 20px 60px rgba(0,0,0,.25); color: var(--text); }
+dialog::backdrop { background: rgba(20, 30, 22, .45); }
+.dialog-kopf { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+.dialog-kopf h2 { margin: 0; color: var(--gruen-dunkel); }
+.schliessen { background: none; border: 0; font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--text-leise); }
+.detail-liste { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 16px 0; }
+.detail-liste dt { color: var(--text-leise); }
+.detail-liste dd { margin: 0; }
+.knopf-reihe { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+
+.fuss { text-align: center; color: var(--text-leise); font-size: .85rem; padding: 32px 16px; }
+
+/* Eingebettet in die Vereinswebseite (ClubDesk): ohne eigenen Kopf und Fuss */
+body.eingebettet { background: transparent; }
+body.eingebettet .kopf .marke, body.eingebettet .fuss { display: none; }
+body.eingebettet .kopf { background: transparent; border: 0; }
+body.eingebettet .kopf-innen { padding: 8px 16px 0; justify-content: flex-end; }

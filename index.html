@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dorfkalender Rehetobel</title>
+  <link rel="stylesheet" href="css/kalender.css">
+</head>
+<body>
+  <header class="kopf">
+    <div class="kopf-innen">
+      <div class="marke">
+        <img class="logo" src="bilder/logo.png" alt="Verkehrsverein Rehetobel">
+        <div>
+          <h1>Dorfkalender</h1>
+          <p class="untertitel">Was läuft in Rechtobel?</p>
+        </div>
+      </div>
+      <a class="knopf knopf-hell" href="#melden">+ Anlass melden</a>
+    </div>
+  </header>
+
+  <main class="seite">
+    <nav class="tabs" role="tablist" aria-label="Ansicht">
+      <button role="tab" data-ansicht="liste" aria-selected="true">Liste</button>
+      <button role="tab" data-ansicht="monat" aria-selected="false">Monat</button>
+      <button role="tab" data-ansicht="planung" aria-selected="false">Terminplanung</button>
+    </nav>
+
+    <section class="filter" aria-label="Filter">
+      <label class="suche">
+        <span class="sr">Suche</span>
+        <input id="suche" type="search" placeholder="Anlass, Ort oder Verein suchen …">
+      </label>
+      <label>
+        <span class="sr">Veranstalter</span>
+        <select id="filter-kategorie"><option value="">Alle Veranstalter</option></select>
+      </label>
+      <label>
+        <span class="sr">Gemeinde</span>
+        <select id="filter-gemeinde"><option value="">Alle Gemeinden</option></select>
+      </label>
+    </section>
+
+    <section id="ansicht-liste" class="ansicht"></section>
+    <section id="ansicht-monat" class="ansicht" hidden></section>
+    <section id="ansicht-planung" class="ansicht" hidden></section>
+  </main>
+
+  <dialog id="detail" aria-labelledby="detail-titel"></dialog>
+
+  <dialog id="melden-dialog" aria-labelledby="melden-titel">
+    <div class="dialog-kopf">
+      <h2 id="melden-titel">Anlass melden</h2>
+      <button class="schliessen" data-schliessen aria-label="Schliessen">×</button>
+    </div>
+    <p>Vereine, Gemeinde, Kirche, Schule und Gewerbe können ihre Anlässe hier über ein einfaches Formular melden.
+       Der Verkehrsverein prüft jede Meldung, bevor sie im Kalender erscheint.</p>
+    <p class="hinweis">Das Formular wird bald freigeschaltet.</p>
+  </dialog>
+
+  <footer class="fuss">
+    Verkehrsverein Rehetobel · CH-9038 Rehetobel · <span class="hinweis">Anlass melden: Knopf oben rechts</span>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="data/anlaesse.js"></script>
+  <script src="js/datenquelle.js"></script>
+  <script src="js/kalender.js"></script>
+</body>
+</html>
