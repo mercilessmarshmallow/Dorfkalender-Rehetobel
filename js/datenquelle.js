@@ -26,6 +26,11 @@
   // "13.06.2026" oder "2026-06-13" oder "13.6.2026" → "2026-06-13"
   function isoDatum(s) {
     s = (s || "").trim();
+    // Google liefert ein Datum manchmal als Zahl (Tage seit 30.12.1899), z. B. 46329
+    if (/^\d{5}([.,]\d+)?$/.test(s)) {
+      const d = new Date(Date.UTC(1899, 11, 30) + Math.floor(parseFloat(s.replace(",", "."))) * 86400000);
+      return d.toISOString().slice(0, 10);
+    }
     let m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
     if (m) return `${m[1]}-${m[2].padStart(2, "0")}-${m[3].padStart(2, "0")}`;
     m = s.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})/);
@@ -34,7 +39,14 @@
   }
   // "19:00", "19.00", "19:00:00" → "19:00"
   function zeit(s) {
-    const m = (s || "").trim().match(/^(\d{1,2})[:.](\d{2})/);
+    s = (s || "").trim();
+    // Uhrzeit als Tagesbruchteil, z. B. 0,7916666667 = 19:00 (0 = keine Zeit)
+    if (/^0?[.,]\d+$/.test(s) || /^0$/.test(s)) {
+      const min = Math.round(parseFloat(s.replace(",", ".")) * 1440);
+      if (!min) return "";
+      return `${String(Math.floor(min / 60)).padStart(2, "0")}:${String(min % 60).padStart(2, "0")}`;
+    }
+    const m = s.match(/^(\d{1,2})[:.](\d{2})/);
     return m ? `${m[1].padStart(2, "0")}:${m[2]}` : "";
   }
 
