@@ -45,9 +45,9 @@ window.ANLAESSE = [
   { id: "a11", titel: "Hauptversammlung Verkehrsverein", datum: "2027-03-12", zeit: "19:30",
     ort: "Gemeindezentrum", gemeinde: "Rehetobel", veranstalter: "Verkehrsverein Rehetobel", kategorie: "Verkehrsverein Rehetobel",
     beschreibung: "Beispiel-Eintrag (Datum erfunden).", status: "provisorisch" },
-  { id: "a12", titel: "Vo 11 bis 11", datum: "2027-06-19", zeit: "11:00", zeitBis: "23:00",
+  { id: "a12", titel: "Vo 11 bis 11", datum: "2027-07-03", zeit: "11:00", zeitBis: "23:00",
     ort: "Dorf", gemeinde: "Rehetobel", veranstalter: "Verkehrsverein Rehetobel", kategorie: "Verkehrsverein Rehetobel",
-    beschreibung: "Datum noch offen: 19. oder 26. Juni 2027.", status: "provisorisch" },
+    beschreibung: "Auf dem Kaienspitz (Stobetebüel).", status: "fix" },
   { id: "a13", titel: "1. August-Feier und Wanderung", datum: "2027-08-01",
     ort: "Rehetobel", gemeinde: "Rehetobel", veranstalter: "Verkehrsverein Rehetobel", kategorie: "Verkehrsverein Rehetobel", status: "provisorisch" }
 ];
