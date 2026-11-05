@@ -23,8 +23,7 @@ const BLATT_ANTWORTEN = "Formularantworten 1";
 // Steht unter jedem Mail an die Veranstalter.
 const FUSS = `
 ---
-Dies ist eine automatisch verschickte Nachricht. Bitte nicht auf dieses Mail antworten.
-Bei Fragen schreiben Sie an ${ANTWORT_AN}.`;
+Dies ist eine automatisch verschickte Nachricht. Bitte nicht auf dieses Mail antworten.`;
 
 // Spalten, die das Programm selbst verwaltet (erscheinen nicht im Prüf-Mail)
 const INTERN = ["freigegeben", "begründung", "mail-status", "id"];
