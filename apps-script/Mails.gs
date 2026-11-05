@@ -12,7 +12,7 @@
 // Einrichten: siehe kalender/ANLEITUNG_MAILS.md
 
 // ---------- Einstellungen ----------
-const VORSTAND = ["info@rehetobel-tourismus.ch"];   // wer die Meldungen zum Prüfen bekommt (mehrere: ["a@…", "b@…"])
+const VORSTAND = ["verkehrsverein.rehetobel@gmail.com"];   // wer die Meldungen zum Prüfen bekommt (mehrere: ["a@…", "b@…"])
 const WEB_APP_URL = "";                          // nach dem Bereitstellen hier die Web-App-URL einfügen (Anleitung Teil D)
 const ABSENDER_NAME = "Verkehrsverein Rehetobel";
 const ANTWORT_AN = "info@rehetobel-tourismus.ch";
