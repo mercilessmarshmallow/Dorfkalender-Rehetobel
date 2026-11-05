@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Dorfkalender – Meldung prüfen</title>
+  <link rel="stylesheet" href="css/kalender.css">
+  <style>
+    .karte-pruefen { background: #fff; border: 1px solid var(--linie); border-radius: var(--radius); padding: 14px 16px; margin: 12px 0; }
+    .karte-pruefen pre { font: inherit; white-space: pre-wrap; margin: 0; }
+    .ok { color: var(--gruen-dunkel); font-weight: 700; font-size: 1.2rem; }
+    .fehler { color: var(--akzent); font-weight: 600; }
+    textarea { width: 100%; font: inherit; padding: 8px; border: 1px solid var(--linie); border-radius: 8px; margin: 6px 0 12px; }
+    .knopf-gruen { background: var(--gruen); color: #fff; }
+    .klein { font-size: .9rem; color: var(--text-leise); }
+  </style>
+</head>
+<body>
+  <header class="kopf">
+    <div class="kopf-innen">
+      <div class="marke">
+        <img class="logo" src="bilder/logo.png" alt="Verkehrsverein Rehetobel">
+        <div>
+          <h1>Dorfkalender</h1>
+          <p class="untertitel">Meldung prüfen</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="seite" id="inhalt">
+    <p>Einen Moment …</p>
+  </main>
+
+  <script>
+    // Leitet den Entscheid aus dem Prüf-Mail an das Google-Programm weiter – ohne Google-Anmeldung.
+    // So funktionieren die Knöpfe auch in der Gmail-App und wenn man mit einem anderen Google-Konto angemeldet ist.
+    (function () {
+      "use strict";
+      const API = "https://script.google.com/macros/s/AKfycbzuNZ27F1NhpYGpJ4i1sGFxalk1lCvedJ943s-_EhoT6aOph1VdG5FNRp30H94sS6ykEQ/exec";
+      const q = new URLSearchParams(location.search);
+      const a = q.get("a"), id = q.get("id"), t = q.get("t");
+      const inhalt = document.getElementById("inhalt");
+      const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
+        ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+      async function rufe(api, extra) {
+        const url = API + "?" + new URLSearchParams(Object.assign({ api, id, t }, extra || {}));
+        const antwort = await fetch(url, { credentials: "omit", cache: "no-store" });
+        if (!antwort.ok) throw new Error("Server antwortet nicht (" + antwort.status + ")");
+        return antwort.json();
+      }
+      const fehler = (text) => { inhalt.innerHTML = `<p class="fehler">${esc(text)}</p>`; };
+      const andererLink = (wert, text) =>
+        `<p class="klein"><a href="?a=${wert}&id=${encodeURIComponent(id)}&t=${encodeURIComponent(t)}">${text}</a></p>`;
+
+      async function start() {
+        if (!id || !t || (a !== "ja" && a !== "nein")) return fehler("Dieser Link ist ungültig oder unvollständig.");
+        let info;
+        try { info = await rufe("info"); } catch (e) { return fehler("Fehler: " + e.message); }
+        if (!info.ok) return fehler(info.text);
+        const karte = `<div class="karte-pruefen"><pre>${esc(info.angaben)}</pre>
+          ${info.status ? `<p class="klein">Bisher: ${esc(info.status)}</p>` : ""}</div>`;
+
+        if (a === "ja") {
+          inhalt.innerHTML = `<h2>Anlass annehmen</h2>${karte}<div id="ergebnis"><p>Einen Moment …</p></div>${andererLink("nein", "Doch ablehnen")}`;
+          entscheide("ja", "");
+        } else {
+          inhalt.innerHTML = `<h2>Anlass ablehnen</h2>${karte}
+            <label for="grund">Begründung für den Veranstalter (freiwillig):</label>
+            <textarea id="grund" rows="3" placeholder="z. B. Der Anlass findet nicht in Rehetobel statt."></textarea>
+            <button id="knopf" class="knopf knopf-akzent">Ablehnen und Mail schicken</button>
+            <div id="ergebnis"></div>${andererLink("ja", "Doch annehmen")}`;
+          document.getElementById("knopf").addEventListener("click", (ev) => {
+            ev.target.disabled = true;
+            entscheide("nein", document.getElementById("grund").value);
+          });
+        }
+      }
+
+      async function entscheide(wert, grund) {
+        const el = document.getElementById("ergebnis");
+        el.innerHTML = "<p>Einen Moment …</p>";
+        try {
+          const r = await rufe(wert, wert === "nein" ? { grund } : {});
+          if (!r.ok) { el.innerHTML = `<p class="fehler">${esc(r.text)}</p>`; return; }
+          el.innerHTML = wert === "ja"
+            ? `<p class="ok">✓ Angenommen.</p><p>${esc(r.text)}</p><p>Der Anlass erscheint in ein paar Minuten im <a href="./">Dorfkalender</a>.</p>`
+            : `<p class="ok">✓ Abgelehnt.</p><p>${esc(r.text)}</p>`;
+        } catch (e) {
+          el.innerHTML = `<p class="fehler">Fehler: ${esc(e.message)}</p>`;
+        }
+      }
+
+      start();
+    })();
+  </script>
+</body>
+</html>

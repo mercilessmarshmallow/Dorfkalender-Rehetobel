@@ -13,10 +13,12 @@
 
 // ---------- Einstellungen ----------
 const VORSTAND = ["verkehrsverein.rehetobel@gmail.com"];   // wer die Meldungen zum Prüfen bekommt (mehrere: ["a@…", "b@…"])
-const WEB_APP_URL = "";                          // nach dem Bereitstellen hier die Web-App-URL einfügen (Anleitung Teil D)
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzuNZ27F1NhpYGpJ4i1sGFxalk1lCvedJ943s-_EhoT6aOph1VdG5FNRp30H94sS6ykEQ/exec";
 const ABSENDER_NAME = "Verkehrsverein Rehetobel";
 const ANTWORT_AN = "verkehrsverein.rehetobel@gmail.com";
 const KALENDER_LINK = "https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/";
+// Seite auf der Kalender-Webseite, zu der die Knöpfe im Prüf-Mail führen (funktioniert ohne Google-Anmeldung, auch in der Gmail-App)
+const ENTSCHEID_SEITE = "https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/entscheid.html";
 const FORMULAR_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSeKT9Vj2d2BhPkuX7gYlE9mK_gae2x-f5uYJN-bJc8TcsTbYQ/viewform";
 const BLATT_ANTWORTEN = "Formularantworten 1";
 
@@ -96,6 +98,7 @@ function beiAenderung(e) {
 // ---------- Knöpfe im Prüf-Mail: Web-App ----------
 function doGet(e) {
   const p = e.parameter || {};
+  if (p.api) return api_(p);
   const blatt = SpreadsheetApp.getActive().getSheetByName(BLATT_ANTWORTEN);
   if (!p.id || p.t !== token_(p.id)) return seite_("Link ungültig", "<p>Dieser Link ist ungültig oder unvollständig.</p>");
   const zeile = findeZeile_(blatt, p.id);
@@ -129,23 +132,48 @@ function doGet(e) {
 
 // Wird von der Seite aufgerufen (Knopf bzw. automatisch bei «Annehmen»)
 function entscheiden(id, t, wert, grund) {
-  if (t !== token_(id) || (wert !== "ja" && wert !== "nein")) throw new Error("Link ungültig");
+  const r = entscheidKern_(id, t, wert, grund);
+  if (!r.ok) return `<p class="fehler">${esc_(r.text)}</p>`;
+  if (wert === "ja") {
+    return `<p class="ok">✓ Angenommen.</p><p>${esc_(r.text)}</p><p>Der Anlass erscheint in ein paar Minuten im <a href="${KALENDER_LINK}" target="_blank">Dorfkalender</a>.</p>`;
+  }
+  return `<p class="ok">✓ Abgelehnt.</p><p>${esc_(r.text)}</p>`;
+}
+
+// Entscheid ausführen: «ja» oder «nein» in die Tabelle schreiben und Mail an den Veranstalter schicken
+function entscheidKern_(id, t, wert, grund) {
+  if (t !== token_(id) || (wert !== "ja" && wert !== "nein")) return { ok: false, text: "Dieser Link ist ungültig." };
   const lock = LockService.getScriptLock();
   lock.waitLock(20000);
   try {
     const blatt = SpreadsheetApp.getActive().getSheetByName(BLATT_ANTWORTEN);
     const zeile = findeZeile_(blatt, id);
-    if (!zeile) return `<p class="fehler">Dieser Anlass ist nicht mehr in der Tabelle.</p>`;
+    if (!zeile) return { ok: false, text: "Dieser Anlass ist nicht mehr in der Tabelle." };
     if (wert === "nein") blatt.getRange(zeile, spalte_(blatt, "Begründung", true)).setValue(String(grund || "").trim());
     blatt.getRange(zeile, spalte_(blatt, "Freigegeben", true)).setValue(wert);
-    const r = entscheidMail_(blatt, zeile, wert);
-    if (wert === "ja") {
-      return `<p class="ok">✓ Angenommen.</p><p>${r}</p><p>Der Anlass erscheint in ein paar Minuten im <a href="${KALENDER_LINK}" target="_blank">Dorfkalender</a>.</p>`;
-    }
-    return `<p class="ok">✓ Abgelehnt.</p><p>${r}</p>`;
+    return { ok: true, text: entscheidMail_(blatt, zeile, wert) };
   } finally {
     lock.releaseLock();
   }
+}
+
+// Schnittstelle für die Seite entscheid.html auf der Kalender-Webseite (läuft ohne Google-Anmeldung)
+//   ?api=info&id=…&t=…            → Angaben zum Anlass
+//   ?api=ja&id=…&t=…              → annehmen
+//   ?api=nein&id=…&t=…&grund=…    → ablehnen
+function api_(p) {
+  const json = (o) => ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON);
+  if (!p.id || p.t !== token_(p.id)) return json({ ok: false, text: "Dieser Link ist ungültig oder unvollständig." });
+  if (p.api === "info") {
+    const blatt = SpreadsheetApp.getActive().getSheetByName(BLATT_ANTWORTEN);
+    const zeile = findeZeile_(blatt, p.id);
+    if (!zeile) return json({ ok: false, text: "Dieser Anlass ist nicht mehr in der Tabelle (gelöscht?)." });
+    const a = anlass_(blatt, zeile);
+    return json({ ok: true, titel: a.titel, angaben: angaben_(a),
+      status: String(blatt.getRange(zeile, spalte_(blatt, "Mail-Status", true)).getDisplayValue()) });
+  }
+  if (p.api === "ja" || p.api === "nein") return json(entscheidKern_(p.id, p.t, p.api, p.grund));
+  return json({ ok: false, text: "Unbekannte Anfrage." });
 }
 
 // ---------- Mails ----------
@@ -302,8 +330,7 @@ function seite_(titel, inhalt) {
 }
 
 function link_(id, wert) {
-  const basis = WEB_APP_URL || ScriptApp.getService().getUrl();
-  return `${basis}?a=${wert}&id=${encodeURIComponent(id)}&t=${token_(id)}`;
+  return `${ENTSCHEID_SEITE}?a=${wert}&id=${encodeURIComponent(id)}&t=${token_(id)}`;
 }
 
 // Geheimer Schlüssel, damit niemand Links für fremde Anlässe basteln kann
