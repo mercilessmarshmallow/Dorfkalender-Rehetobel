@@ -9,10 +9,13 @@
 // Liegt das Datum in der Vergangenheit, wird die Meldung automatisch abgelehnt (mit Link zum Neu-Melden).
 // 3. Man kann weiterhin auch direkt in der Tabelle «ja» oder «nein» schreiben – das löst dieselben Mails aus.
 //
-// Einrichten: siehe kalender/ANLEITUNG_MAILS.md
+// Einrichten: siehe anleitungen/programm-einrichten.md (Ablage Dorfkalender-Rehetobel)
 
 // ---------- Einstellungen ----------
-const VORSTAND = ["verkehrsverein.rehetobel@gmail.com"];   // wer die Meldungen zum Prüfen bekommt (mehrere: ["a@…", "b@…"])
+// Wer die Meldungen zum Prüfen bekommt. Weitere (private) Adressen NICHT hier eintragen, sondern in Apps Script unter
+// Projekteinstellungen (Zahnrad) → Skripteigenschaften: Name PRUEF_MAILS_AUCH_AN, Wert z. B. "name@gmail.com"
+// (mehrere mit Komma trennen). So steht keine private Adresse im öffentlichen Programmtext.
+const VORSTAND = ["verkehrsverein.rehetobel@gmail.com"];
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzuNZ27F1NhpYGpJ4i1sGFxalk1lCvedJ943s-_EhoT6aOph1VdG5FNRp30H94sS6ykEQ/exec";
 const ABSENDER_NAME = "Verkehrsverein Rehetobel";
 const ANTWORT_AN = "verkehrsverein.rehetobel@gmail.com";
@@ -224,7 +227,8 @@ ${FUSS}`);
 
 // Mail an den Vorstand: alle Angaben + Knöpfe «Annehmen» / «Ablehnen»
 function mailAnVorstand_(blatt, zeile, a, id) {
-  if (!VORSTAND.length) return;
+  const an = pruefEmpfaenger_();
+  if (!an.length) return;
   const breite = blatt.getLastColumn();
   const kopf = blatt.getRange(1, 1, 1, breite).getDisplayValues()[0];
   const werte = blatt.getRange(zeile, 1, 1, breite).getDisplayValues()[0];
@@ -245,12 +249,19 @@ function mailAnVorstand_(blatt, zeile, a, id) {
   const text = zeilen.map(([h, w]) => `${h}: ${w}`).join("\n") +
     (WEB_APP_URL ? `\n\nAnnehmen: ${ja}\nAblehnen: ${nein}` : "");
   MailApp.sendEmail({
-    to: VORSTAND.join(","), subject: `Dorfkalender: neue Meldung «${a.titel}» (${a.datum})`,
+    to: an.join(","), subject: `Dorfkalender: neue Meldung «${a.titel}» (${a.datum})`,
     body: text, htmlBody: html, name: "Dorfkalender Rehetobel",
   });
 }
 
 // ---------- Hilfsfunktionen ----------
+
+// Empfänger der Prüf-Mails: VORSTAND plus Adressen aus der Skripteigenschaft PRUEF_MAILS_AUCH_AN
+function pruefEmpfaenger_() {
+  const extra = String(PropertiesService.getScriptProperties().getProperty("PRUEF_MAILS_AUCH_AN") || "")
+    .split(/[,;\s]+/).map((x) => x.trim()).filter((x) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(x));
+  return [...new Set([...VORSTAND, ...extra])];
+}
 
 function spalte_(blatt, name, anlegen) {
   const breite = Math.max(1, blatt.getLastColumn());

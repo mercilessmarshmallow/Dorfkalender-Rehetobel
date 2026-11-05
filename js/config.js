@@ -9,4 +9,4 @@ window.KALENDER_CONFIG = {
   // Leer lassen = es werden die Beispieldaten aus data/anlaesse.js angezeigt.
   tabelleCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSyroUV1FK_j_fvwqEibQNkXLuSSmVSMMBnow8-VK-8tKR1GkEQLpNZEJNYw69OuPlReQN32gtKf6PH/pub?gid=308241126&single=true&output=csv",
 };
-// Anleitung zum Einrichten: kalender/ANLEITUNG_FORMULAR.md
+// Anleitung zum Einrichten: anleitungen/formular-und-tabelle.md

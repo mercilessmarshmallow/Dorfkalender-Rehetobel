@@ -1,5 +1,7 @@
 # Anleitung: Formular «Anlass melden» und Kalender-Tabelle
 
+> Diese Anleitung beschreibt die **Ersteinrichtung** (erledigt am 3.11.2026). Seither geändert: Frage 12 heisst «Name der Kontaktperson», dazu kam die Pflichtfrage «E-Mail» (4.11.2026); das Google-Konto heisst verkehrsverein.rehetobel@gmail.com (5.11.2026). Aktueller Stand: [../KONZEPT.md](../KONZEPT.md).
+
 Ziel: Vereine melden ihre Anlässe über ein Google-Formular. Die Meldungen landen in einer Google-Tabelle.
 Der Vorstand setzt bei jedem Anlass ein **«ja»** in die Spalte *Freigegeben*. Nur freigegebene Anlässe
 erscheinen im Dorfkalender. Alles läuft über das **Google-Konto des Vereins** (nicht über ein privates Konto).
@@ -76,6 +78,6 @@ Claude trägt sie in `js/config.js` ein. Ab dann:
 
 ## Ablauf im Alltag
 1. Verein füllt das Formular aus → Zeile erscheint in «Formularantworten 1».
-2. Vorstand (z. B. Käthy oder Jonas) bekommt eine Mail (Formular → Antworten → ⋮ → «E-Mail-Benachrichtigungen erhalten»), prüft und schreibt **ja**.
+2. Die Projektleitung bekommt ein Prüf-Mail mit den Knöpfen «Annehmen»/«Ablehnen» (siehe [programm-einrichten.md](programm-einrichten.md)). Von Hand **ja** in der Tabelle geht weiterhin.
 3. Nach wenigen Minuten ist der Anlass im Dorfkalender.
 Ändern oder löschen: direkt in der Tabelle; zurückziehen: «ja» entfernen.
