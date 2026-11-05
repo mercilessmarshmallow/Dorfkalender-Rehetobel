@@ -13,6 +13,13 @@ Google kommt durcheinander, wenn im Browser mehrere Google-Konten angemeldet sin
 2. **sheets.google.com** → mit **verkehrsverein.rehetobel@gmail.com** anmelden.
 3. Tabelle **«Dorfkalender Rehetobel»** → **Erweiterungen → Apps Script**.
 
+## Übersicht: Umstellung auf den Jahresablauf (einmalig, nach Okay der Projektleitung)
+1. Formular: Frage «Status» ändern (Teil D)
+2. Programm erneuern (Teil A)
+3. Eigene Adresse für Prüf-Mails (Teil B)
+4. Einmal «einrichten» ausführen (Teil E) – nötig wegen der neuen Erinnerungsmails
+5. Testen
+
 ## A. Programm erneuern (wenn es schon eingerichtet ist)
 1. Im selben privaten Fenster einen neuen Tab öffnen und diese Adresse aufrufen:
    https://raw.githubusercontent.com/mercilessmarshmallow/Dorfkalender-Rehetobel/main/apps-script/Mails.gs
@@ -36,6 +43,18 @@ Nach A und B zusätzlich:
    Die Web-App-URL in `apps-script/Mails.gs` bei `WEB_APP_URL` und in `entscheid.html` bei `API` eintragen (Claude).
 2. Oben die Funktion **einrichten** wählen → **▷ Ausführen** → Berechtigungen erlauben
    («Fortgeschritten» → «Weiter zu Dorfkalender Mails» → «Zulassen»).
+
+## D. Formularfrage «Status» → «Kann das Datum verschoben werden?»
+1. Formular «Anlass melden – Dorfkalender Rehetobel» öffnen (im Vereinskonto), Reiter **Fragen**.
+2. Die Frage **«Status»** anklicken. Titel ändern in: **Kann das Datum verschoben werden?**
+3. Die zwei Antworten «fix» und «provisorisch» ändern in **Ja** und **Nein**.
+4. Bei der Frage auf **⋮ → Beschreibung**: **Wichtig für die Jahresplanung: Kann Ihr Anlass bei einer Überschneidung auf ein anderes Datum verschoben werden?**
+5. Google speichert von selbst. Ältere Antworten bleiben, wie sie sind.
+
+## E. Einmal «einrichten» ausführen
+1. In Apps Script oben in der Auswahl **einrichten** wählen → **▷ Ausführen**.
+2. Falls Google nach einer Erlaubnis fragt: «Fortgeschritten» → «Weiter zu Dorfkalender Mails» → «Zulassen».
+3. Unten «Ausführung abgeschlossen». Beim nächsten Öffnen der Tabelle erscheint oben das Menü **«Dorfkalender»**.
 
 ## Testen
 1. Im Dorfkalender «+ Anlass melden», Datum in der Zukunft, bei E-Mail eine eigene Adresse.

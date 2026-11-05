@@ -13,6 +13,8 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 - **Nächstes Jahr freigeben mit einem einzigen Befehl.**
 - **«Verschiebbar ja/nein»** dient der Projektleitung, um zu wissen, wen sie bei Überschneidungen kontaktiert.
 - **Koordinationssitzung bleibt:** Kompromisse findet man nur im Gespräch.
+- **Umsetzung (Vorschlag Claude, noch von der Projektleitung zu bestätigen):** Freigabe-Knopf kommt automatisch per Mail am Tag nach der
+  Sitzung (plus Menü in der Tabelle); eine Woche vor der Sitzung kommt automatisch die Planungsliste. Startjahr: 2027 gilt als freigegeben.
 
 ## 5.11.2026
 - **Jahresablauf mit Koordinationssitzung** (siehe KONZEPT.md): Anlässe fürs nächste Jahr werden vorgemerkt und

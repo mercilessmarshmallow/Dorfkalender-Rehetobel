@@ -138,3 +138,22 @@ body.eingebettet { background: transparent; }
 body.eingebettet .kopf .marke, body.eingebettet .fuss { display: none; }
 body.eingebettet .kopf { background: transparent; border: 0; }
 body.eingebettet .kopf-innen { padding: 8px 16px 0; justify-content: flex-end; }
+
+/* Planungskalender */
+.planung-hinweis { background: #fff4e5; border: 1px solid #f0c27a; border-radius: var(--radius); padding: 10px 14px; margin: 0 0 12px; }
+.druck-kopf h2 { margin-bottom: 4px; }
+.druck-monat { margin: 18px 0 6px; color: var(--gruen-dunkel); }
+.druck-tabelle { width: 100%; border-collapse: collapse; font-size: .92rem; background: #fff; }
+.druck-tabelle th, .druck-tabelle td { border: 1px solid var(--linie); padding: 4px 6px; text-align: left; vertical-align: top; }
+.druck-tabelle tr.konflikt td { background: #fdecea; font-weight: 600; }
+.druck-leer { padding: 2px 0 6px; }
+@media print {
+  .kopf, .tabs, .filter, .fuss, .planung-hinweis, .nicht-drucken, .knopf-hell { display: none !important; }
+  body { background: #fff; }
+  .seite { max-width: none; padding: 0; }
+  .druck-monat { break-after: avoid; }
+  .druck-tabelle tr { break-inside: avoid; }
+  .druck-tabelle tr.konflikt td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+#ansicht-druck { overflow-x: auto; }
+@media (max-width: 640px) { .druck-tabelle { font-size: .8rem; } }

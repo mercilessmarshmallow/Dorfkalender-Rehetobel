@@ -12,9 +12,10 @@ let fehler = 0;
 const pruefe = (bedingung, text) => { console.log((bedingung ? "  ✓ " : "  ✗ ") + text); if (!bedingung) fehler++; };
 
 // ---------- Nachbildung von Google ----------
-function google(heute = "20261105") {
+function google(start = "20261105") {
+  let heute = start;
   const daten = [["Zeitstempel", "Titel", "Datum", "Bis", "Zeit (Beginn)", "Zeit (Ende)", "Ort (z.B. Gemeindezentrum)",
-    "Veranstalter (Name des Vereins/der Firma)", "Kategorie", "Beschreibung", "Link (Webseite mit mehr Infos)", "Status",
+    "Veranstalter (Name des Vereins/der Firma)", "Kategorie", "Beschreibung", "Link (Webseite mit mehr Infos)", "Kann das Datum verschoben werden?",
     "Name der Kontaktperson", "E-Mail", "Freigegeben"]];
   const blatt = {
     getName: () => "Formularantworten 1",
@@ -33,7 +34,8 @@ function google(heute = "20261105") {
   const ctx = {
     SpreadsheetApp: { getActive: () => ({ getSheetByName: () => blatt, toast: () => {} }) },
     ScriptApp: { getProjectTriggers: () => [], deleteTrigger: () => {}, getService: () => ({ getUrl: () => "" }),
-      newTrigger: () => { const b = { forSpreadsheet: () => b, onFormSubmit: () => b, onEdit: () => b, create: () => {} }; return b; } },
+      newTrigger: () => { const b = { forSpreadsheet: () => b, onFormSubmit: () => b, onEdit: () => b, timeBased: () => b,
+        everyDays: () => b, atHour: () => b, create: () => {} }; return b; } },
     MailApp: { sendEmail: (m) => mails.push(m) },
     PropertiesService: { getScriptProperties: () => ({ getProperty: (k) => props[k] || null, setProperty: (k, v) => { props[k] = v; } }) },
     LockService: { getScriptLock: () => ({ waitLock: () => {}, releaseLock: () => {} }) },
@@ -47,12 +49,12 @@ function google(heute = "20261105") {
     console,
   };
   vm.createContext(ctx); vm.runInContext(CODE, ctx);
-  const melde = (titel, datum, mail) => {
-    daten.push(["05.11.2026 15:00:00", titel, datum, "", "19:00:00", "", "Dorf 5", "Testverein", "Vereine", "", "", "Ja", "Test", mail]);
+  const melde = (titel, datum, mail, verschiebbar = "Ja", veranstalter = "Testverein") => {
+    daten.push(["05.11.2026 15:00:00", titel, datum, "", "19:00:00", "", "Dorf 5", veranstalter, "Vereine", "", "", verschiebbar, "Test", mail]);
     ctx.beiMeldung({ range: blatt.getRange(daten.length, 1, 1, 15) });
   };
   const spalte = (zeile, name) => daten[zeile][daten[0].findIndex((h) => h.toLowerCase().startsWith(name))];
-  return { ctx, daten, mails, melde, spalte };
+  return { ctx, daten, mails, melde, spalte, props, setzeHeute: (h) => { heute = h; } };
 }
 
 // ---------- Kleiner Webserver für die Webseite ----------
@@ -68,26 +70,38 @@ function server() {
   }).listen(8765);
 }
 
+const lokal = (u) => u.replace("https://mercilessmarshmallow.github.io", "http://localhost:8765");
+const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || [])[1];
+
 (async () => {
-  console.log("1. Programm: Meldungen und Mails");
+  console.log("1. Nachmeldungen (dieses Jahr) und automatische Absagen – heute 5.11.2026, 2027 schon geplant");
   const g = google();
   g.ctx.einrichten();
+  pruefe(g.props.FREIGEGEBEN_BIS === "2027", "Startwert: freigegeben bis 2027 (Sitzung 4.11.2026 vorbei) und gespeichert");
   g.melde("Konzert", "12.12.2026", "verein@example.ch");
   g.melde("Alter Termin", "03.11.2026", "verein2@example.ch");
-  const pruef = g.mails.filter((m) => m.subject.startsWith("Dorfkalender: neue"));
-  pruefe(pruef.length === 1, "nur für den zukünftigen Anlass ein Prüf-Mail");
-  pruefe(pruef[0] && pruef[0].to === "verkehrsverein.rehetobel@gmail.com,privat@example.ch", "Prüf-Mail an Vereins-Gmail + Skripteigenschaft");
+  g.melde("Viel zu früh", "10.05.2029", "verein3@example.ch");
+  const pruef = g.mails.filter((m) => m.subject.startsWith("Dorfkalender:"));
+  pruefe(pruef.length === 1 && /neue Meldung «Konzert»/.test(pruef[0].subject), "nur für das Konzert ein Prüf-Mail");
+  pruefe(pruef[0].to === "verkehrsverein.rehetobel@gmail.com,privat@example.ch", "Prüf-Mail an Vereins-Gmail + Skripteigenschaft (privates Gmail)");
+  pruefe(/Nachmeldung/.test(pruef[0].body) && /noch nichts eingetragen/.test(pruef[0].body), "Prüf-Mail: Nachmeldung, Tag noch frei");
   pruefe(g.mails.some((m) => m.to === "verein@example.ch" && /Ihre Meldung/.test(m.subject)), "Eingangsbestätigung an den Verein");
   pruefe(g.spalte(2, "freigegeben") === "nein" && /Vergangenheit/.test(g.spalte(2, "begründung")), "vergangenes Datum automatisch abgelehnt");
-  pruefe(g.mails.every((m) => !/privat@example\.ch/.test((m.to || "") + (m.replyTo || "")) || m.subject.startsWith("Dorfkalender: neue")),
-    "private Adresse nur im Prüf-Mail, nie bei den Vereinen");
-  pruefe(g.mails.filter((m) => !m.subject.startsWith("Dorfkalender")).every((m) => m.replyTo === "verkehrsverein.rehetobel@gmail.com"),
-    "Antworten der Vereine gehen ans Vereins-Gmail");
-  pruefe(!/Bei Fragen schreiben/.test(g.mails[0].body), "keine Zeile «Bei Fragen schreiben Sie an …»");
-  const ja = pruef[0].body.match(/Annehmen: (\S+)/)[1], nein = pruef[0].body.match(/Ablehnen: (\S+)/)[1];
-  pruefe(ja.startsWith("https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/entscheid.html?a=ja"), "Knopf führt auf die Prüfseite");
+  pruefe(g.spalte(3, "freigegeben") === "nein" && /noch zu früh/.test(g.spalte(3, "begründung")), "2029 automatisch abgelehnt («noch zu früh»)");
+  pruefe(g.mails.filter((m) => !m.subject.startsWith("Dorfkalender:")).every((m) => m.replyTo === "verkehrsverein.rehetobel@gmail.com" && !/privat@/.test(m.to)),
+    "Mails an Vereine: Antworten ans Vereins-Gmail, private Adresse nie dabei");
+  pruefe(!g.mails.some((m) => /Bei Fragen schreiben/.test(m.body || "")), "keine Zeile «Bei Fragen schreiben Sie an …»");
+  const konzertJa = linkAus(pruef[0].body, "Annehmen");
+  pruefe(/^https:\/\/mercilessmarshmallow\.github\.io\/Dorfkalender-Rehetobel\/entscheid\.html\?a=ja/.test(konzertJa), "Knopf führt auf die Prüfseite");
 
-  console.log("2. Prüfseite im Browser (mit angemeldetem Google-Konto wie in der Gmail-App)");
+  console.log("2. Planung 2028");
+  g.melde("Turnfest", "12.06.2028", "turnverein@example.ch", "Nein", "Turnverein");
+  const p1 = g.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1);
+  pruefe(/Planung 2028 «Turnfest»/.test(p1.subject) && /vormerken/.test(p1.body), "Prüf-Mail: Planung 2028, «Annehmen» = vormerken");
+  const bestaetigung = g.mails.filter((m) => m.to === "turnverein@example.ch").at(-1);
+  const planLink = (bestaetigung.body.match(/https:\S+\?planung=\S+/) || [])[0];
+  pruefe(/Jahresplanung 2028/.test(bestaetigung.body) && planLink, "Eingangsbestätigung erklärt die Planung und enthält den Planungskalender-Link");
+
   const srv = server();
   const browser = await chromium.launch();
   const kontext = await browser.newContext({ viewport: { width: 390, height: 800 } });
@@ -97,31 +111,78 @@ function server() {
     const out = g.ctx.doGet({ parameter: Object.fromEntries(new URL(route.request().url()).searchParams) });
     route.fulfill({ status: 200, contentType: "application/json", headers: { "access-control-allow-origin": "*" }, body: out.text ?? out.html });
   });
+  await kontext.route("https://docs.google.com/**", (r) => r.fulfill({ status: 200, contentType: "text/csv",
+    body: "Titel,Datum,Bis,Zeit,Zeit bis,Ort,Veranstalter,Kategorie,Beschreibung,Link,Status\nKonzert,46368,,\"0,7916666667\",0,Dorf 5,Testverein,Vereine,,,Ja\n" }));
   await kontext.addCookies([{ name: "SID", value: "angemeldet", domain: ".google.com", path: "/" }]);
-  const lokal = (u) => u.replace("https://mercilessmarshmallow.github.io", "http://localhost:8765");
   const seite = await kontext.newPage(); const jsFehler = []; seite.on("pageerror", (e) => jsFehler.push(e.message));
-  await seite.goto(lokal(ja)); await seite.waitForSelector("#ergebnis .ok, .fehler", { timeout: 5000 });
-  pruefe(/Angenommen/.test(await seite.innerText("main")), "ein Tipp auf «Annehmen» → «Angenommen»");
-  pruefe(g.spalte(1, "freigegeben") === "ja", "in der Tabelle steht «ja»");
+  const tippe = async (url) => { await seite.goto(lokal(url)); await seite.waitForSelector("#ergebnis .ok, #ergebnis .fehler, main > .fehler", { timeout: 5000 }); return seite.innerText("main"); };
+
+  pruefe(/Vormerken|vormerken/.test(await tippe(linkAus(p1.body, "Annehmen"))) && g.spalte(4, "freigegeben") === "vorgemerkt",
+    "ein Tipp auf «Annehmen» → vorgemerkt (nicht öffentlich)");
+  pruefe(g.mails.some((m) => m.to === "turnverein@example.ch" && /vorgemerkt/.test(m.subject)), "Mail «vorgemerkt» an den Verein");
+
+  g.melde("Dorffest", "12.06.2028", "dorffest@example.ch", "Ja", "Dorfverein");
+  const p2 = g.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1);
+  pruefe(/Am gleichen Tag schon eingetragen/.test(p2.body) && /Turnfest \(Turnverein\).*vorgemerkt, verschiebbar: Nein/.test(p2.body),
+    "Prüf-Mail zeigt Überschneidung: Turnfest, vorgemerkt, nicht verschiebbar");
+  await tippe(linkAus(p2.body, "Annehmen"));
+
+  console.log("3. Planungskalender (eigener Link) und Planungsliste");
+  const plan = await kontext.newPage(); const planFehler = []; plan.on("pageerror", (e) => planFehler.push(e.message));
+  await plan.goto(lokal(planLink)); await plan.waitForSelector(".planung-hinweis", { timeout: 5000 }); await plan.waitForTimeout(300);
+  pruefe(/Planungskalender 2028/.test(await plan.innerText("body")), "Planungskalender 2028 mit Hinweis «provisorisch»");
+  await plan.click('[data-ansicht="liste"]');
+  const planListe = await plan.innerText("#ansicht-liste");
+  pruefe(/Turnfest/.test(planListe) && /Dorffest/.test(planListe) && /fest, nicht verschiebbar/.test(planListe), "zeigt vorgemerkte Anlässe mit «verschiebbar»");
+  pruefe(!/Konzert/.test(planListe), "zeigt keine öffentlichen Anlässe von 2026");
+  await plan.goto(lokal(planLink + "&ansicht=druck")); await plan.waitForSelector(".druck-tabelle", { timeout: 5000 });
+  const druck = await plan.innerText("#ansicht-druck");
+  pruefe(/Planungsliste 2028/.test(druck) && /Juni 2028/.test(druck) && (await plan.$$("tr.konflikt")).length === 2, "Planungsliste: Juni mit 2 markierten Überschneidungen");
+  await plan.screenshot({ path: path.join(require("os").tmpdir(), "planungsliste.png"), fullPage: true });
+  await plan.goto(lokal(planLink.replace(/planung=[^&]+/, "planung=falsch"))); await plan.waitForTimeout(800);
+  pruefe(/konnten nicht geladen/.test(await plan.innerText("#ansicht-liste")), "falscher Planungs-Link zeigt nichts");
+  pruefe(planFehler.length === 0, "keine Fehler im Planungskalender " + planFehler.join("; "));
+
+  console.log("4. Öffentlicher Kalender");
+  const k = await kontext.newPage(); const kFehler = []; k.on("pageerror", (e) => kFehler.push(e.message));
+  await k.goto("http://localhost:8765/index.html"); await k.waitForTimeout(800);
+  const oeff = await k.innerText("#ansicht-liste");
+  pruefe(/Konzert/.test(oeff) && !/Turnfest/.test(oeff) && !(await k.$(".planung-hinweis")), "zeigt nur Freigegebenes, nichts aus der Planung");
+  pruefe(kFehler.length === 0, "keine Fehler im Kalender " + kFehler.join("; "));
+
+  console.log("5. Nachmeldung annehmen / ablehnen (Gmail-App, angemeldetes Google-Konto)");
+  pruefe(/Angenommen/.test(await tippe(konzertJa)) && g.spalte(1, "freigegeben") === "ja", "ein Tipp «Annehmen» → öffentlich («ja»)");
   pruefe(g.mails.some((m) => m.to === "verein@example.ch" && /ist im Dorfkalender/.test(m.subject)), "Mail «angenommen» an den Verein");
   const vorher = g.mails.length;
-  await seite.goto(lokal(ja)); await seite.waitForSelector("#ergebnis .ok, .fehler");
+  await tippe(konzertJa);
   pruefe(g.mails.length === vorher, "zweiter Tipp verschickt kein zweites Mail");
-  await seite.goto(lokal(nein)); await seite.waitForSelector("#ergebnis .ok, .fehler");
-  pruefe(/Abgelehnt/.test(await seite.innerText("main")) && g.spalte(1, "freigegeben") === "nein", "ein Tipp auf «Ablehnen» → «Abgelehnt»");
-  await seite.goto(lokal(ja.replace(/t=[^&]+/, "t=falsch"))); await seite.waitForSelector(".fehler");
-  pruefe(/ungültig/.test(await seite.innerText("main")), "gefälschter Link wird abgewiesen");
-  pruefe(cookies === 0, "Google-Anmeldung wird nicht mitgeschickt");
-  pruefe(jsFehler.length === 0, "keine Fehler auf der Seite " + (jsFehler.join("; ") || ""));
+  pruefe(/Abgelehnt/.test(await tippe(linkAus(pruef[0].body, "Ablehnen"))) && g.spalte(1, "freigegeben") === "nein", "ein Tipp «Ablehnen» → abgelehnt");
+  pruefe(/ungültig/.test(await tippe(konzertJa.replace(/t=[^&]+/, "t=falsch"))), "gefälschter Link wird abgewiesen");
 
-  console.log("3. Kalender-Webseite lädt");
-  const k = await kontext.newPage(); const kFehler = []; k.on("pageerror", (e) => kFehler.push(e.message));
-  await k.route("https://docs.google.com/**", (r) => r.fulfill({ status: 200, contentType: "text/csv",
-    body: "Titel,Datum,Bis,Zeit,Zeit bis,Ort,Veranstalter,Kategorie,Beschreibung,Link,Status\nKonzert,46368,,\"0,7916666667\",0,Dorf 5,Testverein,Vereine,,,Ja\n" }));
-  await k.goto("http://localhost:8765/index.html"); await k.waitForTimeout(800);
-  pruefe(/Konzert/.test(await k.innerText("#ansicht-liste")), "Anlass aus der Tabelle erscheint in der Liste");
-  pruefe(kFehler.length === 0, "keine Fehler im Kalender " + (kFehler.join("; ") || ""));
+  console.log("6. Erinnerungen und «2028 freigeben»");
+  const anzahlVorher = g.mails.length;
+  g.setzeHeute("20271027"); g.ctx.taeglich(); g.ctx.taeglich();
+  const liste = g.mails.slice(anzahlVorher).filter((m) => /Planungsliste 2028/.test(m.subject));
+  pruefe(liste.length === 1 && /ansicht=druck/.test(liste[0].body), "eine Woche vor der Sitzung (3.11.2027): Mail mit Planungsliste, nur einmal");
+  g.setzeHeute("20271104"); g.ctx.taeglich(); g.ctx.taeglich();
+  const freiMail = g.mails.filter((m) => /2028 freigeben/.test(m.subject));
+  pruefe(freiMail.length === 1, "Tag nach der Sitzung: Mail mit Knopf «2028 freigeben», nur einmal");
+  const freiLink = (freiMail[0].body.match(/https:\S+aktion=freigeben\S+/) || [])[0];
+  await seite.goto(lokal(freiLink)); await seite.waitForSelector("#freigeben", { timeout: 5000 });
+  pruefe(/2 vorgemerkte Anlässe/.test(await seite.innerText("main")), "Freigabe-Seite: 2 vorgemerkte Anlässe");
+  await seite.click("#freigeben"); await seite.waitForSelector("#ergebnis .ok, #ergebnis .fehler");
+  pruefe(/2028 ist freigegeben/.test(await seite.innerText("#ergebnis")) && g.spalte(4, "freigegeben") === "ja" && g.spalte(5, "freigegeben") === "ja",
+    "ein Tipp: 2028 freigegeben, beide Anlässe öffentlich");
+  pruefe(g.props.FREIGEGEBEN_BIS === "2028", "freigegeben bis 2028");
+  g.melde("Spontankonzert", "20.03.2028", "spontan@example.ch");
+  pruefe(/neue Meldung «Spontankonzert»/.test(g.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1).subject), "danach ist 2028 eine Nachmeldung");
+  g.melde("Planung 2029", "01.05.2029", "plan29@example.ch");
+  pruefe(/Planung 2029/.test(g.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1).subject), "und 2029 ist jetzt das Planungsjahr");
+  pruefe(/ungültig/.test(await (async () => { await seite.goto(lokal(freiLink.replace(/t=[^&]+/, "t=falsch"))); await seite.waitForSelector(".fehler"); return seite.innerText("main"); })()),
+    "gefälschter Freigabe-Link wird abgewiesen");
 
+  pruefe(cookies === 0, "Google-Anmeldung wird nie mitgeschickt");
+  pruefe(jsFehler.length === 0, "keine Fehler auf der Prüfseite " + jsFehler.join("; "));
   await browser.close(); srv.close();
   console.log(fehler ? `\n${fehler} Prüfung(en) fehlgeschlagen.` : "\nAlle Prüfungen bestanden.");
   process.exit(fehler ? 1 : 0);

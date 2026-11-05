@@ -94,9 +94,13 @@
         <p class="meta">${esc(ort)}</p>
         ${a.kategorie ? `<span class="etikett">${esc(a.kategorie)}</span>` : ""}
         ${a.status === "provisorisch" ? `<span class="etikett provisorisch">provisorisch</span>` : ""}
+        ${a.verschiebbar ? `<span class="etikett">${verschiebbarText(a)}</span>` : ""}
       </div>
     </button></li>`;
   }
+
+  // «Kann das Datum verschoben werden?» Ja/Nein → kurzer Text
+  const verschiebbarText = (a) => /^j/i.test(a.verschiebbar) ? "verschiebbar" : /^n/i.test(a.verschiebbar) ? "fest, nicht verschiebbar" : esc(a.verschiebbar);
 
   // ---------- Ansicht: Liste ----------
   function zeigeListe() {
@@ -216,6 +220,7 @@
         <dt>Ort</dt><dd>${esc(ortText(a))}</dd>
         ${a.veranstalter ? `<dt>Veranstalter</dt><dd>${esc(a.veranstalter)}</dd>` : ""}
         ${a.kategorie ? `<dt>Kategorie</dt><dd>${esc(a.kategorie)}</dd>` : ""}
+        ${a.verschiebbar ? `<dt>Verschiebbar</dt><dd>${verschiebbarText(a)}</dd>` : ""}
       </dl>
       ${a.beschreibung ? `<p>${esc(a.beschreibung)}</p>` : ""}
       <div class="knopf-reihe">
@@ -252,13 +257,60 @@
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
+  // ---------- Ansicht: Planungsliste zum Ausdrucken (nur Planungskalender) ----------
+  function zeigeDruck() {
+    const el = document.getElementById("ansicht-druck");
+    const j = zustand.planungsJahr;
+    const tage = proTag(alle);
+    let html = `<div class="druck-kopf"><h2>Planungsliste ${j} – Koordinationssitzung</h2>
+      <p>Provisorisch, nur für die Vereine. ⚠ = mehrere Anlässe am gleichen Tag.
+      <button class="knopf knopf-akzent nicht-drucken" onclick="window.print()">Drucken</button></p></div>`;
+    for (let m = 0; m < 12; m++) {
+      const imMonat = alle.filter((a) => parse(a.datum).getFullYear() === j && parse(a.datum).getMonth() === m);
+      html += `<h3 class="druck-monat">${MONATE[m]} ${j}</h3>`;
+      if (!imMonat.length) { html += `<p class="leer druck-leer">– noch nichts gemeldet –</p>`; continue; }
+      html += `<table class="druck-tabelle"><thead><tr><th></th><th>Datum</th><th>Zeit</th><th>Anlass</th><th>Veranstalter</th><th>Ort</th><th>Verschiebbar</th></tr></thead><tbody>`;
+      for (const a of imMonat) {
+        const d = parse(a.datum);
+        const doppelt = tageVon(a).some((t) => (tage.get(t) || []).length > 1);
+        html += `<tr class="${doppelt ? "konflikt" : ""}"><td>${doppelt ? "⚠" : ""}</td>
+          <td>${WOCHENTAGE[d.getDay()]} ${d.getDate()}.${d.getMonth() + 1}.${a.bis ? ` – ${parse(a.bis).getDate()}.${parse(a.bis).getMonth() + 1}.` : ""}</td>
+          <td>${esc(a.zeit || "")}</td><td>${esc(a.titel)}</td><td>${esc(a.veranstalter)}</td><td>${esc(a.ort)}</td>
+          <td>${a.verschiebbar ? verschiebbarText(a) : ""}</td></tr>`;
+      }
+      html += `</tbody></table>`;
+    }
+    el.innerHTML = html;
+  }
+
   // ---------- Steuerung ----------
   function zeichne() {
-    for (const n of ["liste", "monat", "planung"]) {
-      document.getElementById(`ansicht-${n}`).hidden = n !== zustand.ansicht;
-      document.querySelector(`[data-ansicht="${n}"]`).setAttribute("aria-selected", n === zustand.ansicht);
+    for (const n of ["liste", "monat", "planung", "druck"]) {
+      const sek = document.getElementById(`ansicht-${n}`), tab = document.querySelector(`[data-ansicht="${n}"]`);
+      if (!sek || !tab) continue;
+      sek.hidden = n !== zustand.ansicht;
+      tab.setAttribute("aria-selected", n === zustand.ansicht);
     }
-    ({ liste: zeigeListe, monat: zeigeMonat, planung: zeigePlanung })[zustand.ansicht]();
+    ({ liste: zeigeListe, monat: zeigeMonat, planung: zeigePlanung, druck: zeigeDruck })[zustand.ansicht]();
+  }
+
+  // Planungskalender (?planung=…): Hinweis, eigenes Jahr, zusätzliche Ansicht «Liste zum Drucken»
+  function richtePlanungEin() {
+    const jahr = window.KALENDER_PLANUNG.jahr;
+    document.body.classList.add("planung-modus");
+    document.title = `Planungskalender ${jahr} – Dorfkalender Rehetobel`;
+    const untertitel = document.querySelector(".untertitel");
+    if (untertitel) untertitel.textContent = `Planungskalender ${jahr}`;
+    document.querySelector(".seite").insertAdjacentHTML("afterbegin",
+      `<p class="planung-hinweis"><strong>Planungskalender ${jahr} – provisorisch.</strong> Nur für die Vereine, die ihre Anlässe planen.
+       Bitte nicht weitergeben. Die Daten werden an der Koordinationssitzung im November gemeinsam festgelegt;
+       erst danach erscheinen sie im öffentlichen Dorfkalender.</p>`);
+    document.querySelector(".tabs").insertAdjacentHTML("beforeend",
+      `<button role="tab" data-ansicht="druck" aria-selected="false">Liste zum Drucken</button>`);
+    document.getElementById("ansicht-planung").insertAdjacentHTML("afterend", `<section id="ansicht-druck" class="ansicht" hidden></section>`);
+    zustand.planungsJahr = jahr;
+    zustand.monat = new Date(jahr, 0, 1);
+    zustand.ansicht = new URLSearchParams(location.search).get("ansicht") === "druck" ? "druck" : "planung";
   }
 
   document.addEventListener("click", (e) => {
@@ -300,6 +352,7 @@
   window.ladeAnlaesse()
     .then((liste) => {
       alle = sortiere(liste);
+      if (window.KALENDER_PLANUNG) richtePlanungEin();
       fuelleSelect("filter-kategorie", alle.map((a) => a.kategorie));
       fuelleSelect("filter-gemeinde", alle.map((a) => a.gemeinde));
       // Nur eine Gemeinde (Rehetobel)? Dann braucht es den Gemeinde-Filter nicht.

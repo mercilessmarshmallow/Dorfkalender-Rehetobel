@@ -18,14 +18,15 @@ Zeichen: ✅ läuft · 🔧 gebaut, noch nicht eingerichtet · 📋 geplant
 | Formular «Anlass melden» | Google-Konto des Vereins | Vereine melden ihre Anlässe. ✅ |
 | Tabelle «Dorfkalender Rehetobel» | Google-Konto des Vereins | Alle Meldungen. Das Blatt «Kalender» enthält nur freigegebene Anlässe ohne Kontaktdaten und ist als CSV veröffentlicht. ✅ |
 | Programm «Dorfkalender Mails» | Apps Script in der Tabelle, Quelltext in `apps-script/Mails.gs` | Mails an Vereine und Prüf-Mails, Annehmen/Ablehnen. ✅ / 🔧 |
-| Prüfseite | `entscheid.html` auf der Webseite | Annehmen/Ablehnen mit einem Tipp, auch in der Gmail-App. 🔧 |
+| Prüfseite | `entscheid.html` auf der Webseite | Annehmen/Ablehnen mit einem Tipp, auch in der Gmail-App; Jahr freigeben. 🔧 |
+| Planungskalender | Webseite mit `?planung=…` (Link kommt mit den Mails) | Vorgemerkte Anlässe des nächsten Jahres für die Vereine; «Liste zum Drucken». 🔧 |
 | Jahresbüchli | Papier, in jeden Haushalt | Jahresprogramm nach der Koordinationssitzung, besonders für ältere Personen. |
 
 Google-Konto des Vereins: **verkehrsverein.rehetobel@gmail.com** – unabhängig von der Vereinsadresse info@.
 
 ## Der Jahresablauf
 
-### Grundidee: ein Kalender, ein Formular – das Programm sortiert nach dem Datum 📋
+### Grundidee: ein Kalender, ein Formular – das Programm sortiert nach dem Datum 🔧
 Die Vereine haben **einen** Link zum Formular. Das Programm entscheidet anhand des Datums, was mit der Meldung passiert:
 
 | Datum des Anlasses | Art | Nach «Annehmen» |
@@ -38,7 +39,7 @@ Die Vereine haben **einen** Link zum Formular. Das Programm entscheidet anhand d
 Damit gilt automatisch: **Bis zur Freigabe** nimmt der öffentliche Kalender nur Anlässe **bis 31.12. dieses Jahres** auf;
 **nach der Freigabe** ist das **ganze nächste Jahr** offen für Nachmeldungen.
 
-### 1. Planung fürs nächste Jahr (bis zur Koordinationssitzung) 📋
+### 1. Planung fürs nächste Jahr (bis zur Koordinationssitzung) 🔧
 - Die Vereine melden ihre Anlässe fürs nächste Jahr übers gleiche Formular und geben an, ob das Datum
   **verschiebbar** ist (z. B. Turnfest mit festem Datum = nein, Dorffest = ja). Diese Angabe ist für die Projektleitung:
   Sie zeigt, **wen man bei einer Überschneidung kontaktieren** kann. Nach der Freigabe spielt sie keine Rolle mehr.
@@ -49,29 +50,35 @@ Damit gilt automatisch: **Bis zur Freigabe** nimmt der öffentliche Kalender nur
   so sehen sie beim Planen schon, was andere eingetragen haben. Die Öffentlichkeit sieht nichts davon.
   (Wer den Link hat, kann hineinschauen – für provisorische Termine von Dorfanlässen genügt das; ein Login pro Verein wäre viel aufwändiger.)
 
-### 2. Koordinationssitzung (jeweils erster Mittwoch im November) 📋
+### 2. Koordinationssitzung (jeweils erster Mittwoch im November) 🔧
 - Die Sitzung bleibt **das Herzstück**: Nur im Gespräch findet man **Kompromisse** («das ist wichtiger, könnt ihr verschieben?»).
-- Vorher wird die **Planungsliste** ausgedruckt: Monat für Monat alle vorgemerkten Anlässe,
-  **Überschneidungen am gleichen Tag markiert**, mit «verschiebbar ja/nein». Jeder bekommt ein Exemplar zum Mitstreichen.
+- **Eine Woche vorher** kommt automatisch ein Mail mit dem Link zur **Planungsliste** zum Ausdrucken: Monat für Monat alle
+  vorgemerkten Anlässe, **Überschneidungen am gleichen Tag rot markiert**, mit «verschiebbar ja/nein». Jeder bekommt ein Exemplar zum Mitstreichen.
+  (Auch jederzeit über den Planungskalender → «Liste zum Drucken».)
 - Man geht Monat für Monat durch und bespricht die Überschneidungen. Vereine passen ihre Daten an.
 
-### 3. Nach der Sitzung: nächstes Jahr freigeben – ein Befehl 📋
+### 3. Nach der Sitzung: nächstes Jahr freigeben – ein Befehl 🔧
 - Geänderte Daten werden in der Tabelle angepasst (Projektleitung oder Claude).
 - Dann **ein Befehl** «Jahr freigeben»: Alle vorgemerkten Anlässe des Jahres werden **öffentlich**, und ab sofort
   gehen Meldungen fürs ganze Jahr als Nachmeldungen direkt in den öffentlichen Kalender. Nichts muss umkopiert werden.
-- Vorschlag: der Befehl als **Knopf in einem Mail** (Handy, ein Tipp) und zusätzlich im Menü der Tabelle («Dorfkalender» → «Jahr freigeben»).
+- Am **Tag nach der Sitzung** kommt automatisch ein Mail mit dem Knopf **«[Jahr] freigeben»**. Antippen → Seite zeigt, wie viele
+  Anlässe öffentlich werden → **«jetzt freigeben»**. Das Mail kann man liegen lassen, bis die Daten bereinigt sind.
+  Zusätzlich im Menü der Tabelle: «Dorfkalender» → «Nächstes Jahr freigeben …».
 - Danach: Grundlage fürs **Jahresbüchli**. Die Daten sind fix.
 
-### 4. Unter dem Jahr: spontane Anlässe nachmelden ✅ / 📋
+### 4. Unter dem Jahr: spontane Anlässe nachmelden ✅ / 🔧
 - Z. B. ein Konzert in zwei Wochen: übers Formular melden, damit es im Kalender steht und Werbung macht.
-- Prüf-Mail mit allen Angaben und dem Hinweis, was am gleichen Tag schon läuft (📋), dann **ein Tipp**:
+- Prüf-Mail mit allen Angaben und dem Hinweis, was am gleichen Tag schon läuft (🔧), dann **ein Tipp**:
   «Annehmen» → sofort öffentlich, «Ablehnen» → Absage an den Verein.
 
 ## Die Mails
 | Mail | Von | An | Wann |
 |---|---|---|---|
 | Eingangsbestätigung | verkehrsverein.rehetobel@gmail.com | meldender Verein | sofort nach der Meldung ✅ |
-| Prüf-Mail mit «Annehmen»/«Ablehnen» | verkehrsverein.rehetobel@gmail.com | Vereins-Gmail + Projektleitung | sofort nach der Meldung ✅ |
+| Prüf-Mail mit «Annehmen»/«Ablehnen», Art der Meldung, Überschneidungen | verkehrsverein.rehetobel@gmail.com | Vereins-Gmail + Projektleitung | sofort nach der Meldung ✅ / 🔧 |
+| «vorgemerkt» mit Link zum Planungskalender | verkehrsverein.rehetobel@gmail.com | meldender Verein | nach «Annehmen» einer Planungsmeldung 🔧 |
+| automatische Absage «noch zu früh» | verkehrsverein.rehetobel@gmail.com | meldender Verein | Datum zu weit in der Zukunft 🔧 |
+| Planungsliste / «Jahr freigeben» | verkehrsverein.rehetobel@gmail.com | Vereins-Gmail + Projektleitung | eine Woche vor / am Tag nach der Sitzung 🔧 |
 | «angenommen» / «abgelehnt» | verkehrsverein.rehetobel@gmail.com | meldender Verein | nach dem Tipp ✅ |
 | automatische Absage | verkehrsverein.rehetobel@gmail.com | meldender Verein | Datum liegt in der Vergangenheit ✅ |
 

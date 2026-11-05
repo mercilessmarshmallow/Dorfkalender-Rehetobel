@@ -45,7 +45,9 @@
         ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
       async function rufe(api, extra) {
-        const url = API + "?" + new URLSearchParams(Object.assign({ api, id, t }, extra || {}));
+        const werte = Object.assign({ api, id, t }, extra || {});
+        Object.keys(werte).forEach((k) => { if (werte[k] == null) delete werte[k]; });
+        const url = API + "?" + new URLSearchParams(werte);
         const antwort = await fetch(url, { credentials: "omit", cache: "no-store" });
         if (!antwort.ok) throw new Error("Server antwortet nicht (" + antwort.status + ")");
         return antwort.json();
@@ -54,7 +56,36 @@
       const andererLink = (wert, text) =>
         `<p class="klein"><a href="?a=${wert}&id=${encodeURIComponent(id)}&t=${encodeURIComponent(t)}">${text}</a></p>`;
 
+      // Nach der Koordinationssitzung: ein Jahr freigeben (Link aus dem Mail «… freigeben»)
+      async function freigabe() {
+        const jahr = q.get("jahr");
+        let info;
+        try { info = await rufe("freiinfo", { jahr }); } catch (e) { return fehler("Fehler: " + e.message); }
+        if (!info.ok) return fehler(info.text);
+        if (info.schon) {
+          inhalt.innerHTML = `<h2>Jahr ${esc(jahr)} freigeben</h2><p class="ok">✓ ${esc(jahr)} ist bereits freigegeben.</p>
+            <p>Alle Anlässe ${esc(jahr)} sind im <a href="./">Dorfkalender</a> öffentlich.</p>`;
+          return;
+        }
+        inhalt.innerHTML = `<h2>Jahr ${esc(jahr)} freigeben</h2>
+          <div class="karte-pruefen"><p><strong>${info.anzahl}</strong> vorgemerkte Anlässe für ${esc(jahr)} werden öffentlich.
+          Danach kommen Meldungen für ${esc(jahr)} direkt in den Dorfkalender.</p>
+          <p class="klein">Vorher prüfen: Sind die an der Koordinationssitzung verschobenen Daten in der Tabelle angepasst?</p></div>
+          <button id="freigeben" class="knopf knopf-gruen">${esc(jahr)} jetzt freigeben</button>
+          <div id="ergebnis"></div>`;
+        document.getElementById("freigeben").addEventListener("click", async (ev) => {
+          ev.target.disabled = true;
+          const el = document.getElementById("ergebnis");
+          el.innerHTML = "<p>Einen Moment …</p>";
+          try {
+            const r = await rufe("freigeben", { jahr });
+            el.innerHTML = r.ok ? `<p class="ok">✓ ${esc(jahr)} ist freigegeben.</p><p>${esc(r.text)}</p>` : `<p class="fehler">${esc(r.text)}</p>`;
+          } catch (e) { el.innerHTML = `<p class="fehler">Fehler: ${esc(e.message)}</p>`; }
+        });
+      }
+
       async function start() {
+        if (q.get("aktion") === "freigeben") return freigabe();
         if (!id || !t || (a !== "ja" && a !== "nein")) return fehler("Dieser Link ist ungültig oder unvollständig.");
         let info;
         try { info = await rufe("info"); } catch (e) { return fehler("Fehler: " + e.message); }
@@ -62,7 +93,7 @@
         const karte = `<div class="karte-pruefen"><pre>${esc(info.angaben)}</pre>
           ${info.status ? `<p class="klein">Bisher: ${esc(info.status)}</p>` : ""}</div>`;
 
-        const titel = a === "ja" ? "Anlass annehmen" : "Anlass ablehnen";
+        const titel = a === "nein" ? "Anlass ablehnen" : info.art === "planung" ? "Anlass vormerken (Jahresplanung)" : "Anlass annehmen";
         const anders = a === "ja" ? andererLink("nein", "Doch ablehnen") : andererLink("ja", "Doch annehmen");
         inhalt.innerHTML = `<h2>${titel}</h2>${karte}<div id="ergebnis"><p>Einen Moment …</p></div>${anders}`;
         entscheide(a);
@@ -74,7 +105,9 @@
         try {
           const r = await rufe(wert);
           if (!r.ok) { el.innerHTML = `<p class="fehler">${esc(r.text)}</p>`; return; }
-          el.innerHTML = wert === "ja"
+          el.innerHTML = r.art === "vorgemerkt"
+            ? `<p class="ok">✓ Vorgemerkt.</p><p>${esc(r.text)}</p><p>Der Anlass ist jetzt im Planungskalender sichtbar, öffentlich erst nach der Freigabe.</p>`
+            : r.art === "oeffentlich"
             ? `<p class="ok">✓ Angenommen.</p><p>${esc(r.text)}</p><p>Der Anlass erscheint in ein paar Minuten im <a href="./">Dorfkalender</a>.</p>`
             : `<p class="ok">✓ Abgelehnt.</p><p>${esc(r.text)}</p>`;
         } catch (e) {

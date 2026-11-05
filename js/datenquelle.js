@@ -92,7 +92,32 @@
     }).filter((a) => a.titel && a.datum);
   }
 
+  // Planungskalender: ?planung=<Schlüssel> → vorgemerkte Anlässe des nächsten Jahres aus dem Google-Programm
+  // (ohne Google-Anmeldung abgefragt; ohne gültigen Schlüssel gibt es nichts)
+  async function ladePlanung(schluessel) {
+    const cfg = window.KALENDER_CONFIG || {};
+    const url = cfg.webAppUrl + "?" + new URLSearchParams({ api: "planung", k: schluessel });
+    const antwort = await fetch(url, { credentials: "omit", cache: "no-store" });
+    if (!antwort.ok) throw new Error("Planung nicht erreichbar: " + antwort.status);
+    const d = await antwort.json();
+    if (!d.ok) throw new Error(d.text || "Planungskalender nicht verfügbar");
+    window.KALENDER_PLANUNG = { jahr: d.jahr };
+    return d.anlaesse.map((x, n) => {
+      const a = {
+        id: "p" + n, titel: x.titel || "", datum: isoDatum(x.datum), bis: isoDatum(x.bis),
+        zeit: zeit(x.zeit), zeitBis: zeit(x.zeitBis), ort: x.ort || "", gemeinde: "Rehetobel",
+        veranstalter: x.veranstalter || "", kategorie: x.kategorie || "", beschreibung: x.beschreibung || "",
+        link: /^https?:\/\//.test(x.link || "") ? x.link : "", status: "provisorisch",
+        verschiebbar: String(x.verschiebbar || "").trim(),
+      };
+      if (a.bis && a.bis <= a.datum) a.bis = "";
+      return a;
+    }).filter((a) => a.titel && a.datum);
+  }
+
   window.ladeAnlaesse = async function () {
+    const planung = new URLSearchParams(location.search).get("planung");
+    if (planung) return ladePlanung(planung);
     const url = (window.KALENDER_CONFIG || {}).tabelleCsvUrl;
     if (!url) return window.ANLAESSE || [];
     const antwort = await fetch(url, { cache: "no-store" });
