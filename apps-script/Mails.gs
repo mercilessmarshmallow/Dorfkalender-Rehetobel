@@ -12,10 +12,10 @@
 // Einrichten: siehe kalender/ANLEITUNG_MAILS.md
 
 // ---------- Einstellungen ----------
-const VORSTAND = ["info@rehetobel-tourismus.ch"];   // wer die Meldungen zum Prüfen bekommt (mehrere: ["a@…", "b@…"])
+const VORSTAND = ["verkehrsverein.rehetobel@gmail.com"];   // wer die Meldungen zum Prüfen bekommt (mehrere: ["a@…", "b@…"])
 const WEB_APP_URL = "";                          // nach dem Bereitstellen hier die Web-App-URL einfügen (Anleitung Teil D)
 const ABSENDER_NAME = "Verkehrsverein Rehetobel";
-const ANTWORT_AN = "info@rehetobel-tourismus.ch";
+const ANTWORT_AN = "verkehrsverein.rehetobel@gmail.com";
 const KALENDER_LINK = "https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/";
 const FORMULAR_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSeKT9Vj2d2BhPkuX7gYlE9mK_gae2x-f5uYJN-bJc8TcsTbYQ/viewform";
 const BLATT_ANTWORTEN = "Formularantworten 1";
