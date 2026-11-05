@@ -3,9 +3,21 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 5.11.2026 (Abend)
+- **Ein Kalender, ein Formular:** Das Programm sortiert nach dem Datum (Nachmeldung / Planungsmeldung / zu weit weg).
+  Grund: ein Link für die Vereine, nichts von Hand umkopieren. (Alternative «zwei getrennte Kalender» verworfen.)
+- **Planungskalender für die planenden Vereine:** Vorgemerkte Anlässe des nächsten Jahres sind über einen eigenen Link
+  für die Vereine sichtbar, für die Öffentlichkeit nicht. **Ersetzt** den Punkt «niemand sieht vorher etwas» vom Nachmittag.
+  Grund: Wer plant, soll sehen, was schon eingetragen ist.
+- **Zeitfenster:** Bis zur Freigabe nur Anlässe bis 31.12. dieses Jahres öffentlich; nach der Freigabe das ganze nächste Jahr.
+- **Nächstes Jahr freigeben mit einem einzigen Befehl.**
+- **«Verschiebbar ja/nein»** dient der Projektleitung, um zu wissen, wen sie bei Überschneidungen kontaktiert.
+- **Koordinationssitzung bleibt:** Kompromisse findet man nur im Gespräch.
+
 ## 5.11.2026
 - **Jahresablauf mit Koordinationssitzung** (siehe KONZEPT.md): Anlässe fürs nächste Jahr werden vorgemerkt und
   sind bis zur Freigabe nach der Sitzung nicht öffentlich. Grund: An der Sitzung wird gemeinsam verhandelt, nicht «wer zuerst kommt».
+  *(Teilweise ersetzt am Abend: Die planenden Vereine sehen die Einträge im Planungskalender.)*
 - **Neue Formularfrage «Kann das Datum verschoben werden?»** statt «Status fix/provisorisch». Grund: Ob ein Anlass
   provisorisch oder definitiv ist, entscheidet der VVR; der Verein sagt nur, ob er flexibel ist.
 - **Planungsliste zum Ausdrucken** für die Sitzung (nicht am Bildschirm). Grund: Jeder soll mitstreichen und mitdenken können.

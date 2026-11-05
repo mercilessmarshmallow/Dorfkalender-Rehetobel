@@ -25,31 +25,47 @@ Google-Konto des Vereins: **verkehrsverein.rehetobel@gmail.com** – unabhängig
 
 ## Der Jahresablauf
 
-### 1. Bis zur Koordinationssitzung: Anlässe fürs nächste Jahr sammeln 📋
-- Die Vereine melden **alle** Anlässe fürs nächste Jahr übers Formular und geben an,
-  ob das Datum **verschiebbar** ist (z. B. Turnfest mit festem Datum = nein, Dorffest = ja).
-- Die Meldungen sind **nicht öffentlich** – niemand sieht vorher, wer was eingetragen hat.
-  Es gilt nicht «wer zuerst kommt», sondern es wird an der Sitzung gemeinsam abgemacht.
-- Die Projektleitung bekommt ein Prüf-Mail und tippt «Annehmen» = **vorgemerkt** (offensichtlicher Unsinn: «Ablehnen»).
-- Der Verein bekommt: «Ihr Anlass ist für die Koordinationssitzung vorgemerkt. Das Datum wird dort festgelegt.»
+### Grundidee: ein Kalender, ein Formular – das Programm sortiert nach dem Datum 📋
+Die Vereine haben **einen** Link zum Formular. Das Programm entscheidet anhand des Datums, was mit der Meldung passiert:
+
+| Datum des Anlasses | Art | Nach «Annehmen» |
+|---|---|---|
+| dieses Jahr (oder ein bereits freigegebenes Jahr) | **Nachmeldung** | sofort **öffentlich** im Dorfkalender |
+| nächstes Jahr, das noch **nicht freigegeben** ist | **Planungsmeldung** | **vorgemerkt**: nur im **Planungskalender** sichtbar, nicht öffentlich |
+| noch weiter weg (z. B. übernächstes Jahr) | – | automatische Absage mit Hinweis, ab wann es möglich ist |
+| in der Vergangenheit | – | automatische Absage (läuft schon ✅) |
+
+Damit gilt automatisch: **Bis zur Freigabe** nimmt der öffentliche Kalender nur Anlässe **bis 31.12. dieses Jahres** auf;
+**nach der Freigabe** ist das **ganze nächste Jahr** offen für Nachmeldungen.
+
+### 1. Planung fürs nächste Jahr (bis zur Koordinationssitzung) 📋
+- Die Vereine melden ihre Anlässe fürs nächste Jahr übers gleiche Formular und geben an, ob das Datum
+  **verschiebbar** ist (z. B. Turnfest mit festem Datum = nein, Dorffest = ja). Diese Angabe ist für die Projektleitung:
+  Sie zeigt, **wen man bei einer Überschneidung kontaktieren** kann. Nach der Freigabe spielt sie keine Rolle mehr.
+- Die Projektleitung tippt im Prüf-Mail «Annehmen» = **vorgemerkt** (Unsinn: «Ablehnen»).
+- Der Verein bekommt: «Ihr Anlass ist für die Jahresplanung vorgemerkt. Das Datum wird an der Koordinationssitzung festgelegt.»
+- **Planungskalender:** sieht aus wie der Dorfkalender, zeigt aber die **vorgemerkten Anlässe des nächsten Jahres**
+  (mit «verschiebbar ja/nein»). Erreichbar nur über einen **eigenen Link**, den die planenden Vereine bekommen –
+  so sehen sie beim Planen schon, was andere eingetragen haben. Die Öffentlichkeit sieht nichts davon.
+  (Wer den Link hat, kann hineinschauen – für provisorische Termine von Dorfanlässen genügt das; ein Login pro Verein wäre viel aufwändiger.)
 
 ### 2. Koordinationssitzung (jeweils erster Mittwoch im November) 📋
+- Die Sitzung bleibt **das Herzstück**: Nur im Gespräch findet man **Kompromisse** («das ist wichtiger, könnt ihr verschieben?»).
 - Vorher wird die **Planungsliste** ausgedruckt: Monat für Monat alle vorgemerkten Anlässe,
   **Überschneidungen am gleichen Tag markiert**, mit «verschiebbar ja/nein». Jeder bekommt ein Exemplar zum Mitstreichen.
-  Erstellt mit einem Klick in der Tabelle (Menü «Dorfkalender» → «Planungsliste erstellen»).
-- Man geht Monat für Monat durch und bespricht nur die Überschneidungen. Vereine passen ihre Daten an.
+- Man geht Monat für Monat durch und bespricht die Überschneidungen. Vereine passen ihre Daten an.
 
-### 3. Nach der Sitzung: Jahr freigeben 📋
-- Geänderte Daten werden in der Tabelle angepasst.
-- Menü «Dorfkalender» → «Jahr freigeben»: alle Anlässe des Jahres werden öffentlich.
-- Grundlage fürs **Jahresbüchli**. Die Daten sind damit fix.
+### 3. Nach der Sitzung: nächstes Jahr freigeben – ein Befehl 📋
+- Geänderte Daten werden in der Tabelle angepasst (Projektleitung oder Claude).
+- Dann **ein Befehl** «Jahr freigeben»: Alle vorgemerkten Anlässe des Jahres werden **öffentlich**, und ab sofort
+  gehen Meldungen fürs ganze Jahr als Nachmeldungen direkt in den öffentlichen Kalender. Nichts muss umkopiert werden.
+- Vorschlag: der Befehl als **Knopf in einem Mail** (Handy, ein Tipp) und zusätzlich im Menü der Tabelle («Dorfkalender» → «Jahr freigeben»).
+- Danach: Grundlage fürs **Jahresbüchli**. Die Daten sind fix.
 
 ### 4. Unter dem Jahr: spontane Anlässe nachmelden ✅ / 📋
-- Für Anlässe in einem bereits freigegebenen Jahr (z. B. ein Konzert in zwei Wochen).
+- Z. B. ein Konzert in zwei Wochen: übers Formular melden, damit es im Kalender steht und Werbung macht.
 - Prüf-Mail mit allen Angaben und dem Hinweis, was am gleichen Tag schon läuft (📋), dann **ein Tipp**:
   «Annehmen» → sofort öffentlich, «Ablehnen» → Absage an den Verein.
-
-Das Programm erkennt am Jahr des Anlasses selbst, ob es eine Meldung für die Jahresplanung (1) oder eine Nachmeldung (4) ist. 📋
 
 ## Die Mails
 | Mail | Von | An | Wann |
@@ -67,7 +83,7 @@ Das Programm erkennt am Jahr des Anlasses selbst, ob es eine Meldung für die Ja
 
 ## Das Formular
 Titel · Datum · Bis · Zeit (Beginn) · Zeit (Ende) · Ort · Veranstalter · Kategorie · Beschreibung · Link ·
-**Kann das Datum verschoben werden? (Ja/Nein)** 📋 (ersetzt «Status fix/provisorisch») · Name der Kontaktperson · E-Mail (Pflicht).
+**Kann das Datum verschoben werden? (Ja/Nein)** 📋 (ersetzt «Status fix/provisorisch»; nur wichtig für Planungsmeldungen) · Name der Kontaktperson · E-Mail (Pflicht).
 Kontaktname und E-Mail erscheinen nie im öffentlichen Kalender.
 
 ## Grundsätze

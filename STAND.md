@@ -20,10 +20,10 @@ Stand: 5.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
   → Einrichten nach `anleitungen/programm-einrichten.md` (am PC, einmalig).
 
 ## Geplant (siehe KONZEPT.md)
-1. Jahresablauf: Vormerken fürs nächste Jahr, nicht öffentlich bis «Jahr freigeben».
+1. Jahresablauf: ein Formular, Programm sortiert nach Datum; Vormerken fürs nächste Jahr; **Planungskalender** (eigener Link) für die Vereine; «Jahr freigeben» mit einem Befehl.
 2. Formularfrage «Kann das Datum verschoben werden?» statt «Status».
 3. Prüf-Mail zeigt, was am gleichen Tag schon eingetragen ist.
-4. Menü in der Tabelle: «Planungsliste erstellen» (zum Ausdrucken) und «Jahr freigeben».
+4. Planungsliste zum Ausdrucken; «Jahr freigeben» als Knopf im Mail und im Menü der Tabelle.
 5. Anlässe 2027 aus der Koordinationssitzung vom 4.11.2026 eintragen (Liste von der Projektleitung nötig).
 
 Sinnvolle Reihenfolge: 1–4 zusammen bauen und testen, dann **einmal** einrichten (zusammen mit der neuen
