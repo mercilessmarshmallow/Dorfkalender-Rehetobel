@@ -22,11 +22,11 @@ Stand: 5.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
     im Prüf-Mail, Planungskalender-Daten, «Jahr freigeben», Erinnerungsmails (Planungsliste, Freigabe), Menü in der Tabelle.
   - Startwert: freigegeben bis **2027** (Sitzung 4.11.2026 vorbei) → Meldungen für 2027 = Nachmeldungen, 2028 = Planung.
 - **Webseite:** Planungskalender (`?planung=…`) mit «Liste zum Drucken» und Etikett «verschiebbar».
-- → Einrichten: `anleitungen/programm-einrichten.md` (einmal am PC: Formularfrage ändern, Programm erneuern,
-  Skripteigenschaft, neue Version, einmal «einrichten»).
+- → **Nächster Schritt: Einrichten** mit der Projektleitung nach [`anleitungen/umstellung-schritt-fuer-schritt.md`](anleitungen/umstellung-schritt-fuer-schritt.md)
+  (14 kleine Schritte, einer nach dem anderen). Termin offen.
 
 ## Noch offen
-- **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen (Liste von der Projektleitung nötig).
+- **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – **erst nach dem erfolgreichen Test**; die Liste liegt beim Vorstand.
 
 ## Kleinigkeiten offen
 - Test-Einträge in der Tabelle löschen (test, test 2, test 3, test 4).

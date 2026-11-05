@@ -7,9 +7,9 @@ window.KALENDER_CONFIG = {
   // Link zur veröffentlichten Kalender-Tabelle als CSV
   // (Google-Tabelle → Datei → Freigeben → Im Web veröffentlichen → Blatt «Kalender» → CSV).
   // Leer lassen = es werden die Beispieldaten aus data/anlaesse.js angezeigt.
+  tabelleCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSyroUV1FK_j_fvwqEibQNkXLuSSmVSMMBnow8-VK-8tKR1GkEQLpNZEJNYw69OuPlReQN32gtKf6PH/pub?gid=308241126&single=true&output=csv",
+
   // Google-Programm (Web-App) – liefert dem Planungskalender die vorgemerkten Anlässe (nur mit Link ?planung=…)
   webAppUrl: "https://script.google.com/macros/s/AKfycbzuNZ27F1NhpYGpJ4i1sGFxalk1lCvedJ943s-_EhoT6aOph1VdG5FNRp30H94sS6ykEQ/exec",
-
-  tabelleCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSyroUV1FK_j_fvwqEibQNkXLuSSmVSMMBnow8-VK-8tKR1GkEQLpNZEJNYw69OuPlReQN32gtKf6PH/pub?gid=308241126&single=true&output=csv",
 };
 // Anleitung zum Einrichten: anleitungen/formular-und-tabelle.md

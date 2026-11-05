@@ -4,6 +4,8 @@ Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Ent
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
 ## 5.11.2026 (Abend)
+- **Vorgehen:** Zuerst einrichten und testen, dann die Anlässe 2027 eintragen (Liste liegt beim Vorstand). Einrichtung nicht am 5.11.,
+  sondern später nach `anleitungen/umstellung-schritt-fuer-schritt.md`. Webseite darf veröffentlicht werden.
 - **Ein Kalender, ein Formular:** Das Programm sortiert nach dem Datum (Nachmeldung / Planungsmeldung / zu weit weg).
   Grund: ein Link für die Vereine, nichts von Hand umkopieren. (Alternative «zwei getrennte Kalender» verworfen.)
 - **Planungskalender für die planenden Vereine:** Vorgemerkte Anlässe des nächsten Jahres sind über einen eigenen Link
@@ -13,7 +15,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 - **Nächstes Jahr freigeben mit einem einzigen Befehl.**
 - **«Verschiebbar ja/nein»** dient der Projektleitung, um zu wissen, wen sie bei Überschneidungen kontaktiert.
 - **Koordinationssitzung bleibt:** Kompromisse findet man nur im Gespräch.
-- **Umsetzung (Vorschlag Claude, noch von der Projektleitung zu bestätigen):** Freigabe-Knopf kommt automatisch per Mail am Tag nach der
+- **Umsetzung (Vorschlag Claude, von der Projektleitung bestätigt):** Freigabe-Knopf kommt automatisch per Mail am Tag nach der
   Sitzung (plus Menü in der Tabelle); eine Woche vor der Sitzung kommt automatisch die Planungsliste. Startjahr: 2027 gilt als freigegeben.
 
 ## 5.11.2026
