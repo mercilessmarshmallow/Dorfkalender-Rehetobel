@@ -65,7 +65,8 @@ function beiMeldung(e) {
       ? `Das angegebene Datum liegt in der Vergangenheit. Vielleicht hat sich beim Jahr ein Tippfehler eingeschlichen? ` +
         `Bitte melden Sie den Anlass mit dem richtigen Datum neu:\n${FORMULAR_LINK}`
       : `Für das Jahr ${jahr} ist es noch zu früh. Die Anlässe für ${jahr} werden an der Koordinationssitzung ` +
-        `im November ${jahr - 1} gemeinsam abgemacht. Sie können Ihren Anlass ab November ${jahr - 2} melden:\n${FORMULAR_LINK}`);
+        `im November ${jahr - 1} gemeinsam abgemacht. Sie können Ihren Anlass melden, sobald das Jahr ${jahr - 1} im ` +
+        `Dorfkalender freigegeben ist (jeweils nach der Koordinationssitzung im November):\n${FORMULAR_LINK}`);
     blatt.getRange(zeile, spalte_(blatt, "Freigegeben", true)).setValue("nein");
     entscheidMail_(blatt, zeile, "nein");
     return;
@@ -169,7 +170,7 @@ function entscheidKern_(id, t, wert, grund) {
     if (!zeile) return { ok: false, text: "Dieser Anlass ist nicht mehr in der Tabelle." };
     if (wert === "nein") blatt.getRange(zeile, spalte_(blatt, "Begründung", true)).setValue(String(grund || "").trim());
     const a = anlass_(blatt, zeile);
-    const neu = wert === "nein" ? "nein" : (jahr_(a.datum) > freigegebenBis_() ? "vorgemerkt" : "ja");
+    const neu = wert === "nein" ? "nein" : (jahr_(a.datum) > offenBis_() ? "vorgemerkt" : "ja");
     blatt.getRange(zeile, spalte_(blatt, "Freigegeben", true)).setValue(neu);
     const art = neu === "ja" ? "oeffentlich" : neu === "vorgemerkt" ? "vorgemerkt" : "abgelehnt";
     return { ok: true, art, text: entscheidMail_(blatt, zeile, neu) };
@@ -196,7 +197,7 @@ function api_(p) {
     if (!jahr || p.t !== token_("freigeben-" + jahr)) return json({ ok: false, text: "Dieser Link ist ungültig." });
     if (p.api === "freiinfo") {
       return json({ ok: true, jahr, schon: freigegebenBis_() >= jahr,
-        anzahl: vorgemerkte_(blatt).filter((x) => jahr_(x.datum) === jahr).length });
+        anzahl: vorgemerkte_(blatt).filter((x) => jahr_(x.datum) && jahr_(x.datum) <= jahr).length });
     }
     return json(jahrFreigeben_(jahr));
   }
@@ -228,7 +229,8 @@ function vorgemerkte_(blatt) {
   return liste;
 }
 
-// Ein Jahr freigeben: alle vorgemerkten Anlässe dieses Jahres werden öffentlich («ja»)
+// Ein Jahr freigeben: alle vorgemerkten Anlässe bis und mit diesem Jahr werden öffentlich («ja»)
+// (auch ältere, falls eine Freigabe vergessen wurde – es darf nie etwas unsichtbar liegen bleiben)
 function jahrFreigeben_(jahr) {
   const lock = LockService.getScriptLock();
   lock.waitLock(20000);
@@ -238,7 +240,7 @@ function jahrFreigeben_(jahr) {
     let n = 0;
     for (let z = 2; z <= blatt.getLastRow(); z++) {
       const a = anlass_(blatt, z);
-      if (a.freigegeben === "vorgemerkt" && jahr_(a.datum) === jahr) {
+      if (a.freigegeben === "vorgemerkt" && jahr_(a.datum) && jahr_(a.datum) <= jahr) {
         blatt.getRange(z, spFrei).setValue("ja");
         setzeStatus_(blatt, z, "Öffentlich seit Freigabe " + heute_());
         n++;
@@ -254,27 +256,30 @@ function jahrFreigeben_(jahr) {
 
 // Läuft jeden Morgen: Erinnerungen rund um die Koordinationssitzung (erster Mittwoch im November)
 function taeglich() {
-  const heute = heuteNum_(), jahr = Math.floor(heute / 10000);
-  const sitzung = ersterMittwochNov_(jahr), props = PropertiesService.getScriptProperties();
-  const planjahr = jahr + 1, an = pruefEmpfaenger_();
-  // Eine Woche vorher: Planungsliste zum Ausdrucken
-  if (heute >= plusTage_(sitzung, -7) && heute < sitzung && !props.getProperty("MAIL_LISTE_" + planjahr) && freigegebenBis_() < planjahr) {
+  const heute = heuteNum_(), props = PropertiesService.getScriptProperties();
+  const planjahr = freigegebenBis_() + 1;                 // das Jahr, das gerade geplant wird
+  const sitzung = ersterMittwochNov_(planjahr - 1);       // Koordinationssitzung für dieses Jahr
+  const an = pruefEmpfaenger_();
+  // Eine Woche vorher: Planungsliste zum Ausdrucken (einmal)
+  if (heute >= plusTage_(sitzung, -7) && heute < sitzung && !props.getProperty("MAIL_LISTE_" + planjahr)) {
     MailApp.sendEmail({ to: an.join(","), name: "Dorfkalender Rehetobel",
       subject: `Dorfkalender: Planungsliste ${planjahr} für die Koordinationssitzung`,
       body: `Die Koordinationssitzung ist am ${datumText_(sitzung)}.\n\nPlanungsliste ${planjahr} zum Ausdrucken ` +
         `(Überschneidungen markiert):\n${planungsLink_()}&ansicht=druck\n\nPlanungskalender:\n${planungsLink_()}` });
     props.setProperty("MAIL_LISTE_" + planjahr, "1");
   }
-  // Am Tag danach: Knopf zum Freigeben
-  if (heute > sitzung && !props.getProperty("MAIL_FREIGABE_" + planjahr) && freigegebenBis_() < planjahr) {
+  // Ab dem Tag danach: Knopf zum Freigeben – wiederholt jede Woche, bis das Jahr freigegeben ist
+  const zuletzt = Number(props.getProperty("MAIL_FREIGABE_" + planjahr) || 0);
+  if (heute > sitzung && (!zuletzt || heute >= plusTage_(zuletzt, 7))) {
     const link = `${ENTSCHEID_SEITE}?aktion=freigeben&jahr=${planjahr}&t=${token_("freigeben-" + planjahr)}`;
+    const erneut = zuletzt ? "Erinnerung: " : "";
     MailApp.sendEmail({ to: an.join(","), name: "Dorfkalender Rehetobel",
-      subject: `Dorfkalender: ${planjahr} freigeben`,
+      subject: `Dorfkalender: ${erneut}${planjahr} freigeben`,
       body: `Ist die Jahresplanung ${planjahr} bereinigt? Dann hier ${planjahr} freigeben – danach sieht das ganze Dorf alle Anlässe:\n${link}`,
-      htmlBody: `<div style="font-family:Arial,sans-serif;font-size:15px;color:#222"><p>Ist die Jahresplanung ${planjahr} nach der ` +
+      htmlBody: `<div style="font-family:Arial,sans-serif;font-size:15px;color:#222"><p>${erneut}Ist die Jahresplanung ${planjahr} nach der ` +
         `Koordinationssitzung bereinigt (verschobene Daten angepasst)?</p><p>Dann hier freigeben – danach sieht das ganze Dorf alle Anlässe ${planjahr}:</p>` +
         `<a href="${link}" style="display:inline-block;padding:12px 22px;border-radius:6px;background:#2e7d32;color:#fff;text-decoration:none;font-weight:bold">${planjahr} freigeben</a></div>` });
-    props.setProperty("MAIL_FREIGABE_" + planjahr, "1");
+    props.setProperty("MAIL_FREIGABE_" + planjahr, String(heute));
   }
 }
 
@@ -379,6 +384,8 @@ function mailAnVorstand_(blatt, zeile, a, id, art) {
   const jahr = jahr_(a.datum);
   const artText = art === "planung"
     ? `Planung ${jahr}: «Annehmen» = vormerken (nur im Planungskalender sichtbar, öffentlich erst nach der Freigabe).`
+    : art === "unklar"
+    ? `⚠ Das Datum «${a.datum}» konnte nicht gelesen werden. Bitte in der Tabelle prüfen, bevor Sie annehmen.`
     : `Nachmeldung: «Annehmen» = sofort öffentlich im Dorfkalender.`;
   const gleich = gleicherTag_(blatt, zeile, a);
   const gleichText = gleich.length
@@ -477,12 +484,19 @@ function anlass_(blatt, zeile) {
   };
 }
 
-// Art der Meldung nach dem Datum: vergangen / nachmeldung / planung / zu_frueh
+// Art der Meldung nach dem Datum: vergangen / nachmeldung / planung / zu_frueh / unklar
 function art_(a) {
   if (a.vergangen) return "vergangen";
-  const j = jahr_(a.datum), fb = freigegebenBis_();
-  if (!j || j <= fb) return "nachmeldung";
-  return j === fb + 1 ? "planung" : "zu_frueh";
+  const j = jahr_(a.datum), offen = offenBis_();
+  if (!j) return "unklar";
+  if (j <= offen) return "nachmeldung";
+  return j === offen + 1 ? "planung" : "zu_frueh";
+}
+
+// Bis zu welchem Jahr gehen Meldungen direkt in den öffentlichen Kalender? Das freigegebene Jahr, mindestens aber
+// das laufende Kalenderjahr (falls die Freigabe über den Jahreswechsel vergessen wurde, bleibt das laufende Jahr offen).
+function offenBis_() {
+  return Math.max(freigegebenBis_(), Math.floor(heuteNum_() / 10000));
 }
 
 // Bis zu welchem Jahr ist der öffentliche Kalender freigegeben?

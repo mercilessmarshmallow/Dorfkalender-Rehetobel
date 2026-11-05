@@ -13,7 +13,7 @@ Stand: 5.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
   - **Einschränkung:** Die Knöpfe «Annehmen»/«Ablehnen» funktionieren nur ohne Google-Anmeldung
     (am PC: Rechtsklick → «Link in InPrivate-Fenster öffnen»), **nicht in der Gmail-App**.
 
-## Gebaut und getestet, noch nicht eingerichtet (Test: 39 Prüfungen bestanden)
+## Gebaut und getestet, noch nicht eingerichtet (Test: 45 Prüfungen bestanden)
 - **Prüfseite `entscheid.html`** – Annehmen/Ablehnen mit einem Tipp, auch in der Gmail-App; Seite «Jahr freigeben».
 - **Neue Programmfassung** `apps-script/Mails.gs`:
   - Knöpfe führen auf die Prüfseite; Ablehnen mit einem Tipp; Zeile «Bei Fragen …» entfernt.

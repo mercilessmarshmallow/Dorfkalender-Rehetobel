@@ -298,6 +298,8 @@
   function richtePlanungEin() {
     const jahr = window.KALENDER_PLANUNG.jahr;
     document.body.classList.add("planung-modus");
+    // Planungskalender nicht in Suchmaschinen aufnehmen
+    document.head.insertAdjacentHTML("beforeend", `<meta name="robots" content="noindex, nofollow">`);
     document.title = `Planungskalender ${jahr} – Dorfkalender Rehetobel`;
     const untertitel = document.querySelector(".untertitel");
     if (untertitel) untertitel.textContent = `Planungskalender ${jahr}`;

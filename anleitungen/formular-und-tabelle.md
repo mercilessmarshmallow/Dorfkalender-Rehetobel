@@ -1,6 +1,7 @@
 # Anleitung: Formular «Anlass melden» und Kalender-Tabelle
 
 > Diese Anleitung beschreibt die **Ersteinrichtung** (erledigt am 3.11.2026). Seither geändert: Frage 12 heisst «Name der Kontaktperson», dazu kam die Pflichtfrage «E-Mail» (4.11.2026); das Google-Konto heisst verkehrsverein.rehetobel@gmail.com (5.11.2026). Aktueller Stand: [../KONZEPT.md](../KONZEPT.md).
+> Seit der Frage «E-Mail» liegt «Freigegeben» eine Spalte weiter rechts (vermutlich O statt N); Google hat die Formel im Blatt «Kalender» dabei selbst angepasst.
 
 Ziel: Vereine melden ihre Anlässe über ein Google-Formular. Die Meldungen landen in einer Google-Tabelle.
 Der Vorstand setzt bei jedem Anlass ein **«ja»** in die Spalte *Freigegeben*. Nur freigegebene Anlässe

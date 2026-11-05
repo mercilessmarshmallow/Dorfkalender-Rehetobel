@@ -181,6 +181,40 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   pruefe(/ungültig/.test(await (async () => { await seite.goto(lokal(freiLink.replace(/t=[^&]+/, "t=falsch"))); await seite.waitForSelector(".fehler"); return seite.innerText("main"); })()),
     "gefälschter Freigabe-Link wird abgewiesen");
 
+  await seite.goto(lokal(freiLink)); await seite.waitForSelector("main .ok", { timeout: 5000 });
+  pruefe(/bereits freigegeben/.test(await seite.innerText("main")), "Freigabe-Link nochmals geöffnet: «bereits freigegeben»");
+
+  console.log("7. Sonderfälle");
+  // von Hand «vorgemerkt» in der Tabelle
+  g.melde("Handeintrag", "01.06.2029", "hand@example.ch");
+  const zHand = g.daten.length - 1, spFrei = g.daten[0].findIndex((h) => h.toLowerCase() === "freigegeben") + 1;
+  g.daten[zHand][spFrei - 1] = "vorgemerkt";
+  g.ctx.beiAenderung({ range: { getSheet: () => ({ getName: () => "Formularantworten 1", getRange: (...x) => g.ctx.SpreadsheetApp.getActive().getSheetByName().getRange(...x),
+    getLastColumn: () => g.daten[0].length, getLastRow: () => g.daten.length }), getRow: () => zHand + 1, getLastRow: () => zHand + 1, getColumn: () => spFrei, getLastColumn: () => spFrei } });
+  pruefe(g.mails.some((m) => m.to === "hand@example.ch" && /vorgemerkt/.test(m.subject)), "von Hand «vorgemerkt» → Mail «vorgemerkt»");
+
+  // vergessene Freigabe über den Jahreswechsel
+  const h = google("20271020");
+  h.ctx.einrichten();                                  // freigegeben bis 2027, Planung 2028
+  h.melde("Frühlingsfest", "15.04.2028", "fest@example.ch");
+  const hz = (name) => h.spalte(1, name);
+  const hLink = linkAus(h.mails.find((m) => /Planung 2028/.test(m.subject)).body, "Annehmen");
+  const hp = Object.fromEntries(new URL(hLink).searchParams);
+  h.ctx.api_({ api: "ja", id: hp.id, t: hp.t });
+  pruefe(hz("freigegeben") === "vorgemerkt", "Okt. 2027: Frühlingsfest 2028 vorgemerkt");
+  h.setzeHeute("20280110");                            // Freigabe vergessen, schon Januar 2028
+  h.melde("Januarkonzert", "25.01.2028", "jan@example.ch");
+  pruefe(/neue Meldung «Januarkonzert»/.test(h.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1).subject),
+    "Januar 2028 ohne Freigabe: Meldung fürs laufende Jahr ist trotzdem eine Nachmeldung");
+  h.ctx.taeglich(); h.setzeHeute("20280112"); h.ctx.taeglich(); h.setzeHeute("20280117"); h.ctx.taeglich();
+  const erinnerungen = h.mails.filter((m) => /2028 freigeben/.test(m.subject));
+  pruefe(erinnerungen.length === 2 && /Erinnerung/.test(erinnerungen[1].subject), "Freigabe-Erinnerung wird wöchentlich wiederholt");
+  const hf = Object.fromEntries(new URL((erinnerungen[0].body.match(/https:\S+aktion=freigeben\S+/) || [])[0]).searchParams);
+  h.ctx.api_({ api: "freigeben", jahr: hf.jahr, t: hf.t });
+  pruefe(hz("freigegeben") === "ja", "verspätete Freigabe macht das Frühlingsfest öffentlich");
+  h.setzeHeute("20281005"); h.melde("Herbstmarkt", "10.10.2029", "markt@example.ch");
+  pruefe(/Planung 2029/.test(h.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1).subject), "danach läuft die Planung 2029 normal");
+
   pruefe(cookies === 0, "Google-Anmeldung wird nie mitgeschickt");
   pruefe(jsFehler.length === 0, "keine Fehler auf der Prüfseite " + jsFehler.join("; "));
   await browser.close(); srv.close();

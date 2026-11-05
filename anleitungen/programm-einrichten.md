@@ -64,6 +64,12 @@ Nach A und B zusätzlich:
 
 Achtung: Ältere Prüf-Mails (vor der Erneuerung) haben noch die alten Knöpfe; die gehen in der Gmail-App nicht.
 
+## Gut zu wissen
+- In der Tabelle kann man in der Spalte «Freigegeben» weiterhin von Hand **ja**, **vorgemerkt** oder **nein** schreiben.
+  Achtung: **ja** macht einen Anlass sofort öffentlich – auch einen fürs nächste Jahr.
+- Wird die Freigabe vergessen, kommt jede Woche eine Erinnerung. Ab dem 1. Januar gehen Meldungen fürs laufende Jahr
+  trotzdem direkt in den öffentlichen Kalender; die Freigabe holt alle noch vorgemerkten Anlässe nach.
+
 ## Wenn etwas nicht geht
 In Apps Script links **≡▶ «Ausführungen»**: Dort steht, ob das Programm gelaufen ist und ob es einen Fehler gab.
 Bildschirmfoto davon an Claude.
