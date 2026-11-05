@@ -11,7 +11,6 @@
     .karte-pruefen pre { font: inherit; white-space: pre-wrap; margin: 0; }
     .ok { color: var(--gruen-dunkel); font-weight: 700; font-size: 1.2rem; }
     .fehler { color: var(--akzent); font-weight: 600; }
-    textarea { width: 100%; font: inherit; padding: 8px; border: 1px solid var(--linie); border-radius: 8px; margin: 6px 0 12px; }
     .knopf-gruen { background: var(--gruen); color: #fff; }
     .klein { font-size: .9rem; color: var(--text-leise); }
   </style>
@@ -63,27 +62,17 @@
         const karte = `<div class="karte-pruefen"><pre>${esc(info.angaben)}</pre>
           ${info.status ? `<p class="klein">Bisher: ${esc(info.status)}</p>` : ""}</div>`;
 
-        if (a === "ja") {
-          inhalt.innerHTML = `<h2>Anlass annehmen</h2>${karte}<div id="ergebnis"><p>Einen Moment …</p></div>${andererLink("nein", "Doch ablehnen")}`;
-          entscheide("ja", "");
-        } else {
-          inhalt.innerHTML = `<h2>Anlass ablehnen</h2>${karte}
-            <label for="grund">Begründung für den Veranstalter (freiwillig):</label>
-            <textarea id="grund" rows="3" placeholder="z. B. Der Anlass findet nicht in Rehetobel statt."></textarea>
-            <button id="knopf" class="knopf knopf-akzent">Ablehnen und Mail schicken</button>
-            <div id="ergebnis"></div>${andererLink("ja", "Doch annehmen")}`;
-          document.getElementById("knopf").addEventListener("click", (ev) => {
-            ev.target.disabled = true;
-            entscheide("nein", document.getElementById("grund").value);
-          });
-        }
+        const titel = a === "ja" ? "Anlass annehmen" : "Anlass ablehnen";
+        const anders = a === "ja" ? andererLink("nein", "Doch ablehnen") : andererLink("ja", "Doch annehmen");
+        inhalt.innerHTML = `<h2>${titel}</h2>${karte}<div id="ergebnis"><p>Einen Moment …</p></div>${anders}`;
+        entscheide(a);
       }
 
-      async function entscheide(wert, grund) {
+      async function entscheide(wert) {
         const el = document.getElementById("ergebnis");
         el.innerHTML = "<p>Einen Moment …</p>";
         try {
-          const r = await rufe(wert, wert === "nein" ? { grund } : {});
+          const r = await rufe(wert);
           if (!r.ok) { el.innerHTML = `<p class="fehler">${esc(r.text)}</p>`; return; }
           el.innerHTML = wert === "ja"
             ? `<p class="ok">✓ Angenommen.</p><p>${esc(r.text)}</p><p>Der Anlass erscheint in ein paar Minuten im <a href="./">Dorfkalender</a>.</p>`

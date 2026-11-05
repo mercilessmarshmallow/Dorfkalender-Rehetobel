@@ -240,7 +240,7 @@ function mailAnVorstand_(blatt, zeile, a, id) {
     <table style="border-collapse:collapse;margin-bottom:16px">${tabelle}</table>
     ${WEB_APP_URL ? knopf("✓ Annehmen", "#2e7d32", ja) + knopf("✕ Ablehnen", "#c62828", nein)
       : "<p><b>Knöpfe fehlen:</b> WEB_APP_URL ist im Programm noch nicht eingetragen. Bitte in der Tabelle «ja» oder «nein» schreiben.</p>"}
-    <p style="color:#666;font-size:13px">Annehmen: Der Veranstalter bekommt sofort ein Mail. Ablehnen: Sie können noch eine Begründung schreiben.</p>
+    <p style="color:#666;font-size:13px">Ein Tipp genügt: Der Veranstalter bekommt sofort das passende Mail.</p>
   </div>`;
   const text = zeilen.map(([h, w]) => `${h}: ${w}`).join("\n") +
     (WEB_APP_URL ? `\n\nAnnehmen: ${ja}\nAblehnen: ${nein}` : "");
