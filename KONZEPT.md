@@ -96,7 +96,8 @@ Kontaktname und E-Mail erscheinen nie im öffentlichen Kalender.
 ## Ideenspeicher (6.11.2026, noch nicht entschieden) 📋
 - **Eigene Adresse statt «mercilessmarshmallow»:** Ablage in eine GitHub-Organisation des Vereins (gehört dem Vereins-Gmail)
   umziehen und Adresse **kalender.rehetobel-tourismus.ch** (DNS-Eintrag bei green.ch). Löst auch die Übergabe.
-  Vorher klären, wem die Domain rehetobel-tourismus.ch gehört. Hängt mit dem Entscheid zur Vereinswebseite zusammen (Vorstand, 17.2.2027).
+  Die Domain rehetobel-tourismus.ch gehört dem VVR (green.ch, Logins beim Vorstand) – geklärt 6.11.2026.
+  Hängt mit dem Entscheid zur Vereinswebseite zusammen (Vorstand, 17.2.2027).
 - **Kalender abonnieren:** alle Dorfanlässe automatisch im eigenen Handy-Kalender (ICS-Abo). ⭐
 - **Jahresbüchli automatisch:** nach der Freigabe druckfertige Vorlage mit allen Anlässen des Jahres. ⭐
 - Aussehen: Foto von Rehetobel im Kopf, Farben pro Kategorie, grössere Schrift für Ältere.
