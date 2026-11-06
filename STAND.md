@@ -16,7 +16,8 @@ Stand: 6.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
 
 ## Gebaut, noch nicht eingerichtet
 - **Schönere Mails an die Vereine** (6.11.2026): formatiert statt reiner Text – keine Umbrüche mitten im Satz,
-  Angaben im Kasten, Links als Knöpfe («Zum Dorfkalender», «Planungskalender ansehen», «Anlass neu melden»).
+  Angaben im Kasten, Links als Knöpfe («Zum Dorfkalender», «Planungskalender ansehen», «Anlass neu melden»);
+  oben das Logo mit grüner Linie, Knöpfe in Rot wie auf der Webseite (Vorschau Handy und Laptop von der Projektleitung bestätigt).
   → Programm erneuern: `anleitungen/programm-einrichten.md` **Teil A** (einfügen, speichern, neue Version). «einrichten» nicht nötig.
 
 ## Noch offen
