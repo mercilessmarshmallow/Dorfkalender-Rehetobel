@@ -20,6 +20,8 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzuNZ27F1NhpYGpJ4i1
 const ABSENDER_NAME = "Verkehrsverein Rehetobel";
 const ANTWORT_AN = "verkehrsverein.rehetobel@gmail.com";
 const KALENDER_LINK = "https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/";
+const LOGO = KALENDER_LINK + "bilder/logo.png";   // Logo oben in den Mails an die Vereine
+const FARBE = "#bd1521";                          // Knöpfe in den Mails: Rot wie «+ Anlass melden» auf der Webseite
 // Seite auf der Kalender-Webseite, zu der die Knöpfe im Prüf-Mail führen (funktioniert ohne Google-Anmeldung, auch in der Gmail-App)
 const ENTSCHEID_SEITE = "https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/entscheid.html";
 const FORMULAR_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSeKT9Vj2d2BhPkuX7gYlE9mK_gae2x-f5uYJN-bJc8TcsTbYQ/viewform";
@@ -561,6 +563,8 @@ function esc_(s) {
 function vereinsMail_(an, betreff, teile) {
   const stil = "font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5;color:#222";
   const html = [], text = ["Guten Tag"];
+  html.push(`<p style="margin:0 0 18px;padding-bottom:12px;border-bottom:3px solid #008c35">` +
+    `<img src="${LOGO}" alt="Verkehrsverein Rehetobel" width="150" style="display:block;width:150px;height:auto;border:0"></p>`);
   html.push(`<p style="margin:0 0 14px">Guten Tag</p>`);
   for (const t of teile) {
     if (typeof t === "string") {
@@ -576,7 +580,7 @@ function vereinsMail_(an, betreff, teile) {
       text.push((t.titel ? t.titel + ":\n" : "") + angaben_(t.angaben));
     } else if (t.link) {
       html.push(`${t.hinweis ? `<p style="margin:0 0 8px">${esc_(t.hinweis)}</p>` : ""}` +
-        `<p style="margin:0 0 14px"><a href="${t.link}" style="display:inline-block;padding:10px 18px;border-radius:6px;background:#008c35;color:#fff;text-decoration:none;font-weight:bold">${esc_(t.text)}</a></p>`);
+        `<p style="margin:0 0 14px"><a href="${t.link}" style="display:inline-block;padding:10px 18px;border-radius:6px;background:${FARBE};color:#fff;text-decoration:none;font-weight:bold">${esc_(t.text)}</a></p>`);
       text.push((t.hinweis ? t.hinweis + "\n" : "") + `${t.text}: ${t.link}`);
     } else if (t.grund) {
       html.push(`<p style="margin:0 0 14px;background:#fdf1f0;border-radius:8px;padding:10px 14px"><b>Begründung:</b> ${verlinke_(esc_(t.grund))}</p>`);
