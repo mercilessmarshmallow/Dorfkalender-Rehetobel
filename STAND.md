@@ -14,12 +14,16 @@ Stand: 6.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
   - Eingangsbestätigungen ohne «Bei Fragen …» ✓
 - Noch nicht von Hand angeschaut: Planungskalender-Seite (Link aus dem Mail).
 
+## Gebaut, noch nicht eingerichtet
+- **Schönere Mails an die Vereine** (6.11.2026): formatiert statt reiner Text – keine Umbrüche mitten im Satz,
+  Angaben im Kasten, Links als Knöpfe («Zum Dorfkalender», «Planungskalender ansehen», «Anlass neu melden»).
+  → Programm erneuern: `anleitungen/programm-einrichten.md` **Teil A** (einfügen, speichern, neue Version). «einrichten» nicht nötig.
+
 ## Noch offen
 - **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – Test erfolgreich, Liste liegt beim Vorstand.
 
 ## Kleinigkeiten offen
 - Test-Einträge in der Tabelle löschen (TEST A, TEST B, test, test 2, test 3, test 4).
-- Mailtexte: harte Zeilenumbrüche mitten im Satz entfernen (sieht in Gmail unschön aus) – bei der nächsten Programmänderung.
 - Bestätigungsnachricht im Formular: «Bitte auch im Spam-Ordner nachsehen.»
 - Google-Benachrichtigung «neue Antworten» behalten oder ausschalten (Prüf-Mail ersetzt sie).
 - Einbindung in die ClubDesk-Webseite (Code in KONZEPT.md / README.md).

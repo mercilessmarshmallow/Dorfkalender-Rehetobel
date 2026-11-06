@@ -91,6 +91,14 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   pruefe(g.mails.filter((m) => !m.subject.startsWith("Dorfkalender:")).every((m) => m.replyTo === "verkehrsverein.rehetobel@gmail.com" && !/privat@/.test(m.to)),
     "Mails an Vereine: Antworten ans Vereins-Gmail, private Adresse nie dabei");
   pruefe(!g.mails.some((m) => /Bei Fragen schreiben/.test(m.body || "")), "keine Zeile «Bei Fragen schreiben Sie an …»");
+  pruefe(g.mails.filter((m) => !m.subject.startsWith("Dorfkalender:")).every((m) => m.htmlBody && /automatisch verschickte Nachricht/.test(m.htmlBody)),
+    "Mails an Vereine sind formatiert (sauberer Zeilenumbruch) mit Hinweis «automatisch»");
+  pruefe(g.mails.filter((m) => !m.subject.startsWith("Dorfkalender:")).every((m) => !/[a-zäöü,]\n[a-zäöü]/.test(m.body)),
+    "keine Zeilenumbrüche mitten im Satz");
+  const absage = g.mails.find((m) => m.to === "verein2@example.ch");
+  const begruendungsText = (absage.htmlBody.split("Begründung:</b>")[1] || "").split("</p>")[0];
+  pruefe(/Anlass neu melden/.test(absage.htmlBody) && begruendungsText && !/docs\.google\.com/.test(begruendungsText),
+    "automatische Absage: Knopf «Anlass neu melden» statt langem Link");
   const konzertJa = linkAus(pruef[0].body, "Annehmen");
   pruefe(/^https:\/\/mercilessmarshmallow\.github\.io\/Dorfkalender-Rehetobel\/entscheid\.html\?a=ja/.test(konzertJa), "Knopf führt auf die Prüfseite");
 
@@ -214,6 +222,11 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   pruefe(hz("freigegeben") === "ja", "verspätete Freigabe macht das Frühlingsfest öffentlich");
   h.setzeHeute("20281005"); h.melde("Herbstmarkt", "10.10.2029", "markt@example.ch");
   pruefe(/Planung 2029/.test(h.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1).subject), "danach läuft die Planung 2029 normal");
+
+  const x = google(); x.ctx.einrichten();
+  x.melde('<script>alert(1)</script>', "13.12.2026", "x@example.ch");
+  const boese = x.mails.filter((m) => /alert/.test(m.subject));
+  pruefe(boese.length === 2 && boese.every((m) => !/<script>/.test(m.htmlBody)), "Text aus dem Formular wird im Mail unschädlich angezeigt");
 
   pruefe(cookies === 0, "Google-Anmeldung wird nie mitgeschickt");
   pruefe(jsFehler.length === 0, "keine Fehler auf der Prüfseite " + jsFehler.join("; "));

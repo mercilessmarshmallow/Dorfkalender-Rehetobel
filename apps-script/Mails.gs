@@ -28,9 +28,7 @@ const BLATT_ANTWORTEN = "Formularantworten 1";
 // Fehlt sie, gilt: dieses Jahr, ab der Koordinationssitzung (erster Mittwoch im November) das nächste Jahr.
 
 // Steht unter jedem Mail an die Veranstalter.
-const FUSS = `
----
-Dies ist eine automatisch verschickte Nachricht. Bitte nicht auf dieses Mail antworten.`;
+const FUSS = "Dies ist eine automatisch verschickte Nachricht. Bitte nicht auf dieses Mail antworten.";
 
 // Spalten, die das Programm selbst verwaltet (erscheinen nicht im Prüf-Mail)
 const INTERN = ["freigegeben", "begründung", "mail-status", "id"];
@@ -63,10 +61,10 @@ function beiMeldung(e) {
     const jahr = jahr_(a.datum);
     blatt.getRange(zeile, spalte_(blatt, "Begründung", true)).setValue(art === "vergangen"
       ? `Das angegebene Datum liegt in der Vergangenheit. Vielleicht hat sich beim Jahr ein Tippfehler eingeschlichen? ` +
-        `Bitte melden Sie den Anlass mit dem richtigen Datum neu:\n${FORMULAR_LINK}`
+        `Bitte melden Sie den Anlass mit dem richtigen Datum neu: ${FORMULAR_LINK}`
       : `Für das Jahr ${jahr} ist es noch zu früh. Die Anlässe für ${jahr} werden an der Koordinationssitzung ` +
         `im November ${jahr - 1} gemeinsam abgemacht. Sie können Ihren Anlass melden, sobald das Jahr ${jahr - 1} im ` +
-        `Dorfkalender freigegeben ist (jeweils nach der Koordinationssitzung im November):\n${FORMULAR_LINK}`);
+        `Dorfkalender freigegeben ist (jeweils nach der Koordinationssitzung im November): ${FORMULAR_LINK}`);
     blatt.getRange(zeile, spalte_(blatt, "Freigegeben", true)).setValue("nein");
     entscheidMail_(blatt, zeile, "nein");
     return;
@@ -77,27 +75,19 @@ function beiMeldung(e) {
 
   // 2. Eingangsbestätigung an den Verein
   if (!a.mail) { setzeStatus_(blatt, zeile, "keine E-Mail-Adresse – kein Mail an Veranstalter"); return; }
-  const planung = art === "planung" ? `
-Ihr Anlass ist für die Jahresplanung ${jahr_(a.datum)} gemeldet. Nach der Prüfung wird er vorgemerkt und ist dann
-für die planenden Vereine im Planungskalender sichtbar. Das Datum wird an der Koordinationssitzung im November
-gemeinsam festgelegt. Öffentlich erscheint er erst danach.
-
-Was andere Vereine für ${jahr_(a.datum)} schon vorgemerkt haben, sehen Sie hier (provisorisch, bitte nicht weitergeben):
-${planungsLink_()}
-` : "";
-  sende_(a.mail, `Ihre Meldung «${a.titel}» – Dorfkalender Rehetobel`,
-    `Guten Tag
-
-Vielen Dank für Ihre Meldung für den Dorfkalender Rehetobel.
-
-Der Verkehrsverein Rehetobel schaut sich Ihren Anlass an und prüft ihn. Sie hören wieder von uns, sobald er geprüft ist.
-${planung}
-Ihre Angaben:
-${angaben_(a)}
-
-Freundliche Grüsse
-Verkehrsverein Rehetobel
-${FUSS}`);
+  const j = jahr_(a.datum);
+  vereinsMail_(a.mail, `Ihre Meldung «${a.titel}» – Dorfkalender Rehetobel`, [
+    "Vielen Dank für Ihre Meldung für den Dorfkalender Rehetobel.",
+    "Der Verkehrsverein Rehetobel schaut sich Ihren Anlass an und prüft ihn. Sie hören wieder von uns, sobald er geprüft ist.",
+    ...(art === "planung" ? [
+      `Ihr Anlass ist für die Jahresplanung ${j} gemeldet. Nach der Prüfung wird er vorgemerkt und ist dann für die ` +
+        `planenden Vereine im Planungskalender sichtbar. Das Datum wird an der Koordinationssitzung im November gemeinsam ` +
+        `festgelegt. Öffentlich erscheint er erst danach.`,
+      { link: planungsLink_(), text: `Planungskalender ${j} ansehen`,
+        hinweis: `Hier sehen Sie, was andere Vereine für ${j} schon vorgemerkt haben (provisorisch, bitte nicht weitergeben).` },
+    ] : []),
+    { angaben: a, titel: "Ihre Angaben" },
+  ]);
   setzeStatus_(blatt, zeile, "Eingang bestätigt " + heute_());
 }
 
@@ -265,7 +255,11 @@ function taeglich() {
     MailApp.sendEmail({ to: an.join(","), name: "Dorfkalender Rehetobel",
       subject: `Dorfkalender: Planungsliste ${planjahr} für die Koordinationssitzung`,
       body: `Die Koordinationssitzung ist am ${datumText_(sitzung)}.\n\nPlanungsliste ${planjahr} zum Ausdrucken ` +
-        `(Überschneidungen markiert):\n${planungsLink_()}&ansicht=druck\n\nPlanungskalender:\n${planungsLink_()}` });
+        `(Überschneidungen markiert):\n${planungsLink_()}&ansicht=druck\n\nPlanungskalender:\n${planungsLink_()}`,
+      htmlBody: `<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#222"><p>Die Koordinationssitzung ist am ` +
+        `<b>${datumText_(sitzung)}</b>.</p><p>Hier die Planungsliste ${planjahr} zum Ausdrucken – Überschneidungen sind rot markiert:</p>` +
+        `<p><a href="${planungsLink_()}&ansicht=druck" style="display:inline-block;padding:12px 22px;border-radius:6px;background:#008c35;color:#fff;text-decoration:none;font-weight:bold">Planungsliste ${planjahr} öffnen</a></p>` +
+        `<p style="color:#666;font-size:13px">Planungskalender: <a href="${planungsLink_()}">ansehen</a></p></div>` });
     props.setProperty("MAIL_LISTE_" + planjahr, "1");
   }
   // Ab dem Tag danach: Knopf zum Freigeben – wiederholt jede Woche, bis das Jahr freigegeben ist
@@ -315,53 +309,33 @@ function entscheidMail_(blatt, zeile, wert) {
     return "Kein Mail verschickt: Der Veranstalter hat keine E-Mail-Adresse angegeben.";
   }
   if (wert === "ja") {
-    sende_(a.mail, `Ihr Anlass «${a.titel}» ist im Dorfkalender`,
-      `Guten Tag
-
-Gute Nachricht: Der Verkehrsverein Rehetobel hat Ihren Anlass geprüft und angenommen.
-
-${angaben_(a)}
-
-Der Anlass erscheint im Dorfkalender Rehetobel. Es kann noch ein paar Minuten dauern, bis er aufgeschaltet ist:
-${KALENDER_LINK}
-
-Ändert sich etwas an Ihrem Anlass? Dann schreiben Sie bitte an ${ANTWORT_AN}.
-
-Freundliche Grüsse
-Verkehrsverein Rehetobel
-${FUSS}`);
+    vereinsMail_(a.mail, `Ihr Anlass «${a.titel}» ist im Dorfkalender`, [
+      "Gute Nachricht: Der Verkehrsverein Rehetobel hat Ihren Anlass geprüft und angenommen.",
+      { angaben: a },
+      "Der Anlass erscheint im Dorfkalender Rehetobel. Es kann noch ein paar Minuten dauern, bis er aufgeschaltet ist.",
+      { link: KALENDER_LINK, text: "Zum Dorfkalender" },
+      `Ändert sich etwas an Ihrem Anlass? Dann schreiben Sie bitte an ${ANTWORT_AN}.`,
+    ]);
     setzeStatus_(blatt, zeile, "Angenommen, Mail verschickt " + heute_());
   } else if (wert === "vorgemerkt") {
     const jahr = jahr_(a.datum);
-    sende_(a.mail, `Ihr Anlass «${a.titel}» ist für ${jahr} vorgemerkt`,
-      `Guten Tag
-
-Der Verkehrsverein Rehetobel hat Ihren Anlass für die Jahresplanung ${jahr} vorgemerkt.
-
-${angaben_(a)}
-
-Das Datum wird an der Koordinationssitzung im November gemeinsam mit allen Vereinen festgelegt.
-Öffentlich im Dorfkalender erscheint der Anlass erst danach.
-
-Was andere Vereine für ${jahr} schon vorgemerkt haben, sehen Sie hier (provisorisch, bitte nicht weitergeben):
-${planungsLink_()}
-
-Freundliche Grüsse
-Verkehrsverein Rehetobel
-${FUSS}`);
+    vereinsMail_(a.mail, `Ihr Anlass «${a.titel}» ist für ${jahr} vorgemerkt`, [
+      `Der Verkehrsverein Rehetobel hat Ihren Anlass für die Jahresplanung ${jahr} vorgemerkt.`,
+      { angaben: a },
+      "Das Datum wird an der Koordinationssitzung im November gemeinsam mit allen Vereinen festgelegt. " +
+        "Öffentlich im Dorfkalender erscheint der Anlass erst danach.",
+      { link: planungsLink_(), text: `Planungskalender ${jahr} ansehen`,
+        hinweis: `Hier sehen Sie, was andere Vereine für ${jahr} schon vorgemerkt haben (provisorisch, bitte nicht weitergeben).` },
+    ]);
     setzeStatus_(blatt, zeile, "Vorgemerkt, Mail verschickt " + heute_());
   } else {
-    const grund = a.begruendung ? `\nBegründung: ${a.begruendung}\n` : "";
-    sende_(a.mail, `Ihre Meldung «${a.titel}» – Dorfkalender Rehetobel`,
-      `Guten Tag
-
-Vielen Dank für Ihre Meldung. Leider können wir den folgenden Anlass nicht in den Dorfkalender Rehetobel aufnehmen:
-
-${angaben_(a)}
-${grund}
-Freundliche Grüsse
-Verkehrsverein Rehetobel
-${FUSS}`);
+    vereinsMail_(a.mail, `Ihre Meldung «${a.titel}» – Dorfkalender Rehetobel`, [
+      "Vielen Dank für Ihre Meldung. Leider können wir den folgenden Anlass nicht in den Dorfkalender Rehetobel aufnehmen:",
+      { angaben: a },
+      // Steht der Formular-Link in der Begründung (automatische Absagen), wird daraus ein Knopf
+      ...(a.begruendung ? [{ grund: a.begruendung.replace(FORMULAR_LINK, "").replace(/[\s:]+$/, "").replace(/([^.!?])$/, "$1.") }] : []),
+      ...(a.begruendung.includes(FORMULAR_LINK) ? [{ link: FORMULAR_LINK, text: "Anlass neu melden" }] : []),
+    ]);
     setzeStatus_(blatt, zeile, "Abgelehnt, Mail verschickt " + heute_());
   }
   return `Mail an ${esc_(a.mail)} verschickt.`;
@@ -582,8 +556,44 @@ function esc_(s) {
   return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 
-function sende_(an, betreff, text) {
-  MailApp.sendEmail({ to: an, subject: betreff, body: text, name: ABSENDER_NAME, replyTo: ANTWORT_AN });
+// Mail an einen Verein – formatiert (fliesst sauber auf jeder Bildschirmbreite) und als einfacher Text.
+// teile: Text (Absatz) | { angaben: anlass, titel } | { link, text, hinweis } | { grund }
+function vereinsMail_(an, betreff, teile) {
+  const stil = "font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5;color:#222";
+  const html = [], text = ["Guten Tag"];
+  html.push(`<p style="margin:0 0 14px">Guten Tag</p>`);
+  for (const t of teile) {
+    if (typeof t === "string") {
+      html.push(`<p style="margin:0 0 14px">${verlinke_(esc_(t))}</p>`);
+      text.push(t);
+    } else if (t.angaben) {
+      const zeilen = angaben_(t.angaben).split("\n").map((z) => {
+        const [k, ...v] = z.split(": ");
+        return `<tr><td style="padding:2px 14px 2px 0;color:#666;vertical-align:top">${esc_(k)}</td><td style="padding:2px 0"><b>${esc_(v.join(": "))}</b></td></tr>`;
+      }).join("");
+      html.push(`${t.titel ? `<p style="margin:0 0 6px;color:#666">${esc_(t.titel)}:</p>` : ""}` +
+        `<table style="background:#f4f4f2;border-radius:8px;padding:10px 14px;margin:0 0 14px;border-collapse:separate">${zeilen}</table>`);
+      text.push((t.titel ? t.titel + ":\n" : "") + angaben_(t.angaben));
+    } else if (t.link) {
+      html.push(`${t.hinweis ? `<p style="margin:0 0 8px">${esc_(t.hinweis)}</p>` : ""}` +
+        `<p style="margin:0 0 14px"><a href="${t.link}" style="display:inline-block;padding:10px 18px;border-radius:6px;background:#008c35;color:#fff;text-decoration:none;font-weight:bold">${esc_(t.text)}</a></p>`);
+      text.push((t.hinweis ? t.hinweis + "\n" : "") + `${t.text}: ${t.link}`);
+    } else if (t.grund) {
+      html.push(`<p style="margin:0 0 14px;background:#fdf1f0;border-radius:8px;padding:10px 14px"><b>Begründung:</b> ${verlinke_(esc_(t.grund))}</p>`);
+      text.push("Begründung: " + t.grund);
+    }
+  }
+  html.push(`<p style="margin:18px 0 0">Freundliche Grüsse<br>Verkehrsverein Rehetobel</p>`);
+  html.push(`<p style="margin:24px 0 0;padding-top:10px;border-top:1px solid #ddd;color:#888;font-size:12px">${esc_(FUSS)}</p>`);
+  text.push("Freundliche Grüsse\nVerkehrsverein Rehetobel", "---\n" + FUSS);
+  MailApp.sendEmail({ to: an, subject: betreff, name: ABSENDER_NAME, replyTo: ANTWORT_AN,
+    body: text.join("\n\n"), htmlBody: `<div style="${stil};max-width:600px">${html.join("")}</div>` });
+}
+
+// Adressen und Links in (bereits geschütztem) Text anklickbar machen
+function verlinke_(s) {
+  return s.replace(/https?:\/\/[^\s<]+/g, (u) => `<a href="${u}" style="color:#0b5e2a;word-break:break-all">${u}</a>`)
+    .replace(/\b([\w.+-]+@[\w-]+\.[\w.]+)\b/g, '<a href="mailto:$1" style="color:#0b5e2a">$1</a>');
 }
 
 function setzeStatus_(blatt, zeile, text) {
