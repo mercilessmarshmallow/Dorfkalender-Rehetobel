@@ -93,6 +93,18 @@ Titel · Datum · Bis · Zeit (Beginn) · Zeit (Ende) · Ort · Veranstalter · 
 **Kann das Datum verschoben werden? (Ja/Nein)** 📋 (ersetzt «Status fix/provisorisch»; nur wichtig für Planungsmeldungen) · Name der Kontaktperson · E-Mail (Pflicht).
 Kontaktname und E-Mail erscheinen nie im öffentlichen Kalender.
 
+## Ideenspeicher (6.11.2026, noch nicht entschieden) 📋
+- **Eigene Adresse statt «mercilessmarshmallow»:** Ablage in eine GitHub-Organisation des Vereins (gehört dem Vereins-Gmail)
+  umziehen und Adresse **kalender.rehetobel-tourismus.ch** (DNS-Eintrag bei green.ch). Löst auch die Übergabe.
+  Vorher klären, wem die Domain rehetobel-tourismus.ch gehört. Hängt mit dem Entscheid zur Vereinswebseite zusammen (Vorstand, 17.2.2027).
+- **Kalender abonnieren:** alle Dorfanlässe automatisch im eigenen Handy-Kalender (ICS-Abo). ⭐
+- **Jahresbüchli automatisch:** nach der Freigabe druckfertige Vorlage mit allen Anlässen des Jahres. ⭐
+- Aussehen: Foto von Rehetobel im Kopf, Farben pro Kategorie, grössere Schrift für Ältere.
+- «Diese Woche im Dorf» oben auf der Seite; Teilen per WhatsApp; QR-Code-Plakat für Anschlagbrett und Prospektständer.
+- Übersicht für den VVR: welche Vereine noch nichts gemeldet haben.
+- **Übergabe-Anleitung** (wenn die Projektleitung wechselt): Google-Konto (Passwort, Wiederherstellung, Telefon, Passkey),
+  GitHub-Ablage, Skripteigenschaft `PRUEF_MAILS_AUCH_AN`. Wird angelegt, sobald die GitHub-Frage entschieden ist.
+
 ## Grundsätze
 - **Einfach für die Projektleitung:** alles Wichtige mit einem Tipp in der Gmail-App, ohne Computer.
 - **Ein Ort für alles:** diese Ablage. Keine zweite Kopie anderswo.
