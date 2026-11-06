@@ -14,17 +14,17 @@ Stand: 6.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
   - Eingangsbestätigungen ohne «Bei Fragen …» ✓
 - Noch nicht von Hand angeschaut: Planungskalender-Seite (Link aus dem Mail).
 
-## Gebaut, noch nicht eingerichtet
-- **Schönere Mails an die Vereine** (6.11.2026): formatiert statt reiner Text – keine Umbrüche mitten im Satz,
-  Angaben im Kasten, Links als Knöpfe («Zum Dorfkalender», «Planungskalender ansehen», «Anlass neu melden»);
-  oben das Logo mit grüner Linie, Knöpfe in Rot wie auf der Webseite (Vorschau Handy und Laptop von der Projektleitung bestätigt).
-  → Programm erneuern: `anleitungen/programm-einrichten.md` **Teil A** (einfügen, speichern, neue Version). «einrichten» nicht nötig.
+## Eingerichtet am 6.11.2026 (Nachtrag)
+- **Schönere Mails an die Vereine:** formatiert, Logo oben mit grüner Linie, Angaben im Kasten, rote Knöpfe,
+  keine Umbrüche mitten im Satz. Programm erneuert (609 Zeilen, neue Version), mit echtem Mail geprüft ✓
 
 ## Noch offen
 - **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – Test erfolgreich, Liste liegt beim Vorstand.
 
 ## Kleinigkeiten offen
-- Test-Einträge in der Tabelle löschen (TEST A, TEST B, test, test 2, test 3, test 4).
+- Test-Einträge in der Tabelle löschen (test, test 2, test 3, test 4, TEST A, TEST B, TEST C, Test D).
+- Die zwei Vorstandssitzungen (3.11.2026, 17.02.2027) bleiben vorerst als Beispiel zum Zeigen; vor den echten Daten 2027 löschen
+  (interne Sitzungen gehören nicht in den Dorfkalender).
 - Bestätigungsnachricht im Formular: «Bitte auch im Spam-Ordner nachsehen.»
 - Google-Benachrichtigung «neue Antworten» behalten oder ausschalten (Prüf-Mail ersetzt sie).
 - Einbindung in die ClubDesk-Webseite (Code in KONZEPT.md / README.md).
