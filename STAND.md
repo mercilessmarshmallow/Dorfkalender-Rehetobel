@@ -1,35 +1,25 @@
 # Stand Dorfkalender
 
-Stand: 5.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
+Stand: 6.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
 
-## Läuft
-- Webseite mit Liste, Monat und Terminplanung; liest die freigegebenen Anlässe aus der Google-Tabelle.
-- Formular «Anlass melden» mit Name der Kontaktperson und E-Mail.
-- Programm (alte Fassung, eingerichtet am 4./5.11.2026):
-  - Eingangsbestätigung an den Verein ✓
-  - Prüf-Mail an Vereins-Gmail und Projektleitung ✓
-  - Datum in der Vergangenheit → automatische Absage ✓
-  - Mails kommen von verkehrsverein.rehetobel@gmail.com, auch an strenge Mailsysteme (dort anfangs im Spam) ✓
-  - **Einschränkung:** Die Knöpfe «Annehmen»/«Ablehnen» funktionieren nur ohne Google-Anmeldung
-    (am PC: Rechtsklick → «Link in InPrivate-Fenster öffnen»), **nicht in der Gmail-App**.
-
-## Gebaut und getestet, noch nicht eingerichtet (Test: 45 Prüfungen bestanden)
-- **Prüfseite `entscheid.html`** – Annehmen/Ablehnen mit einem Tipp, auch in der Gmail-App; Seite «Jahr freigeben».
-- **Neue Programmfassung** `apps-script/Mails.gs`:
-  - Knöpfe führen auf die Prüfseite; Ablehnen mit einem Tipp; Zeile «Bei Fragen …» entfernt.
-  - Private Adresse über Skripteigenschaft `PRUEF_MAILS_AUCH_AN` statt im Programmtext.
-  - **Jahresablauf:** Sortierung nach Datum (Nachmeldung / Planung / zu früh / vergangen), «vorgemerkt», Überschneidungen
-    im Prüf-Mail, Planungskalender-Daten, «Jahr freigeben», Erinnerungsmails (Planungsliste, Freigabe), Menü in der Tabelle.
-  - Startwert: freigegeben bis **2027** (Sitzung 4.11.2026 vorbei) → Meldungen für 2027 = Nachmeldungen, 2028 = Planung.
-- **Webseite:** Planungskalender (`?planung=…`) mit «Liste zum Drucken» und Etikett «verschiebbar».
-- → **Nächster Schritt: Einrichten** mit der Projektleitung nach [`anleitungen/umstellung-schritt-fuer-schritt.md`](anleitungen/umstellung-schritt-fuer-schritt.md)
-  (14 kleine Schritte, einer nach dem anderen). Termin offen.
+## Läuft (eingerichtet am 6.11.2026, mit dem Handy getestet)
+- Webseite mit Liste, Monat und Terminplanung; Planungskalender über `?planung=…`.
+- Formular mit «Kann das Datum verschoben werden? (Ja/Nein)», Name der Kontaktperson und E-Mail.
+- Programm (neue Fassung, 595 Zeilen), Skripteigenschaft `PRUEF_MAILS_AUCH_AN` gesetzt, neue Version bereitgestellt, «einrichten» ausgeführt.
+- Getestet am 6.11.2026:
+  - Prüf-Mail kommt ins private Gmail der Projektleitung ✓
+  - Ein Tipp auf «Annehmen» in der Gmail-App ✓
+  - Nachmeldung (Dez. 2026) → angenommen, Mail an den Verein ✓
+  - Planungsmeldung (Jan. 2028) → als «Planung 2028» erkannt, Überschneidungsprüfung, «vorgemerkt», Mail mit Planungskalender-Link ✓
+  - Eingangsbestätigungen ohne «Bei Fragen …» ✓
+- Noch nicht von Hand angeschaut: Planungskalender-Seite (Link aus dem Mail).
 
 ## Noch offen
-- **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – **erst nach dem erfolgreichen Test**; die Liste liegt beim Vorstand.
+- **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – Test erfolgreich, Liste liegt beim Vorstand.
 
 ## Kleinigkeiten offen
-- Test-Einträge in der Tabelle löschen (test, test 2, test 3, test 4).
+- Test-Einträge in der Tabelle löschen (TEST A, TEST B, test, test 2, test 3, test 4).
+- Mailtexte: harte Zeilenumbrüche mitten im Satz entfernen (sieht in Gmail unschön aus) – bei der nächsten Programmänderung.
 - Bestätigungsnachricht im Formular: «Bitte auch im Spam-Ordner nachsehen.»
 - Google-Benachrichtigung «neue Antworten» behalten oder ausschalten (Prüf-Mail ersetzt sie).
 - Einbindung in die ClubDesk-Webseite (Code in KONZEPT.md / README.md).
