@@ -34,13 +34,14 @@ Vorschau mit Beispiel-Anlässen in der Vorstandsablage (`ideen/originale/dorfkal
   Logo oben rechts in der Karte (Karten kürzer), Kategorie-Knöpfe umbrechend, Kirche beim Baum-Foto auch am Laptop frei.
   Grüne Zweitknöpfe bewusst behalten (Farbe aus dem VVR-Logo).
 - **Offen:** Wohin führt «Mitglied werden»? (heute ClubDesk-Startseite)
+- **Später besprechen:** Was gehört überhaupt in den Dorfkalender (z. B. Proben, Übungen, Sitzungen)?
 - **Beim Umsetzen nicht vergessen:** Formular-Auswahl «Kategorie» ohne «Verkehrsverein», neue Reihenfolge; bestehende Einträge anpassen.
 - Hinweis: Logo wird über den Veranstalter-Namen zugeordnet → Veranstalter im Formular als Auswahlliste (Ideenspeicher).
 
 ## Noch offen
 - **Hinweis:** Der alte Kalender (rehetobel-tourismus.ch) läuft weiter; der neue ersetzt ihn erst, wenn er so weit ist (siehe Vision im KONZEPT).
 - **Vor dem Ersetzen des alten Kalenders:** kommende Anlässe aus dem alten Kalender übernehmen (iCal-Export vom Vorstand).
-- **Nächste Verbesserungen (entschieden 7.11., zuerst erklären, dann bauen):** «Für alle offen» / «Nur für Mitglieder» mit Häkchen,
+- **Nächste Verbesserungen (entschieden 7.11., zuerst erklären, dann bauen):** Etikett «Nur für Mitglieder» (alle Anlässe sichtbar, kein Häkchen),
   Liste kürzen (20 Anlässe + «Weitere anzeigen»), neues Design wie in der Vorschau (siehe oben).
 - **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – Test erfolgreich, Liste liegt beim Vorstand.
 

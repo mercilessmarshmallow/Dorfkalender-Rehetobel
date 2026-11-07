@@ -4,6 +4,9 @@ Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Ent
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
 ## 7.11.2026 (Design)
+- **Alle Anlässe erscheinen immer, kein Häkchen mehr.** «Nur für Mitglieder» ist nur noch ein graues Etikett an der Karte.
+  **Ersetzt** «Standard: nur Für alle offen; Nur für Mitglieder per Häkchen» (7.11. später). Später zu besprechen: was überhaupt in den Kalender gehört.
+- **«Heute» im Kalenderblatt grün** (Grün des Verkehrsvereins) statt schwarz.
 - **Kategorien bleiben die Veranstalter-Gruppen**, aber **ohne eigene Kategorie «Verkehrsverein»**: Der VVR gehört zu den «Vereinen».
   **Reihenfolge nach Wichtigkeit:** Gemeinde, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Andere.
   **Ändert** die Kategorienliste vom 2.11. → im Formular die Auswahl «Verkehrsverein» entfernen und die Reihenfolge anpassen,
