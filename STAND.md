@@ -19,6 +19,9 @@ Stand: 6.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
   keine Umbrüche mitten im Satz. Programm erneuert (609 Zeilen, neue Version), mit echtem Mail geprüft ✓
 
 ## Noch offen
+- **Vor dem Ersetzen des alten Kalenders:** kommende Anlässe aus dem alten Kalender übernehmen (iCal-Export vom Vorstand).
+- **Nächste Verbesserungen (entschieden 7.11., zuerst erklären, dann bauen):** öffentlich/vereinsintern mit Häkchen,
+  Liste kürzen (2 Wochen + «Weitere anzeigen»), Kasten «Nächste Anlässe».
 - **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – Test erfolgreich, Liste liegt beim Vorstand.
 
 ## Kleinigkeiten offen

@@ -3,6 +3,16 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 7.11.2026
+- **Öffentlich und vereinsintern:** Der Dorfkalender zeigt standardmässig nur **öffentliche** Anlässe (für alle offen).
+  Mit einem Häkchen «Auch vereinsinterne Anlässe zeigen» erscheinen alle (z. B. Samariterübung, Proben, Sitzungen),
+  markiert als «vereinsintern». Grund: übersichtlich für die Bevölkerung, trotzdem nützlich für Vereinsmitglieder.
+  Für Planung/Überschneidungen zählen immer alle Anlässe. Neue Formularfrage «Ist der Anlass öffentlich (für alle offen)?».
+- **Ausnahme Haus zur Stickerei (Heiden):** wird aufgenommen (Leitung ist im VVR, liegt an der Dorfgrenze).
+  Sonst gilt weiterhin: nur Anlässe in Rehetobel.
+- **Liste kürzen:** Es sind rund 10 Anlässe pro Woche → Liste zeigt zuerst diese und nächste Woche, dann «Weitere anzeigen».
+  (Ersetzt den Ideenspeicher-Vorschlag «2–3 Monate».)
+
 ## 5.11.2026 (Abend)
 - **Vorgehen:** Zuerst einrichten und testen, dann die Anlässe 2027 eintragen (Liste liegt beim Vorstand). Einrichtung nicht am 5.11.,
   sondern später nach `anleitungen/umstellung-schritt-fuer-schritt.md`. Webseite darf veröffentlicht werden.

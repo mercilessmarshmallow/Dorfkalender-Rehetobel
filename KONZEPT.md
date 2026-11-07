@@ -6,7 +6,9 @@ Verkehrsverein Rehetobel (VVR) betrieben, der seit Jahren die Termine der Dorfve
 Zeichen: ✅ läuft · 🔧 gebaut, noch nicht eingerichtet · 📋 geplant
 
 ## Was in den Kalender gehört
-- Öffentliche Anlässe **in Rehetobel**: Vereine, Gemeinde, Kirche, Schule, Gewerbe, Parteien, Kommissionen.
+- Anlässe **in Rehetobel**: Vereine, Gemeinde, Kirche, Schule, Gewerbe, Parteien, Kommissionen. Ausnahme: Haus zur Stickerei (Heiden).
+- **Öffentlich** (für alle offen) erscheint standardmässig; **vereinsintern** (z. B. Übungen, Proben, Sitzungen) nur mit dem
+  Häkchen «Auch vereinsinterne Anlässe zeigen». 📋
 - Auch öffentliche Anlässe des VVR selbst, z. B. die **Hauptversammlung** (viele Dorfbewohner kommen).
 - **Nicht** hinein: interne Sitzungen (z. B. Vorstandssitzungen) und Anlässe ausserhalb von Rehetobel
   (die gehören zu Appenzellerland Tourismus).
@@ -103,8 +105,11 @@ Kontaktname und E-Mail erscheinen nie im öffentlichen Kalender.
 - Aussehen: Foto von Rehetobel im Kopf, Farben pro Kategorie, grössere Schrift für Ältere.
 - «Diese Woche im Dorf» oben auf der Seite; Teilen per WhatsApp; QR-Code-Plakat für Anschlagbrett und Prospektständer.
 - Übersicht für den VVR: welche Vereine noch nichts gemeldet haben.
-- **Lange Liste kürzen:** Die Liste zeigt heute alle Anlässe ab heute (keine Seiten). Der alte Kalender zeigte 10 pro Seite.
-  Vorschlag: zuerst die nächsten 2–3 Monate, dann Knopf «Weitere Anlässe anzeigen» und/oder Monatsleiste zum Springen.
+- **Liste kürzen** (entschieden 7.11.): zuerst diese und nächste Woche (ca. 20 Anlässe), dann «Weitere anzeigen». 📋
+- **Öffentlich / vereinsintern** (entschieden 7.11.): Formularfrage, Häkchen im Kalender, Etikett «vereinsintern». 📋
+- **Kasten «Nächste Anlässe»** für die Startseite der Vereinswebseite (wie die Spalte rechts im alten Kalender), mit Link «alle Veranstaltungen». 📋
+- **Anlässe aus dem alten Kalender übernehmen:** alle kommenden Anlässe als iCal-Datei aus dem alten Kalender exportieren
+  (Vorstand) → Claude liest sie ein. Nötig vor der Umstellung, sonst fehlen Nov./Dez. 2026. 📋
 - **Übergabe-Anleitung** (wenn die Projektleitung wechselt): Google-Konto (Passwort, Wiederherstellung, Telefon, Passkey),
   GitHub-Ablage, Skripteigenschaft `PRUEF_MAILS_AUCH_AN`. Wird angelegt, sobald die GitHub-Frage entschieden ist.
 
