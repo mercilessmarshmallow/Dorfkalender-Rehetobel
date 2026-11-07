@@ -4,6 +4,8 @@ Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Ent
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
 ## 7.11.2026 (Design)
+- **App-Symbol: Kalenderblatt in VVR-Farben** (Wahl «B» der Projektleitung): grüner Kopf, zwei rote und drei grüne Punkte wie im Logo;
+  ersetzt das erste Symbol (ganzes VVR-Logo). Grund: als Kalender sofort erkennbar, passt zu den Vereinsfarben.
 - **«Dorfkalender aufs Handy» gebaut:** eigenes Symbol, Name «Dorfkalender», Anleitung je nach Handy (iPhone / Android);
   der Hinweis erscheint nur auf dem Handy und nicht mehr, wenn der Kalender schon als App geöffnet ist.
 - **«Nur für Mitglieder» vorerst nicht einführen** (Projektleitung, nach dem Veröffentlichen): keine Formularfrage «Für wen», kein Etikett.

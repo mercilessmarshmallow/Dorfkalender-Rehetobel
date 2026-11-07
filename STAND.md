@@ -30,7 +30,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Kategorien** als Knöpfe (Gemeinde, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Andere); auf dem Handy zugeklappt.
   «Verkehrsverein Rehetobel» und «Gemeinde Rehetobel» aus der Tabelle werden automatisch zu «Vereine» bzw. «Gemeinde».
 - Monat und Terminplanung bleiben als Ansichten (Reiter unter der Suche). Planungskalender und `?einbetten=1` funktionieren weiter.
-- **«Dorfkalender aufs Handy»** (7.11.): eigenes quadratisches Symbol (`bilder/app/`), Name «Dorfkalender» (`manifest.webmanifest`),
+- **«Dorfkalender aufs Handy»** (7.11.): eigenes quadratisches Symbol (Kalenderblatt in VVR-Farben, Wahl B, `bilder/app/`), Name «Dorfkalender» (`manifest.webmanifest`),
   öffnet sich vom Startbildschirm ohne Adressleiste. Hinweis-Kasten mit Anleitung fürs iPhone bzw. Android; auf dem Computer und
   in der «App» selbst ausgeblendet. **Von Hand testen:** auf iPhone und Android hinzufügen; in der «App» prüfen, ob
   «📅 In meinen Kalender» funktioniert (iPhone-Apps vom Startbildschirm laden Dateien manchmal nicht).
