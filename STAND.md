@@ -34,6 +34,7 @@ Vorschau mit Beispiel-Anlässen in der Vorstandsablage (`ideen/originale/dorfkal
   Logo oben rechts in der Karte (Karten kürzer), Kategorie-Knöpfe umbrechend, Kirche beim Baum-Foto auch am Laptop frei.
   Grüne Zweitknöpfe bewusst behalten (Farbe aus dem VVR-Logo).
 - **Offen:** Wohin führt «Mitglied werden»? (heute ClubDesk-Startseite)
+- **Beim Umsetzen nicht vergessen:** Formular-Auswahl «Kategorie» ohne «Verkehrsverein», neue Reihenfolge; bestehende Einträge anpassen.
 - Hinweis: Logo wird über den Veranstalter-Namen zugeordnet → Veranstalter im Formular als Auswahlliste (Ideenspeicher).
 
 ## Noch offen
@@ -50,4 +51,4 @@ Vorschau mit Beispiel-Anlässen in der Vorstandsablage (`ideen/originale/dorfkal
 - Bestätigungsnachricht im Formular: «Bitte auch im Spam-Ordner nachsehen.»
 - Google-Benachrichtigung «neue Antworten» behalten oder ausschalten (Prüf-Mail ersetzt sie).
 - Einbindung in die ClubDesk-Webseite (Code in KONZEPT.md / README.md).
-- Offene Fragen: Themen-Kategorien zusätzlich zu Veranstalter-Gruppen? Anlässe aus dem alten Kalender übernehmen?
+- Offene Fragen: Anlässe aus dem alten Kalender übernehmen?

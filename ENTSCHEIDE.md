@@ -4,6 +4,12 @@ Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Ent
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
 ## 7.11.2026 (Design)
+- **Kategorien bleiben die Veranstalter-Gruppen**, aber **ohne eigene Kategorie «Verkehrsverein»**: Der VVR gehört zu den «Vereinen».
+  **Reihenfolge nach Wichtigkeit:** Gemeinde, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Andere.
+  **Ändert** die Kategorienliste vom 2.11. → im Formular die Auswahl «Verkehrsverein» entfernen und die Reihenfolge anpassen,
+  bestehende Einträge «Verkehrsverein» in der Tabelle auf «Vereine» ändern. (Themen-Kategorien besprochen, verworfen.)
+- **Handy: Kategorien zuerst zugeklappt** (Knopf «Nach Kategorie filtern ▾») – zuerst sieht man, was im Dorf läuft.
+  Nach der Wahl klappt es wieder zu und zeigt «Kategorie: …». **Laptop: Kategorie-Knöpfe immer sichtbar.**
 - **Titelbild ohne Logo und ohne Bildnachweis** (Wunsch Projektleitung: stört das Design). Bildnachweis
   «Fotos: Appenzellerland Tourismus» klein in der Fusszeile ganz unten; VVR-Logo nur unten im Kasten
   «Ein Angebot des Verkehrsvereins» (ganz am Schluss). **Ersetzt** «Logo oben links» und «Bildnachweis oben rechts» unten.
