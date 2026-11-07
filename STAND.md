@@ -34,7 +34,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Logos (17, `js/logos.js` + `bilder/logos/`):** Verkehrsverein, Gemeinde, Kirche, Jugendmusik, MG Brass Band, Chor, Sportverein,
   Gewerbeverein, Samariter, Feuerwehr, Spielgruppe, Sonjolino, Ornithologen, Schwimmbad (selbst gezeichnetes Symbol), Solardorf,
   Lesegesellschaft (quer gedreht), FDP. Zuordnung über den Veranstalter-Namen (mehrere Schreibweisen pro Verein).
-  - **Mit den Vereinen klären (sind schon online):** Schwimmbad (eigenes Symbol ok?), Lesegesellschaft (gedreht ok?).
+  - Logos bleiben so. Lesegesellschaft (gedreht): laut Projektleitung sicher okay. Schwimmbad (eigenes Symbol): fragt die Projektleitung vor dem offiziellen Start.
   - **Bessere Datei wäre gut:** Spielgruppe (Scan), Solardorf (sehr klein), Feuerwehr (klein), MG Brass Band und Kirche (Bildschirmfoto; Kirche hat SVG).
 - **«Nur für Mitglieder» vorerst nicht** (Entscheid 7.11.): keine Formularfrage, kein Etikett sichtbar. Falls später doch:
   Spalte «Für wen» im Blatt «Kalender» einzeln anhängen (z. B. `FILTER({B:L\X:X}; …)`), **nie** B:P o. ä. (sonst Kontaktdaten öffentlich).
