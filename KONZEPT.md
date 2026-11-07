@@ -5,6 +5,26 @@ Verkehrsverein Rehetobel (VVR) betrieben, der seit Jahren die Termine der Dorfve
 
 Zeichen: ✅ läuft · 🔧 gebaut, noch nicht eingerichtet · 📋 geplant
 
+## Vision: der optimale Dorfkalender (Projektleitung, 7.11.2026)
+**Ziel: Der Kalender soll dazu beitragen, dass mehr Leute an die Anlässe im Dorf gehen.**
+Heute läuft noch der alte Kalender (rehetobel-tourismus.ch). Der neue wird erst eingesetzt, wenn er so weit ist.
+Problem heute: unattraktiv, nicht auf der Gemeinde-Webseite, zu viele uninteressante Termine (z. B. jede Übung, jede Woche Kirche).
+
+| Baustein | Idee | Machbarkeit |
+|---|---|---|
+| Highlights | Konzerte, Dorffest, Jubiläen gross mit Bild oben; beim Annehmen «⭐ Highlight» tippen | gut 📋 |
+| Regelmässiges | wöchentliche Anlässe (z. B. Gottesdienst) zusammenfassen statt jede Woche einzeln | gut 📋 |
+| Vereinsintern | nur mit Häkchen sichtbar (Entscheid 7.11.) | gut 📋 |
+| Bilder | Standardbild pro Kategorie; bei Highlights Bild-Link vom Verein oder vom VVR (Upload im Google-Formular braucht Google-Anmeldung) | gut 📋 |
+| «App» | Kalender als App auf den Startbildschirm (ohne App Store, gratis) | gut 📋 |
+| Erinnerung | Knopf «Erinnere mich» → Anlass im Handy-Kalender mit Erinnerung 1 Tag vorher | gut 📋 |
+| Benachrichtigungen | direkt aus der «App» | aufwändig, später |
+| Reichweite | Gemeinde-Webseite, QR-Plakate, «Was läuft diese Woche» (Text für WhatsApp-Kanal/Gmäändsblatt), Jahresbüchli | gut 📋 |
+| Design | Foto von Rehetobel, Farben pro Kategorie, gut lesbar für Ältere | gut 📋 |
+
+Nächster Schritt (Vorschlag): eine **Vorschau** des optimalen Kalenders zum Anschauen und Diskutieren (auch für den Vorstand),
+ohne das laufende System zu ändern.
+
 ## Was in den Kalender gehört
 - Anlässe **in Rehetobel**: Vereine, Gemeinde, Kirche, Schule, Gewerbe, Parteien, Kommissionen. Ausnahme: Haus zur Stickerei (Heiden).
 - **Öffentlich** (für alle offen) erscheint standardmässig; **vereinsintern** (z. B. Übungen, Proben, Sitzungen) nur mit dem
