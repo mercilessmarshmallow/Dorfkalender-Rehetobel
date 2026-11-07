@@ -20,9 +20,10 @@ Stand: 7.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
 
 ## Neues Design – Vorschau (7.11.2026, noch nicht gebaut)
 Vorschau mit Beispiel-Anlässen in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`), Entscheide siehe ENTSCHEIDE.md (7.11., Design).
-- Titelbild je nach Jahreszeit, Handy quadratisch; Schrift und Logo auf der Seite ohne Kirche; Baum-Foto als Variante (`?foto=baum`).
+- Titelbild je nach Jahreszeit, Handy quadratisch; Schrift auf der Seite ohne Kirche; kein Logo und kein Bildnachweis im Bild
+  (Nachweis in der Fusszeile); Sommer: Kirchen- und Baum-Foto abwechselnd. Liste: 20 Anlässe, dann «Weitere anzeigen».
 - Karten: Datum links, Farbe je Kategorie (Streifen + Etikett), Vereinslogo rechts (nur wenn vorhanden);
-  Antippen öffnet Fenster mit «In meinen Kalender» und «Alle Anlässe von …». Kasten «Ein Angebot des Verkehrsvereins» mit «Mitglied werden».
+  Antippen öffnet Fenster mit «In meinen Kalender» und «Alle Anlässe von …». Kasten «Ein Angebot des Verkehrsvereins» mit «Mitglied werden» ganz unten.
 - **Logos vorhanden (17):** Verkehrsverein, Jugendmusik, Sportverein, Gemeinde, Gewerbeverein, Samariterverein Rehetobel-Wald,
   Feuerwehr Wald Rehetobel, Reformierte Kirchgemeinde, Spielgruppe Rägeboge, MG Brass Band, FDP, Schwimmbad,
   Ornithologischer Verein, Chor Rehetobel, Kinderzirkus Sonjolino, Solardorf, Lesegesellschaft Dorf Rehetobel (quer gedreht, Original hoch – mit dem Verein klären). Alle anderen Vereine: (noch) kein Logo.
@@ -36,7 +37,7 @@ Vorschau mit Beispiel-Anlässen in der Vorstandsablage (`ideen/originale/dorfkal
 - **Hinweis:** Der alte Kalender (rehetobel-tourismus.ch) läuft weiter; der neue ersetzt ihn erst, wenn er so weit ist (siehe Vision im KONZEPT).
 - **Vor dem Ersetzen des alten Kalenders:** kommende Anlässe aus dem alten Kalender übernehmen (iCal-Export vom Vorstand).
 - **Nächste Verbesserungen (entschieden 7.11., zuerst erklären, dann bauen):** «Für alle offen» / «Nur für Mitglieder» mit Häkchen,
-  Liste kürzen (2 Wochen + «Weitere anzeigen»), neues Design wie in der Vorschau (siehe oben).
+  Liste kürzen (20 Anlässe + «Weitere anzeigen»), neues Design wie in der Vorschau (siehe oben).
 - **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – Test erfolgreich, Liste liegt beim Vorstand.
 
 ## Kleinigkeiten offen

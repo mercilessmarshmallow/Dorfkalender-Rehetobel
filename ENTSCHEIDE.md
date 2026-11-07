@@ -4,6 +4,10 @@ Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Ent
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
 ## 7.11.2026 (Design)
+- **Titelbild ohne Logo und ohne Bildnachweis** (Wunsch Projektleitung: stört das Design). Bildnachweis
+  «Fotos: Appenzellerland Tourismus» klein in der Fusszeile ganz unten; VVR-Logo nur unten im Kasten
+  «Ein Angebot des Verkehrsvereins» (ganz am Schluss). **Ersetzt** «Logo oben links» und «Bildnachweis oben rechts» unten.
+- **20 Anlässe pro Seite**, dann «Weitere Anlässe anzeigen» (je 20 mehr); beim Suchen alle. **Ersetzt** «diese und nächste Woche» vom 7.11.
 - **Titelbild genau so wie in der Vorschau:** Foto von Rehetobel (Herbst, Kirche und Appenzeller Häuser) über die ganze Breite,
   Logo oben links in weissem Feld, darüber «Dorfkalender – Was läuft in Rechtobel?» und roter Knopf «+ Anlass melden»;
   das Suchfeld überlappt den unteren Bildrand. Vorschau in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`).
