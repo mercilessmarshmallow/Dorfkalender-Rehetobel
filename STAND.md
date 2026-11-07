@@ -18,7 +18,8 @@ Stand: 7.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
 - **Schönere Mails an die Vereine:** formatiert, Logo oben mit grüner Linie, Angaben im Kasten, rote Knöpfe,
   keine Umbrüche mitten im Satz. Programm erneuert (609 Zeilen, neue Version), mit echtem Mail geprüft ✓
 
-## Neues Design (gebaut am 7.11.2026)
+## Neues Design (gebaut und auf main veröffentlicht am 7.11.2026, Okay der Projektleitung – auch für Schwimmbad-Symbol und gedrehtes Lesegesellschaft-Logo)
+- **Noch von Hand anschauen:** Seite auf dem Handy öffnen (GitHub braucht ein paar Minuten).
 Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`), Entscheide siehe ENTSCHEIDE.md (7.11., Design).
 - **Titelbild je nach Jahreszeit** (`js/titelbild.js`, Bilder in `bilder/titel/`, Handy quadratisch): Frühling (2), Sommer (2), Herbst (1),
   Winter (3), täglich abwechselnd. Schrift immer auf der Seite ohne Kirche/Hauptmotiv. Kein Logo und kein Bildnachweis im Bild,
@@ -33,7 +34,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Logos (17, `js/logos.js` + `bilder/logos/`):** Verkehrsverein, Gemeinde, Kirche, Jugendmusik, MG Brass Band, Chor, Sportverein,
   Gewerbeverein, Samariter, Feuerwehr, Spielgruppe, Sonjolino, Ornithologen, Schwimmbad (selbst gezeichnetes Symbol), Solardorf,
   Lesegesellschaft (quer gedreht), FDP. Zuordnung über den Veranstalter-Namen (mehrere Schreibweisen pro Verein).
-  - **Mit den Vereinen klären:** Schwimmbad (eigenes Symbol ok?), Lesegesellschaft (gedreht ok?).
+  - **Mit den Vereinen klären (sind schon online):** Schwimmbad (eigenes Symbol ok?), Lesegesellschaft (gedreht ok?).
   - **Bessere Datei wäre gut:** Spielgruppe (Scan), Solardorf (sehr klein), Feuerwehr (klein), MG Brass Band und Kirche (Bildschirmfoto; Kirche hat SVG).
 - **Noch nicht im Formular (PC-Aufgabe, zuerst erklären):** Frage «Für wen ist der Anlass? Für alle offen / Nur für Mitglieder»
   und die passende Spalte «Für wen» im Blatt «Kalender». Bis dahin gelten alle Anlässe als «für alle offen».
