@@ -27,7 +27,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Liste:** «Diese Woche im Dorf», «Nächste Woche», dann Monate; 20 Anlässe, dann «Weitere anzeigen» (beim Suchen alle).
   Karten: Datum links («Heute» grün), Farbstreifen + Etikett je Kategorie, Vereinslogo oben rechts (nur wenn vorhanden),
   (Etikett «Nur für Mitglieder» vorbereitet, aber vorerst nicht im Einsatz). Antippen → Fenster mit «📅 In meinen Kalender» und «Alle Anlässe von …».
-- **Kategorien** als Knöpfe (Gemeinde, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Andere); auf dem Handy zugeklappt.
+- **Kategorien** als Knöpfe (Gemeinde, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Entsorgung, Andere); auf dem Handy zugeklappt.
   «Verkehrsverein Rehetobel» und «Gemeinde Rehetobel» aus der Tabelle werden automatisch zu «Vereine» bzw. «Gemeinde».
 - Monat und Terminplanung bleiben als Ansichten (Reiter unter der Suche). Planungskalender und `?einbetten=1` funktionieren weiter.
 - **«Dorfkalender aufs Handy»** (7.11.): eigenes quadratisches Symbol (Kalenderblatt in VVR-Farben, Wahl B, `bilder/app/`), Name «Dorfkalender» (`manifest.webmanifest`),
@@ -42,7 +42,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   - **Bessere Datei wäre gut:** Spielgruppe (Scan), Solardorf (sehr klein), Feuerwehr (klein), MG Brass Band und Kirche (Bildschirmfoto; Kirche hat SVG).
 - **«Nur für Mitglieder» vorerst nicht** (Entscheid 7.11.): keine Formularfrage, kein Etikett sichtbar. Falls später doch:
   Spalte «Für wen» im Blatt «Kalender» einzeln anhängen (z. B. `FILTER({B:L\X:X}; …)`), **nie** B:P o. ä. (sonst Kontaktdaten öffentlich).
-- **PC-Aufgabe (zuerst erklären):** Kategorie-Auswahl im Formular ohne «Verkehrsverein», neue Reihenfolge.
+- **PC-Aufgabe (zuerst erklären):** Kategorie-Auswahl im Formular ohne «Verkehrsverein», neu mit «Entsorgung», neue Reihenfolge.
   Ideenspeicher: Veranstalter als Auswahlliste (für die Logos).
 - **Später besprechen:** Was gehört überhaupt in den Dorfkalender (z. B. Proben, Übungen, Sitzungen)?
 

@@ -32,9 +32,9 @@ Nächster Schritt (Vorschlag): eine **Vorschau** des optimalen Kalenders zum Ans
 ohne das laufende System zu ändern.
 
 ## Was in den Kalender gehört
-- Anlässe **in Rehetobel**: Vereine, Gemeinde, Kirche, Schule, Gewerbe, Parteien, Kommissionen. Ausnahme: Haus zur Stickerei (Heiden).
-- **«Für alle offen»** erscheint standardmässig; **«Nur für Mitglieder»** (z. B. Übungen, Proben, Sitzungen) nur mit dem
-  Häkchen «Auch Anlässe nur für Mitglieder zeigen». 📋
+- Anlässe **in Rehetobel**: Vereine, Gemeinde, Kirche, Schule, Gewerbe, Parteien, Kommissionen. Ausnahme: Haus zur Stickerei (Heiden), solange dessen Leitung im VVR ist.
+- «Für alle offen» / «Nur für Mitglieder»: vorerst nicht unterschieden (Entscheid 7.11.); was überhaupt hinein gehört, wird noch besprochen.
+- **Entsorgung** (Grüngut, Papier, Altmetall) als eigene Kategorie (Entscheid 8.11.).
 - Auch öffentliche Anlässe des VVR selbst, z. B. die **Hauptversammlung** (viele Dorfbewohner kommen).
 - **Nicht** hinein: interne Sitzungen (z. B. Vorstandssitzungen) und Anlässe ausserhalb von Rehetobel
   (die gehören zu Appenzellerland Tourismus).

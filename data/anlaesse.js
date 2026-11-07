@@ -14,7 +14,7 @@
 //   gemeinde    z. B. "Rehetobel"
 //   veranstalter (optional)
 //   kategorie   Veranstalter-Gruppe: Gemeinde Rehetobel, Vereine, Schule, Kirche, Gewerbe,
-//               Parteien, Kommissionen, Andere («Verkehrsverein …» zeigt die Webseite bei «Vereine»)
+//               Parteien, Kommissionen, Entsorgung, Andere («Verkehrsverein …» zeigt die Webseite bei «Vereine»)
 //   beschreibung (optional)
 //   link        (optional) Webseite mit mehr Infos
 //   status      "fix" oder "provisorisch" (für die Terminplanung)
