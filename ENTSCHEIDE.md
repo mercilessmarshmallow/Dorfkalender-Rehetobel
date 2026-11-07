@@ -4,6 +4,9 @@ Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Ent
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
 ## 7.11.2026 (Design)
+- **Winterfotos (Dezember bis Februar):** zwei eigene Fotos des VVR (Langlauf, Schlittelhang), täglich abwechselnd; Herbstfoto
+  nur noch September bis November. Schrift links (keine Kirche im Bild), unten stärker abgedunkelt wegen weissem Schnee.
+  Bildnachweis in der Fusszeile: «Fotos: Appenzellerland Tourismus, Verkehrsverein Rehetobel» (Vorschlag, noch zu bestätigen).
 - **Alle Anlässe erscheinen immer, kein Häkchen mehr.** «Nur für Mitglieder» ist nur noch ein graues Etikett an der Karte.
   **Ersetzt** «Standard: nur Für alle offen; Nur für Mitglieder per Häkchen» (7.11. später). Später zu besprechen: was überhaupt in den Kalender gehört.
 - **«Heute» im Kalenderblatt grün** (Grün des Verkehrsvereins) statt schwarz.
