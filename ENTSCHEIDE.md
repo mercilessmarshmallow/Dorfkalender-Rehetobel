@@ -5,7 +5,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
 ## 8.11.2026 (Was gehört in den Kalender – erste Punkte, nach Durchsicht des alten Kalenders)
 - **Sammlungen dürfen rein:** Grüngut, Altmetall und Papiersammlung (eigentlich Abfallkalender der Gemeinde) – gemeinsam als
-  eine Art Anlass. Wie genau (eigene Kategorie? einzeln oder zusammengefasst?) noch offen.
+  eine Art Anlass, als **eigene Kategorie** (nicht unter «Gemeinde»). Name noch offen («Sammlungen» gefällt nicht ganz).
 - **Keine Anlässe ausserhalb von Rehetobel** (bestätigt; im alten Kalender waren es 2025 gut 60, z. B. Heiden, Wolfhalden).
   **Ausnahme Haus zur Stickerei (Heiden) bleibt** – solange dessen Leitung im Verkehrsverein ist.
 
