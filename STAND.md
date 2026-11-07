@@ -1,6 +1,6 @@
 # Stand Dorfkalender
 
-Stand: 6.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
+Stand: 7.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
 
 ## Läuft (eingerichtet am 6.11.2026, mit dem Handy getestet)
 - Webseite mit Liste, Monat und Terminplanung; Planungskalender über `?planung=…`.
@@ -18,11 +18,25 @@ Stand: 6.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
 - **Schönere Mails an die Vereine:** formatiert, Logo oben mit grüner Linie, Angaben im Kasten, rote Knöpfe,
   keine Umbrüche mitten im Satz. Programm erneuert (609 Zeilen, neue Version), mit echtem Mail geprüft ✓
 
+## Neues Design – Vorschau (7.11.2026, noch nicht gebaut)
+Vorschau mit Beispiel-Anlässen in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`), Entscheide siehe ENTSCHEIDE.md (7.11., Design).
+- Titelbild je nach Jahreszeit, Handy quadratisch; Schrift und Logo auf der Seite ohne Kirche; Baum-Foto als Variante (`?foto=baum`).
+- Karten: Datum links, Farbe je Kategorie (Streifen + Etikett), Vereinslogo rechts (nur wenn vorhanden);
+  Antippen öffnet Fenster mit «In meinen Kalender» und «Alle Anlässe von …». Kasten «Ein Angebot des Verkehrsvereins» mit «Mitglied werden».
+- **Logos vorhanden (16):** Verkehrsverein, Jugendmusik, Sportverein, Gemeinde, Gewerbeverein, Samariterverein Rehetobel-Wald,
+  Feuerwehr Wald Rehetobel, Reformierte Kirchgemeinde, Spielgruppe Rägeboge, MG Brass Band, FDP, Schwimmbad,
+  Ornithologischer Verein, Chor Rehetobel, Kinderzirkus Sonjolino, Solardorf. Alle anderen Vereine: (noch) kein Logo.
+- **Bessere Logo-Datei wäre gut bei:** Spielgruppe (Scan), Solardorf (nur Webseiten-Band, sehr klein), Feuerwehr (sehr klein),
+  MG Brass Band und Kirche (Bildschirmfoto; Kirche hat eine SVG-Datei), Schwimmbad (sehr breit, kompakte Version?).
+- **Offen:** Logo «Kontakte pflegen – Meinung bilden – Kultur geniessen»: welcher Verein? Darf es quer gedreht werden?
+- **Offen:** Baum-Foto ersetzt das Sommerfoto oder wechselt ab? Link «Mitglied werden» (ClubDesk-Seite) prüfen.
+- Hinweis: Logo wird über den Veranstalter-Namen zugeordnet → Veranstalter im Formular als Auswahlliste (Ideenspeicher).
+
 ## Noch offen
 - **Hinweis:** Der alte Kalender (rehetobel-tourismus.ch) läuft weiter; der neue ersetzt ihn erst, wenn er so weit ist (siehe Vision im KONZEPT).
 - **Vor dem Ersetzen des alten Kalenders:** kommende Anlässe aus dem alten Kalender übernehmen (iCal-Export vom Vorstand).
-- **Nächste Verbesserungen (entschieden 7.11., zuerst erklären, dann bauen):** öffentlich/vereinsintern mit Häkchen,
-  Liste kürzen (2 Wochen + «Weitere anzeigen»), Kasten «Nächste Anlässe».
+- **Nächste Verbesserungen (entschieden 7.11., zuerst erklären, dann bauen):** «Für alle offen» / «Nur für Mitglieder» mit Häkchen,
+  Liste kürzen (2 Wochen + «Weitere anzeigen»), neues Design wie in der Vorschau (siehe oben).
 - **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – Test erfolgreich, Liste liegt beim Vorstand.
 
 ## Kleinigkeiten offen
