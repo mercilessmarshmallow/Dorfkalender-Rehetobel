@@ -37,6 +37,8 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   - **Bessere Datei wäre gut:** Spielgruppe (Scan), Solardorf (sehr klein), Feuerwehr (klein), MG Brass Band und Kirche (Bildschirmfoto; Kirche hat SVG).
 - **Noch nicht im Formular (PC-Aufgabe, zuerst erklären):** Frage «Für wen ist der Anlass? Für alle offen / Nur für Mitglieder»
   und die passende Spalte «Für wen» im Blatt «Kalender». Bis dahin gelten alle Anlässe als «für alle offen».
+  ⚠️ Die neue Formularspalte landet rechts von den Kontaktspalten: Formel im Blatt «Kalender» **nicht** auf B:P o. ä. erweitern
+  (sonst werden Name und E-Mail öffentlich), sondern die Spalte einzeln anhängen, z. B. `FILTER({B:L\X:X}; …)`, und danach die CSV prüfen.
   Bei der Gelegenheit: Kategorie-Auswahl ohne «Verkehrsverein», neue Reihenfolge. Ideenspeicher: Veranstalter als Auswahlliste (für die Logos).
 - **Später besprechen:** Was gehört überhaupt in den Dorfkalender (z. B. Proben, Übungen, Sitzungen)?
 
