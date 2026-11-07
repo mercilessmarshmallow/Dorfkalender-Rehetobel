@@ -11,6 +11,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
   **Appenzellerland Tourismus**, die sie dem VVR zur Verfügung gestellt haben.
   Kleiner Bildnachweis «Foto: Appenzellerland Tourismus» oben rechts im Titelbild.
   **Titelbild je nach Jahreszeit:** März bis August Sommerfoto (blauer Himmel), September bis Februar Herbstfoto (beide von Appenzellerland Tourismus).
+  **Zwei Sommerfotos abwechselnd:** Kirchen-Foto und Baum-Foto wechseln sich täglich ab (ein Tag das eine, am nächsten das andere).
 - **Grundsatz Titelbild: Das Wichtigste im Bild wird nicht verdeckt** – vor allem die **Kirche** (das Wahrzeichen des Dorfes).
   Schrift und Knöpfe kommen auf die Seite, wo die Kirche nicht ist; bei jedem neuen Foto auf Handy und Laptop prüfen.
 - **Knopf «In meinen Kalender» statt «Erinnere mich»:** Wichtig ist, dass der Anlass in den eigenen Kalender kommt.
