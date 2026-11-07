@@ -33,7 +33,6 @@ Vorschau mit Beispiel-Anlässen in der Vorstandsablage (`ideen/originale/dorfkal
 - Gestaltung unabhängig geprüft (7.11.) und verbessert: Etiketten-Kontrast (Schule, Andere, Parteien waren zu hell), grössere Kleinschriften,
   Logo oben rechts in der Karte (Karten kürzer), Kategorie-Knöpfe umbrechend, Kirche beim Baum-Foto auch am Laptop frei.
   Grüne Zweitknöpfe bewusst behalten (Farbe aus dem VVR-Logo).
-- **Offen:** Wohin führt «Mitglied werden»? (heute ClubDesk-Startseite)
 - **Später besprechen:** Was gehört überhaupt in den Dorfkalender (z. B. Proben, Übungen, Sitzungen)?
 - **Beim Umsetzen nicht vergessen:** Formular-Auswahl «Kategorie» ohne «Verkehrsverein», neue Reihenfolge; bestehende Einträge anpassen.
 - Hinweis: Logo wird über den Veranstalter-Namen zugeordnet → Veranstalter im Formular als Auswahlliste (Ideenspeicher).

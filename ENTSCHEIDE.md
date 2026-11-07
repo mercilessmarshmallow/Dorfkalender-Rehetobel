@@ -4,6 +4,8 @@ Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Ent
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
 ## 7.11.2026 (Design)
+- **Kasten unten: «Den Verkehrsverein unterstützen und Mitglied werden»** – vorerst per Mail an info@rehetobel-tourismus.ch
+  (Knopf «Mail schreiben» mit Betreff «Mitglied werden», Adresse auch sichtbar). Vereinsadresse, keine Privatadresse.
 - **Vier Jahreszeiten im Titelbild:** März–Mai Frühling (zwei eigene Fotos: Löwenzahnwiese mit Säntis, Hütte), Juni–August Sommer
   (Kirche, Baum), September–November Herbst, Dezember–Februar Winter (drei Fotos). Mehrere Fotos wechseln täglich.
   **Ändert** «März bis August Sommerfoto» oben.
