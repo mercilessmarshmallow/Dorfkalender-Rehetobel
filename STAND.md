@@ -27,7 +27,7 @@ Vorschau mit Beispiel-Anlässen in der Vorstandsablage (`ideen/originale/dorfkal
   Feuerwehr Wald Rehetobel, Reformierte Kirchgemeinde, Spielgruppe Rägeboge, MG Brass Band, FDP, Schwimmbad,
   Ornithologischer Verein, Chor Rehetobel, Kinderzirkus Sonjolino, Solardorf, Lesegesellschaft Dorf Rehetobel (quer gedreht, Original hoch – mit dem Verein klären). Alle anderen Vereine: (noch) kein Logo.
 - **Bessere Logo-Datei wäre gut bei:** Spielgruppe (Scan), Solardorf (nur Webseiten-Band, sehr klein), Feuerwehr (sehr klein),
-  MG Brass Band und Kirche (Bildschirmfoto; Kirche hat eine SVG-Datei), Schwimmbad (sehr breit, kompakte Version?).
+  MG Brass Band und Kirche (Bildschirmfoto; Kirche hat eine SVG-Datei), Schwimmbad (sehr breit → in der Vorschau ein selbst gezeichnetes Schwimmer-Symbol in seinen Farben; vor dem Einsatz mit dem Schwimmbad absprechen).
 - Sommer: Kirchen- und Baum-Foto wechseln täglich ab (Entscheid 7.11.).
 - **Offen:** Wohin führt «Mitglied werden»? (heute ClubDesk-Startseite)
 - Hinweis: Logo wird über den Veranstalter-Namen zugeordnet → Veranstalter im Formular als Auswahlliste (Ideenspeicher).
