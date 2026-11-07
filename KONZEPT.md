@@ -16,7 +16,7 @@ Problem heute: unattraktiv, nicht auf der Gemeinde-Webseite, zu viele uninteress
 | Regelmässiges | wöchentliche Anlässe (z. B. Gottesdienst) zusammenfassen statt jede Woche einzeln | gut 📋 |
 | Bilder | **Vereinslogos**: Vereine schicken ihr Logo, es erscheint automatisch bei ihren Anlässen; sonst Bild pro Kategorie. Kein Hochladen im Formular (bräuchte Google-Konto) | gut 📋 |
 | «App» | Kalender als App auf den Startbildschirm (ohne App Store, gratis) | gut 📋 |
-| Erinnerung | Knopf «Erinnere mich» → Anlass im Handy-Kalender mit Erinnerung 1 Tag vorher (das Handy erinnert) | gut 📋 |
+| In meinen Kalender | Knopf «In meinen Kalender» im Fenster beim Antippen → Anlass im eigenen Handy-Kalender; Erinnerung stellt jede Person selbst ein (Entscheid 7.11.) | gut 📋 |
 | Benachrichtigungen | direkt aus der «App» | aufwändig, später |
 | Reichweite | **Gemeinde-Webseite (Zusage der Gemeinde)**, QR-Plakate, «Was läuft diese Woche» (Text für WhatsApp-Kanal/Gmäändsblatt), Jahresbüchli | gut 📋 |
 | Design | Foto von Rehetobel, Farben pro Kategorie, gut lesbar für Ältere | gut 📋 |

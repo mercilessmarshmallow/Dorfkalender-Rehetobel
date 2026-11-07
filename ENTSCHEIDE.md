@@ -12,8 +12,10 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
   **Titelbild je nach Jahreszeit:** März bis August Sommerfoto (blauer Himmel), September bis Februar Herbstfoto (beide von Appenzellerland Tourismus).
 - **Grundsatz Titelbild: Das Wichtigste im Bild wird nicht verdeckt** – vor allem die **Kirche** (das Wahrzeichen des Dorfes).
   Schrift und Knöpfe kommen auf die Seite, wo die Kirche nicht ist; bei jedem neuen Foto auf Handy und Laptop prüfen.
+- **Knopf «In meinen Kalender» statt «Erinnere mich»:** Wichtig ist, dass der Anlass in den eigenen Kalender kommt.
+  Keine fest eingebaute Erinnerung – die stellt jede Person im eigenen Kalender selbst ein. **Ersetzt** «Erinnerung» vom 7.11. (später).
 - **Karten in der Liste (Wunsch Projektleitung, in der Vorschau umgesetzt, noch nicht endgültig):** links wieder das Datum
-  wie beim jetzigen Kalender statt des grossen Vereinskreises; die Glocke ist zu gross → «Erinnere mich» kommt in das Fenster,
+  wie beim jetzigen Kalender statt des grossen Vereinskreises; die Glocke ist zu gross → der Kalender-Knopf kommt in das Fenster,
   das sich beim Antippen eines Anlasses öffnet. **Farbe je Kategorie** (Streifen links und Etikett, Farbpunkte bei den
   Such-Knöpfen) statt Bild in der Liste. Offen: Vereinslogo nur im Fenster beim Antippen oder gar nicht
   (betrifft den Entscheid «Vereinslogos» oben).
@@ -24,7 +26,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
   Standard: nur «Für alle offen»; «Nur für Mitglieder» per Häkchen nachschauen.
 - **Bilder ohne Google-Konto:** Kein Bild-Hochladen im Formular. Stattdessen **Vereinslogos**: Die Vereine schicken ihr Logo
   dem VVR, es wird einmal hinterlegt und erscheint automatisch bei jedem Anlass dieses Vereins.
-- **Erinnerung:** Knopf «Erinnere mich» legt den Anlass mit Erinnerung 1 Tag vorher in den Handy-Kalender; das Handy erinnert.
+- **Erinnerung** *(ersetzt durch «In meinen Kalender», siehe oben)*: Knopf «Erinnere mich» legt den Anlass mit Erinnerung 1 Tag vorher in den Handy-Kalender; das Handy erinnert.
 - **Gemeinde-Webseite:** Die Gemeinde hat zugestimmt, den Dorfkalender einzubinden.
 - **Schönes Design** wird jetzt angegangen.
 
