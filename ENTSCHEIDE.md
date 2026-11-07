@@ -7,7 +7,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 - **Sammlungen dürfen rein:** Grüngut, Altmetall und Papiersammlung (eigentlich Abfallkalender der Gemeinde) – gemeinsam als
   eine Art Anlass. Wie genau (eigene Kategorie? einzeln oder zusammengefasst?) noch offen.
 - **Keine Anlässe ausserhalb von Rehetobel** (bestätigt; im alten Kalender waren es 2025 gut 60, z. B. Heiden, Wolfhalden).
-  Offen: Gilt die Ausnahme Haus zur Stickerei weiterhin?
+  **Ausnahme Haus zur Stickerei (Heiden) bleibt** – solange dessen Leitung im Verkehrsverein ist.
 
 ## 7.11.2026 (Design)
 - **App-Symbol: Kalenderblatt in VVR-Farben** (Wahl «B» der Projektleitung): grüner Kopf, zwei rote und drei grüne Punkte wie im Logo;
