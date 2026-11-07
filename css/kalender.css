@@ -213,7 +213,9 @@ dialog.detail::backdrop { background: rgba(0,0,0,.4); }
 
 /* ---------- Kästen unten und Fuss ---------- */
 .app-hinweis { display: flex; gap: 12px; align-items: center; background: var(--gruen-hell); border-radius: var(--radius); padding: 14px; margin: 26px 0 8px; }
-.app-hinweis .symbol { width: 52px; height: 52px; border-radius: 12px; background: #fff; object-fit: contain; padding: 4px;
+.app-hinweis[hidden], .knopf[hidden] { display: none; }
+.app-hinweis .knopf { margin-top: 8px; padding: 7px 14px; font-size: .92rem; }
+.app-hinweis .symbol { width: 52px; height: 52px; border-radius: 12px; background: #fff; object-fit: contain;
   box-shadow: 0 1px 4px rgba(0,0,0,.12); flex: none; }
 .vvr-kasten { display: flex; gap: 14px; align-items: center; background: var(--flaeche); border-radius: var(--radius);
   border: 1px solid var(--linie); padding: 14px 16px; margin: 26px 0 8px; }

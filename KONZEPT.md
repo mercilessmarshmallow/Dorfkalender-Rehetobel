@@ -15,7 +15,7 @@ Problem heute: unattraktiv, nicht auf der Gemeinde-Webseite, zu viele uninteress
 | Zwei Arten | **«Für alle offen»** und **«Nur für Mitglieder»**: alle erscheinen, «Nur für Mitglieder» als Etikett (kein Häkchen). Keine «Highlights» (Entscheide 7.11.) | vorerst nicht (Entscheid 7.11.) |
 | Regelmässiges | wöchentliche Anlässe (z. B. Gottesdienst) zusammenfassen statt jede Woche einzeln | gut 📋 |
 | Bilder | **Vereinslogos**: Vereine schicken ihr Logo, es erscheint automatisch bei ihren Anlässen (Liste in `js/logos.js`); sonst einfach keines. Kein Hochladen im Formular (bräuchte Google-Konto) | ✅ (17 Logos) |
-| «App» | Kalender als App auf den Startbildschirm (ohne App Store, gratis) | gut 📋 |
+| «App» | Kalender als App auf den Startbildschirm (ohne App Store, gratis): eigenes Symbol, Name «Dorfkalender», Anleitung je nach Handy | ✅ (7.11.2026) |
 | In meinen Kalender | Knopf «In meinen Kalender» im Fenster beim Antippen → Anlass im eigenen Handy-Kalender; Erinnerung stellt jede Person selbst ein (Entscheid 7.11.) | ✅ |
 | Benachrichtigungen | direkt aus der «App» | aufwändig, später |
 | Reichweite | **Gemeinde-Webseite (Zusage der Gemeinde)**, QR-Plakate, «Was läuft diese Woche» (Text für WhatsApp-Kanal/Gmäändsblatt), Jahresbüchli | gut 📋 |

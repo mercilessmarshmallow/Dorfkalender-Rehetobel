@@ -404,6 +404,26 @@
 
   document.getElementById("suche").addEventListener("input", (e) => { zustand.suche = e.target.value; zustand.anzahl = PRO_SEITE; zeichne(); });
 
+  // ---------- «Dorfkalender aufs Handy» (Anleitung je nach Handy) ----------
+  (function appHinweis() {
+    const ua = navigator.userAgent;
+    const alsApp = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+    const iphone = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    const android = /Android/.test(ua);
+    if (alsApp || (!iphone && !android)) return;   // schon als App geöffnet oder Computer: kein Hinweis
+    document.getElementById("app-anleitung").innerHTML = iphone
+      ? "Unten auf den Teilen-Knopf <b>□↑</b> tippen, dann «Zum Home-Bildschirm». So ist der Kalender wie eine App immer dabei."
+      : "Oben rechts auf <b>⋮</b> tippen, dann «Zum Startbildschirm hinzufügen» (oder «App installieren»). So ist der Kalender wie eine App immer dabei.";
+    document.getElementById("app-hinweis").hidden = false;
+    // Android/Chrome bietet manchmal direkt «Installieren» an → eigener Knopf
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      const knopf = document.getElementById("app-installieren");
+      knopf.hidden = false;
+      knopf.onclick = async () => { e.prompt(); await e.userChoice; knopf.hidden = true; };
+    });
+  })();
+
   // Eingebettet (z. B. in ClubDesk): ?einbetten=1 blendet Kopf und Fuss aus
   if (new URLSearchParams(location.search).has("einbetten")) document.body.classList.add("eingebettet");
 

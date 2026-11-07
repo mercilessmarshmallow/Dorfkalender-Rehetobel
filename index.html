@@ -6,7 +6,13 @@
   <title>Dorfkalender Rehetobel</title>
   <meta name="description" content="Was läuft in Rechtobel? Alle Anlässe im Dorf – Vereine, Gemeinde, Schule, Kirche und Gewerbe.">
   <meta name="theme-color" content="#0b7a34">
-  <link rel="apple-touch-icon" href="bilder/logo.png">
+  <!-- «Dorfkalender aufs Handy»: Symbol und Name auf dem Startbildschirm -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="bilder/app/favicon-48.png">
+  <link rel="apple-touch-icon" href="bilder/app/icon-180.png">
+  <meta name="apple-mobile-web-app-title" content="Dorfkalender">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="stylesheet" href="css/kalender.css">
   <!-- Titelbild je nach Jahreszeit, bevor die Seite gezeichnet wird (siehe js/titelbild.js) -->
   <script src="js/titelbild.js"></script>
@@ -40,10 +46,12 @@
     <section id="ansicht-monat" class="ansicht" hidden></section>
     <section id="ansicht-planung" class="ansicht" hidden></section>
 
-    <div class="app-hinweis">
-      <img class="symbol" src="bilder/logo.png" alt="">
+    <!-- Hinweis passt sich dem Handy an (js/kalender.js); auf dem Computer und in der «App» selbst ausgeblendet -->
+    <div class="app-hinweis" id="app-hinweis" hidden>
+      <img class="symbol" src="bilder/app/icon-180.png" alt="">
       <div><strong>Dorfkalender aufs Handy</strong><br>
-        <span class="zeile">Teilen-Knopf → «Zum Home-Bildschirm» – dann ist der Kalender wie eine App immer dabei.</span></div>
+        <span class="zeile" id="app-anleitung"></span>
+        <button class="knopf knopf-rand" id="app-installieren" type="button" hidden>Als App installieren</button></div>
     </div>
 
     <div class="vvr-kasten">

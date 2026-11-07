@@ -196,6 +196,17 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   pruefe(bilder.every((b) => fs.existsSync(path.join(ROOT, b))), "alle Titelbilder vorhanden");
   const logoDateien = fs.readFileSync(path.join(ROOT, "js/logos.js"), "utf8").match(/datei: "([^"]+)"/g).map((s) => s.slice(8, -1));
   pruefe(logoDateien.length >= 17 && logoDateien.every((f) => fs.existsSync(path.join(ROOT, "bilder/logos", f))), "alle Vereinslogos vorhanden");
+  const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, "manifest.webmanifest"), "utf8"));
+  pruefe(manifest.short_name === "Dorfkalender" && manifest.icons.every((i) => fs.existsSync(path.join(ROOT, i.src))), "App-Angaben (Name, Symbole) vorhanden");
+  for (const [ua, wort, name] of [["Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Version/17.0 Mobile/15E148 Safari/604.1", /Home-Bildschirm/, "iPhone"],
+    ["Mozilla/5.0 (Linux; Android 14; SM-S911B) AppleWebKit/537.36 Chrome/120.0 Mobile Safari/537.36", /Startbildschirm/, "Android"]]) {
+    const c = await browser.newContext({ userAgent: ua, viewport: { width: 390, height: 800 } });
+    await c.route("https://docs.google.com/**", (r) => r.fulfill({ status: 200, contentType: "text/csv", body: csvZeilen.join("\n") + "\n" }));
+    const pg = await c.newPage(); await pg.goto("http://localhost:8765/index.html"); await pg.waitForSelector(".karte", { timeout: 5000 });
+    pruefe(await pg.isVisible("#app-hinweis") && wort.test(await pg.innerText("#app-hinweis")), `«Aufs Handy»: Anleitung fürs ${name}`);
+    await c.close();
+  }
+  pruefe(!(await n.isVisible("#app-hinweis")), "«Aufs Handy»: auf dem Computer ausgeblendet");
   pruefe(nFehler.length === 0, "keine Fehler im neuen Design " + nFehler.join("; "));
   await d.close();
 
