@@ -4,8 +4,8 @@ Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Ent
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
 ## 8.11.2026 (Was gehört in den Kalender – erste Punkte, nach Durchsicht des alten Kalenders)
-- **Sammlungen dürfen rein:** Grüngut, Altmetall und Papiersammlung (eigentlich Abfallkalender der Gemeinde) – gemeinsam als
-  eine Art Anlass, als **eigene Kategorie** (nicht unter «Gemeinde»). Name: **«Entsorgung»** (vorläufig, lässt sich leicht ändern). Kommt vor «Andere».
+- **Sammlungen (Grüngut, Altmetall, Papier) – nur als Idee, vorerst nicht im Kalender.** Falls später: eigene Kategorie,
+  Arbeitsname «Entsorgung». Siehe Ideenspeicher in KONZEPT.md.
 - **Keine Anlässe ausserhalb von Rehetobel** (bestätigt; im alten Kalender waren es 2025 gut 60, z. B. Heiden, Wolfhalden).
   **Ausnahme Haus zur Stickerei (Heiden) bleibt** – solange dessen Leitung im Verkehrsverein ist.
 
@@ -31,7 +31,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 - **Kategorien bleiben die Veranstalter-Gruppen**, aber **ohne eigene Kategorie «Verkehrsverein»**: Der VVR gehört zu den «Vereinen».
   **Reihenfolge nach Wichtigkeit:** Gemeinde, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Andere.
   **Ändert** die Kategorienliste vom 2.11. → im Formular die Auswahl «Verkehrsverein» entfernen und die Reihenfolge anpassen,
-  bestehende Einträge «Verkehrsverein» in der Tabelle auf «Vereine» ändern. (Themen-Kategorien besprochen, verworfen.) *(Ergänzt am 8.11.: neue Kategorie «Entsorgung» vor «Andere».)*
+  bestehende Einträge «Verkehrsverein» in der Tabelle auf «Vereine» ändern. (Themen-Kategorien besprochen, verworfen.)
 - **Handy: Kategorien zuerst zugeklappt** (Knopf «Nach Kategorie filtern ▾») – zuerst sieht man, was im Dorf läuft.
   Nach der Wahl klappt es wieder zu und zeigt «Kategorie: …». **Laptop: Kategorie-Knöpfe immer sichtbar.**
 - **Titelbild ohne Logo und ohne Bildnachweis** (Wunsch Projektleitung: stört das Design). Bildnachweis

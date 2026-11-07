@@ -24,7 +24,7 @@ Fragen genau so anlegen (die **Namen sind wichtig**, der Kalender liest sie):
 | 5 | **Zeit bis** (Ende) | Uhrzeit | |
 | 6 | **Ort** (z. B. «Gemeindezentrum») | Kurzantwort | ✅ |
 | 7 | **Veranstalter** (Name des Vereins/der Firma) | Kurzantwort | ✅ |
-| 8 | **Kategorie** | Drop-down: Gemeinde Rehetobel, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Entsorgung, Andere («Entsorgung» = Grüngut, Papier, Altmetall, seit 8.11.2026; seit 7.11.2026 ohne «Verkehrsverein» – der VVR gehört zu den Vereinen; alte Einträge «Verkehrsverein Rehetobel» zeigt die Webseite automatisch bei «Vereine») | ✅ |
+| 8 | **Kategorie** | Drop-down: Gemeinde Rehetobel, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Andere (seit 7.11.2026 ohne «Verkehrsverein» – der VVR gehört zu den Vereinen; alte Einträge «Verkehrsverein Rehetobel» zeigt die Webseite automatisch bei «Vereine») | ✅ |
 | 9 | **Beschreibung** | Absatz | |
 | 10 | **Link** (Webseite mit mehr Infos) | Kurzantwort | |
 | 11 | **Status** | Drop-down: fix, provisorisch | ✅ |

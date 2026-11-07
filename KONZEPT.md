@@ -34,7 +34,6 @@ ohne das laufende System zu ändern.
 ## Was in den Kalender gehört
 - Anlässe **in Rehetobel**: Vereine, Gemeinde, Kirche, Schule, Gewerbe, Parteien, Kommissionen. Ausnahme: Haus zur Stickerei (Heiden), solange dessen Leitung im VVR ist.
 - «Für alle offen» / «Nur für Mitglieder»: vorerst nicht unterschieden (Entscheid 7.11.); was überhaupt hinein gehört, wird noch besprochen.
-- **Entsorgung** (Grüngut, Papier, Altmetall) als eigene Kategorie (Entscheid 8.11.).
 - Auch öffentliche Anlässe des VVR selbst, z. B. die **Hauptversammlung** (viele Dorfbewohner kommen).
 - **Nicht** hinein: interne Sitzungen (z. B. Vorstandssitzungen) und Anlässe ausserhalb von Rehetobel
   (die gehören zu Appenzellerland Tourismus).
@@ -122,6 +121,8 @@ Titel · Datum · Bis · Zeit (Beginn) · Zeit (Ende) · Ort · Veranstalter · 
 Kontaktname und E-Mail erscheinen nie im öffentlichen Kalender.
 
 ## Ideenspeicher (6.11.2026, noch nicht entschieden) 📋
+- **Entsorgung als Kategorie (8.11.):** Grüngut, Altmetall und Papiersammlung (eigentlich Abfallkalender der Gemeinde) als
+  eigene Kategorie «Entsorgung». Vorerst nicht umsetzen, nur Idee (Projektleitung 8.11.).
 - **Eigene Adresse statt «mercilessmarshmallow»:** Ablage in eine GitHub-Organisation des Vereins (gehört dem Vereins-Gmail)
   umziehen und Adresse **kalender.rehetobel-tourismus.ch** (DNS-Eintrag bei green.ch). Löst auch die Übergabe.
   Die Domain rehetobel-tourismus.ch gehört dem VVR (green.ch, Logins beim Vorstand) – geklärt 6.11.2026.

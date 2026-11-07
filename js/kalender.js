@@ -46,12 +46,11 @@
   // ---------- Kategorien (Reihenfolge nach Wichtigkeit, Entscheid 7.11.2026) ----------
   // Der Verkehrsverein gehört zu den Vereinen; «Gemeinde Rehetobel» heisst kurz «Gemeinde».
   const FARBE = { "Gemeinde": "#1f5fa8", "Vereine": "#0b7a34", "Schule": "#d97a1f", "Kirche": "#7b4fa8", "Gewerbe": "#9a5a2e",
-    "Parteien": "#0e7c86", "Kommissionen": "#5d6b7a", "Entsorgung": "#6e7f1c", "Andere": "#8a8a8a" };
+    "Parteien": "#0e7c86", "Kommissionen": "#5d6b7a", "Andere": "#8a8a8a" };
   function kategorieVon(k) {
     const t = String(k || "").trim();
     if (/^gemeinde/i.test(t)) return "Gemeinde";
     if (/^verkehrsverein|^verein/i.test(t)) return "Vereine";
-    if (/entsorgung|sammlung|abfall|recycling|grüngut/i.test(t)) return "Entsorgung";   // Grüngut, Papier, Altmetall (Entscheid 8.11.)
     const bekannt = Object.keys(FARBE).find((n) => n.toLowerCase() === t.toLowerCase());
     return bekannt || t;
   }

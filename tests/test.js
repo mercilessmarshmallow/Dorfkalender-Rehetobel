@@ -165,22 +165,19 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   csvZeilen.push("Probe Chor,09.12.2026,,20:00,,Schulhaus,Chor Rehetobel,Vereine,,,,Nur für Mitglieder");
   csvZeilen.push("HV Verkehrsverein,08.12.2026,,19:30,,Krone,Verkehrsverein Rehetobel,Verkehrsverein Rehetobel,,,,Für alle offen");
   csvZeilen.push("Gemeindeversammlung,07.12.2026,,20:00,,Gemeindezentrum,Gemeinde Rehetobel,Gemeinde Rehetobel,,,,");
-  csvZeilen.push("Grüngutsammlung,31.12.2026,,08:00,,Werkhof,Gemeinde Rehetobel,Grüngutsammlung,,,,");
   await d.route("https://docs.google.com/**", (r) => r.fulfill({ status: 200, contentType: "text/csv", body: csvZeilen.join("\n") + "\n" }));
   const n = await d.newPage(); const nFehler = []; n.on("pageerror", (e) => nFehler.push(e.message));
   await n.clock.setFixedTime(new Date("2026-12-07T10:00:00"));
   await n.goto("http://localhost:8765/index.html"); await n.waitForSelector(".karte", { timeout: 5000 });
-  pruefe(await n.locator(".karte").count() === 20 && /Weitere Anlässe anzeigen \(9\)/.test(await n.innerText("#ansicht-liste")), "zuerst 20 Anlässe, dann «Weitere Anlässe anzeigen»");
+  pruefe(await n.locator(".karte").count() === 20 && /Weitere Anlässe anzeigen \(8\)/.test(await n.innerText("#ansicht-liste")), "zuerst 20 Anlässe, dann «Weitere Anlässe anzeigen»");
   await n.click("[data-mehr]");
-  pruefe(await n.locator(".karte").count() === 29, "«Weitere» zeigt den Rest");
+  pruefe(await n.locator(".karte").count() === 28, "«Weitere» zeigt den Rest");
   const kats = await n.locator("#kategorien .kat-knopf").allInnerTexts();
-  pruefe(kats.join(",") === "Alle,Gemeinde,Vereine,Schule,Kirche,Gewerbe,Parteien,Kommissionen,Entsorgung,Andere", "Kategorien in der Reihenfolge nach Wichtigkeit, ohne «Verkehrsverein»");
+  pruefe(kats.join(",") === "Alle,Gemeinde,Vereine,Schule,Kirche,Gewerbe,Parteien,Kommissionen,Andere", "Kategorien in der Reihenfolge nach Wichtigkeit, ohne «Verkehrsverein»");
   pruefe(!(await n.isVisible("#kategorien")) && await n.isVisible("#kat-auf"), "Handy: Kategorien zuerst zugeklappt");
   await n.click("#kat-auf"); await n.click('.kat-knopf[data-kat="Gemeinde"]');
   pruefe((await n.locator(".karte").count()) === 1 && /Kategorie: Gemeinde/.test(await n.innerText("#kat-auf")) && !(await n.isVisible("#kategorien")),
     "Kategorie «Gemeinde» (auch «Gemeinde Rehetobel») filtert, klappt wieder zu");
-  await n.click("#kat-auf"); await n.click('.kat-knopf[data-kat="Entsorgung"]');
-  pruefe((await n.locator(".karte").count()) === 1 && /Grüngutsammlung[\s\S]*Entsorgung/.test(await n.innerText("#ansicht-liste")), "«Grüngutsammlung» erscheint unter «Entsorgung»");
   await n.click("#kat-auf"); await n.click('.kat-knopf[data-kat="Vereine"]');
   const vereine = await n.innerText("#ansicht-liste");
   pruefe(/HV Verkehrsverein/.test(vereine), "Verkehrsverein erscheint bei den Vereinen");
