@@ -120,6 +120,32 @@ Titel · Datum · Bis · Zeit (Beginn) · Zeit (Ende) · Ort · Veranstalter · 
 **Kann das Datum verschoben werden? (Ja/Nein)** 📋 (ersetzt «Status fix/provisorisch»; nur wichtig für Planungsmeldungen) · Name der Kontaktperson · E-Mail (Pflicht).
 Kontaktname und E-Mail erscheinen nie im öffentlichen Kalender.
 
+## Vorschlag 8.11.2026: Kategorien nach Thema und «Meine Auswahl» 📋 (noch nicht entschieden)
+Grundlage: alle 457 Anlässe 2025 und die kommenden Anlässe im alten Kalender; andere Kalender
+(Zürich Tourismus: Highlights, Musik, Traditionen, Sport; Appenzell: Brauchtum, Kultur, Sport; Familienportale: nach Alter;
+Gemeinden wie Köniz oder Rüti: Agenda + Vereinsverzeichnis). Gemeinsam ist: Man sucht nach **Thema** («was?»), nicht nach
+Veranstalter-Gruppe («wer?»). Wer es macht, zeigt bei uns schon das Vereinslogo.
+
+**Themen (10 statt 8 Veranstalter-Gruppen):** Musik & Kultur · Feste & Märkte · Sport & Natur · Kinder & Familie ·
+Senioren & Treffpunkt · Kirche · Gemeinde & Politik · Vereinsleben (Übungen, Proben, Versammlungen, Höcks) ·
+Entsorgung (nur Idee, siehe Ideenspeicher) · Andere.
+Zahlen aus dem alten Kalender (8.11.2026–31.1.2027, 69 Anlässe): Vereinsleben 14, Feste & Märkte 14, Kirche 13,
+Musik & Kultur 10, je 4 Sport & Natur / Senioren / Gemeinde / Kinder, Entsorgung 2.
+
+**Meine Auswahl (auf dem Handy gespeichert, ohne Anmeldung):**
+- Man wählt mit Häkchen, was einen interessiert. Standard: alles ausser «Vereinsleben» (und «Entsorgung»).
+- Liste: von den nächsten 20 Anlässen stehen die ausgewählten **oben**, dann ein **Strich «Weitere Anlässe im Dorf»** und
+  darunter die übrigen, etwas kleiner. Nichts verschwindet.
+- **«☆ Immer oben»** bei einem Verein (z. B. Jugendmusik): dessen Anlässe stehen immer oben, mit ★.
+- **«📅 Alle in meinen Kalender»** (Verein oder Thema): Kalender-Abo, neue Anlässe kommen automatisch dazu.
+  Technisch über das Google-Programm (Web-App liefert einen Kalender-Link). ⚠ Unsicher, auf dem Handy testen:
+  iPhone kann so ein Abo mit einem Tipp; **Android/Google-Kalender** kann Abos nur über calendar.google.com am Computer
+  hinzufügen – Alternative dort: einmalig alle kommenden Anlässe als Datei.
+- Löst nebenbei «Nur für Mitglieder»: Übungen und Proben stehen als «Vereinsleben» unten, ohne neue Formularfrage.
+- **Auswirkungen:** ändert den Entscheid «Kategorien = Veranstalter-Gruppen» (7.11.); Formularfrage «Kategorie» neu;
+  bestehende Einträge neu zuordnen (besser vor den Anlässen 2027). Monat/Terminplanung bleiben.
+- Vorschau zum Anschauen: Vorstandsablage `ideen/originale/dorfkalender-vorschau-auswahl/`.
+
 ## Ideenspeicher (6.11.2026, noch nicht entschieden) 📋
 - **Entsorgung als Kategorie (8.11.):** Grüngut, Altmetall und Papiersammlung (eigentlich Abfallkalender der Gemeinde) als
   eigene Kategorie «Entsorgung». Vorerst nicht umsetzen, nur Idee (Projektleitung 8.11.).
