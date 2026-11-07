@@ -103,6 +103,8 @@ Kontaktname und E-Mail erscheinen nie im öffentlichen Kalender.
 - Aussehen: Foto von Rehetobel im Kopf, Farben pro Kategorie, grössere Schrift für Ältere.
 - «Diese Woche im Dorf» oben auf der Seite; Teilen per WhatsApp; QR-Code-Plakat für Anschlagbrett und Prospektständer.
 - Übersicht für den VVR: welche Vereine noch nichts gemeldet haben.
+- **Lange Liste kürzen:** Die Liste zeigt heute alle Anlässe ab heute (keine Seiten). Der alte Kalender zeigte 10 pro Seite.
+  Vorschlag: zuerst die nächsten 2–3 Monate, dann Knopf «Weitere Anlässe anzeigen» und/oder Monatsleiste zum Springen.
 - **Übergabe-Anleitung** (wenn die Projektleitung wechselt): Google-Konto (Passwort, Wiederherstellung, Telefon, Passkey),
   GitHub-Ablage, Skripteigenschaft `PRUEF_MAILS_AUCH_AN`. Wird angelegt, sobald die GitHub-Frage entschieden ist.
 
