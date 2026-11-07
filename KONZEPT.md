@@ -12,7 +12,7 @@ Problem heute: unattraktiv, nicht auf der Gemeinde-Webseite, zu viele uninteress
 
 | Baustein | Idee | Machbarkeit |
 |---|---|---|
-| Zwei Arten | **«Für alle offen»** und **«Nur für Mitglieder»**: alle erscheinen, «Nur für Mitglieder» als Etikett (kein Häkchen). Keine «Highlights» (Entscheide 7.11.) | Webseite ✅, Formularfrage 📋 |
+| Zwei Arten | **«Für alle offen»** und **«Nur für Mitglieder»**: alle erscheinen, «Nur für Mitglieder» als Etikett (kein Häkchen). Keine «Highlights» (Entscheide 7.11.) | vorerst nicht (Entscheid 7.11.) |
 | Regelmässiges | wöchentliche Anlässe (z. B. Gottesdienst) zusammenfassen statt jede Woche einzeln | gut 📋 |
 | Bilder | **Vereinslogos**: Vereine schicken ihr Logo, es erscheint automatisch bei ihren Anlässen (Liste in `js/logos.js`); sonst einfach keines. Kein Hochladen im Formular (bräuchte Google-Konto) | ✅ (17 Logos) |
 | «App» | Kalender als App auf den Startbildschirm (ohne App Store, gratis) | gut 📋 |

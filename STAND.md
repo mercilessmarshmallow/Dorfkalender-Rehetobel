@@ -26,7 +26,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Nachweis in der Fusszeile «Fotos: Appenzellerland Tourismus, Verkehrsverein Rehetobel» (ohne Namen).
 - **Liste:** «Diese Woche im Dorf», «Nächste Woche», dann Monate; 20 Anlässe, dann «Weitere anzeigen» (beim Suchen alle).
   Karten: Datum links («Heute» grün), Farbstreifen + Etikett je Kategorie, Vereinslogo oben rechts (nur wenn vorhanden),
-  Etikett «Nur für Mitglieder». Antippen → Fenster mit «📅 In meinen Kalender» und «Alle Anlässe von …».
+  (Etikett «Nur für Mitglieder» vorbereitet, aber vorerst nicht im Einsatz). Antippen → Fenster mit «📅 In meinen Kalender» und «Alle Anlässe von …».
 - **Kategorien** als Knöpfe (Gemeinde, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Andere); auf dem Handy zugeklappt.
   «Verkehrsverein Rehetobel» und «Gemeinde Rehetobel» aus der Tabelle werden automatisch zu «Vereine» bzw. «Gemeinde».
 - Monat und Terminplanung bleiben als Ansichten (Reiter unter der Suche). Planungskalender und `?einbetten=1` funktionieren weiter.
@@ -36,11 +36,10 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Lesegesellschaft (quer gedreht), FDP. Zuordnung über den Veranstalter-Namen (mehrere Schreibweisen pro Verein).
   - **Mit den Vereinen klären (sind schon online):** Schwimmbad (eigenes Symbol ok?), Lesegesellschaft (gedreht ok?).
   - **Bessere Datei wäre gut:** Spielgruppe (Scan), Solardorf (sehr klein), Feuerwehr (klein), MG Brass Band und Kirche (Bildschirmfoto; Kirche hat SVG).
-- **Noch nicht im Formular (PC-Aufgabe, zuerst erklären):** Frage «Für wen ist der Anlass? Für alle offen / Nur für Mitglieder»
-  und die passende Spalte «Für wen» im Blatt «Kalender». Bis dahin gelten alle Anlässe als «für alle offen».
-  ⚠️ Die neue Formularspalte landet rechts von den Kontaktspalten: Formel im Blatt «Kalender» **nicht** auf B:P o. ä. erweitern
-  (sonst werden Name und E-Mail öffentlich), sondern die Spalte einzeln anhängen, z. B. `FILTER({B:L\X:X}; …)`, und danach die CSV prüfen.
-  Bei der Gelegenheit: Kategorie-Auswahl ohne «Verkehrsverein», neue Reihenfolge. Ideenspeicher: Veranstalter als Auswahlliste (für die Logos).
+- **«Nur für Mitglieder» vorerst nicht** (Entscheid 7.11.): keine Formularfrage, kein Etikett sichtbar. Falls später doch:
+  Spalte «Für wen» im Blatt «Kalender» einzeln anhängen (z. B. `FILTER({B:L\X:X}; …)`), **nie** B:P o. ä. (sonst Kontaktdaten öffentlich).
+- **PC-Aufgabe (zuerst erklären):** Kategorie-Auswahl im Formular ohne «Verkehrsverein», neue Reihenfolge.
+  Ideenspeicher: Veranstalter als Auswahlliste (für die Logos).
 - **Später besprechen:** Was gehört überhaupt in den Dorfkalender (z. B. Proben, Übungen, Sitzungen)?
 
 ## Noch offen

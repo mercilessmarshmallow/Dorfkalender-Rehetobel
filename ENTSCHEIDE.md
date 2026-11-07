@@ -4,6 +4,9 @@ Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Ent
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
 ## 7.11.2026 (Design)
+- **«Nur für Mitglieder» vorerst nicht einführen** (Projektleitung, nach dem Veröffentlichen): keine Formularfrage «Für wen», kein Etikett.
+  Gehört zur späteren Diskussion «Was gehört überhaupt in den Kalender?». Die Webseite könnte es (optionale Spalte «Für wen»), zeigt aber
+  nichts, solange es die Spalte nicht gibt.
 - **Kasten unten: «Den Verkehrsverein unterstützen und Mitglied werden»** – vorerst per Mail an info@rehetobel-tourismus.ch
   (Knopf «Mail schreiben» mit Betreff «Mitglied werden», Adresse auch sichtbar). Vereinsadresse, keine Privatadresse.
 - **Vier Jahreszeiten im Titelbild:** März–Mai Frühling (zwei eigene Fotos: Löwenzahnwiese mit Säntis, Hütte), Juni–August Sommer
