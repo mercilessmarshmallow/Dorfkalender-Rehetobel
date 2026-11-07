@@ -3,6 +3,12 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 8.11.2026 (Was gehört in den Kalender – erste Punkte, nach Durchsicht des alten Kalenders)
+- **Sammlungen dürfen rein:** Grüngut, Altmetall und Papiersammlung (eigentlich Abfallkalender der Gemeinde) – gemeinsam als
+  eine Art Anlass. Wie genau (eigene Kategorie? einzeln oder zusammengefasst?) noch offen.
+- **Keine Anlässe ausserhalb von Rehetobel** (bestätigt; im alten Kalender waren es 2025 gut 60, z. B. Heiden, Wolfhalden).
+  Offen: Gilt die Ausnahme Haus zur Stickerei weiterhin?
+
 ## 7.11.2026 (Design)
 - **App-Symbol: Kalenderblatt in VVR-Farben** (Wahl «B» der Projektleitung): grüner Kopf, zwei rote und drei grüne Punkte wie im Logo;
   ersetzt das erste Symbol (ganzes VVR-Logo). Grund: als Kalender sofort erkennbar, passt zu den Vereinsfarben.
