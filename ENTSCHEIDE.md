@@ -9,7 +9,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
   **Ändert** «März bis August Sommerfoto» oben.
 - **Winterfotos (Dezember bis Februar):** drei eigene Fotos des VVR (Langlauf, Schlittelhang, verschneite Tannen), täglich abwechselnd; Herbstfoto
   nur noch September bis November. Schrift jeweils auf der Seite ohne Hauptmotiv, unten stärker abgedunkelt wegen weissem Schnee.
-  Bildnachweis in der Fusszeile: «Fotos: Appenzellerland Tourismus, Verkehrsverein Rehetobel» (Vorschlag, noch zu bestätigen).
+  Bildnachweis in der Fusszeile: «Fotos: Appenzellerland Tourismus, Verkehrsverein Rehetobel» – **ohne Namen des Fotografen** (bestätigt).
 - **Alle Anlässe erscheinen immer, kein Häkchen mehr.** «Nur für Mitglieder» ist nur noch ein graues Etikett an der Karte.
   **Ersetzt** «Standard: nur Für alle offen; Nur für Mitglieder per Häkchen» (7.11. später). Später zu besprechen: was überhaupt in den Kalender gehört.
 - **«Heute» im Kalenderblatt grün** (Grün des Verkehrsvereins) statt schwarz.
