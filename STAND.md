@@ -23,12 +23,11 @@ Vorschau mit Beispiel-Anlässen in der Vorstandsablage (`ideen/originale/dorfkal
 - Titelbild je nach Jahreszeit, Handy quadratisch; Schrift und Logo auf der Seite ohne Kirche; Baum-Foto als Variante (`?foto=baum`).
 - Karten: Datum links, Farbe je Kategorie (Streifen + Etikett), Vereinslogo rechts (nur wenn vorhanden);
   Antippen öffnet Fenster mit «In meinen Kalender» und «Alle Anlässe von …». Kasten «Ein Angebot des Verkehrsvereins» mit «Mitglied werden».
-- **Logos vorhanden (16):** Verkehrsverein, Jugendmusik, Sportverein, Gemeinde, Gewerbeverein, Samariterverein Rehetobel-Wald,
+- **Logos vorhanden (17):** Verkehrsverein, Jugendmusik, Sportverein, Gemeinde, Gewerbeverein, Samariterverein Rehetobel-Wald,
   Feuerwehr Wald Rehetobel, Reformierte Kirchgemeinde, Spielgruppe Rägeboge, MG Brass Band, FDP, Schwimmbad,
-  Ornithologischer Verein, Chor Rehetobel, Kinderzirkus Sonjolino, Solardorf. Alle anderen Vereine: (noch) kein Logo.
+  Ornithologischer Verein, Chor Rehetobel, Kinderzirkus Sonjolino, Solardorf, Lesegesellschaft Dorf Rehetobel (quer gedreht, Original hoch – mit dem Verein klären). Alle anderen Vereine: (noch) kein Logo.
 - **Bessere Logo-Datei wäre gut bei:** Spielgruppe (Scan), Solardorf (nur Webseiten-Band, sehr klein), Feuerwehr (sehr klein),
   MG Brass Band und Kirche (Bildschirmfoto; Kirche hat eine SVG-Datei), Schwimmbad (sehr breit, kompakte Version?).
-- **Offen:** Logo «Kontakte pflegen – Meinung bilden – Kultur geniessen»: welcher Verein? Darf es quer gedreht werden?
 - **Offen:** Baum-Foto ersetzt das Sommerfoto oder wechselt ab? Link «Mitglied werden» (ClubDesk-Seite) prüfen.
 - Hinweis: Logo wird über den Veranstalter-Namen zugeordnet → Veranstalter im Formular als Auswahlliste (Ideenspeicher).
 
