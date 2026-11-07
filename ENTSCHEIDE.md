@@ -3,8 +3,18 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 7.11.2026 (später)
+- **Keine «Highlights».** Es gibt nur zwei Arten: **«Für alle offen»** und **«Nur für Mitglieder»** (Begriffe statt
+  öffentlich/vereinsintern). Grund: Sonst müsste der VVR entscheiden, was ein Highlight ist – das führt zu Streit.
+  Standard: nur «Für alle offen»; «Nur für Mitglieder» per Häkchen nachschauen.
+- **Bilder ohne Google-Konto:** Kein Bild-Hochladen im Formular. Stattdessen **Vereinslogos**: Die Vereine schicken ihr Logo
+  dem VVR, es wird einmal hinterlegt und erscheint automatisch bei jedem Anlass dieses Vereins.
+- **Erinnerung:** Knopf «Erinnere mich» legt den Anlass mit Erinnerung 1 Tag vorher in den Handy-Kalender; das Handy erinnert.
+- **Gemeinde-Webseite:** Die Gemeinde hat zugestimmt, den Dorfkalender einzubinden.
+- **Schönes Design** wird jetzt angegangen.
+
 ## 7.11.2026
-- **Öffentlich und vereinsintern:** Der Dorfkalender zeigt standardmässig nur **öffentliche** Anlässe (für alle offen).
+- **Öffentlich und vereinsintern** *(Begriffe ersetzt durch «Für alle offen» / «Nur für Mitglieder», siehe oben)*: Der Dorfkalender zeigt standardmässig nur **öffentliche** Anlässe (für alle offen).
   Mit einem Häkchen «Auch vereinsinterne Anlässe zeigen» erscheinen alle (z. B. Samariterübung, Proben, Sitzungen),
   markiert als «vereinsintern». Grund: übersichtlich für die Bevölkerung, trotzdem nützlich für Vereinsmitglieder.
   Für Planung/Überschneidungen zählen immer alle Anlässe. Neue Formularfrage «Ist der Anlass öffentlich (für alle offen)?».

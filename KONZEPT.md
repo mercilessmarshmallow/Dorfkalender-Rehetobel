@@ -12,14 +12,13 @@ Problem heute: unattraktiv, nicht auf der Gemeinde-Webseite, zu viele uninteress
 
 | Baustein | Idee | Machbarkeit |
 |---|---|---|
-| Highlights | Konzerte, Dorffest, Jubiläen gross mit Bild oben; beim Annehmen «⭐ Highlight» tippen | gut 📋 |
+| Zwei Arten | **«Für alle offen»** (Standard) und **«Nur für Mitglieder»** (per Häkchen nachschauen). Keine «Highlights» (Entscheid 7.11.) | gut 📋 |
 | Regelmässiges | wöchentliche Anlässe (z. B. Gottesdienst) zusammenfassen statt jede Woche einzeln | gut 📋 |
-| Vereinsintern | nur mit Häkchen sichtbar (Entscheid 7.11.) | gut 📋 |
-| Bilder | Standardbild pro Kategorie; bei Highlights Bild-Link vom Verein oder vom VVR (Upload im Google-Formular braucht Google-Anmeldung) | gut 📋 |
+| Bilder | **Vereinslogos**: Vereine schicken ihr Logo, es erscheint automatisch bei ihren Anlässen; sonst Bild pro Kategorie. Kein Hochladen im Formular (bräuchte Google-Konto) | gut 📋 |
 | «App» | Kalender als App auf den Startbildschirm (ohne App Store, gratis) | gut 📋 |
-| Erinnerung | Knopf «Erinnere mich» → Anlass im Handy-Kalender mit Erinnerung 1 Tag vorher | gut 📋 |
+| Erinnerung | Knopf «Erinnere mich» → Anlass im Handy-Kalender mit Erinnerung 1 Tag vorher (das Handy erinnert) | gut 📋 |
 | Benachrichtigungen | direkt aus der «App» | aufwändig, später |
-| Reichweite | Gemeinde-Webseite, QR-Plakate, «Was läuft diese Woche» (Text für WhatsApp-Kanal/Gmäändsblatt), Jahresbüchli | gut 📋 |
+| Reichweite | **Gemeinde-Webseite (Zusage der Gemeinde)**, QR-Plakate, «Was läuft diese Woche» (Text für WhatsApp-Kanal/Gmäändsblatt), Jahresbüchli | gut 📋 |
 | Design | Foto von Rehetobel, Farben pro Kategorie, gut lesbar für Ältere | gut 📋 |
 
 Nächster Schritt (Vorschlag): eine **Vorschau** des optimalen Kalenders zum Anschauen und Diskutieren (auch für den Vorstand),
@@ -27,8 +26,8 @@ ohne das laufende System zu ändern.
 
 ## Was in den Kalender gehört
 - Anlässe **in Rehetobel**: Vereine, Gemeinde, Kirche, Schule, Gewerbe, Parteien, Kommissionen. Ausnahme: Haus zur Stickerei (Heiden).
-- **Öffentlich** (für alle offen) erscheint standardmässig; **vereinsintern** (z. B. Übungen, Proben, Sitzungen) nur mit dem
-  Häkchen «Auch vereinsinterne Anlässe zeigen». 📋
+- **«Für alle offen»** erscheint standardmässig; **«Nur für Mitglieder»** (z. B. Übungen, Proben, Sitzungen) nur mit dem
+  Häkchen «Auch Anlässe nur für Mitglieder zeigen». 📋
 - Auch öffentliche Anlässe des VVR selbst, z. B. die **Hauptversammlung** (viele Dorfbewohner kommen).
 - **Nicht** hinein: interne Sitzungen (z. B. Vorstandssitzungen) und Anlässe ausserhalb von Rehetobel
   (die gehören zu Appenzellerland Tourismus).
@@ -126,7 +125,9 @@ Kontaktname und E-Mail erscheinen nie im öffentlichen Kalender.
 - «Diese Woche im Dorf» oben auf der Seite; Teilen per WhatsApp; QR-Code-Plakat für Anschlagbrett und Prospektständer.
 - Übersicht für den VVR: welche Vereine noch nichts gemeldet haben.
 - **Liste kürzen** (entschieden 7.11.): zuerst diese und nächste Woche (ca. 20 Anlässe), dann «Weitere anzeigen». 📋
-- **Öffentlich / vereinsintern** (entschieden 7.11.): Formularfrage, Häkchen im Kalender, Etikett «vereinsintern». 📋
+- **Für alle offen / Nur für Mitglieder** (entschieden 7.11.): Formularfrage, Häkchen im Kalender, Etikett «nur für Mitglieder». 📋
+- **Vereinslogos:** Ordner `bilder/vereine/`, Zuordnung Veranstalter → Logo. Tipp: «Veranstalter» im Formular als Auswahlliste der Vereine,
+  damit die Namen immer gleich geschrieben sind (sonst klappt die automatische Zuordnung nicht). 📋
 - **Kasten «Nächste Anlässe»** für die Startseite der Vereinswebseite (wie die Spalte rechts im alten Kalender), mit Link «alle Veranstaltungen». 📋
 - **Anlässe aus dem alten Kalender übernehmen:** alle kommenden Anlässe als iCal-Datei aus dem alten Kalender exportieren
   (Vorstand) → Claude liest sie ein. Nötig vor der Umstellung, sonst fehlen Nov./Dez. 2026. 📋
