@@ -7,7 +7,8 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 - **Titelbild genau so wie in der Vorschau:** Foto von Rehetobel (Herbst, Kirche und Appenzeller Häuser) über die ganze Breite,
   Logo oben links in weissem Feld, darüber «Dorfkalender – Was läuft in Rechtobel?» und roter Knopf «+ Anlass melden»;
   das Suchfeld überlappt den unteren Bildrand. Vorschau in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`).
-  Offen: Bildrechte klären, bevor das Foto öffentlich wird; Sommerfoto für Frühling/Sommer.
+  Bildrechte geklärt: Das Foto stammt von **Appenzellerland Tourismus**, die es dem VVR zur Verfügung gestellt haben.
+  Kleiner Bildnachweis «Foto: Appenzellerland Tourismus» unten rechts im Titelbild. Offen: Sommerfoto für Frühling/Sommer.
 
 ## 7.11.2026 (später)
 - **Keine «Highlights».** Es gibt nur zwei Arten: **«Für alle offen»** und **«Nur für Mitglieder»** (Begriffe statt
