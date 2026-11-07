@@ -10,6 +10,11 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
   Bildrechte geklärt: Das Foto stammt von **Appenzellerland Tourismus**, die es dem VVR zur Verfügung gestellt haben.
   Kleiner Bildnachweis «Foto: Appenzellerland Tourismus» oben rechts im Titelbild.
   **Titelbild je nach Jahreszeit:** März bis August Sommerfoto (blauer Himmel), September bis Februar Herbstfoto (beide von Appenzellerland Tourismus).
+- **Grundsatz Titelbild: Das Wichtigste im Bild wird nicht verdeckt** – vor allem die **Kirche** (das Wahrzeichen des Dorfes).
+  Schrift und Knöpfe kommen auf die Seite, wo die Kirche nicht ist; bei jedem neuen Foto auf Handy und Laptop prüfen.
+- **Karten in der Liste (Wunsch Projektleitung, in der Vorschau umgesetzt, noch nicht endgültig):** links wieder das Datum
+  wie beim jetzigen Kalender statt des grossen Vereinskreises; die Glocke ist zu gross → «Erinnere mich» kommt in das Fenster,
+  das sich beim Antippen eines Anlasses öffnet.
 
 ## 7.11.2026 (später)
 - **Keine «Highlights».** Es gibt nur zwei Arten: **«Für alle offen»** und **«Nur für Mitglieder»** (Begriffe statt
