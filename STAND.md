@@ -30,6 +30,9 @@ Vorschau mit Beispiel-Anlässen in der Vorstandsablage (`ideen/originale/dorfkal
 - **Bessere Logo-Datei wäre gut bei:** Spielgruppe (Scan), Solardorf (nur Webseiten-Band, sehr klein), Feuerwehr (sehr klein),
   MG Brass Band und Kirche (Bildschirmfoto; Kirche hat eine SVG-Datei), Schwimmbad (sehr breit → in der Vorschau ein selbst gezeichnetes Schwimmer-Symbol in seinen Farben; vor dem Einsatz mit dem Schwimmbad absprechen).
 - Sommer: Kirchen- und Baum-Foto wechseln täglich ab (Entscheid 7.11.).
+- Gestaltung unabhängig geprüft (7.11.) und verbessert: Etiketten-Kontrast (Schule, Andere, Parteien waren zu hell), grössere Kleinschriften,
+  Logo oben rechts in der Karte (Karten kürzer), Kategorie-Knöpfe umbrechend, Kirche beim Baum-Foto auch am Laptop frei.
+  Grüne Zweitknöpfe bewusst behalten (Farbe aus dem VVR-Logo).
 - **Offen:** Wohin führt «Mitglied werden»? (heute ClubDesk-Startseite)
 - Hinweis: Logo wird über den Veranstalter-Namen zugeordnet → Veranstalter im Formular als Auswahlliste (Ideenspeicher).
 
