@@ -64,7 +64,11 @@
     beschreibung: ["beschreibung"],
     link: ["link", "webseite"],
     status: ["status"],
+    // «Für alle offen» / «Nur für Mitglieder» (Formularfrage, Entscheid 7.11.2026) – fehlt die Spalte, gilt «für alle offen»
+    offen: ["für wen", "für wen ist der anlass?", "öffentlich", "ist der anlass öffentlich (für alle offen)?", "für alle offen"],
   };
+  // «Nur für Mitglieder», «nein», «vereinsintern» → nur für Mitglieder
+  const nurMitglieder = (s) => /mitglied|^nein|intern/i.test((s || "").trim());
 
   function zuAnlaessen(zeilen) {
     const kopf = zeilen[0].map((h) => h.trim().toLowerCase());
@@ -86,6 +90,7 @@
         beschreibung: wert("beschreibung"),
         link: /^https?:\/\//.test(wert("link")) ? wert("link") : "",
         status: wert("status").toLowerCase().startsWith("prov") ? "provisorisch" : "fix",
+        nurMitglieder: nurMitglieder(wert("offen")),
       };
       if (a.bis && a.bis <= a.datum) a.bis = "";
       return a;
@@ -109,6 +114,7 @@
         veranstalter: x.veranstalter || "", kategorie: x.kategorie || "", beschreibung: x.beschreibung || "",
         link: /^https?:\/\//.test(x.link || "") ? x.link : "", status: "provisorisch",
         verschiebbar: String(x.verschiebbar || "").trim(),
+        nurMitglieder: nurMitglieder(x.offen),
       };
       if (a.bis && a.bis <= a.datum) a.bis = "";
       return a;

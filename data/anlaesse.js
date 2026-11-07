@@ -13,8 +13,8 @@
 //   ort         Lokalität, z. B. "Gemeindezentrum"
 //   gemeinde    z. B. "Rehetobel"
 //   veranstalter (optional)
-//   kategorie   Veranstalter-Gruppe: Gemeinde Rehetobel, Kirche, Schule, Vereine, Gewerbe,
-//               Parteien, Kommissionen, Verkehrsverein Rehetobel, Andere
+//   kategorie   Veranstalter-Gruppe: Gemeinde Rehetobel, Vereine, Schule, Kirche, Gewerbe,
+//               Parteien, Kommissionen, Andere («Verkehrsverein …» zeigt die Webseite bei «Vereine»)
 //   beschreibung (optional)
 //   link        (optional) Webseite mit mehr Infos
 //   status      "fix" oder "provisorisch" (für die Terminplanung)

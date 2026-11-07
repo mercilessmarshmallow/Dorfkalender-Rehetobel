@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 90" role="img" aria-label="Symbol Schwimmbad">
+  <!-- Selbst gezeichnetes Symbol (kein offizielles Logo), in den Farben des Schwimmbad-Logos -->
+  <rect width="120" height="90" rx="14" fill="#0077bb"/>
+  <circle cx="88" cy="42" r="8.5" fill="#fff"/>
+  <path d="M20 56 L70 50" stroke="#fff" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <path d="M50 52 Q60 22 100 30" stroke="#fff" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+  <path d="M10 68 q8 -7 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M10 80 q8 -7 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" stroke="#7ecbd3" stroke-width="5" stroke-linecap="round" fill="none"/>
+</svg>

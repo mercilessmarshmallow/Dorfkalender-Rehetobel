@@ -158,6 +158,47 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   pruefe(/Konzert/.test(oeff) && !/Turnfest/.test(oeff) && !(await k.$(".planung-hinweis")), "zeigt nur Freigegebenes, nichts aus der Planung");
   pruefe(kFehler.length === 0, "keine Fehler im Kalender " + kFehler.join("; "));
 
+  console.log("4b. Neues Design (7.11.2026)");
+  const d = await browser.newContext({ viewport: { width: 390, height: 800 } });
+  const csvZeilen = ["Titel,Datum,Bis,Zeit,Zeit bis,Ort,Veranstalter,Kategorie,Beschreibung,Link,Status,Für wen"];
+  for (let i = 0; i < 25; i++) csvZeilen.push(`Anlass ${i + 1},${String(i + 10).padStart(2, "0")}.12.2026,,19:00,,Gemeindezentrum,Testverein,Vereine,,,,Für alle offen`);
+  csvZeilen.push("Probe Chor,09.12.2026,,20:00,,Schulhaus,Chor Rehetobel,Vereine,,,,Nur für Mitglieder");
+  csvZeilen.push("HV Verkehrsverein,08.12.2026,,19:30,,Krone,Verkehrsverein Rehetobel,Verkehrsverein Rehetobel,,,,Für alle offen");
+  csvZeilen.push("Gemeindeversammlung,07.12.2026,,20:00,,Gemeindezentrum,Gemeinde Rehetobel,Gemeinde Rehetobel,,,,");
+  await d.route("https://docs.google.com/**", (r) => r.fulfill({ status: 200, contentType: "text/csv", body: csvZeilen.join("\n") + "\n" }));
+  const n = await d.newPage(); const nFehler = []; n.on("pageerror", (e) => nFehler.push(e.message));
+  await n.clock.setFixedTime(new Date("2026-12-07T10:00:00"));
+  await n.goto("http://localhost:8765/index.html"); await n.waitForSelector(".karte", { timeout: 5000 });
+  pruefe(await n.locator(".karte").count() === 20 && /Weitere Anlässe anzeigen \(8\)/.test(await n.innerText("#ansicht-liste")), "zuerst 20 Anlässe, dann «Weitere Anlässe anzeigen»");
+  await n.click("[data-mehr]");
+  pruefe(await n.locator(".karte").count() === 28, "«Weitere» zeigt den Rest");
+  const kats = await n.locator("#kategorien .kat-knopf").allInnerTexts();
+  pruefe(kats.join(",") === "Alle,Gemeinde,Vereine,Schule,Kirche,Gewerbe,Parteien,Kommissionen,Andere", "Kategorien in der Reihenfolge nach Wichtigkeit, ohne «Verkehrsverein»");
+  pruefe(!(await n.isVisible("#kategorien")) && await n.isVisible("#kat-auf"), "Handy: Kategorien zuerst zugeklappt");
+  await n.click("#kat-auf"); await n.click('.kat-knopf[data-kat="Gemeinde"]');
+  pruefe((await n.locator(".karte").count()) === 1 && /Kategorie: Gemeinde/.test(await n.innerText("#kat-auf")) && !(await n.isVisible("#kategorien")),
+    "Kategorie «Gemeinde» (auch «Gemeinde Rehetobel») filtert, klappt wieder zu");
+  await n.click("#kat-auf"); await n.click('.kat-knopf[data-kat="Vereine"]');
+  const vereine = await n.innerText("#ansicht-liste");
+  pruefe(/HV Verkehrsverein/.test(vereine), "Verkehrsverein erscheint bei den Vereinen");
+  pruefe(/Probe Chor[\s\S]*Nur für Mitglieder/.test(vereine), "Anlass «Nur für Mitglieder» erscheint, mit Etikett");
+  pruefe(await n.locator('.karte:has-text("HV Verkehrsverein") .vlogo img[src="bilder/logos/verkehrsverein.png"]').count() === 1
+    && await n.locator('.karte:has-text("Anlass 1") .vlogo').count() === 0, "Vereinslogo nur bei Vereinen mit Logo");
+  await n.locator('.karte:has-text("Probe Chor")').click();
+  pruefe(/In meinen Kalender/.test(await n.innerText("#detail")) && await n.locator("#detail .vlogo img").count() === 1, "Fenster: Logo und «In meinen Kalender»");
+  await n.click('#detail [data-verein]');
+  pruefe((await n.locator(".karte").count()) === 1 && /Alle Anlässe von Chor Rehetobel/.test(await n.innerText("#aktiver-verein")), "«Alle Anlässe von …» filtert nach Verein");
+  for (const [monat, klasse] of [[4, "fruehling"], [7, "sommer"], [10, "herbst"], [1, "winter"]]) {
+    await n.goto(`http://localhost:8765/index.html?monat=${monat}`);
+    pruefe(await n.evaluate((k) => document.documentElement.classList.contains(k), klasse), `Titelbild im Monat ${monat}: ${klasse}`);
+  }
+  const bilder = await n.evaluate(() => [...document.styleSheets[0].cssRules].map((r) => r.cssText).join(" ").match(/bilder\/titel\/[\w-]+\.jpg/g));
+  pruefe(bilder.every((b) => fs.existsSync(path.join(ROOT, b))), "alle Titelbilder vorhanden");
+  const logoDateien = fs.readFileSync(path.join(ROOT, "js/logos.js"), "utf8").match(/datei: "([^"]+)"/g).map((s) => s.slice(8, -1));
+  pruefe(logoDateien.length >= 17 && logoDateien.every((f) => fs.existsSync(path.join(ROOT, "bilder/logos", f))), "alle Vereinslogos vorhanden");
+  pruefe(nFehler.length === 0, "keine Fehler im neuen Design " + nFehler.join("; "));
+  await d.close();
+
   console.log("5. Nachmeldung annehmen / ablehnen (Gmail-App, angemeldetes Google-Konto)");
   pruefe(/Angenommen/.test(await tippe(konzertJa)) && g.spalte(1, "freigegeben") === "ja", "ein Tipp «Annehmen» → öffentlich («ja»)");
   pruefe(g.mails.some((m) => m.to === "verein@example.ch" && /ist im Dorfkalender/.test(m.subject)), "Mail «angenommen» an den Verein");

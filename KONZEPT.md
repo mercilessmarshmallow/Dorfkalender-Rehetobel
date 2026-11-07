@@ -14,7 +14,7 @@ Problem heute: unattraktiv, nicht auf der Gemeinde-Webseite, zu viele uninteress
 |---|---|---|
 | Zwei Arten | **«Für alle offen»** (Standard) und **«Nur für Mitglieder»** (per Häkchen nachschauen). Keine «Highlights» (Entscheid 7.11.) | gut 📋 |
 | Regelmässiges | wöchentliche Anlässe (z. B. Gottesdienst) zusammenfassen statt jede Woche einzeln | gut 📋 |
-| Bilder | **Vereinslogos**: Vereine schicken ihr Logo, es erscheint automatisch bei ihren Anlässen; sonst Bild pro Kategorie. Kein Hochladen im Formular (bräuchte Google-Konto) | gut 📋 |
+| Bilder | **Vereinslogos**: Vereine schicken ihr Logo, es erscheint automatisch bei ihren Anlässen (Liste in `js/logos.js`); sonst einfach keines. Kein Hochladen im Formular (bräuchte Google-Konto) | gut 📋 |
 | «App» | Kalender als App auf den Startbildschirm (ohne App Store, gratis) | gut 📋 |
 | In meinen Kalender | Knopf «In meinen Kalender» im Fenster beim Antippen → Anlass im eigenen Handy-Kalender; Erinnerung stellt jede Person selbst ein (Entscheid 7.11.) | gut 📋 |
 | Benachrichtigungen | direkt aus der «App» | aufwändig, später |
