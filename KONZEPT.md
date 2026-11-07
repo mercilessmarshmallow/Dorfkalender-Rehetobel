@@ -21,6 +21,13 @@ Problem heute: unattraktiv, nicht auf der Gemeinde-Webseite, zu viele uninteress
 | Reichweite | **Gemeinde-Webseite (Zusage der Gemeinde)**, QR-Plakate, «Was läuft diese Woche» (Text für WhatsApp-Kanal/Gmäändsblatt), Jahresbüchli | gut 📋 |
 | Design | Foto von Rehetobel, Farben pro Kategorie, gut lesbar für Ältere | gut 📋 |
 
+**Grundsatz: Übersichtlich suchen geht vor schönem Aussehen** (Projektleitung, 7.11.2026). Suchen nur mit drei Dingen:
+1. ein Suchfeld (sucht in Titel, Verein, Ort – «Samariter» findet alle Samariter-Anlässe),
+2. eine Reihe grosser Kategorie-Knöpfe (Vereine, Kirche, Schule, Gemeinde, Gewerbe …),
+3. ein Häkchen «Auch Anlässe nur für Mitglieder zeigen».
+Keine zusätzliche Vereinsliste beim Suchen; Tipp auf Logo/Vereinsnamen zeigt alle Anlässe dieses Vereins.
+Die Vereins-Auswahlliste im **Formular** sorgt nur für gleich geschriebene Namen (bessere Suche, Logo automatisch).
+
 Nächster Schritt (Vorschlag): eine **Vorschau** des optimalen Kalenders zum Anschauen und Diskutieren (auch für den Vorstand),
 ohne das laufende System zu ändern.
 
