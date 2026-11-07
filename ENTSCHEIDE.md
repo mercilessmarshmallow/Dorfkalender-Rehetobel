@@ -4,6 +4,9 @@ Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Ent
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
 ## 7.11.2026 (Design)
+- **Vier Jahreszeiten im Titelbild:** März–Mai Frühling (zwei eigene Fotos: Löwenzahnwiese mit Säntis, Hütte), Juni–August Sommer
+  (Kirche, Baum), September–November Herbst, Dezember–Februar Winter (drei Fotos). Mehrere Fotos wechseln täglich.
+  **Ändert** «März bis August Sommerfoto» oben.
 - **Winterfotos (Dezember bis Februar):** drei eigene Fotos des VVR (Langlauf, Schlittelhang, verschneite Tannen), täglich abwechselnd; Herbstfoto
   nur noch September bis November. Schrift jeweils auf der Seite ohne Hauptmotiv, unten stärker abgedunkelt wegen weissem Schnee.
   Bildnachweis in der Fusszeile: «Fotos: Appenzellerland Tourismus, Verkehrsverein Rehetobel» (Vorschlag, noch zu bestätigen).
