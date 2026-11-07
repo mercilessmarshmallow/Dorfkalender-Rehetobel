@@ -7,7 +7,8 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 - **Titelbild genau so wie in der Vorschau:** Foto von Rehetobel (Herbst, Kirche und Appenzeller Häuser) über die ganze Breite,
   Logo oben links in weissem Feld, darüber «Dorfkalender – Was läuft in Rechtobel?» und roter Knopf «+ Anlass melden»;
   das Suchfeld überlappt den unteren Bildrand. Vorschau in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`).
-  Bildrechte geklärt: Das Foto stammt von **Appenzellerland Tourismus**, die es dem VVR zur Verfügung gestellt haben.
+  Bildrechte geklärt: **Alle Fotos** (Herbst, Sommer, Sommer mit Baum, auch die quadratischen fürs Handy) stammen von
+  **Appenzellerland Tourismus**, die sie dem VVR zur Verfügung gestellt haben.
   Kleiner Bildnachweis «Foto: Appenzellerland Tourismus» oben rechts im Titelbild.
   **Titelbild je nach Jahreszeit:** März bis August Sommerfoto (blauer Himmel), September bis Februar Herbstfoto (beide von Appenzellerland Tourismus).
 - **Grundsatz Titelbild: Das Wichtigste im Bild wird nicht verdeckt** – vor allem die **Kirche** (das Wahrzeichen des Dorfes).
