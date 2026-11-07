@@ -8,7 +8,8 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
   Logo oben links in weissem Feld, darüber «Dorfkalender – Was läuft in Rechtobel?» und roter Knopf «+ Anlass melden»;
   das Suchfeld überlappt den unteren Bildrand. Vorschau in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`).
   Bildrechte geklärt: Das Foto stammt von **Appenzellerland Tourismus**, die es dem VVR zur Verfügung gestellt haben.
-  Kleiner Bildnachweis «Foto: Appenzellerland Tourismus» unten rechts im Titelbild. Offen: Sommerfoto für Frühling/Sommer.
+  Kleiner Bildnachweis «Foto: Appenzellerland Tourismus» oben rechts im Titelbild.
+  **Titelbild je nach Jahreszeit:** März bis August Sommerfoto (blauer Himmel), September bis Februar Herbstfoto (beide von Appenzellerland Tourismus).
 
 ## 7.11.2026 (später)
 - **Keine «Highlights».** Es gibt nur zwei Arten: **«Für alle offen»** und **«Nur für Mitglieder»** (Begriffe statt
