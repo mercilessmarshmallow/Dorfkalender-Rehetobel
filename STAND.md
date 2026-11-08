@@ -74,6 +74,8 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Vor dem Ersetzen des alten Kalenders:** kommende Anlässe aus dem alten Kalender übernehmen (iCal-Export vom Vorstand).
 - **Anlässe 2027 (8.11.):** Liste vom Vorstand (Excel + PDF) erhalten und umgeordnet (nur im Arbeitsordner von Claude, **nie in die Ablage**):
   ~270 Zeilen → 209 Anlässe mit Datum und Thema, 49 weggelassen (Sammlungen, ausserhalb Rehetobel, intern), 10 ohne Datum 2027.
+  Liste, Werkzeug und offene Fragen liegen in der **privaten** Vorstandsablage (`kalender/anlaesse-2027/`). Veranstalter werden
+  nicht erraten (78 offen, klärt die Projektleitung mit dem Vorstand).
   Wartet auf Okay der Projektleitung zu den Regeln und auf den Weg in die Tabelle (Tabelle mit privatem Google-Konto teilen → Claude
   trägt direkt ein, oder Import am PC). Danach Liste neu erzeugen (Werkzeug im Arbeitsordner; bei neuer Sitzung: Excel nochmals schicken).
 
