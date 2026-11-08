@@ -49,7 +49,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 ## Helfer für Claude (8.11.2026, gebaut)
 - Neu: **`handy-anschauer`** (`tests/anschauen.js`) und **`anlass-pruefer`** (`tests/anlaesse-pruefen.js`, liest nur Blatt «Kalender»
   über das geteilte private Google-Konto); **`kalender-pruefer`** prüft neu auch die Sprache. Siehe CLAUDE.md «Helfer».
-  Ändert nichts an der Webseite. Erster Probelauf Handy-Anschauer: alles in Ordnung.
+  Ändert nichts an der Webseite. Erster Probelauf Handy-Anschauer: alles in Ordnung. Auf main (8.11., Okay Projektleitung).
   **Nächster Einsatz:** `anlass-pruefer` vor dem PC-Termin → Liste der alten Kategorien und Lücken.
 
 ## Hier weitermachen (8.11.2026)
