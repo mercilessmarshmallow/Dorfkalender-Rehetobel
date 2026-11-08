@@ -47,7 +47,11 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Später besprechen:** Was gehört überhaupt in den Dorfkalender (z. B. Proben, Übungen, Sitzungen)?
 
 ## Noch offen
-- **Vorschlag 8.11. (KONZEPT): Themen statt Veranstalter-Gruppen + «Meine Auswahl»** – Projektleitung entscheidet; Vorschau in der Vorstandsablage.
+- **Themen + «Meine Auswahl» + Warnungen im Prüf-Mail (8.11.): gebaut auf dem Arbeitszweig, NICHT live.**
+  Vorschau für den Vorstand: https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/vorschau/ (mit Beispiel-Prüf-Mail).
+  Live schalten, wenn der Vorstand einverstanden ist – in einem Schritt: (1) Formular-Auswahl «Kategorie» auf die neun Themen,
+  (2) Programm in Apps Script erneuern (Teil A der Anleitung), (3) Webseite auf main, (4) Vorschau-Ordner löschen.
+  Bestehende Einträge in der Tabelle dann neu zuordnen (alte Gruppen werden teilweise übersetzt).
 - **Hinweis:** Der alte Kalender (rehetobel-tourismus.ch) läuft weiter; der neue ersetzt ihn erst, wenn er so weit ist (siehe Vision im KONZEPT).
 - **Vor dem Ersetzen des alten Kalenders:** kommende Anlässe aus dem alten Kalender übernehmen (iCal-Export vom Vorstand).
 - **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – Test erfolgreich, Liste liegt beim Vorstand.

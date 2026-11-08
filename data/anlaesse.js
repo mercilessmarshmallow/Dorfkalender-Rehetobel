@@ -30,7 +30,7 @@ window.ANLAESSE = [
     ort: "Dorf 5", gemeinde: "Rehetobel", veranstalter: "Verkehrsverein Rehetobel", kategorie: "Verkehrsverein Rehetobel",
     beschreibung: "Die Ortsvereine stimmen ihre Veranstaltungsdaten für das Jahr 2027 ab.", status: "fix" },
   { id: "a5", titel: "Ideenwerkstatt Apéro", datum: "2026-11-05", zeit: "17:30", zeitBis: "19:30",
-    ort: "Sägholzstrasse 11", gemeinde: "Rehetobel", kategorie: "Andere", status: "fix" },
+    ort: "Dorf", gemeinde: "Rehetobel", kategorie: "Andere", status: "fix" },
   { id: "a6", titel: "Traditionelles Frauenfrühstück", datum: "2026-11-07", zeit: "09:00",
     ort: "Haus zur Stickerei", gemeinde: "Heiden", kategorie: "Vereine", status: "fix" },
   { id: "a7", titel: "Weiherpflege Schutzgebiet Ettenberg", datum: "2026-11-07", zeit: "09:00",

@@ -120,7 +120,7 @@ Titel · Datum · Bis · Zeit (Beginn) · Zeit (Ende) · Ort · Veranstalter · 
 **Kann das Datum verschoben werden? (Ja/Nein)** 📋 (ersetzt «Status fix/provisorisch»; nur wichtig für Planungsmeldungen) · Name der Kontaktperson · E-Mail (Pflicht).
 Kontaktname und E-Mail erscheinen nie im öffentlichen Kalender.
 
-## Vorschlag 8.11.2026: Kategorien nach Thema und «Meine Auswahl» 📋 (noch nicht entschieden)
+## Themen und «Meine Auswahl» (entschieden 8.11.2026, gebaut, live mit dem neuen Formular) 📋
 Grundlage: alle 457 Anlässe 2025 und die kommenden Anlässe im alten Kalender; andere Kalender
 (Zürich Tourismus: Highlights, Musik, Traditionen, Sport; Appenzell: Brauchtum, Kultur, Sport; Familienportale: nach Alter;
 Gemeinden wie Köniz oder Rüti: Agenda + Vereinsverzeichnis). Gemeinsam ist: Man sucht nach **Thema** («was?»), nicht nach
