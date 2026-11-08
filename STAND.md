@@ -53,6 +53,9 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Vorschau Themen + «Meine Auswahl»** ist für den Vorstand online (…/vorschau/), Projektleitung schickt sie weiter.
   Live schalten erst nach Okay des Vorstands (Schritte siehe unten).
 - Arbeitszweig `claude/pensive-thompson-br689r` enthält die neue Seite + Programm (nicht live); main = jetziger Kalender + vorschau/.
+  ⚠ Darum **nie den ganzen Zweig auf main schieben** (`git push HEAD:main`), solange er unveröffentlichten Code enthält –
+  nur einzelne Dateien über einen eigenen Arbeitsordner auf main bringen. (8.11. passiert und nach ~2 Min. rückgängig gemacht.)
+  Main **nicht** in den Zweig übernehmen, sonst holt der Zweig das Rückgängig-Machen und verliert die neue Seite.
 
 ## Noch offen
 - **Themen + «Meine Auswahl» + Warnungen im Prüf-Mail (8.11.): gebaut auf dem Arbeitszweig, NICHT live.**
