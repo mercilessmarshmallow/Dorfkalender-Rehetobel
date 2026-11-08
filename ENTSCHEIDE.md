@@ -3,6 +3,20 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 8.11.2026 (Themen und «Meine Auswahl» – gebaut, noch nicht live)
+- **Kategorien nach Thema statt nach Veranstalter-Gruppe** (Projektleitung: «Einteilung recht gut», «ändere das»):
+  Musik & Kultur · Feste & Märkte · Sport & Natur · Kinder & Familie · Senioren & Treffpunkt · Kirche · Gemeinde & Politik ·
+  Vereinsleben · Kurse & Weiteres. Faustregel: «Was mache ich dort als Besucher?» (KONZEPT). Der Verein wählt im Formular.
+  **Ersetzt** «Kategorien bleiben die Veranstalter-Gruppen» und deren Reihenfolge (7.11.). «Andere» heisst «Kurse & Weiteres».
+- **«Meine Auswahl»:** Häkchen pro Thema, auf dem Handy gespeichert; zu Beginn alles ausser Vereinsleben. Von den nächsten
+  20 Anlässen stehen die gewählten oben, die übrigen unter dem Strich «Weitere Anlässe im Dorf». **«☆ Immer oben»** pro Verein.
+  **«📅 Alle in meinen Kalender»** pro Verein: vorerst eine Kalender-Datei mit allen kommenden Anlässen (Abo später).
+- **Hilfe beim Annehmen (Programm):** Prüf-Mail warnt, wenn die Kategorie von bisher abweicht, und wenn am gleichen Tag schon
+  ein Anlass der gleichen Hauptart (Musik & Kultur, Feste & Märkte, Sport & Natur) eingetragen ist; der Verein bekommt dann
+  einen Hinweis in der Eingangsbestätigung.
+- **Live erst zusammen mit dem Formular** (neue Kategorie-Auswahl) und dem erneuerten Programm. Bis dahin: Vorschau unter
+  `…/Dorfkalender-Rehetobel/vorschau/` für den Vorstand.
+
 ## 8.11.2026 (Was gehört in den Kalender – erste Punkte, nach Durchsicht des alten Kalenders)
 - **Sammlungen (Grüngut, Altmetall, Papier) – nur als Idee, vorerst nicht im Kalender.** Falls später: eigene Kategorie,
   Arbeitsname «Entsorgung». Siehe Ideenspeicher in KONZEPT.md.
