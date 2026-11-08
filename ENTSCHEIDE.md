@@ -7,6 +7,8 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 - **Themen und «Meine Auswahl» sofort live** (Projektleitung: «Die alten Kategorien waren Blödsinn … im Notfall gehen wir
   wieder zurück»). Der Vorstand wird vor vollendete Tatsachen gestellt statt vorher gefragt. Zurück geht jederzeit (alte Fassung im Verlauf).
   Die alte Vorschau-Adresse `…/vorschau/` leitet auf den Kalender weiter.
+  Projektleitung ist klar gegen die alten Kategorien; für den Notfall ist das Zurückschalten beschrieben in
+  `anleitungen/notfall-alte-kategorien.md`.
 - **Parteien:** Politische Anlässe einer Partei (Podium, Abstimmungs-Info) kommen unter **«Gemeinde & Politik»** – das Thema
   sagt, worum es geht, nicht wer einlädt; das Logo zeigt den Absender. Unpolitische Anlässe einer Partei (Brunch, Grillfest)
   nach Faustregel, z. B. «Feste & Märkte».

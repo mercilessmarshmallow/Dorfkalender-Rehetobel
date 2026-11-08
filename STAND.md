@@ -56,6 +56,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Themen + «Meine Auswahl» live (8.11., Entscheid Projektleitung, ohne auf den Vorstand zu warten).** Webseite auf main,
   `vorschau/` leitet auf den Kalender weiter. Alte Gruppen «Vereine»/«Gewerbe» bekommen auf der Webseite vorläufig ein Thema
   aus dem Titel (sonst «Kurse & Weiteres»). Zweig und main sind jetzt wieder gleich.
+  **Notfall zurück zu den alten Kategorien:** `anleitungen/notfall-alte-kategorien.md` (alt/neu, alter Stand `8b595f2`).
 - **PC-Termin der Projektleitung (Schritte einzeln geben, zuerst Termin abmachen):**
   1. Formular: Auswahl «Kategorie» → die neun Themen (Musik & Kultur, Feste & Märkte, Sport & Natur, Kinder & Familie,
      Senioren & Treffpunkt, Kirche, Gemeinde & Politik, Vereinsleben, Kurse & Weiteres), Hilfstext «Was macht man dort als Besucher?».
