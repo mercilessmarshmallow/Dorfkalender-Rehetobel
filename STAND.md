@@ -32,7 +32,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - Monat und Terminplanung bleiben als Ansichten (Reiter unter der Suche). Planungskalender und `?einbetten=1` funktionieren weiter.
 - **«Dorfkalender aufs Handy»** (7.11.): eigenes quadratisches Symbol (Kalenderblatt in VVR-Farben, Wahl B, `bilder/app/`), Name «Dorfkalender» (`manifest.webmanifest`),
   öffnet sich vom Startbildschirm ohne Adressleiste. Hinweis-Kasten mit Anleitung fürs iPhone bzw. Android; auf dem Computer und
-  in der «App» selbst ausgeblendet. **Android: getestet ✓** (Symbol, Name, Design, «In meinen Kalender» aus der App, 7.11.). **Noch testen:** iPhone hinzufügen; in der «App» prüfen, ob
+  in der «App» selbst ausgeblendet. **Android: getestet ✓** (Symbol, Name, Design, «In meinen Kalender» aus der App, 7.11.). **iPhone hinzufügen ✓ (8.11.).** **Noch testen:** in der iPhone-«App» prüfen, ob
   «📅 In meinen Kalender» funktioniert (iPhone-Apps vom Startbildschirm laden Dateien manchmal nicht).
 - Unten: «Dorfkalender aufs Handy» und «Den Verkehrsverein unterstützen und Mitglied werden» (Mail an info@rehetobel-tourismus.ch).
 - **Logos (17, `js/logos.js` + `bilder/logos/`):** Verkehrsverein, Gemeinde, Kirche, Jugendmusik, MG Brass Band, Chor, Sportverein,
@@ -47,9 +47,12 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Später besprechen:** Was gehört überhaupt in den Dorfkalender (z. B. Proben, Übungen, Sitzungen)?
 
 ## Hier weitermachen (8.11.2026)
-- **iPhone-Test «aufs Handy» läuft:** Webseite öffnet, «App herunterladen» geht nicht. Ursache noch NICHT geklärt –
-  Frage an die Projektleitung offen: Wo bleibt sie stecken (Teilen-Knopf nicht gefunden / «Zum Home-Bildschirm» fehlt /
-  kein Symbol)? Link in Safari geöffnet oder aus WhatsApp/Gmail? Nicht raten.
+- **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
+  (Symbol wie bei Android). Ursache des Problems: Der Hinweis-Kasten ist auf dem iPhone nur Text (Apple erlaubt keinen
+  Installieren-Knopf), sieht aber antippbar aus; und neuere iOS-Safari (iOS 26) hat unten keinen Teilen-Knopf mehr.
+  **Vorschlag offen (wartet auf Okay):** Kasten-Text korrigieren (••• → Teilen → Zum Home-Bildschirm, Zusatz für ältere iPhones
+  mit □↑) und Knopf «Zeig mir, wie» mit Bilder-Anleitung in 3 Schritten (aus Screenshots der Projektleitung). Erst Vorschau, dann main.
+  App-Store-App verworfen (Kosten, Aufwand). **Noch testen:** «📅 In meinen Kalender» in der iPhone-«App».
 - **Vorschau Themen + «Meine Auswahl»** ist für den Vorstand online (…/vorschau/), Projektleitung schickt sie weiter.
   Live schalten erst nach Okay des Vorstands (Schritte siehe unten).
 - Arbeitszweig `claude/pensive-thompson-br689r` enthält die neue Seite + Programm (nicht live); main = jetziger Kalender + vorschau/.
