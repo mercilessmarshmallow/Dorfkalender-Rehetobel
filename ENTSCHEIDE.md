@@ -3,6 +3,10 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 8.11.2026 (Feuerwehrverein-Logo)
+- **«Feuerwehrverein Rehetobel» bekommt das Feuerwehr-Logo** (Projektleitung: «Mit»). Schreibweise in `js/logos.js` ergänzt.
+  «Lesegesellschaft Kaien» bleibt ohne Logo (anderer Verein als die Lesegesellschaft Dorf).
+
 ## 8.11.2026 (Helfer für Claude)
 - **Zwei neue Helfer und Sprachprüfung** (Projektleitung: «1–3 sind gut»): `handy-anschauer` (Webseite wie auf iPhone, Android
   und Laptop anschauen, Bildschirmfotos) und `anlass-pruefer` (Lücken in den eingetragenen Anlässen finden, liest nur das

@@ -376,16 +376,18 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
       ["Lesung", "12.12.2026", "", "nachmittags", "", "Bibliothek", "Lesegesellschaft Lobenschwendi", "Musik & Kultur"],
       ["Markt", "46388", "", "0,5", "", "", "Gewerbeverein", "Gewerbe"],
       ["Stamm", "46512", "", "", "", "Dorf 5", "Feuerwehrverein Rehetobel", "Vereinsleben"],
+      ["Ständli", "46513", "", "19:00", "", "Dorf", "Jugendmusik Rehetobel-Wald", "Musik & Kultur"],
       ["Ohne Datum", "", "", "", "", "", "", ""],
       ["Vorbei", "01.01.2026", "", "", "", "", "", ""]], "2026-11-08");
-    pruefe(r.anzahl === 6 && r.kommend === 5, "zählt Anlässe wie die Webseite, prüft nur kommende");
+    pruefe(r.anzahl === 7 && r.kommend === 6, "zählt Anlässe wie die Webseite, prüft nur kommende");
     pruefe(r.unsichtbar.length === 1 && /Ohne Datum/.test(r.unsichtbar[0]), "meldet Zeilen, die nicht auf der Webseite erscheinen");
     pruefe(r.doppelt.length === 1, "findet doppelte Einträge");
     pruefe(r.alteKategorie.length === 1 && /Gewerbe/.test(r.alteKategorie[0]), "findet alte Kategorie statt Thema");
     pruefe(r.ohneZeit.length === 1 && /Stamm/.test(r.ohneZeit[0]), "ohne Zeit: «nachmittags» und «0,5» zählen als Zeit");
     pruefe(r.ohneOrt.length === 1 && /Markt/.test(r.ohneOrt[0]), "findet Anlässe ohne Ort");
-    pruefe(r.aehnlich.length === 1 && /Feuerwehrverein/.test(r.aehnlich[0]) && r.ohneLogo.some((x) => /Lobenschwendi/.test(x)),
-      "Logo fehlt wegen Schreibweise (Feuerwehrverein), aber andere Lesegesellschaft ist kein Treffer");
+    pruefe(r.aehnlich.length === 1 && /Jugendmusik Rehetobel-Wald/.test(r.aehnlich[0]) && r.ohneLogo.some((x) => /Lobenschwendi/.test(x)),
+      "Logo fehlt wegen Schreibweise (Jugendmusik Rehetobel-Wald), aber andere Lesegesellschaft ist kein Treffer");
+    pruefe(![...r.aehnlich, ...r.ohneLogo].some((x) => /Feuerwehrverein/.test(x)), "Feuerwehrverein hat das Feuerwehr-Logo (Entscheid 8.11.2026)");
     pruefe(r.gleicheArt.length === 1 && /Lesung/.test(r.gleicheArt[0]), "gleiche Art am gleichen Tag");
   }
 

@@ -13,7 +13,8 @@ window.KALENDER_LOGOS = [
   { datei: "sportverein.jpg",      namen: ["Sportverein Rehetobel", "Sportverein"] },
   { datei: "gewerbeverein.jpg",    namen: ["Gewerbeverein Rehetobel", "Gewerbeverein"] },
   { datei: "samariter.jpg",        namen: ["Samariterverein Rehetobel-Wald", "Samariterverein Rehetobel", "Samariterverein", "Samariter"] },
-  { datei: "feuerwehr.png",        namen: ["Feuerwehr Wald Rehetobel", "Feuerwehr Rehetobel-Wald", "Feuerwehr Rehetobel", "Feuerwehr"] },
+  { datei: "feuerwehr.png",        namen: ["Feuerwehr Wald Rehetobel", "Feuerwehr Rehetobel-Wald", "Feuerwehr Rehetobel", "Feuerwehr",
+                                           "Feuerwehrverein Rehetobel", "Feuerwehrverein"] },   // Feuerwehrverein mit Feuerwehr-Logo (Entscheid 8.11.2026)
   { datei: "spielgruppe.png",      namen: ["Spielgruppe Rägeboge", "Spielgruppe Regenbogen", "Spielgruppe"] },
   { datei: "sonjolino.png",        namen: ["Kinderzirkus Sonjolino", "Sonjolino"] },
   { datei: "ornithologen.png",     namen: ["Ornithologischer Verein Rehetobel und Umgebung", "Ornithologischer Verein Rehetobel",
