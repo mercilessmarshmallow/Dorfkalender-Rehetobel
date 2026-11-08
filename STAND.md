@@ -60,6 +60,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Beispiel-Anlässen (aus dem alten Kalender, Nov. 2026–Jan. 2027) und **Probe-Formular** (`vorschau/melden.html`) mit den neuen
   Themen; verschickt nichts, Probe-Anlass erscheint nur im eigenen Browser. Projektleitung schickt Link + Bilder weiter,
   Vorstand gibt Rückmeldung. Excel 2027 und Vereinswebseite (ClubDesk) kommen erst danach.
+  Text zum Weiterschicken (8.11.) mit Vergleich zum alten Kalender (rehetobel-tourismus.ch/wp/veranstaltungen/). **Wartet auf Rückmeldungen des Vorstands.**
 - **PC-Termin der Projektleitung (Schritte einzeln geben, zuerst Termin abmachen):**
   1. Formular: Auswahl «Kategorie» → die neun Themen (Frage muss weiterhin **«Kategorie»** heissen – das Programm findet die Spalte über die Überschrift) (Musik & Kultur, Feste & Märkte, Sport & Natur, Kinder & Familie,
      Senioren & Treffpunkt, Kirche, Gemeinde & Politik, Vereinsleben, Kurse & Weiteres), Hilfstext «Was macht man dort als Besucher?».
