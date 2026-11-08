@@ -58,7 +58,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Feuerwehr-Logo live (8.11., Okay Projektleitung). **Noch offen – nachfragen** (Projektleitung weiss es nicht): Veranstalter Saxophongebet (12×) und Naturfreundehaus Kaien (5×).
   **Offen – bei Vereinen nachfragen:** Sternsingen 9.1. (zweimal: Rundgang + Kirche → Titel unterscheiden?),
   Verbandswettschiessen (5./6.3. oder 12.3.?), rund 25 fehlende Uhrzeiten, Anfangszeit Vollmondschwimmen.
-  Liste zum Nachfragen soll in die private Vorstandsablage (`kalender/anlaesse-2027/`) – noch nicht gemacht.
+  **Liste zum Nachfragen liegt in der privaten Vorstandsablage** (`kalender/anlaesse-2027/README.md`, 8.11.) – Projektleitung klärt mit Vorstand/Vereinen, Claude trägt Antworten in der Tabelle nach.
 
 ## Hier weitermachen (8.11.2026)
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
