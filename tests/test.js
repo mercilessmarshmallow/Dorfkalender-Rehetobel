@@ -204,6 +204,15 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
     await c.route("https://docs.google.com/**", (r) => r.fulfill({ status: 200, contentType: "text/csv", body: csvZeilen.join("\n") + "\n" }));
     const pg = await c.newPage(); await pg.goto("http://localhost:8765/index.html"); await pg.waitForSelector(".karte", { timeout: 5000 });
     pruefe(await pg.isVisible("#app-hinweis") && wort.test(await pg.innerText("#app-hinweis")), `«Aufs Handy»: Anleitung fürs ${name}`);
+    if (name === "iPhone") {
+      pruefe(/•••/.test(await pg.innerText("#app-hinweis")), "«Aufs Handy»: iPhone-Text nennt den Knopf •••");
+      await pg.click("#app-zeigen");
+      const bilder = await pg.locator("#iphone-dialog img").evaluateAll((l) => l.map((i) => i.getAttribute("src")));
+      pruefe(await pg.isVisible("#iphone-dialog") && bilder.length === 4 && bilder.every((b) => fs.existsSync(path.join(ROOT, b))),
+        "«Zeig mir, wie»: Bilder-Anleitung mit 4 Schritten öffnet sich");
+      await pg.click("#iphone-dialog [data-schliessen]");
+      pruefe(!(await pg.isVisible("#iphone-dialog")), "«Zeig mir, wie»: Fenster schliesst sich");
+    } else pruefe(!(await pg.isVisible("#app-zeigen")), "«Zeig mir, wie» nur auf dem iPhone");
     await c.close();
   }
   pruefe(!(await n.isVisible("#app-hinweis")), "«Aufs Handy»: auf dem Computer ausgeblendet");

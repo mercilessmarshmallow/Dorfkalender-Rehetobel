@@ -412,9 +412,15 @@
     const android = /Android/.test(ua);
     if (alsApp || (!iphone && !android)) return;   // schon als App geöffnet oder Computer: kein Hinweis
     document.getElementById("app-anleitung").innerHTML = iphone
-      ? "Unten auf den Teilen-Knopf <b>□↑</b> tippen, dann «Zum Home-Bildschirm». So ist der Kalender wie eine App immer dabei."
+      ? "In Safari unten rechts auf <b>•••</b> tippen, dann «Teilen» und «Zum Home-Bildschirm». So ist der Kalender wie eine App immer dabei."
       : "Oben rechts auf <b>⋮</b> tippen, dann «Zum Startbildschirm hinzufügen» (oder «App installieren»). So ist der Kalender wie eine App immer dabei.";
     document.getElementById("app-hinweis").hidden = false;
+    // iPhone: Apple erlaubt keinen Installieren-Knopf → Bilder-Anleitung
+    if (iphone) {
+      const zeigen = document.getElementById("app-zeigen");
+      zeigen.hidden = false;
+      zeigen.onclick = () => document.getElementById("iphone-dialog").showModal();
+    }
     // Android/Chrome bietet manchmal direkt «Installieren» an → eigener Knopf
     window.addEventListener("beforeinstallprompt", (e) => {
       e.preventDefault();

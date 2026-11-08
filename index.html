@@ -51,7 +51,8 @@
       <img class="symbol" src="bilder/app/kalender-180.png" alt="">
       <div><strong>Dorfkalender aufs Handy</strong><br>
         <span class="zeile" id="app-anleitung"></span>
-        <button class="knopf knopf-rand" id="app-installieren" type="button" hidden>Als App installieren</button></div>
+        <button class="knopf knopf-rand" id="app-installieren" type="button" hidden>Als App installieren</button>
+        <button class="knopf knopf-rand" id="app-zeigen" type="button" hidden>Zeig mir, wie</button></div>
     </div>
 
     <div class="vvr-kasten">
@@ -74,6 +75,27 @@
       <p>Vereine, Gemeinde, Kirche, Schule und Gewerbe können ihre Anlässe hier über ein einfaches Formular melden.
          Der Verkehrsverein prüft jede Meldung, bevor sie im Kalender erscheint.</p>
       <p class="hinweis">Das Formular wird bald freigeschaltet.</p>
+    </div>
+  </dialog>
+
+  <!-- Bilder-Anleitung fürs iPhone (Knopf «Zeig mir, wie» im Kasten «Dorfkalender aufs Handy») -->
+  <dialog id="iphone-dialog" class="detail" aria-labelledby="iphone-titel">
+    <div class="detail-innen">
+      <div class="detail-kopf">
+        <h2 id="iphone-titel">So kommt der Dorfkalender aufs iPhone</h2>
+        <button class="zu" data-schliessen aria-label="Schliessen">×</button>
+      </div>
+      <ol class="schritte">
+        <li><p>In Safari <b>unten rechts auf •••</b> tippen, dann auf <b>«Teilen»</b>.<br>
+          <small>Ältere iPhones: unten direkt auf den Teilen-Knopf <b>□↑</b> tippen.</small></p>
+          <img src="bilder/anleitung/iphone-1.jpg" alt="Menü mit «Teilen» zuoberst" loading="lazy" width="500" height="493"></li>
+        <li><p>Auf <b>«Mehr anzeigen»</b> tippen (oder nach unten wischen).</p>
+          <img src="bilder/anleitung/iphone-2.jpg" alt="Teilen-Fenster mit dem Knopf «Mehr anzeigen»" loading="lazy" width="500" height="683"></li>
+        <li><p>Auf <b>«Zum Home-Bildschirm»</b> tippen.</p>
+          <img src="bilder/anleitung/iphone-3.jpg" alt="Liste mit «Zum Home-Bildschirm»" loading="lazy" width="500" height="473"></li>
+        <li><p>Oben rechts auf <b>«Hinzufügen»</b> tippen. Fertig – das Kalender-Symbol ist jetzt auf dem Startbildschirm.</p>
+          <img src="bilder/anleitung/iphone-4.jpg" alt="Fenster «Zum Home-Bildschirm» mit dem Knopf «Hinzufügen»" loading="lazy" width="500" height="410"></li>
+      </ol>
     </div>
   </dialog>
 
