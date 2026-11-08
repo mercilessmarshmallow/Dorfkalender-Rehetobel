@@ -50,6 +50,12 @@
     return m ? `${m[1].padStart(2, "0")}:${m[2]}` : "";
   }
 
+  // Zeit in Worten, z. B. «nachmittags» oder «ab 18.00» (wenn keine Uhrzeit erkannt wird) – wird statt «ganztägig» angezeigt
+  function zeitWort(s) {
+    s = (s || "").trim();
+    return zeit(s) || !/[a-zäöü]/i.test(s) ? "" : s.slice(0, 40);
+  }
+
   // Spaltennamen in der Tabelle «Kalender» (Kleinschreibung egal)
   const SPALTEN = {
     titel: ["titel", "anlass", "name des anlasses"],
@@ -83,6 +89,7 @@
         bis: isoDatum(wert("bis")),
         zeit: zeit(wert("zeit")),
         zeitBis: zeit(wert("zeitBis")),
+        zeitWort: zeitWort(wert("zeit")),
         ort: wert("ort"),
         gemeinde: wert("gemeinde") || "Rehetobel",
         veranstalter: wert("veranstalter"),
@@ -110,7 +117,7 @@
     return d.anlaesse.map((x, n) => {
       const a = {
         id: "p" + n, titel: x.titel || "", datum: isoDatum(x.datum), bis: isoDatum(x.bis),
-        zeit: zeit(x.zeit), zeitBis: zeit(x.zeitBis), ort: x.ort || "", gemeinde: "Rehetobel",
+        zeit: zeit(x.zeit), zeitBis: zeit(x.zeitBis), zeitWort: zeitWort(String(x.zeit || "")), ort: x.ort || "", gemeinde: "Rehetobel",
         veranstalter: x.veranstalter || "", kategorie: x.kategorie || "", beschreibung: x.beschreibung || "",
         link: /^https?:\/\//.test(x.link || "") ? x.link : "", status: "provisorisch",
         verschiebbar: String(x.verschiebbar || "").trim(),

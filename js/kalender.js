@@ -25,7 +25,7 @@
     return t;
   }
   function zeitText(a) {
-    if (!a.zeit) return "ganztägig";
+    if (!a.zeit) return a.zeitWort || "ganztägig";
     return a.zeitBis ? `${a.zeit} – ${a.zeitBis} Uhr` : `${a.zeit} Uhr`;
   }
   // Alle Tage, an denen ein Anlass stattfindet (für mehrtägige Anlässe)
@@ -146,7 +146,7 @@
     const d = parse(a.datum);
     const n = Math.round((d - parse(heute)) / 864e5);
     const wt = n === 0 ? "Heute" : n === 1 ? "Morgen" : WOCHENTAGE[d.getDay()];
-    const zt = a.zeit ? (a.zeitBis ? `${a.zeit}–${a.zeitBis} Uhr` : `${a.zeit} Uhr`) : "ganztägig";
+    const zt = a.zeit ? (a.zeitBis ? `${a.zeit}–${a.zeitBis} Uhr` : `${a.zeit} Uhr`) : (a.zeitWort || "ganztägig");
     const bis = a.bis ? ` · bis ${parse(a.bis).getDate()}. ${MONATE[parse(a.bis).getMonth()]}` : "";
     return `<li><button class="karte${klein ? " klein" : ""}" data-id="${esc(a.id)}" style="--kat:${farbe(a)}">
       <div class="datum-block${a.datum === heute ? " heute" : ""}"><div class="wt">${wt}</div><div class="tg">${d.getDate()}</div><div class="mo">${MONATE[d.getMonth()].slice(0, 3)}</div></div>
@@ -365,7 +365,7 @@
         const doppelt = tageVon(a).some((t) => (tage.get(t) || []).length > 1);
         html += `<tr class="${doppelt ? "konflikt" : ""}"><td>${doppelt ? "⚠" : ""}</td>
           <td>${WOCHENTAGE[d.getDay()]} ${d.getDate()}.${d.getMonth() + 1}.${a.bis ? ` – ${parse(a.bis).getDate()}.${parse(a.bis).getMonth() + 1}.` : ""}</td>
-          <td>${esc(a.zeit || "")}</td><td>${esc(a.titel)}</td><td>${esc(a.veranstalter)}</td><td>${esc(a.ort)}</td>
+          <td>${esc(a.zeit || a.zeitWort || "")}</td><td>${esc(a.titel)}</td><td>${esc(a.veranstalter)}</td><td>${esc(a.ort)}</td>
           <td>${a.verschiebbar ? verschiebbarText(a) : ""}</td></tr>`;
       }
       html += `</tbody></table>`;

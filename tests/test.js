@@ -238,12 +238,15 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
     await c.route("https://docs.google.com/**", (r) => r.fulfill({ status: 200, contentType: "text/csv", body: [csvZeilen[0],
       "Adventsmarkt,10.12.2026,,10:00,,Dorfplatz,Gewerbeverein,Gewerbe,,,",
       "Samariterübung,11.12.2026,,20:00,,Schulhaus,Samariterverein,Vereine,,,",
-      "Kegelabend,12.12.2026,,19:00,,Krone,Testverein,Vereine,,,"].join("\n") + "\n" }));
+      "Kegelabend,12.12.2026,,19:00,,Krone,Testverein,Vereine,,,",
+      "Sternsingen,13.12.2026,,nachmittags,,Rundgang im Dorf,Katholische Kirche,Kirche,,,"].join("\n") + "\n" }));
     const pg = await c.newPage(); await pg.clock.setFixedTime(new Date("2026-12-07T10:00:00"));
     await pg.goto("http://localhost:8765/index.html"); await pg.waitForSelector(".karte", { timeout: 5000 });
     const text = await pg.innerText("#ansicht-liste");
     pruefe(/Adventsmarkt[\s\S]*Feste & Märkte/.test(text) && /Samariterübung[\s\S]*Vereinsleben/.test(text) && /Kegelabend[\s\S]*Kurse & Weiteres/.test(text)
       && !/\bGewerbe\b|\bVereine\b/.test(text), "alte Gruppen «Vereine»/«Gewerbe» bekommen ein Thema (Stichwort im Titel, sonst «Kurse & Weiteres»)");
+    const stern = await pg.locator('.karte:has-text("Sternsingen")').innerText();
+    pruefe(/nachmittags/.test(stern) && !/ganztägig/.test(stern), "Zeit in Worten («nachmittags») wird statt «ganztägig» angezeigt");
     await c.close();
   }
   pruefe(nFehler.length === 0, "keine Fehler im neuen Design " + nFehler.join("; "));

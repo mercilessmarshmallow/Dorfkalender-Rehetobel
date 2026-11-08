@@ -3,6 +3,10 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 8.11.2026 (Zeit in Worten)
+- Steht bei einem Anlass nur «nachmittags» o. Ä., kommt dieses Wort in die Spalte **Zeit**; der Kalender zeigt es statt «ganztägig».
+  Keine erfundenen Uhrzeiten (Projektleitung: «Wenn du das so empfiehlst, mach es»).
+
 ## 8.11.2026 (Anlässe auswärts)
 - **Auswärtige Anlässe von Rehetobler Vereinen kommen in den Kalender** (Projektleitung: «einige sind Vereine, die auswärts sind,
   und allenfalls Rehetobler, die dann besuchen – lass die drin»), z. B. Turnfest des Sportvereins, Konzert der Jugendmusik in
