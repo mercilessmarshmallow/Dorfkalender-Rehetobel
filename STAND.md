@@ -50,10 +50,9 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
   (Symbol wie bei Android). Ursache des Problems: Der Hinweis-Kasten ist auf dem iPhone nur Text (Apple erlaubt keinen
   Installieren-Knopf), sieht aber antippbar aus; und neuere iOS-Safari (iOS 26) hat unten keinen Teilen-Knopf mehr.
-  **Bilder-Anleitung gebaut (8.11.), im Arbeitszweig, noch NICHT auf main:** Kasten-Text korrigiert (••• → Teilen → Zum Home-Bildschirm)
-  und Knopf «Zeig mir, wie» (nur iPhone) mit 4 Bildern (`bilder/anleitung/`, Kontakte unkenntlich). Vorschau-Bilder an die Projektleitung geschickt.
-  **Nach Okay:** nur diese neuen Stellen auf main bringen (Bilder ganz; in index.html, js/kalender.js, css/kalender.css, tests/test.js
-  nur die neuen Abschnitte – die Dateien enthalten im Zweig unveröffentlichten Code), dann auf dem main-Stand `node tests/test.js`.
+  **Bilder-Anleitung live (8.11., Okay Projektleitung):** Kasten-Text korrigiert (••• → Teilen → Zum Home-Bildschirm)
+  und Knopf «Zeig mir, wie» (nur iPhone) mit 4 Bildern (`bilder/anleitung/`, Kontakte unkenntlich). Nur diese Stellen auf main
+  gebracht (eigener Arbeitsordner), Tests auf dem main-Stand bestanden. **Noch anschauen:** auf dem iPhone den Knopf ausprobieren.
   App-Store-App verworfen (Kosten, Aufwand). **Noch testen:** «📅 In meinen Kalender» in der iPhone-«App».
 - **Vorschau Themen + «Meine Auswahl»** ist für den Vorstand online (…/vorschau/), Projektleitung schickt sie weiter.
   Live schalten erst nach Okay des Vorstands (Schritte siehe unten).
