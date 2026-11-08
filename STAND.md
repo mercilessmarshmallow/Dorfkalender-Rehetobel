@@ -54,8 +54,8 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Nachgetragen (Okay Projektleitung): Veranstalter bei 28 Anlässen (Samariterübungen, Abstimmungssonntage, Schwimmbad,
   Hauptübung Feuerwehr, Kirchgemeindeversammlung, Konfirmation, Besuchstag Schule) und Titel «Kammerorchester St. Gallen».
   Danach (Antworten Projektleitung): «Stobe + Bar offen» (9×) → Veranstalter «Haus zur Stickerei» eingetragen;
-  «Feuerwehrverein Rehetobel» bekommt das Feuerwehr-Logo (`js/logos.js`). **Seniorenzmittag (12×): trägt die Projektleitung nach.**
-  **Noch offen:** Veranstalter Saxophongebet (12×) – Frage an die Projektleitung; Naturfreundehaus Kaien (5×) – Projektleitung weiss es nicht → nachfragen.
+  «Feuerwehrverein Rehetobel» bekommt das Feuerwehr-Logo (`js/logos.js`, im Suchfeld «Feuerwehrverein» prüfen). **Seniorenzmittag (12×): trägt die Projektleitung nach.**
+  Feuerwehr-Logo live (8.11., Okay Projektleitung). **Noch offen – nachfragen** (Projektleitung weiss es nicht): Veranstalter Saxophongebet (12×) und Naturfreundehaus Kaien (5×).
   **Offen – bei Vereinen nachfragen:** Sternsingen 9.1. (zweimal: Rundgang + Kirche → Titel unterscheiden?),
   Verbandswettschiessen (5./6.3. oder 12.3.?), rund 25 fehlende Uhrzeiten, Anfangszeit Vollmondschwimmen.
   Liste zum Nachfragen soll in die private Vorstandsablage (`kalender/anlaesse-2027/`) – noch nicht gemacht.
