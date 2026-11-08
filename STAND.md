@@ -50,7 +50,14 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - Neu: **`handy-anschauer`** (`tests/anschauen.js`) und **`anlass-pruefer`** (`tests/anlaesse-pruefen.js`, liest nur Blatt «Kalender»
   über das geteilte private Google-Konto); **`kalender-pruefer`** prüft neu auch die Sprache. Siehe CLAUDE.md «Helfer».
   Ändert nichts an der Webseite. Erster Probelauf Handy-Anschauer: alles in Ordnung. Auf main (8.11., Okay Projektleitung).
-  **Nächster Einsatz:** `anlass-pruefer` vor dem PC-Termin → Liste der alten Kategorien und Lücken.
+  **Erster Einsatz Anlass-Prüfer (8.11.):** 212 Anlässe 2027 – alle erscheinen, alle haben ein Thema und einen Ort.
+  Nachgetragen (Okay Projektleitung): Veranstalter bei 28 Anlässen (Samariterübungen, Abstimmungssonntage, Schwimmbad,
+  Hauptübung Feuerwehr, Kirchgemeindeversammlung, Konfirmation, Besuchstag Schule) und Titel «Kammerorchester St. Gallen».
+  **Offen – Fragen an die Projektleitung:** Veranstalter von Saxophongebet (12×), Anlässen im Naturfreundehaus Kaien (5×),
+  Seniorenzmittag (12×), «Stobe + Bar offen» (9×); Logo für «Feuerwehrverein Rehetobel» ja/nein; «Lesegesellschaft Kaien» ohne Logo lassen.
+  **Offen – bei Vereinen nachfragen:** Sternsingen 9.1. (zweimal: Rundgang + Kirche → Titel unterscheiden?),
+  Verbandswettschiessen (5./6.3. oder 12.3.?), rund 25 fehlende Uhrzeiten, Anfangszeit Vollmondschwimmen.
+  Liste zum Nachfragen soll in die private Vorstandsablage (`kalender/anlaesse-2027/`) – noch nicht gemacht.
 
 ## Hier weitermachen (8.11.2026)
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
@@ -72,7 +79,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   1. Formular: Auswahl «Kategorie» → die neun Themen (Frage muss weiterhin **«Kategorie»** heissen – das Programm findet die Spalte über die Überschrift) (Musik & Kultur, Feste & Märkte, Sport & Natur, Kinder & Familie,
      Senioren & Treffpunkt, Kirche, Gemeinde & Politik, Vereinsleben, Kurse & Weiteres), Hilfstext «Was macht man dort als Besucher?».
   2. Programm in Apps Script erneuern (`anleitungen/programm-einrichten.md`, Teil A) – erst dann Warnungen im Prüf-Mail.
-  3. Tabelle: Einträge mit alten Gruppen (v. a. «Vereine», «Gewerbe») auf Themen umstellen.
+  3. ~~Tabelle: Einträge mit alten Gruppen auf Themen umstellen.~~ Nicht mehr nötig: Anlass-Prüfer 8.11. – alle Anlässe haben schon ein Thema.
   4. Gleich mit: Formular-Bestätigung «Bitte auch im Spam-Ordner nachsehen». (Test-Einträge und die zwei Vorstandssitzungen sind seit 8.11. gelöscht.)
 
 ## Noch offen
