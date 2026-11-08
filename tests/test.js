@@ -140,6 +140,9 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   await plan.goto(lokal(planLink)); await plan.waitForSelector(".planung-hinweis", { timeout: 5000 }); await plan.waitForTimeout(300);
   pruefe(/Planungskalender 2028/.test(await plan.innerText("body")), "Planungskalender 2028 mit Hinweis «provisorisch»");
   await plan.click('[data-ansicht="liste"]');
+  pruefe(!/Weitere Anlässe im Dorf|Diese Woche/.test(await plan.innerText("#ansicht-liste")) && /Juni 2028/.test(await plan.innerText("#ansicht-liste")),
+    "Planungskalender: Liste zeigt alles nach Monat (ohne Auswahl und Strich)");
+  await plan.click('[data-ansicht="liste"]');
   const planListe = await plan.innerText("#ansicht-liste");
   pruefe(/Turnfest/.test(planListe) && /Dorffest/.test(planListe) && /fest, nicht verschiebbar/.test(planListe), "zeigt vorgemerkte Anlässe mit «verschiebbar»");
   pruefe(!/Konzert/.test(planListe), "zeigt keine öffentlichen Anlässe von 2026");
@@ -160,9 +163,9 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
 
   console.log("4b. Neues Design, Themen und «Meine Auswahl» (7./8.11.2026)");
   const d = await browser.newContext({ viewport: { width: 390, height: 800 } });
-  const csvZeilen = ["Titel,Datum,Bis,Zeit,Zeit bis,Ort,Veranstalter,Kategorie,Beschreibung,Link,Status"];
+  const csvZeilen = ["Titel,Datum,Bis,Zeit,Zeit bis,Ort,Veranstalter,Kategorie,Beschreibung,Link,Status,Für wen"];
   for (let i = 0; i < 25; i++) csvZeilen.push(`Anlass ${i + 1},${String(i + 10).padStart(2, "0")}.12.2026,,19:00,,Gemeindezentrum,Testverein,Musik & Kultur,,,`);
-  csvZeilen.push("Probe Chor,09.12.2026,,20:00,,Schulhaus,Chor Rehetobel,Vereinsleben,,,");
+  csvZeilen.push("Probe Chor,09.12.2026,,20:00,,Schulhaus,Chor Rehetobel,Vereinsleben,,,,Nur für Mitglieder");
   csvZeilen.push("HV Verkehrsverein,08.12.2026,,19:30,,Krone,Verkehrsverein Rehetobel,Vereinsleben,,,");
   csvZeilen.push("Gemeindeversammlung,07.12.2026,,20:00,,Gemeindezentrum,Gemeinde Rehetobel,Gemeinde Rehetobel,,,");
   await d.route("https://docs.google.com/**", (r) => r.fulfill({ status: 200, contentType: "text/csv", body: csvZeilen.join("\n") + "\n" }));
@@ -193,7 +196,9 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   await n.click("#detail [data-favorit]"); await n.click("#detail [data-schliessen]");
   pruefe(!/Weitere Anlässe im Dorf[\s\S]*Anlass 1\b/.test(await n.innerText("#ansicht-liste")) && /★ Testverein/.test(await n.innerText("#ansicht-liste")),
     "★ Immer oben: Anlässe des Vereins stehen wieder oben, mit Stern");
+  pruefe(/Probe Chor[\s\S]*Nur für Mitglieder/.test(await n.innerText("#ansicht-liste")), "Etikett «Nur für Mitglieder», wenn die Spalte «Für wen» das sagt");
   await n.locator('.karte:has-text("Probe Chor")').click();
+  pruefe(await n.locator("#detail .vlogo img").count() === 1, "Fenster zeigt das Vereinslogo");
   const [download] = await Promise.all([n.waitForEvent("download"), n.click("#detail [data-abo]")]);
   const icsText = fs.readFileSync(await download.path(), "utf8");
   pruefe(/Chor Rehetobel\.ics/.test(download.suggestedFilename()) && (icsText.match(/BEGIN:VEVENT/g) || []).length === 1 && /Probe Chor/.test(icsText),

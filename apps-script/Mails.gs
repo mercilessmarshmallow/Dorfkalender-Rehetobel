@@ -109,7 +109,7 @@ function beiMeldung(e) {
     ] : []),
     ...gleicheArt_(blatt, zeile, a).slice(0, 3).map((b) =>
       `Hinweis: Am gleichen Tag findet bereits «${b.titel}» (${b.veranstalter || "ein anderer Verein"}) statt – ebenfalls ` +
-      `«${a.kategorie}». Falls Ihr Datum noch flexibel ist, schauen Sie bitte im Dorfkalender nach einem freien Tag.`),
+      `«${a.kategorie}». Falls Ihr Datum noch flexibel ist, schauen Sie bitte im ${art === "planung" ? "Planungskalender" : "Dorfkalender"} nach einem freien Tag.`),
     { angaben: a, titel: "Ihre Angaben" },
   ]);
   setzeStatus_(blatt, zeile, "Eingang bestätigt " + heute_());
@@ -417,9 +417,8 @@ function gleicherTag_(blatt, zeile, a) {
   const von = datumNum_(a.datum), bis = datumNum_(a.bis) || von;
   if (!von) return [];
   const treffer = [];
-  for (let z = 2; z <= blatt.getLastRow(); z++) {
+  for (const { zeile: z, a: b } of alleAnlaesse_(blatt)) {
     if (z === zeile) continue;
-    const b = anlass_(blatt, z);
     if (b.freigegeben !== "ja" && b.freigegeben !== "vorgemerkt") continue;
     const bVon = datumNum_(b.datum), bBis = datumNum_(b.bis) || bVon;
     if (!bVon || bVon > bis || bBis < von) continue;
@@ -437,9 +436,8 @@ function gleicheArt_(blatt, zeile, a) {
   const von = datumNum_(a.datum), bis = datumNum_(a.bis) || von;
   if (!von) return [];
   const treffer = [];
-  for (let z = 2; z <= blatt.getLastRow(); z++) {
+  for (const { zeile: z, a: b } of alleAnlaesse_(blatt)) {
     if (z === zeile) continue;
-    const b = anlass_(blatt, z);
     if (b.freigegeben !== "ja" && b.freigegeben !== "vorgemerkt") continue;
     if (String(b.kategorie || "").trim() !== k) continue;
     const bVon = datumNum_(b.datum), bBis = datumNum_(b.bis) || bVon;
@@ -453,9 +451,8 @@ function gleicheArt_(blatt, zeile, a) {
 function themaVorschlag_(blatt, zeile, a) {
   const norm = (t) => String(t || "").toLowerCase().replace(/\d+\.?/g, "").replace(/[«»"',.:–-]/g, " ").replace(/\s+/g, " ").trim();
   const t = norm(a.titel), zaehler = {};
-  for (let z = 2; z <= blatt.getLastRow(); z++) {
+  for (const { zeile: z, a: b } of alleAnlaesse_(blatt)) {
     if (z === zeile) continue;
-    const b = anlass_(blatt, z);
     if ((b.freigegeben === "ja" || b.freigegeben === "vorgemerkt") && b.kategorie && norm(b.titel) === t)
       zaehler[b.kategorie] = (zaehler[b.kategorie] || 0) + 1;
   }
@@ -507,8 +504,21 @@ function findeZeile_(blatt, id) {
 
 function anlass_(blatt, zeile) {
   const breite = blatt.getLastColumn();
-  const kopf = blatt.getRange(1, 1, 1, breite).getDisplayValues()[0].map((h) => h.trim().toLowerCase());
-  const werte = blatt.getRange(zeile, 1, 1, breite).getDisplayValues()[0].map((w) => String(w).trim());
+  const kopf = blatt.getRange(1, 1, 1, breite).getDisplayValues()[0];
+  return anlassAus_(kopf, blatt.getRange(zeile, 1, 1, breite).getDisplayValues()[0]);
+}
+
+// Alle Zeilen auf einmal lesen (schnell, auch bei vielen hundert Meldungen): [{zeile, a}, …]
+function alleAnlaesse_(blatt) {
+  const breite = blatt.getLastColumn(), n = blatt.getLastRow();
+  if (n < 2) return [];
+  const werte = blatt.getRange(1, 1, n, breite).getDisplayValues();
+  return werte.slice(1).map((w, i) => ({ zeile: i + 2, a: anlassAus_(werte[0], w) }));
+}
+
+function anlassAus_(kopfRoh, werteRoh) {
+  const kopf = kopfRoh.map((h) => String(h).trim().toLowerCase());
+  const werte = werteRoh.map((w) => String(w).trim());
   const feld = (...namen) => {
     const i = kopf.findIndex((h) => namen.some((n) => h === n || h.startsWith(n + " (")));
     return i >= 0 ? werte[i] : "";

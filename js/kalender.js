@@ -156,7 +156,8 @@
     const el = document.getElementById("ansicht-liste");
     const kommend = gefiltert().filter((a) => (a.bis || a.datum) >= heute);
     if (!kommend.length) { el.innerHTML = `<p class="leer">Keine bevorstehenden Anlässe gefunden.</p>`; return; }
-    const alles = zustand.suche.trim() || zustand.verein;
+    const planung = !!window.KALENDER_PLANUNG;   // Planungskalender: alles, nach Monat, ohne Auswahl
+    const alles = zustand.suche.trim() || zustand.verein || planung;
     const fenster = alles ? kommend : kommend.slice(0, zustand.anzahl);
     const h = parse(heute), montag = plusTage(h, -mo0(h));
     const nm = iso(plusTage(montag, 7)), um = iso(plusTage(montag, 14));
@@ -164,13 +165,13 @@
       let html = "", abschnitt = "";
       for (const a of liste) {
         const d = parse(a.datum), b = a.datum < heute ? heute : a.datum;
-        const ab = b < nm ? "Diese Woche im Dorf" : b < um ? "Nächste Woche" : `${MONATE[d.getMonth()]} ${d.getFullYear()}`;
+        const ab = !planung && b < nm ? "Diese Woche im Dorf" : !planung && b < um ? "Nächste Woche" : `${MONATE[d.getMonth()]} ${d.getFullYear()}`;
         if (ab !== abschnitt) { html += (abschnitt ? "</ul>" : "") + `<h3 class="${klein ? "unter-abschnitt" : "abschnitt"}">${ab}</h3><ul class="karten">`; abschnitt = ab; }
         html += karte(a, klein);
       }
       return html + (abschnitt ? "</ul>" : "");
     };
-    const o = fenster.filter(oben), u = fenster.filter((a) => !oben(a));
+    const o = planung ? fenster : fenster.filter(oben), u = planung ? [] : fenster.filter((a) => !oben(a));
     let html = o.length ? gruppe(o, false) : `<p class="leer">In Ihrer Auswahl ist in dieser Zeit nichts los.</p>`;
     if (u.length) html += `<div class="trenner"><span>Weitere Anlässe im Dorf</span><small>${u.length} Anlässe, die nicht in Ihrer Auswahl sind</small></div>
       <div class="unten">${gruppe(u, true)}</div>`;
