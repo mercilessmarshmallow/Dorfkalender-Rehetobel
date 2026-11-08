@@ -141,6 +141,10 @@ Musik & Kultur 10, je 4 Sport & Natur / Senioren / Gemeinde / Kinder, Entsorgung
   Technisch über das Google-Programm (Web-App liefert einen Kalender-Link). ⚠ Unsicher, auf dem Handy testen:
   iPhone kann so ein Abo mit einem Tipp; **Android/Google-Kalender** kann Abos nur über calendar.google.com am Computer
   hinzufügen – Alternative dort: einmalig alle kommenden Anlässe als Datei.
+- **Faustregel «Was mache ich dort als Besucher?»** (Projektleitung 8.11.: Einteilung «recht gut»):
+  Musik & Kultur = zuschauen/zuhören · Sport & Natur = selber aktiv sein, draussen unterwegs (z. B. Grümpelturnier,
+  1.-August-Wanderung) · Feste & Märkte = zusammensitzen, essen, trinken, einkaufen · Vereinsleben = vor allem für die
+  Mitglieder (z. B. Nistkastenputzhöck). Offen: «Vo 11 bis 11» (Wanderung auf den Kaienspitz + Hüttli offen).
 - Löst nebenbei «Nur für Mitglieder»: Übungen und Proben stehen als «Vereinsleben» unten, ohne neue Formularfrage.
 - **Auswirkungen:** ändert den Entscheid «Kategorien = Veranstalter-Gruppen» (7.11.); Formularfrage «Kategorie» neu;
   bestehende Einträge neu zuordnen (besser vor den Anlässen 2027). Monat/Terminplanung bleiben.
