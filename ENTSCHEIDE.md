@@ -3,13 +3,23 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 8.11.2026 (Themen live, ohne auf den Vorstand zu warten)
+- **Themen und «Meine Auswahl» sofort live** (Projektleitung: «Die alten Kategorien waren Blödsinn … im Notfall gehen wir
+  wieder zurück»). Der Vorstand wird vor vollendete Tatsachen gestellt statt vorher gefragt. Zurück geht jederzeit (alte Fassung im Verlauf).
+  Die alte Vorschau-Adresse `…/vorschau/` leitet auf den Kalender weiter.
+- **Parteien:** Politische Anlässe einer Partei (Podium, Abstimmungs-Info) kommen unter **«Gemeinde & Politik»** – das Thema
+  sagt, worum es geht, nicht wer einlädt; das Logo zeigt den Absender. Unpolitische Anlässe einer Partei (Brunch, Grillfest)
+  nach Faustregel, z. B. «Feste & Märkte».
+- **Übergang:** Alte Einträge mit «Vereine», «Gewerbe» o. Ä. bekommen auf der Webseite automatisch ein Thema
+  (Stichwort im Titel, sonst «Kurse & Weiteres»), bis sie in der Tabelle umgestellt sind.
+
 ## 8.11.2026 (iPhone-Anleitung «Dorfkalender aufs Handy»)
 - **Bilder-Anleitung statt App-Store-App** (Projektleitung: Vorschlag angenommen): Apple erlaubt auf dem iPhone keinen
   Installieren-Knopf, eine App im App Store kostet und gibt viel Aufwand. Darum: Kasten-Text «In Safari unten rechts auf •••,
   dann Teilen und Zum Home-Bildschirm» und Knopf «Zeig mir, wie» mit 4 Bildern (Screenshots der Projektleitung,
   Kontakte unkenntlich gemacht). Hinweis für ältere iPhones (□↑) steht im Fenster bei Schritt 1.
 
-## 8.11.2026 (Themen und «Meine Auswahl» – gebaut, noch nicht live)
+## 8.11.2026 (Themen und «Meine Auswahl»)
 - **Kategorien nach Thema statt nach Veranstalter-Gruppe** (Projektleitung: «Einteilung recht gut», «ändere das»):
   Musik & Kultur · Feste & Märkte · Sport & Natur · Kinder & Familie · Senioren & Treffpunkt · Kirche · Gemeinde & Politik ·
   Vereinsleben · Kurse & Weiteres. Faustregel: «Was mache ich dort als Besucher?» (KONZEPT). Der Verein wählt im Formular.
@@ -20,8 +30,8 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 - **Hilfe beim Annehmen (Programm):** Prüf-Mail warnt, wenn die Kategorie von bisher abweicht, und wenn am gleichen Tag schon
   ein Anlass der gleichen Hauptart (Musik & Kultur, Feste & Märkte, Sport & Natur) eingetragen ist; der Verein bekommt dann
   einen Hinweis in der Eingangsbestätigung.
-- **Live erst zusammen mit dem Formular** (neue Kategorie-Auswahl) und dem erneuerten Programm. Bis dahin: Vorschau unter
-  `…/Dorfkalender-Rehetobel/vorschau/` für den Vorstand.
+- ~~**Live erst zusammen mit dem Formular** (neue Kategorie-Auswahl) und dem erneuerten Programm. Bis dahin: Vorschau unter
+  `…/Dorfkalender-Rehetobel/vorschau/` für den Vorstand.~~ **Ersetzt durch** 8.11.2026 (Themen live, ohne auf den Vorstand zu warten).
 
 ## 8.11.2026 (Was gehört in den Kalender – erste Punkte, nach Durchsicht des alten Kalenders)
 - **Sammlungen (Grüngut, Altmetall, Papier) – nur als Idee, vorerst nicht im Kalender.** Falls später: eigene Kategorie,

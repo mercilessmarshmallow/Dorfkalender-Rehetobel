@@ -120,11 +120,12 @@ Titel · Datum · Bis · Zeit (Beginn) · Zeit (Ende) · Ort · Veranstalter · 
 **Kann das Datum verschoben werden? (Ja/Nein)** 📋 (ersetzt «Status fix/provisorisch»; nur wichtig für Planungsmeldungen) · Name der Kontaktperson · E-Mail (Pflicht).
 Kontaktname und E-Mail erscheinen nie im öffentlichen Kalender.
 
-## Themen und «Meine Auswahl» (entschieden 8.11.2026, gebaut, live mit dem neuen Formular) 📋
+## Themen und «Meine Auswahl» (entschieden 8.11.2026; Webseite live seit 8.11. ✅, Formular und Programm folgen 🔧)
 Grundlage: alle 457 Anlässe 2025 und die kommenden Anlässe im alten Kalender; andere Kalender
 (Zürich Tourismus: Highlights, Musik, Traditionen, Sport; Appenzell: Brauchtum, Kultur, Sport; Familienportale: nach Alter;
 Gemeinden wie Köniz oder Rüti: Agenda + Vereinsverzeichnis). Gemeinsam ist: Man sucht nach **Thema** («was?»), nicht nach
 Veranstalter-Gruppe («wer?»). Wer es macht, zeigt bei uns schon das Vereinslogo.
+Beispiel Parteien: politischer Anlass (Podium, Abstimmung) → «Gemeinde & Politik»; Brunch oder Grillfest einer Partei → «Feste & Märkte».
 
 **Themen (10 statt 8 Veranstalter-Gruppen):** Musik & Kultur · Feste & Märkte · Sport & Natur · Kinder & Familie ·
 Senioren & Treffpunkt · Kirche · Gemeinde & Politik · Vereinsleben (Übungen, Proben, Versammlungen, Höcks) ·

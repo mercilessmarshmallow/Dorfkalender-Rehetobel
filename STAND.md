@@ -27,8 +27,8 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Liste:** «Diese Woche im Dorf», «Nächste Woche», dann Monate; 20 Anlässe, dann «Weitere anzeigen» (beim Suchen alle).
   Karten: Datum links («Heute» grün), Farbstreifen + Etikett je Kategorie, Vereinslogo oben rechts (nur wenn vorhanden),
   (Etikett «Nur für Mitglieder» vorbereitet, aber vorerst nicht im Einsatz). Antippen → Fenster mit «📅 In meinen Kalender» und «Alle Anlässe von …».
-- **Kategorien** als Knöpfe (Gemeinde, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Andere); auf dem Handy zugeklappt.
-  «Verkehrsverein Rehetobel» und «Gemeinde Rehetobel» aus der Tabelle werden automatisch zu «Vereine» bzw. «Gemeinde».
+- **Themen** statt Kategorien (seit 8.11. live): neun Themen-Knöpfe als «Meine Auswahl», auf dem Handy zugeklappt.
+  Alte Gruppen aus der Tabelle werden übersetzt (z. B. «Gemeinde Rehetobel» → «Gemeinde & Politik»; «Vereine»/«Gewerbe» nach Stichwort im Titel).
 - Monat und Terminplanung bleiben als Ansichten (Reiter unter der Suche). Planungskalender und `?einbetten=1` funktionieren weiter.
 - **«Dorfkalender aufs Handy»** (7.11.): eigenes quadratisches Symbol (Kalenderblatt in VVR-Farben, Wahl B, `bilder/app/`), Name «Dorfkalender» (`manifest.webmanifest`),
   öffnet sich vom Startbildschirm ohne Adressleiste. Hinweis-Kasten mit Anleitung fürs iPhone bzw. Android; auf dem Computer und
@@ -42,8 +42,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   - **Bessere Datei wäre gut:** Spielgruppe (Scan), Solardorf (sehr klein), Feuerwehr (klein), MG Brass Band und Kirche (Bildschirmfoto; Kirche hat SVG).
 - **«Nur für Mitglieder» vorerst nicht** (Entscheid 7.11.): keine Formularfrage, kein Etikett sichtbar. Falls später doch:
   Spalte «Für wen» im Blatt «Kalender» einzeln anhängen (z. B. `FILTER({B:L\X:X}; …)`), **nie** B:P o. ä. (sonst Kontaktdaten öffentlich).
-- **PC-Aufgabe (zuerst erklären):** Kategorie-Auswahl im Formular ohne «Verkehrsverein», neue Reihenfolge.
-  Ideenspeicher: Veranstalter als Auswahlliste (für die Logos).
+- **PC-Aufgabe:** siehe «PC-Termin» unten (Themen im Formular). Ideenspeicher: Veranstalter als Auswahlliste (für die Logos).
 - **Später besprechen:** Was gehört überhaupt in den Dorfkalender (z. B. Proben, Übungen, Sitzungen)?
 
 ## Hier weitermachen (8.11.2026)
@@ -54,19 +53,17 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   und Knopf «Zeig mir, wie» (nur iPhone) mit 4 Bildern (`bilder/anleitung/`, Kontakte unkenntlich). Nur diese Stellen auf main
   gebracht (eigener Arbeitsordner), Tests auf dem main-Stand bestanden. **Noch anschauen:** auf dem iPhone den Knopf ausprobieren.
   App-Store-App verworfen (Kosten, Aufwand). **Noch testen:** «📅 In meinen Kalender» in der iPhone-«App».
-- **Vorschau Themen + «Meine Auswahl»** ist für den Vorstand online (…/vorschau/), Projektleitung schickt sie weiter.
-  Live schalten erst nach Okay des Vorstands (Schritte siehe unten).
-- Arbeitszweig `claude/pensive-thompson-br689r` enthält die neue Seite + Programm (nicht live); main = jetziger Kalender + vorschau/.
-  ⚠ Darum **nie den ganzen Zweig auf main schieben** (`git push HEAD:main`), solange er unveröffentlichten Code enthält –
-  nur einzelne Dateien über einen eigenen Arbeitsordner auf main bringen. (8.11. passiert und nach ~2 Min. rückgängig gemacht.)
-  Main **nicht** in den Zweig übernehmen, sonst holt der Zweig das Rückgängig-Machen und verliert die neue Seite.
+- **Themen + «Meine Auswahl» live (8.11., Entscheid Projektleitung, ohne auf den Vorstand zu warten).** Webseite auf main,
+  `vorschau/` leitet auf den Kalender weiter. Alte Gruppen «Vereine»/«Gewerbe» bekommen auf der Webseite vorläufig ein Thema
+  aus dem Titel (sonst «Kurse & Weiteres»). Zweig und main sind jetzt wieder gleich.
+- **PC-Termin der Projektleitung (Schritte einzeln geben, zuerst Termin abmachen):**
+  1. Formular: Auswahl «Kategorie» → die neun Themen (Musik & Kultur, Feste & Märkte, Sport & Natur, Kinder & Familie,
+     Senioren & Treffpunkt, Kirche, Gemeinde & Politik, Vereinsleben, Kurse & Weiteres), Hilfstext «Was macht man dort als Besucher?».
+  2. Programm in Apps Script erneuern (`anleitungen/programm-einrichten.md`, Teil A) – erst dann Warnungen im Prüf-Mail.
+  3. Tabelle: Einträge mit alten Gruppen (v. a. «Vereine», «Gewerbe») auf Themen umstellen.
+  4. Gleich mit: Test-Einträge löschen, Formular-Bestätigung «Bitte auch im Spam-Ordner nachsehen».
 
 ## Noch offen
-- **Themen + «Meine Auswahl» + Warnungen im Prüf-Mail (8.11.): gebaut auf dem Arbeitszweig, NICHT live.**
-  Vorschau für den Vorstand: https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/vorschau/ (mit Beispiel-Prüf-Mail).
-  Live schalten, wenn der Vorstand einverstanden ist – in einem Schritt: (1) Formular-Auswahl «Kategorie» auf die neun Themen,
-  (2) Programm in Apps Script erneuern (Teil A der Anleitung), (3) Webseite auf main, (4) Vorschau-Ordner löschen.
-  Bestehende Einträge in der Tabelle dann neu zuordnen (alte Gruppen werden teilweise übersetzt).
 - **Hinweis:** Der alte Kalender (rehetobel-tourismus.ch) läuft weiter; der neue ersetzt ihn erst, wenn er so weit ist (siehe Vision im KONZEPT).
 - **Vor dem Ersetzen des alten Kalenders:** kommende Anlässe aus dem alten Kalender übernehmen (iCal-Export vom Vorstand).
 - **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – Test erfolgreich, Liste liegt beim Vorstand.

@@ -1,99 +1,11 @@
 <!doctype html>
 <html lang="de-CH">
 <head>
-  <base href="../">
-  <meta name="robots" content="noindex, nofollow">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vorschau – Dorfkalender Rehetobel</title>
-  <meta name="description" content="Was läuft in Rechtobel? Alle Anlässe im Dorf – Vereine, Gemeinde, Schule, Kirche und Gewerbe.">
-  <meta name="theme-color" content="#0b7a34">
-  <!-- «Dorfkalender aufs Handy»: Symbol und Name auf dem Startbildschirm -->
-  
-  <link rel="icon" type="image/png" href="bilder/app/favicon-kalender-48.png">
-  <link rel="apple-touch-icon" href="bilder/app/kalender-180.png">
-  <meta name="apple-mobile-web-app-title" content="Dorfkalender">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <link rel="stylesheet" href="vorschau/css/kalender.css">
-  <!-- Titelbild je nach Jahreszeit, bevor die Seite gezeichnet wird (siehe js/titelbild.js) -->
-  <script src="vorschau/js/titelbild.js"></script>
+  <title>Dorfkalender Rehetobel</title>
+  <!-- Die Vorschau ist seit dem 8.11.2026 live – alte Vorschau-Links führen zum Kalender -->
+  <meta http-equiv="refresh" content="0; url=../">
 </head>
-<body>
-  <div style="background:#1f2421;color:#fff;padding:10px 16px;font-size:.95rem;line-height:1.4">
-    <strong>Vorschau</strong> für den Vorstand – Anlässe aus dem alten Kalender, Themen von Hand zugeordnet.
-    Probieren: unten «Meine Auswahl» ändern, einen Anlass antippen, «☆ Immer oben».<br>
-    Mails ansehen: <a href="vorschau/pruefmail.html" style="color:#fff">Prüf-Mail an den Verkehrsverein</a> ·
-    <a href="vorschau/bestaetigung.html" style="color:#fff">Eingangsbestätigung an den Verein</a>
-  </div>
-  <header class="kopf">
-    <div class="kopf-innen">
-      <h1>Dorfkalender</h1>
-      <p class="untertitel">Was läuft in Rechtobel?</p>
-      <a class="knopf knopf-rot" href="#melden">+ Anlass melden</a>
-    </div>
-  </header>
-
-  <main class="seite">
-    <section class="such" aria-label="Suchen">
-      <label><span class="sr">Suche</span>
-        <input id="suche" type="search" placeholder="🔍  Anlass, Verein, Ort …"></label>
-      <button class="kat-auf" id="kat-auf" type="button" aria-expanded="false" aria-controls="kategorien">
-        <span id="kat-auf-text">Meine Auswahl</span> <span class="pfeil" aria-hidden="true">▾</span></button>
-      <div class="kategorien" id="kategorien" role="group" aria-label="Kategorie"></div>
-      <div class="aktiver-verein" id="aktiver-verein"></div>
-    </section>
-
-    <nav class="tabs" role="tablist" aria-label="Ansicht">
-      <button role="tab" data-ansicht="liste" aria-selected="true">Liste</button>
-      <button role="tab" data-ansicht="monat" aria-selected="false">Monat</button>
-      <button role="tab" data-ansicht="planung" aria-selected="false">Terminplanung</button>
-    </nav>
-
-    <section id="ansicht-liste" class="ansicht"></section>
-    <section id="ansicht-monat" class="ansicht" hidden></section>
-    <section id="ansicht-planung" class="ansicht" hidden></section>
-
-    <!-- Hinweis passt sich dem Handy an (js/kalender.js); auf dem Computer und in der «App» selbst ausgeblendet -->
-    <div class="app-hinweis" id="app-hinweis" hidden>
-      <img class="symbol" src="bilder/app/kalender-180.png" alt="">
-      <div><strong>Dorfkalender aufs Handy</strong><br>
-        <span class="zeile" id="app-anleitung"></span>
-        <button class="knopf knopf-rand" id="app-installieren" type="button" hidden>Als App installieren</button></div>
-    </div>
-
-    <div class="vvr-kasten">
-      <img src="bilder/logo.png" alt="Verkehrsverein Rehetobel">
-      <div><strong>Den Verkehrsverein unterstützen und Mitglied werden</strong><br>
-        <span class="zeile">Wir machen den Dorfkalender gratis für alle – möglich dank unseren Mitgliedern.
-          Schreiben Sie uns an <a href="mailto:info@rehetobel-tourismus.ch">info@rehetobel-tourismus.ch</a>.</span><br>
-        <a class="knopf knopf-rand" href="mailto:info@rehetobel-tourismus.ch?subject=Mitglied%20werden">Mail schreiben</a></div>
-    </div>
-  </main>
-
-  <dialog id="detail" class="detail" aria-labelledby="detail-titel"></dialog>
-
-  <dialog id="melden-dialog" class="detail" aria-labelledby="melden-titel">
-    <div class="detail-innen">
-      <div class="detail-kopf">
-        <h2 id="melden-titel">Anlass melden</h2>
-        <button class="zu" data-schliessen aria-label="Schliessen">×</button>
-      </div>
-      <p>Vereine, Gemeinde, Kirche, Schule und Gewerbe können ihre Anlässe hier über ein einfaches Formular melden.
-         Der Verkehrsverein prüft jede Meldung, bevor sie im Kalender erscheint.</p>
-      <p class="hinweis">Das Formular wird bald freigeschaltet.</p>
-    </div>
-  </dialog>
-
-  <footer class="fuss">
-    Verkehrsverein Rehetobel · Dorfkalender für alle Anlässe in Rechtobel<br>
-    <span class="fotos">Fotos: Appenzellerland Tourismus, Verkehrsverein Rehetobel</span>
-  </footer>
-
-  <script src="vorschau/js/config.js"></script>
-  <script src="vorschau/js/logos.js"></script>
-  <script src="vorschau/js/beispiel.js"></script>
-  <script src="vorschau/js/datenquelle.js"></script>
-  <script src="vorschau/js/kalender.js"></script>
-</body>
+<body><p>Die Vorschau ist jetzt der richtige Dorfkalender: <a href="../">weiter zum Dorfkalender</a>.</p></body>
 </html>

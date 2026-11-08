@@ -54,10 +54,26 @@
   // Alte Veranstalter-Gruppen (Formular bis Ende 2026) so gut wie möglich übersetzen
   const ALT = { "gemeinde": "Gemeinde & Politik", "gemeinde rehetobel": "Gemeinde & Politik", "parteien": "Gemeinde & Politik",
     "kommissionen": "Gemeinde & Politik", "schule": "Kinder & Familie", "kirche": "Kirche", "andere": "Kurse & Weiteres" };
-  function kategorieVon(k) {
+  // Alte Gruppen ohne klares Thema (z. B. «Vereine», «Gewerbe»): Thema aus dem Titel erraten (ähnliche, etwas breitere
+  // Stichwörter als im Prüf-Mail, apps-script/Mails.gs), sonst «Kurse & Weiteres». Nur Übergang, bis die Einträge in der Tabelle umgestellt sind.
+  const STICHWORT = [
+    ["übung", "Vereinsleben"], ["probe", "Vereinsleben"], ["hauptversammlung", "Vereinsleben"], ["höck", "Vereinsleben"], ["nistkasten", "Vereinsleben"],
+    ["gottesdienst", "Kirche"], ["andacht", "Kirche"], ["gebet", "Kirche"], ["besinnung", "Kirche"],
+    ["abstimmung", "Gemeinde & Politik"], ["gemeindeversammlung", "Gemeinde & Politik"], ["voranschlag", "Gemeinde & Politik"],
+    ["rechtsberatung", "Gemeinde & Politik"], ["podium", "Gemeinde & Politik"],
+    ["senioren", "Senioren & Treffpunkt"], ["mittagstisch", "Senioren & Treffpunkt"], ["kaffeekränzli", "Senioren & Treffpunkt"],
+    ["jugend", "Kinder & Familie"], ["spielgruppe", "Kinder & Familie"], ["krippenspiel", "Kinder & Familie"], ["kinder", "Kinder & Familie"],
+    ["konzert", "Musik & Kultur"], ["ständli", "Musik & Kultur"], ["lesung", "Musik & Kultur"], ["theater", "Musik & Kultur"],
+    ["markt", "Feste & Märkte"], ["vo bis", "Feste & Märkte"], ["fest", "Feste & Märkte"],
+    ["turnier", "Sport & Natur"], ["wanderung", "Sport & Natur"], ["kurs", "Kurse & Weiteres"],
+  ];
+  function kategorieVon(k, titel) {
     const t = String(k || "").trim();
     const bekannt = Object.keys(FARBE).find((n) => n.toLowerCase() === t.toLowerCase());
-    return bekannt || ALT[t.toLowerCase()] || t;
+    if (bekannt || ALT[t.toLowerCase()]) return bekannt || ALT[t.toLowerCase()];
+    const ti = String(titel || "").toLowerCase().replace(/[0-9.]/g, " ").replace(/\s+/g, " ").trim();
+    const treffer = STICHWORT.find(([w]) => ti.includes(w));
+    return treffer ? treffer[1] : "Kurse & Weiteres";
   }
   const farbe = (a) => FARBE[a.kategorie] || "#8a8a8a";
 
@@ -479,7 +495,7 @@
   document.getElementById("ansicht-liste").innerHTML = `<p class="leer">Anlässe werden geladen …</p>`;
   window.ladeAnlaesse()
     .then((liste) => {
-      alle = sortiere(liste).map((a) => ({ ...a, kategorie: kategorieVon(a.kategorie) }));
+      alle = sortiere(liste).map((a) => ({ ...a, kategorie: kategorieVon(a.kategorie, a.titel) }));
       if (window.KALENDER_PLANUNG) richtePlanungEin();
       fuelleKategorien();
       zeichne();
