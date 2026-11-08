@@ -20,6 +20,7 @@ window.KALENDER_LOGOS = [
                                            "Ornithologischer Verein"] },
   { datei: "schwimmbad.svg",       namen: ["Schwimmbad Rehetobel", "Schwimmbad", "Badi Rehetobel", "Badi"] },
   { datei: "solardorf.png",        namen: ["Solardorf Rehetobel", "Solardorf"] },
+  { datei: "dorf5.png",            namen: ["Restaurant Dorf 5", "Gasthaus Dorf 5", "Dorf 5", "Rest. Dorf 5"] },   // weiss auf schwarz, klein (8.11.2026)
   { datei: "lesegesellschaft.png", namen: ["Lesegesellschaft Dorf Rehetobel", "Lesegesellschaft Dorf", "Lesegesellschaft"] },
   { datei: "fdp.png",              namen: ["FDP Rehetobel", "FDP"] },
 ];
