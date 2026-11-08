@@ -3,6 +3,12 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 8.11.2026 (Anlässe auswärts)
+- **Auswärtige Anlässe von Rehetobler Vereinen kommen in den Kalender** (Projektleitung: «einige sind Vereine, die auswärts sind,
+  und allenfalls Rehetobler, die dann besuchen – lass die drin»), z. B. Turnfest des Sportvereins, Konzert der Jugendmusik in
+  Schwellbrunn, Reformationssonntag in Heiden. **Ändert** «Keine Anlässe ausserhalb von Rehetobel» (8.11., unten): Weiterhin nicht
+  hinein gehören auswärtige Anlässe, die mit Rehetobel nichts zu tun haben.
+
 ## 8.11.2026 (Themen live, ohne auf den Vorstand zu warten)
 - **Themen und «Meine Auswahl» sofort live** (Projektleitung: «Die alten Kategorien waren Blödsinn … im Notfall gehen wir
   wieder zurück»). Der Vorstand wird vor vollendete Tatsachen gestellt statt vorher gefragt. Zurück geht jederzeit (alte Fassung im Verlauf).
@@ -38,7 +44,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 ## 8.11.2026 (Was gehört in den Kalender – erste Punkte, nach Durchsicht des alten Kalenders)
 - **Sammlungen (Grüngut, Altmetall, Papier) – nur als Idee, vorerst nicht im Kalender.** Falls später: eigene Kategorie,
   Arbeitsname «Entsorgung». Siehe Ideenspeicher in KONZEPT.md.
-- **Keine Anlässe ausserhalb von Rehetobel** (bestätigt; im alten Kalender waren es 2025 gut 60, z. B. Heiden, Wolfhalden).
+- **Keine Anlässe ausserhalb von Rehetobel** (*geändert 8.11.: auswärtige Anlässe von Rehetobler Vereinen doch, siehe oben*; bestätigt; im alten Kalender waren es 2025 gut 60, z. B. Heiden, Wolfhalden).
   **Ausnahme Haus zur Stickerei (Heiden) bleibt** – solange dessen Leitung im Verkehrsverein ist.
 
 ## 7.11.2026 (Design)
