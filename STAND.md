@@ -67,7 +67,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
      Senioren & Treffpunkt, Kirche, Gemeinde & Politik, Vereinsleben, Kurse & Weiteres), Hilfstext «Was macht man dort als Besucher?».
   2. Programm in Apps Script erneuern (`anleitungen/programm-einrichten.md`, Teil A) – erst dann Warnungen im Prüf-Mail.
   3. Tabelle: Einträge mit alten Gruppen (v. a. «Vereine», «Gewerbe») auf Themen umstellen.
-  4. Gleich mit: Test-Einträge löschen, Formular-Bestätigung «Bitte auch im Spam-Ordner nachsehen».
+  4. Gleich mit: Formular-Bestätigung «Bitte auch im Spam-Ordner nachsehen». (Test-Einträge und die zwei Vorstandssitzungen sind seit 8.11. gelöscht.)
 
 ## Noch offen
 - **Hinweis:** Der alte Kalender (rehetobel-tourismus.ch) läuft weiter; der neue ersetzt ihn erst, wenn er so weit ist (siehe Vision im KONZEPT).
@@ -75,9 +75,6 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Anlässe 2027 eingetragen (8.11.):** 212 Anlässe (inkl. 12 auswärtige von Rehetobler Vereinen) aus der Liste der Koordinationssitzung direkt in die Tabelle (Freigegeben = ja,
   ohne Mailadressen → keine Mails). Tabelle ist dafür mit dem privaten Google-Konto der Projektleitung geteilt (Claude schreibt darüber).
   Offen (Details in der privaten Vorstandsablage `kalender/anlaesse-2027/`): 75× Veranstalter, 44× Zeit, Orte; ohne Datum; 2028-Konzerte.
-- Test-Einträge in der Tabelle löschen (test, test 2, test 3, test 4, TEST A, TEST B, TEST C, Test D).
-- Die zwei Vorstandssitzungen (3.11.2026, 17.02.2027) bleiben vorerst als Beispiel zum Zeigen; vor den echten Daten 2027 löschen
-  (interne Sitzungen gehören nicht in den Dorfkalender).
 - Bestätigungsnachricht im Formular: «Bitte auch im Spam-Ordner nachsehen.»
 - Google-Benachrichtigung «neue Antworten» behalten oder ausschalten (Prüf-Mail ersetzt sie).
 - Einbindung in die ClubDesk-Webseite (Code in KONZEPT.md / README.md).
