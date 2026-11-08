@@ -53,12 +53,15 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   und Knopf «Zeig mir, wie» (nur iPhone) mit 4 Bildern (`bilder/anleitung/`, Kontakte unkenntlich). Nur diese Stellen auf main
   gebracht (eigener Arbeitsordner), Tests auf dem main-Stand bestanden. **Noch anschauen:** auf dem iPhone den Knopf ausprobieren.
   App-Store-App verworfen (Kosten, Aufwand). **Noch testen:** «📅 In meinen Kalender» in der iPhone-«App».
-- **Themen + «Meine Auswahl» live (8.11., Entscheid Projektleitung, ohne auf den Vorstand zu warten).** Webseite auf main,
-  `vorschau/` leitet auf den Kalender weiter. Alte Gruppen «Vereine»/«Gewerbe» bekommen auf der Webseite vorläufig ein Thema
+- **Themen + «Meine Auswahl» live (8.11., Entscheid Projektleitung, ohne auf den Vorstand zu warten).** Webseite auf main. Alte Gruppen «Vereine»/«Gewerbe» bekommen auf der Webseite vorläufig ein Thema
   aus dem Titel (sonst «Kurse & Weiteres»). Zweig und main sind jetzt wieder gleich.
   **Notfall zurück zu den alten Kategorien:** `anleitungen/notfall-alte-kategorien.md` (alt/neu, alter Stand `8b595f2`).
+- **Vorschau für den Vorstand (8.11.):** https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/vorschau/ – Kalender mit
+  Beispiel-Anlässen (aus dem alten Kalender, Nov. 2026–Jan. 2027) und **Probe-Formular** (`vorschau/melden.html`) mit den neuen
+  Themen; verschickt nichts, Probe-Anlass erscheint nur im eigenen Browser. Projektleitung schickt Link + Bilder weiter,
+  Vorstand gibt Rückmeldung. Excel 2027 und Vereinswebseite (ClubDesk) kommen erst danach.
 - **PC-Termin der Projektleitung (Schritte einzeln geben, zuerst Termin abmachen):**
-  1. Formular: Auswahl «Kategorie» → die neun Themen (Musik & Kultur, Feste & Märkte, Sport & Natur, Kinder & Familie,
+  1. Formular: Auswahl «Kategorie» → die neun Themen (Frage muss weiterhin **«Kategorie»** heissen – das Programm findet die Spalte über die Überschrift) (Musik & Kultur, Feste & Märkte, Sport & Natur, Kinder & Familie,
      Senioren & Treffpunkt, Kirche, Gemeinde & Politik, Vereinsleben, Kurse & Weiteres), Hilfstext «Was macht man dort als Besucher?».
   2. Programm in Apps Script erneuern (`anleitungen/programm-einrichten.md`, Teil A) – erst dann Warnungen im Prüf-Mail.
   3. Tabelle: Einträge mit alten Gruppen (v. a. «Vereine», «Gewerbe») auf Themen umstellen.

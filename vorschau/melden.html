@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Anlass melden (Probe) – Dorfkalender Rehetobel</title>
+  <link rel="icon" type="image/png" href="../bilder/app/favicon-kalender-48.png">
+  <link rel="stylesheet" href="../css/kalender.css">
+  <style>
+    body { background: #eef0ee; }
+    .formular { max-width: 640px; margin: 0 auto; padding: 16px 16px 40px; }
+    .karte-weiss { background: #fff; border-radius: var(--radius); padding: 16px 18px; margin: 0 0 14px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    .karte-weiss.kopfkarte { border-top: 8px solid var(--gruen); }
+    h1 { font-size: 1.45rem; margin: 0 0 6px; }
+    label.feld { display: block; font-weight: 700; margin: 0 0 6px; }
+    .stern { color: var(--rot); }
+    .hilfe { display: block; font-weight: 400; color: var(--leise); font-size: .9rem; margin-top: 2px; }
+    input[type=text], input[type=date], input[type=time], input[type=email], input[type=url], textarea {
+      width: 100%; box-sizing: border-box; font: inherit; font-size: 1rem; padding: 10px 12px; border: 1px solid #c8cec9; border-radius: 10px; background: #fff; }
+    textarea { min-height: 80px; }
+    .zwei { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .zwei label { font-weight: 400; color: var(--leise); font-size: .9rem; }
+    .themen label { display: flex; gap: 10px; align-items: flex-start; padding: 8px 4px; border-bottom: 1px solid var(--linie); cursor: pointer; }
+    .themen label:last-child { border-bottom: 0; }
+    .themen input { margin-top: 4px; width: 20px; height: 20px; flex: none; accent-color: var(--gruen); }
+    .themen small { display: block; color: var(--leise); }
+    .punkt-farbe { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+    .janein label { margin-right: 18px; }
+    .senden { width: 100%; justify-content: center; font-size: 1.1rem; padding: 14px; }
+    .mail { background: #fff; border-radius: 12px; border: 1px solid #ddd; overflow: hidden; margin: 10px 0; }
+    .mail .mk { background: #f5f5f5; border-bottom: 1px solid #ddd; padding: 8px 12px; font-size: .88rem; color: #444; }
+    .mail .mi { padding: 12px 14px; font-size: .95rem; }
+    .warnung { background: #fff4e5; border-radius: 8px; padding: 8px 12px; }
+    .schritte-weiter li { margin-bottom: 8px; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="vorschau-band"><strong>Probe-Formular</strong> – zum Ausprobieren. Es wird <b>nichts verschickt</b> und nichts gespeichert ausser in diesem Browser.
+    <a href="./" style="color:#fff">← zurück zum Kalender</a></div>
+
+  <main class="formular">
+    <form id="form" novalidate>
+      <div class="karte-weiss kopfkarte">
+        <h1>Anlass melden – Dorfkalender Rehetobel</h1>
+        <p>Melden Sie hier Ihren Anlass. Der Verkehrsverein prüft jede Meldung, bevor sie im Kalender erscheint.</p>
+        <p class="hinweis"><span class="stern">*</span> Pflichtfeld</p>
+      </div>
+
+      <div class="karte-weiss"><label class="feld" for="titel">Titel <span class="stern">*</span>
+        <span class="hilfe">z. B. «Adventskonzert» – kurz und klar</span></label>
+        <input type="text" id="titel" required maxlength="80"></div>
+
+      <div class="karte-weiss"><label class="feld">Datum <span class="stern">*</span>
+        <span class="hilfe">«Bis» nur bei mehrtägigen Anlässen</span></label>
+        <div class="zwei"><label>Datum<br><input type="date" id="datum" required></label>
+          <label>Bis<br><input type="date" id="bis"></label></div></div>
+
+      <div class="karte-weiss"><label class="feld">Zeit</label>
+        <div class="zwei"><label>Beginn<br><input type="time" id="zeit"></label>
+          <label>Ende<br><input type="time" id="zeitBis"></label></div></div>
+
+      <div class="karte-weiss"><label class="feld" for="ort">Ort <span class="stern">*</span>
+        <span class="hilfe">z. B. «Gemeindezentrum»</span></label>
+        <input type="text" id="ort" required></div>
+
+      <div class="karte-weiss"><label class="feld" for="veranstalter">Veranstalter <span class="stern">*</span>
+        <span class="hilfe">Name des Vereins, der Firma oder der Gruppe</span></label>
+        <input type="text" id="veranstalter" required></div>
+
+      <div class="karte-weiss"><label class="feld">Thema <span class="stern">*</span>
+        <span class="hilfe">Was macht man dort als Besucher?</span></label>
+        <div class="themen" id="themen"></div></div>
+
+      <div class="karte-weiss"><label class="feld" for="beschreibung">Beschreibung</label>
+        <textarea id="beschreibung"></textarea></div>
+
+      <div class="karte-weiss"><label class="feld" for="link">Link <span class="hilfe">Webseite mit mehr Infos</span></label>
+        <input type="url" id="link" placeholder="https://"></div>
+
+      <div class="karte-weiss"><label class="feld">Kann das Datum verschoben werden? <span class="stern">*</span>
+        <span class="hilfe">Wichtig für die Jahresplanung an der Koordinationssitzung</span></label>
+        <div class="janein"><label><input type="radio" name="verschiebbar" value="Ja" required> Ja</label>
+          <label><input type="radio" name="verschiebbar" value="Nein"> Nein</label></div></div>
+
+      <div class="karte-weiss"><label class="feld" for="kontakt">Name der Kontaktperson <span class="stern">*</span>
+        <span class="hilfe">Nur für Rückfragen – erscheint nie im Kalender</span></label>
+        <input type="text" id="kontakt" required autocomplete="off"></div>
+
+      <div class="karte-weiss"><label class="feld" for="mail">E-Mail <span class="stern">*</span>
+        <span class="hilfe">Hierhin kommt die Bestätigung – erscheint nie im Kalender</span></label>
+        <input type="email" id="mail" required autocomplete="off"></div>
+
+      <p id="fehler" class="warnung" hidden></p>
+      <button class="knopf knopf-rot senden" type="submit">Senden</button>
+    </form>
+
+    <section id="danke" hidden>
+      <div class="karte-weiss kopfkarte">
+        <h1>Danke – so geht es weiter</h1>
+        <ol class="schritte-weiter">
+          <li><b>Sofort:</b> Der Verein bekommt eine Bestätigung per Mail (Beispiel unten).</li>
+          <li><b>Der Verkehrsverein prüft</b> die Meldung – mit einem Tipp auf «Annehmen» im Mail.</li>
+          <li><b>Danach erscheint der Anlass im Kalender</b>, und der Verein bekommt ein zweites Mail.</li>
+        </ol>
+        <p>In dieser Vorschau ist Ihr Probe-Anlass <b>schon jetzt</b> im Kalender zu sehen (in Wirklichkeit erst nach der Prüfung).</p>
+        <a class="knopf knopf-rot" href="./">Zum Kalender</a>
+      </div>
+      <div class="karte-weiss">
+        <h2 style="margin:0 0 6px;font-size:1.1rem">Beispiel: Bestätigung an den Verein</h2>
+        <div class="mail"><div class="mk"><b>Betreff:</b> <span id="m-betreff"></span></div>
+          <div class="mi" id="m-inhalt"></div></div>
+      </div>
+      <p><button class="knopf-link" id="loeschen" type="button">Meine Probe-Anlässe wieder löschen</button></p>
+    </section>
+  </main>
+
+  <script src="js/beispiel.js"></script>
+  <script>
+  (function () {
+    "use strict";
+    const THEMEN = [
+      ["Musik & Kultur", "Konzert, Theater, Lesung – zuschauen und zuhören", "#7b4fa8"],
+      ["Feste & Märkte", "Zusammensitzen, essen, trinken, einkaufen – z. B. «Vo 11 bis 11», Adventsmarkt", "#c25a0f"],
+      ["Sport & Natur", "Selber aktiv sein, draussen unterwegs – z. B. Grümpelturnier, 1.-August-Wanderung", "#0b7a34"],
+      ["Kinder & Familie", "Für Kinder, Jugendliche und Familien", "#b38600"],
+      ["Senioren & Treffpunkt", "Seniorenzmittag, Kaffeekränzli, Treffs", "#b5466e"],
+      ["Kirche", "Gottesdienste und Anlässe der Kirchen", "#6b5a3e"],
+      ["Gemeinde & Politik", "Gemeindeversammlung, Abstimmung, Podium (auch von Parteien)", "#1f5fa8"],
+      ["Vereinsleben", "Vor allem für die Mitglieder: Übungen, Proben, Versammlungen, Höcks", "#0e7c86"],
+      ["Kurse & Weiteres", "Kurse, Vorträge, Tag der offenen Tür", "#7a7a7a"],
+    ];
+    const HAUPT_ARTEN = ["Musik & Kultur", "Feste & Märkte", "Sport & Natur"];
+    const esc = (s) => String(s || "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    const $ = (id) => document.getElementById(id);
+
+    $("themen").innerHTML = THEMEN.map(([n, h, f]) =>
+      `<label><input type="radio" name="thema" value="${esc(n)}" required><span><b><span class="punkt-farbe" style="background:${f}"></span>${esc(n)}</b><small>${esc(h)}</small></span></label>`).join("");
+
+    const lies = () => { try { return JSON.parse(localStorage.getItem("dorfkalender-probe") || "[]"); } catch (e) { return []; } };
+    const schreib = (l) => { try { localStorage.setItem("dorfkalender-probe", JSON.stringify(l)); } catch (e) { /* ohne Speicher */ } };
+    const datumCH = (iso) => iso ? iso.split("-").reverse().join(".") : "";
+
+    $("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const f = e.target;
+      if (!f.checkValidity()) {
+        const erstes = f.querySelector(":invalid");
+        $("fehler").textContent = "Bitte alle Pflichtfelder (*) ausfüllen" + (erstes && erstes.type === "email" ? " – und eine gültige E-Mail-Adresse angeben." : ".");
+        $("fehler").hidden = false;
+        if (erstes) { erstes.closest(".karte-weiss").scrollIntoView({ behavior: "smooth", block: "center" }); erstes.focus({ preventScroll: true }); }
+        return;
+      }
+      const thema = f.querySelector("input[name=thema]:checked").value;
+      // Kontaktperson und E-Mail werden nicht gespeichert (erscheinen nie im Kalender)
+      const a = { id: "probe-" + Date.now(), titel: $("titel").value.trim(), datum: $("datum").value, bis: $("bis").value,
+        zeit: $("zeit").value, zeitBis: $("zeitBis").value, ort: $("ort").value.trim(), gemeinde: "Rehetobel",
+        veranstalter: $("veranstalter").value.trim(), kategorie: thema,
+        beschreibung: ("Probe-Meldung aus der Vorschau. " + $("beschreibung").value.trim()).trim(),
+        link: /^https?:\/\//.test($("link").value) ? $("link").value : "" };
+      schreib(lies().concat([a]));
+
+      // Hinweis wie im echten Mail: gleiche Art am gleichen Tag
+      const gleich = HAUPT_ARTEN.includes(thema) ? (window.ANLAESSE || []).find((x) => x.datum === a.datum && x.kategorie === thema && x.id !== a.id) : null;
+      $("m-betreff").textContent = `Ihre Meldung «${a.titel}» – Dorfkalender Rehetobel`;
+      $("m-inhalt").innerHTML = `<p>Guten Tag</p><p>Vielen Dank für Ihre Meldung für den Dorfkalender Rehetobel.</p>
+        <p>Der Verkehrsverein Rehetobel schaut sich Ihren Anlass an und prüft ihn. Sie hören wieder von uns, sobald er geprüft ist.</p>
+        ${gleich ? `<p class="warnung">Hinweis: Am gleichen Tag findet bereits «${esc(gleich.titel)}» (${esc(gleich.veranstalter)}) statt – ebenfalls «${esc(thema)}». Falls Ihr Datum noch flexibel ist, schauen Sie bitte im Dorfkalender nach einem freien Tag.</p>` : ""}
+        <p style="color:#666;margin-bottom:4px">Ihre Angaben:</p>
+        <p style="background:#f4f4f2;border-radius:8px;padding:8px 12px">Anlass: <b>${esc(a.titel)}</b><br>Datum: <b>${esc(datumCH(a.datum))}${a.bis ? " – " + esc(datumCH(a.bis)) : ""}</b>${a.zeit ? `<br>Zeit: <b>${esc(a.zeit)} Uhr</b>` : ""}<br>Ort: <b>${esc(a.ort)}</b><br>Thema: <b>${esc(thema)}</b></p>
+        <p>Freundliche Grüsse<br>Verkehrsverein Rehetobel</p>`;
+      $("form").hidden = true; $("danke").hidden = false; window.scrollTo(0, 0);
+    });
+    $("loeschen").addEventListener("click", () => { schreib([]); location.href = "./"; });
+  })();
+  </script>
+</body>
+</html>

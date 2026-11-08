@@ -6,7 +6,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 ## 8.11.2026 (Themen live, ohne auf den Vorstand zu warten)
 - **Themen und «Meine Auswahl» sofort live** (Projektleitung: «Die alten Kategorien waren Blödsinn … im Notfall gehen wir
   wieder zurück»). Der Vorstand wird vor vollendete Tatsachen gestellt statt vorher gefragt. Zurück geht jederzeit (alte Fassung im Verlauf).
-  Die alte Vorschau-Adresse `…/vorschau/` leitet auf den Kalender weiter.
+  `…/vorschau/` ist seit 8.11. wieder eine Vorschau für den Vorstand: Beispiel-Anlässe und Probe-Formular, verschickt nichts.
   Projektleitung ist klar gegen die alten Kategorien; für den Notfall ist das Zurückschalten beschrieben in
   `anleitungen/notfall-alte-kategorien.md`.
 - **Parteien:** Politische Anlässe einer Partei (Podium, Abstimmungs-Info) kommen unter **«Gemeinde & Politik»** – das Thema

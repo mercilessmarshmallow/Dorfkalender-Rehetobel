@@ -247,6 +247,28 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
     await c.close();
   }
   pruefe(nFehler.length === 0, "keine Fehler im neuen Design " + nFehler.join("; "));
+  {
+    // Vorschau für den Vorstand: Beispiel-Anlässe, Probe-Formular verschickt nichts, Probe-Anlass erscheint
+    const c = await browser.newContext({ viewport: { width: 390, height: 800 } }); const anfragen = [];
+    c.on("request", (r) => { if (!r.url().startsWith("http://localhost")) anfragen.push(r.url()); });
+    const pg = await c.newPage(); const vFehler = []; pg.on("pageerror", (e) => vFehler.push(e.message));
+    await pg.clock.setFixedTime(new Date("2026-11-09T09:00:00"));
+    await pg.goto("http://localhost:8765/vorschau/"); await pg.waitForSelector(".karte", { timeout: 5000 });
+    pruefe(await pg.locator(".karte").count() >= 20 && await pg.isVisible(".vorschau-band"), "Vorschau: Beispiel-Anlässe und Hinweis-Band");
+    await pg.click(".kopf a[href='#melden']"); await pg.waitForURL(/vorschau\/melden\.html/);
+    await pg.click("button[type=submit]");
+    pruefe(await pg.isVisible("#fehler") && !(await pg.isVisible("#danke")), "Probe-Formular: leer absenden → Hinweis «Pflichtfelder»");
+    await pg.fill("#titel", "Probekonzert"); await pg.fill("#datum", "2026-11-28"); await pg.fill("#ort", "Kirche");
+    await pg.fill("#veranstalter", "Chor Rehetobel"); await pg.check('input[value="Musik & Kultur"]'); await pg.check('input[value="Ja"]');
+    await pg.fill("#kontakt", "Probe"); await pg.fill("#mail", "probe@example.ch"); await pg.click("button[type=submit]");
+    pruefe(await pg.isVisible("#danke") && /Schnuppertag Jugendmusik/.test(await pg.innerText("#m-inhalt")), "Probe-Formular: Bestätigung mit Hinweis «gleiche Art am gleichen Tag»");
+    const gespeichert = await pg.evaluate(() => localStorage.getItem("dorfkalender-probe"));
+    pruefe(!/probe@example|"Probe"/.test(gespeichert), "Probe-Formular: Kontaktperson und E-Mail werden nicht gespeichert");
+    await pg.click("#danke a.knopf"); await pg.waitForSelector(".karte"); await pg.fill("#suche", "Probekonzert");
+    pruefe(await pg.locator('.karte:has-text("Probekonzert")').count() === 1, "Probe-Anlass erscheint im Vorschau-Kalender");
+    pruefe(anfragen.every((u) => !/google\.com/.test(u)) && vFehler.length === 0, "Vorschau: nichts geht an Google, keine Fehler " + vFehler.join("; "));
+    await c.close();
+  }
   await d.close();
 
   console.log("5. Nachmeldung annehmen / ablehnen (Gmail-App, angemeldetes Google-Konto)");
