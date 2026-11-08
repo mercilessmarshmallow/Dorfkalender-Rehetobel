@@ -71,7 +71,10 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 ## Noch offen
 - **Hinweis:** Der alte Kalender (rehetobel-tourismus.ch) läuft weiter; der neue ersetzt ihn erst, wenn er so weit ist (siehe Vision im KONZEPT).
 - **Vor dem Ersetzen des alten Kalenders:** kommende Anlässe aus dem alten Kalender übernehmen (iCal-Export vom Vorstand).
-- **Anlässe 2027** aus der Koordinationssitzung vom 4.11.2026 eintragen – Test erfolgreich, Liste liegt beim Vorstand.
+- **Anlässe 2027 (8.11.):** Liste vom Vorstand (Excel + PDF) erhalten und umgeordnet (nur im Arbeitsordner von Claude, **nie in die Ablage**):
+  ~270 Zeilen → 209 Anlässe mit Datum und Thema, 49 weggelassen (Sammlungen, ausserhalb Rehetobel, intern), 10 ohne Datum 2027.
+  Wartet auf Okay der Projektleitung zu den Regeln und auf den Weg in die Tabelle (Tabelle mit privatem Google-Konto teilen → Claude
+  trägt direkt ein, oder Import am PC). Danach Liste neu erzeugen (Werkzeug im Arbeitsordner; bei neuer Sitzung: Excel nochmals schicken).
 
 ## Kleinigkeiten offen
 - Test-Einträge in der Tabelle löschen (test, test 2, test 3, test 4, TEST A, TEST B, TEST C, Test D).
