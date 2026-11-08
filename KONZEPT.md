@@ -144,7 +144,18 @@ Musik & Kultur 10, je 4 Sport & Natur / Senioren / Gemeinde / Kinder, Entsorgung
 - **Faustregel «Was mache ich dort als Besucher?»** (Projektleitung 8.11.: Einteilung «recht gut»):
   Musik & Kultur = zuschauen/zuhören · Sport & Natur = selber aktiv sein, draussen unterwegs (z. B. Grümpelturnier,
   1.-August-Wanderung) · Feste & Märkte = zusammensitzen, essen, trinken, einkaufen · Vereinsleben = vor allem für die
-  Mitglieder (z. B. Nistkastenputzhöck). Offen: «Vo 11 bis 11» (Wanderung auf den Kaienspitz + Hüttli offen).
+  Mitglieder (z. B. Nistkastenputzhöck). «Vo 11 bis 11» = Feste & Märkte (Essen, Trinken, Zusammensein; man wird nicht
+  begleitet), 1.-August-Wanderung = Sport & Natur (alle laufen gemeinsam). Am Ende wählt der Verein im Formular.
+- **«Andere» ist fast leer:** 2025 blieben nach Durchsicht nur rund 11 Anlässe übrig, fast alles Kurse und Vorträge
+  (Nothilfekurs 5×, BLS-AED 2×, Gesundheitstag, Elternvortrag, Tag der offenen Tür). Vorschlag: «Andere» umbenennen in
+  **«Kurse & Weiteres»**. Gar nicht in den Kalender: Ton-/Videoaufnahmen, Koordinationssitzung, Anlässe ausserhalb.
+- **Idee Projektleitung (8.11.): Hilfe beim Annehmen** (Programmänderung, PC-Schritt nötig):
+  1. *Kategorie-Vorschlag:* Liste «Anlass/Verein → Thema» (aus der Vorselektion der Anlässe 2027, von der Projektleitung
+     kontrolliert, plus alle angenommenen Meldungen). Weicht eine Meldung ab (z. B. Samariterübung als «Feste & Märkte»),
+     steht im Prüf-Mail: «⚠ Bisher war das Vereinsleben».
+  2. *Gleiche Art am gleichen Tag:* Bei Musik & Kultur, Feste & Märkte und Sport & Natur warnt das Prüf-Mail, wenn am
+     gleichen Tag schon ein Anlass dieser Art eingetragen ist; der Verein bekommt in der Eingangsbestätigung den Hinweis
+     «Am gleichen Tag findet bereits … statt». Andere Arten (z. B. Senioren + Fest) gelten nicht als Überschneidung.
 - Löst nebenbei «Nur für Mitglieder»: Übungen und Proben stehen als «Vereinsleben» unten, ohne neue Formularfrage.
 - **Auswirkungen:** ändert den Entscheid «Kategorien = Veranstalter-Gruppen» (7.11.); Formularfrage «Kategorie» neu;
   bestehende Einträge neu zuordnen (besser vor den Anlässen 2027). Monat/Terminplanung bleiben.
