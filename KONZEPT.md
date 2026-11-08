@@ -171,6 +171,9 @@ Musik & Kultur 10, je 4 Sport & Natur / Senioren / Gemeinde / Kinder, Entsorgung
   eigene Kategorie «Entsorgung». Vorerst nicht umsetzen, nur Idee (Projektleitung 8.11.).
 - **Eigene Adresse statt «mercilessmarshmallow»:** Ablage in eine GitHub-Organisation des Vereins (gehört dem Vereins-Gmail)
   umziehen und Adresse **kalender.rehetobel-tourismus.ch** (DNS-Eintrag bei green.ch). Löst auch die Übergabe.
+  Projektleitung 8.11.: Konto/Organisation «Verkehrsverein» anlegen, mit dem eigenen Konto verknüpft. ⚠ Beim Umzug ändert sich die
+  Adresse der Webseite (alte github.io-Adresse leitet nicht weiter) → **vor** QR-Plakaten und breiter Bekanntmachung umziehen,
+  am besten gleich mit eigener Adresse. Claude-Zugriff (GitHub-App) für das neue Konto freigeben.
   Die Domain rehetobel-tourismus.ch gehört dem VVR (green.ch, Logins beim Vorstand) – geklärt 6.11.2026.
   Hängt mit dem Entscheid zur Vereinswebseite zusammen (Vorstand, 17.2.2027).
 - **Kalender abonnieren:** alle Dorfanlässe automatisch im eigenen Handy-Kalender (ICS-Abo). ⭐
