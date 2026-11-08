@@ -3,6 +3,12 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 8.11.2026 (iPhone-Anleitung «Dorfkalender aufs Handy»)
+- **Bilder-Anleitung statt App-Store-App** (Projektleitung: Vorschlag angenommen): Apple erlaubt auf dem iPhone keinen
+  Installieren-Knopf, eine App im App Store kostet und gibt viel Aufwand. Darum: Kasten-Text «In Safari unten rechts auf •••,
+  dann Teilen und Zum Home-Bildschirm» und Knopf «Zeig mir, wie» mit 4 Bildern (Screenshots der Projektleitung,
+  Kontakte unkenntlich gemacht). Hinweis für ältere iPhones (□↑) steht im Fenster bei Schritt 1.
+
 ## 8.11.2026 (Themen und «Meine Auswahl» – gebaut, noch nicht live)
 - **Kategorien nach Thema statt nach Veranstalter-Gruppe** (Projektleitung: «Einteilung recht gut», «ändere das»):
   Musik & Kultur · Feste & Märkte · Sport & Natur · Kinder & Familie · Senioren & Treffpunkt · Kirche · Gemeinde & Politik ·

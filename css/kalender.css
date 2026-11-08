@@ -217,6 +217,14 @@ dialog.detail::backdrop { background: rgba(0,0,0,.4); }
 .app-hinweis .knopf { margin-top: 8px; padding: 7px 14px; font-size: .92rem; }
 .app-hinweis .symbol { width: 52px; height: 52px; border-radius: 12px; background: #fff; object-fit: contain;
   box-shadow: 0 1px 4px rgba(0,0,0,.12); flex: none; }
+.app-hinweis .knopf + .knopf { margin-left: 6px; }
+#iphone-dialog { max-height: 92vh; overflow-y: auto; }
+.schritte { margin: 0; padding-left: 1.4em; }
+.schritte li { margin: 0 0 22px; }
+.schritte li::marker { font-weight: 800; color: var(--gruen); }
+.schritte p { margin: 0 0 8px; }
+.schritte small { color: var(--leise); }
+.schritte img { display: block; width: 100%; max-width: 340px; height: auto; border-radius: 14px; box-shadow: 0 1px 6px rgba(0,0,0,.18); }
 .vvr-kasten { display: flex; gap: 14px; align-items: center; background: var(--flaeche); border-radius: var(--radius);
   border: 1px solid var(--linie); padding: 14px 16px; margin: 26px 0 8px; }
 .vvr-kasten img { width: 92px; flex: none; }
