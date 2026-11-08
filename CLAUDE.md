@@ -41,7 +41,9 @@ und hat hier nichts zu suchen.
 
 ## Vor jeder Änderung veröffentlichen
 1. `node tests/test.js` – muss «Alle Prüfungen bestanden» melden. Neue Funktionen → Test ergänzen.
-2. Subagent **`kalender-pruefer`** einsetzen und sein Ergebnis berücksichtigen.
+2. Subagent **`kalender-pruefer`** einsetzen und sein Ergebnis berücksichtigen (prüft auch die Sprache).
+   Wurde an der Webseite (`index.html`, `css/`, `js/`, `bilder/`) etwas geändert: zusätzlich **`handy-anschauer`**
+   (Bildschirmfotos iPhone/Android/Laptop, `tests/anschauen.js`).
 3. Was auf `main` landet, ist sofort live (Webseite). Auf `main` nur mit Okay der Projektleitung.
 4. Änderungen am Programm (`apps-script/Mails.gs`) wirken erst, wenn die Projektleitung es in Apps Script
    erneuert (`anleitungen/programm-einrichten.md`, Teil A). Darum Programmänderungen sammeln.
@@ -55,6 +57,12 @@ und hat hier nichts zu suchen.
   Das Programm findet Spalten über ihre **Überschriften**, nicht über die Position.
 - Web-App (Apps Script, Ausführen als «Ich», Zugriff «Jeder») – URL steht in `Mails.gs` (`WEB_APP_URL`) und `entscheid.html` (`API`).
   Die Prüfseite ruft sie mit `credentials: "omit"` auf (ohne Google-Anmeldung).
+
+## Helfer (Subagenten, `.claude/agents/`)
+- `kalender-pruefer` – vor jeder Veröffentlichung: Personendaten, Tests, Entscheide, Technik, Sprache.
+- `handy-anschauer` – Aussehen auf iPhone, Android, Laptop; Titelbilder mit `--titelbilder`. Ersetzt nicht den Test auf dem echten Handy.
+- `anlass-pruefer` – liest nur das Blatt «Kalender» und meldet Lücken (Zeit, Ort, Veranstalter, alte Kategorien, Doppelte, Logo-Schreibweisen).
+  Vor dem PC-Termin und nach grösseren Nachträgen. Sein Bericht kommt nie in die Ablage.
 
 ## Bekannte Stolpersteine
 - **Mehrere Google-Konten im Browser** → «Datei kann derzeit nicht geöffnet werden» (Apps Script und Web-App).

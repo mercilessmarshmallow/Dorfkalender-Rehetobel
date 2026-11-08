@@ -3,6 +3,13 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 8.11.2026 (Helfer für Claude)
+- **Zwei neue Helfer und Sprachprüfung** (Projektleitung: «1–3 sind gut»): `handy-anschauer` (Webseite wie auf iPhone, Android
+  und Laptop anschauen, Bildschirmfotos) und `anlass-pruefer` (Lücken in den eingetragenen Anlässen finden, liest nur das
+  öffentliche Blatt «Kalender»). Die Sprachprüfung (ss statt ß, einfache Worte, gleiche Namen) ist kein eigener Helfer,
+  sondern Punkt 5 im `kalender-pruefer` – günstiger. Grund: weniger «von Hand anschauen» für die Projektleitung,
+  fertige Liste für den PC-Termin. Wochen-Text für WhatsApp/Gmäändsblatt erst nach dem Ersetzen des alten Kalenders.
+
 ## 8.11.2026 (Zeit in Worten)
 - Steht bei einem Anlass nur «nachmittags» o. Ä., kommt dieses Wort in die Spalte **Zeit**; der Kalender zeigt es statt «ganztägig».
   Keine erfundenen Uhrzeiten (Projektleitung: «Wenn du das so empfiehlst, mach es»).

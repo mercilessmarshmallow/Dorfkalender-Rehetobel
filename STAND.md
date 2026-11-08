@@ -46,6 +46,12 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **PC-Aufgabe:** siehe «PC-Termin» unten (Themen im Formular). Ideenspeicher: Veranstalter als Auswahlliste (für die Logos).
 - **Später besprechen:** Was gehört überhaupt in den Dorfkalender (z. B. Proben, Übungen, Sitzungen)?
 
+## Helfer für Claude (8.11.2026, gebaut)
+- Neu: **`handy-anschauer`** (`tests/anschauen.js`) und **`anlass-pruefer`** (`tests/anlaesse-pruefen.js`, liest nur Blatt «Kalender»
+  über das geteilte private Google-Konto); **`kalender-pruefer`** prüft neu auch die Sprache. Siehe CLAUDE.md «Helfer».
+  Ändert nichts an der Webseite. Erster Probelauf Handy-Anschauer: alles in Ordnung.
+  **Nächster Einsatz:** `anlass-pruefer` vor dem PC-Termin → Liste der alten Kategorien und Lücken.
+
 ## Hier weitermachen (8.11.2026)
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
   (Symbol wie bei Android). Ursache des Problems: Der Hinweis-Kasten ist auf dem iPhone nur Text (Apple erlaubt keinen

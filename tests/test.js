@@ -367,6 +367,28 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   const boese = x.mails.filter((m) => /alert/.test(m.subject));
   pruefe(boese.length === 2 && boese.every((m) => !/<script>/.test(m.htmlBody)), "Text aus dem Formular wird im Mail unschädlich angezeigt");
 
+  console.log("9. Anlass-Prüfer (tests/anlaesse-pruefen.js)");
+  {
+    const { pruefeAnlaesse } = require("./anlaesse-pruefen.js");
+    const r = pruefeAnlaesse([["Titel", "Datum", "Bis", "Zeit", "Zeit bis", "Ort", "Veranstalter", "Kategorie"],
+      ["Konzert", "12.12.2026", "", "19:00", "", "Kirche", "Jugendmusik Rehetobel", "Musik & Kultur"],
+      ["Konzert", "12.12.2026", "", "19:00", "", "Kirche", "Jugendmusik Rehetobel", "Musik & Kultur"],
+      ["Lesung", "12.12.2026", "", "nachmittags", "", "Bibliothek", "Lesegesellschaft Lobenschwendi", "Musik & Kultur"],
+      ["Markt", "46388", "", "0,5", "", "", "Gewerbeverein", "Gewerbe"],
+      ["Stamm", "46512", "", "", "", "Dorf 5", "Feuerwehrverein Rehetobel", "Vereinsleben"],
+      ["Ohne Datum", "", "", "", "", "", "", ""],
+      ["Vorbei", "01.01.2026", "", "", "", "", "", ""]], "2026-11-08");
+    pruefe(r.anzahl === 6 && r.kommend === 5, "zählt Anlässe wie die Webseite, prüft nur kommende");
+    pruefe(r.unsichtbar.length === 1 && /Ohne Datum/.test(r.unsichtbar[0]), "meldet Zeilen, die nicht auf der Webseite erscheinen");
+    pruefe(r.doppelt.length === 1, "findet doppelte Einträge");
+    pruefe(r.alteKategorie.length === 1 && /Gewerbe/.test(r.alteKategorie[0]), "findet alte Kategorie statt Thema");
+    pruefe(r.ohneZeit.length === 1 && /Stamm/.test(r.ohneZeit[0]), "ohne Zeit: «nachmittags» und «0,5» zählen als Zeit");
+    pruefe(r.ohneOrt.length === 1 && /Markt/.test(r.ohneOrt[0]), "findet Anlässe ohne Ort");
+    pruefe(r.aehnlich.length === 1 && /Feuerwehrverein/.test(r.aehnlich[0]) && r.ohneLogo.some((x) => /Lobenschwendi/.test(x)),
+      "Logo fehlt wegen Schreibweise (Feuerwehrverein), aber andere Lesegesellschaft ist kein Treffer");
+    pruefe(r.gleicheArt.length === 1 && /Lesung/.test(r.gleicheArt[0]), "gleiche Art am gleichen Tag");
+  }
+
   pruefe(cookies === 0, "Google-Anmeldung wird nie mitgeschickt");
   pruefe(jsFehler.length === 0, "keine Fehler auf der Prüfseite " + jsFehler.join("; "));
   await browser.close(); srv.close();
