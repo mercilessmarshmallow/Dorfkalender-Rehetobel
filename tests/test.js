@@ -49,8 +49,8 @@ function google(start = "20261105") {
     console,
   };
   vm.createContext(ctx); vm.runInContext(CODE, ctx);
-  const melde = (titel, datum, mail, verschiebbar = "Ja", veranstalter = "Testverein", kategorie = "Vereine") => {
-    daten.push(["05.11.2026 15:00:00", titel, datum, "", "19:00:00", "", "Dorf 5", veranstalter, kategorie, "", "", verschiebbar, "Test", mail]);
+  const melde = (titel, datum, mail, verschiebbar = "Ja", veranstalter = "Testverein") => {
+    daten.push(["05.11.2026 15:00:00", titel, datum, "", "19:00:00", "", "Dorf 5", veranstalter, "Vereine", "", "", verschiebbar, "Test", mail]);
     ctx.beiMeldung({ range: blatt.getRange(daten.length, 1, 1, 15) });
   };
   const spalte = (zeile, name) => daten[zeile][daten[0].findIndex((h) => h.toLowerCase().startsWith(name))];
@@ -140,9 +140,6 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   await plan.goto(lokal(planLink)); await plan.waitForSelector(".planung-hinweis", { timeout: 5000 }); await plan.waitForTimeout(300);
   pruefe(/Planungskalender 2028/.test(await plan.innerText("body")), "Planungskalender 2028 mit Hinweis «provisorisch»");
   await plan.click('[data-ansicht="liste"]');
-  pruefe(!/Weitere Anlässe im Dorf|Diese Woche/.test(await plan.innerText("#ansicht-liste")) && /Juni 2028/.test(await plan.innerText("#ansicht-liste")),
-    "Planungskalender: Liste zeigt alles nach Monat (ohne Auswahl und Strich)");
-  await plan.click('[data-ansicht="liste"]');
   const planListe = await plan.innerText("#ansicht-liste");
   pruefe(/Turnfest/.test(planListe) && /Dorffest/.test(planListe) && /fest, nicht verschiebbar/.test(planListe), "zeigt vorgemerkte Anlässe mit «verschiebbar»");
   pruefe(!/Konzert/.test(planListe), "zeigt keine öffentlichen Anlässe von 2026");
@@ -161,50 +158,36 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   pruefe(/Konzert/.test(oeff) && !/Turnfest/.test(oeff) && !(await k.$(".planung-hinweis")), "zeigt nur Freigegebenes, nichts aus der Planung");
   pruefe(kFehler.length === 0, "keine Fehler im Kalender " + kFehler.join("; "));
 
-  console.log("4b. Neues Design, Themen und «Meine Auswahl» (7./8.11.2026)");
+  console.log("4b. Neues Design (7.11.2026)");
   const d = await browser.newContext({ viewport: { width: 390, height: 800 } });
   const csvZeilen = ["Titel,Datum,Bis,Zeit,Zeit bis,Ort,Veranstalter,Kategorie,Beschreibung,Link,Status,Für wen"];
-  for (let i = 0; i < 25; i++) csvZeilen.push(`Anlass ${i + 1},${String(i + 10).padStart(2, "0")}.12.2026,,19:00,,Gemeindezentrum,Testverein,Musik & Kultur,,,`);
-  csvZeilen.push("Probe Chor,09.12.2026,,20:00,,Schulhaus,Chor Rehetobel,Vereinsleben,,,,Nur für Mitglieder");
-  csvZeilen.push("HV Verkehrsverein,08.12.2026,,19:30,,Krone,Verkehrsverein Rehetobel,Vereinsleben,,,");
-  csvZeilen.push("Gemeindeversammlung,07.12.2026,,20:00,,Gemeindezentrum,Gemeinde Rehetobel,Gemeinde Rehetobel,,,");
+  for (let i = 0; i < 25; i++) csvZeilen.push(`Anlass ${i + 1},${String(i + 10).padStart(2, "0")}.12.2026,,19:00,,Gemeindezentrum,Testverein,Vereine,,,,Für alle offen`);
+  csvZeilen.push("Probe Chor,09.12.2026,,20:00,,Schulhaus,Chor Rehetobel,Vereine,,,,Nur für Mitglieder");
+  csvZeilen.push("HV Verkehrsverein,08.12.2026,,19:30,,Krone,Verkehrsverein Rehetobel,Verkehrsverein Rehetobel,,,,Für alle offen");
+  csvZeilen.push("Gemeindeversammlung,07.12.2026,,20:00,,Gemeindezentrum,Gemeinde Rehetobel,Gemeinde Rehetobel,,,,");
   await d.route("https://docs.google.com/**", (r) => r.fulfill({ status: 200, contentType: "text/csv", body: csvZeilen.join("\n") + "\n" }));
   const n = await d.newPage(); const nFehler = []; n.on("pageerror", (e) => nFehler.push(e.message));
   await n.clock.setFixedTime(new Date("2026-12-07T10:00:00"));
   await n.goto("http://localhost:8765/index.html"); await n.waitForSelector(".karte", { timeout: 5000 });
   pruefe(await n.locator(".karte").count() === 20 && /Weitere Anlässe anzeigen \(8\)/.test(await n.innerText("#ansicht-liste")), "zuerst 20 Anlässe, dann «Weitere Anlässe anzeigen»");
-  const liste1 = await n.innerText("#ansicht-liste");
-  pruefe(/Gemeindeversammlung[\s\S]*Weitere Anlässe im Dorf[\s\S]*Probe Chor/.test(liste1) && /Gemeinde & Politik/.test(liste1),
-    "Vereinsleben steht unter dem Strich «Weitere Anlässe im Dorf»; «Gemeinde Rehetobel» wird «Gemeinde & Politik»");
   await n.click("[data-mehr]");
   pruefe(await n.locator(".karte").count() === 28, "«Weitere» zeigt den Rest");
-  const kats = await n.$$eval("#kategorien .kat-knopf", (b) => b.map((x) => x.dataset.kat));
-  pruefe(kats.join(",") === "Musik & Kultur,Feste & Märkte,Sport & Natur,Kinder & Familie,Senioren & Treffpunkt,Kirche,Gemeinde & Politik,Vereinsleben,Kurse & Weiteres",
-    "neun Themen in der richtigen Reihenfolge");
-  pruefe(!(await n.isVisible("#kategorien")) && /Meine Auswahl: 8 von 9/.test(await n.innerText("#kat-auf")), "Handy: «Meine Auswahl» zugeklappt, Vereinsleben zu Beginn nicht gewählt");
-  await n.click("#kat-auf"); await n.click('.kat-knopf[data-kat="Vereinsleben"]');
-  pruefe(!/Weitere Anlässe im Dorf/.test(await n.innerText("#ansicht-liste")) && /9 von 9/.test(await n.innerText("#kat-auf")), "Vereinsleben gewählt → alles oben, kein Strich");
-  await n.click('.kat-knopf[data-kat="Musik & Kultur"]');
-  const liste2 = await n.innerText("#ansicht-liste");
-  pruefe(/Probe Chor[\s\S]*Weitere Anlässe im Dorf[\s\S]*Anlass 1\b/.test(liste2), "Musik & Kultur abgewählt → rutscht unter den Strich, verschwindet nicht");
-  await n.reload(); await n.waitForSelector(".karte");
-  pruefe(/8 von 9/.test(await n.innerText("#kat-auf")), "Auswahl bleibt auf dem Handy gespeichert");
+  const kats = await n.locator("#kategorien .kat-knopf").allInnerTexts();
+  pruefe(kats.join(",") === "Alle,Gemeinde,Vereine,Schule,Kirche,Gewerbe,Parteien,Kommissionen,Andere", "Kategorien in der Reihenfolge nach Wichtigkeit, ohne «Verkehrsverein»");
+  pruefe(!(await n.isVisible("#kategorien")) && await n.isVisible("#kat-auf"), "Handy: Kategorien zuerst zugeklappt");
+  await n.click("#kat-auf"); await n.click('.kat-knopf[data-kat="Gemeinde"]');
+  pruefe((await n.locator(".karte").count()) === 1 && /Kategorie: Gemeinde/.test(await n.innerText("#kat-auf")) && !(await n.isVisible("#kategorien")),
+    "Kategorie «Gemeinde» (auch «Gemeinde Rehetobel») filtert, klappt wieder zu");
+  await n.click("#kat-auf"); await n.click('.kat-knopf[data-kat="Vereine"]');
+  const vereine = await n.innerText("#ansicht-liste");
+  pruefe(/HV Verkehrsverein/.test(vereine), "Verkehrsverein erscheint bei den Vereinen");
+  pruefe(/Probe Chor[\s\S]*Nur für Mitglieder/.test(vereine), "Anlass «Nur für Mitglieder» erscheint, mit Etikett");
   pruefe(await n.locator('.karte:has-text("HV Verkehrsverein") .vlogo img[src="bilder/logos/verkehrsverein.png"]').count() === 1
     && await n.locator('.karte:has-text("Anlass 1") .vlogo').count() === 0, "Vereinslogo nur bei Vereinen mit Logo");
-  await n.locator('.karte:has-text("Anlass 1")').first().click();
-  pruefe(/In meinen Kalender/.test(await n.innerText("#detail")) && /Immer oben/.test(await n.innerText("#detail")), "Fenster: «In meinen Kalender» und «Immer oben»");
-  await n.click("#detail [data-favorit]"); await n.click("#detail [data-schliessen]");
-  pruefe(!/Weitere Anlässe im Dorf[\s\S]*Anlass 1\b/.test(await n.innerText("#ansicht-liste")) && /★ Testverein/.test(await n.innerText("#ansicht-liste")),
-    "★ Immer oben: Anlässe des Vereins stehen wieder oben, mit Stern");
-  pruefe(/Probe Chor[\s\S]*Nur für Mitglieder/.test(await n.innerText("#ansicht-liste")), "Etikett «Nur für Mitglieder», wenn die Spalte «Für wen» das sagt");
   await n.locator('.karte:has-text("Probe Chor")').click();
-  pruefe(await n.locator("#detail .vlogo img").count() === 1, "Fenster zeigt das Vereinslogo");
-  const [download] = await Promise.all([n.waitForEvent("download"), n.click("#detail [data-abo]")]);
-  const icsText = fs.readFileSync(await download.path(), "utf8");
-  pruefe(/Chor Rehetobel\.ics/.test(download.suggestedFilename()) && (icsText.match(/BEGIN:VEVENT/g) || []).length === 1 && /Probe Chor/.test(icsText),
-    "«Alle in meinen Kalender»: Kalender-Datei mit allen kommenden Anlässen des Vereins");
+  pruefe(/In meinen Kalender/.test(await n.innerText("#detail")) && await n.locator("#detail .vlogo img").count() === 1, "Fenster: Logo und «In meinen Kalender»");
   await n.click('#detail [data-verein]');
-  pruefe((await n.locator(".karte").count()) === 1 && /Alle Anlässe von Chor Rehetobel/.test(await n.innerText("#aktiver-verein")), "«Alle anzeigen» filtert nach Verein");
+  pruefe((await n.locator(".karte").count()) === 1 && /Alle Anlässe von Chor Rehetobel/.test(await n.innerText("#aktiver-verein")), "«Alle Anlässe von …» filtert nach Verein");
   for (const [monat, klasse] of [[4, "fruehling"], [7, "sommer"], [10, "herbst"], [1, "winter"]]) {
     await n.goto(`http://localhost:8765/index.html?monat=${monat}`);
     pruefe(await n.evaluate((k) => document.documentElement.classList.contains(k), klasse), `Titelbild im Monat ${monat}: ${klasse}`);
@@ -291,29 +274,6 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   pruefe(hz("freigegeben") === "ja", "verspätete Freigabe macht das Frühlingsfest öffentlich");
   h.setzeHeute("20281005"); h.melde("Herbstmarkt", "10.10.2029", "markt@example.ch");
   pruefe(/Planung 2029/.test(h.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1).subject), "danach läuft die Planung 2029 normal");
-
-  console.log("8. Hilfe beim Annehmen: Kategorie-Vorschlag und gleiche Art am gleichen Tag");
-  const kk = google(); kk.ctx.einrichten();
-  const nimmAn = (gg) => { const l = linkAus(gg.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1).body, "Annehmen");
-    const q = Object.fromEntries(new URL(l).searchParams); gg.ctx.api_({ api: "ja", id: q.id, t: q.t }); };
-  kk.melde("Adventsmarkt", "28.11.2026", "markt@example.ch", "Nein", "Gewerbeverein", "Feste & Märkte"); nimmAn(kk);
-  kk.melde("Samariterübung", "09.12.2026", "sam@example.ch", "Ja", "Samariterverein", "Vereinsleben"); nimmAn(kk);
-  kk.melde("Samariterübung", "16.12.2026", "sam@example.ch", "Ja", "Samariterverein", "Feste & Märkte");
-  let pm = kk.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1);
-  pruefe(/Kategorie prüfen: gemeldet ist «Feste &amp; Märkte»/.test(pm.htmlBody) && /bisher immer «Vereinsleben»/.test(pm.body),
-    "Prüf-Mail warnt: Samariterübung war bisher «Vereinsleben»");
-  kk.melde("Weihnachtsmarkt", "28.11.2026", "wm@example.ch", "Ja", "Frauenverein", "Feste & Märkte");
-  pm = kk.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1);
-  pruefe(/Gleiche Art am gleichen Tag \(Feste &amp; Märkte\): «Adventsmarkt» \(Gewerbeverein\)/.test(pm.htmlBody), "Prüf-Mail warnt: gleiche Art am gleichen Tag");
-  const best = kk.mails.filter((m) => m.to === "wm@example.ch").at(-1);
-  pruefe(/Hinweis: Am gleichen Tag findet bereits «Adventsmarkt»/.test(best.body), "Verein bekommt Hinweis in der Eingangsbestätigung");
-  kk.melde("Seniorenzmittag", "28.11.2026", "sz@example.ch", "Ja", "Pro Senectute", "Senioren & Treffpunkt");
-  pm = kk.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1);
-  pruefe(!/Gleiche Art/.test(pm.body) && !/Kategorie prüfen/.test(pm.body) && /Am gleichen Tag schon eingetragen/.test(pm.body),
-    "andere Art am gleichen Tag: keine Warnung, nur der normale Hinweis");
-  kk.melde("Vo 11 bis 11", "20.06.2027", "vvr@example.ch", "Nein", "Verkehrsverein Rehetobel", "Sport & Natur");
-  pm = kk.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1);
-  pruefe(/normalerweise «Feste &amp; Märkte»/.test(pm.htmlBody), "Stichwort-Liste: «Vo 11 bis 11» ist Feste & Märkte");
 
   const x = google(); x.ctx.einrichten();
   x.melde('<script>alert(1)</script>', "13.12.2026", "x@example.ch");

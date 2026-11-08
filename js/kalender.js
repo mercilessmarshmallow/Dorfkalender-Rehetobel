@@ -45,19 +45,14 @@
 
   // ---------- Kategorien (Reihenfolge nach Wichtigkeit, Entscheid 7.11.2026) ----------
   // Der Verkehrsverein gehört zu den Vereinen; «Gemeinde Rehetobel» heisst kurz «Gemeinde».
-  // ---------- Themen (Entscheid 8.11.2026): «Was mache ich dort als Besucher?» ----------
-  // Wer einen Anlass macht, zeigt das Vereinslogo. Reihenfolge = Reihenfolge der Knöpfe.
-  const FARBE = { "Musik & Kultur": "#7b4fa8", "Feste & Märkte": "#c25a0f", "Sport & Natur": "#0b7a34", "Kinder & Familie": "#b38600",
-    "Senioren & Treffpunkt": "#b5466e", "Kirche": "#6b5a3e", "Gemeinde & Politik": "#1f5fa8", "Vereinsleben": "#0e7c86",
-    "Kurse & Weiteres": "#7a7a7a" };
-  const HINWEIS = { "Vereinsleben": "Übungen, Proben, Versammlungen, Höcks", "Kurse & Weiteres": "Kurse, Vorträge, Tag der offenen Tür" };
-  // Alte Veranstalter-Gruppen (Formular bis Ende 2026) so gut wie möglich übersetzen
-  const ALT = { "gemeinde": "Gemeinde & Politik", "gemeinde rehetobel": "Gemeinde & Politik", "parteien": "Gemeinde & Politik",
-    "kommissionen": "Gemeinde & Politik", "schule": "Kinder & Familie", "kirche": "Kirche", "andere": "Kurse & Weiteres" };
+  const FARBE = { "Gemeinde": "#1f5fa8", "Vereine": "#0b7a34", "Schule": "#d97a1f", "Kirche": "#7b4fa8", "Gewerbe": "#9a5a2e",
+    "Parteien": "#0e7c86", "Kommissionen": "#5d6b7a", "Andere": "#8a8a8a" };
   function kategorieVon(k) {
     const t = String(k || "").trim();
+    if (/^gemeinde/i.test(t)) return "Gemeinde";
+    if (/^verkehrsverein|^verein/i.test(t)) return "Vereine";
     const bekannt = Object.keys(FARBE).find((n) => n.toLowerCase() === t.toLowerCase());
-    return bekannt || ALT[t.toLowerCase()] || t;
+    return bekannt || t;
   }
   const farbe = (a) => FARBE[a.kategorie] || "#8a8a8a";
 
@@ -76,13 +71,6 @@
   const sortiere = (liste) => liste.slice().sort((x, y) =>
     (x.datum + (x.zeit || "")).localeCompare(y.datum + (y.zeit || "")));
 
-  const lies = (k, std) => { try { const v = JSON.parse(localStorage.getItem(k)); return Array.isArray(v) ? v : std; } catch (e) { return std; } };
-  const speichere = (k, v) => { try { localStorage.setItem(k, JSON.stringify([...v])); } catch (e) { /* ohne Speicher geht es auch */ } };
-  const STANDARD = Object.keys(FARBE).filter((k) => k !== "Vereinsleben");   // zu Beginn: alles ausser Vereinsleben
-  const auswahl = new Set(lies("dk-auswahl", STANDARD));
-  const favoriten = new Set(lies("dk-favoriten", []));
-  // Oben: gewählte Themen, Vereine mit ★ und Anlässe mit (noch) unbekanntem Thema
-  const oben = (a) => auswahl.has(a.kategorie) || favoriten.has(a.veranstalter) || !(a.kategorie in FARBE);
   const zustand = {
     ansicht: "liste",
     suche: "",
@@ -97,6 +85,7 @@
   function gefiltert() {
     const q = zustand.suche.trim().toLowerCase();
     return alle.filter((a) =>
+      (!zustand.kategorie || a.kategorie === zustand.kategorie) &&
       (!zustand.verein || a.veranstalter === zustand.verein) &&
       (!q || [a.titel, a.ort, a.gemeinde, a.veranstalter, a.beschreibung]
         .some((f) => f && f.toLowerCase().includes(q))));
@@ -112,13 +101,11 @@
 
   // ---------- Kategorie-Knöpfe ----------
   function fuelleKategorien() {
-    const el = document.getElementById("kategorien");
-    el.innerHTML = `<p class="auswahl-text">Was interessiert Sie? Ausgewählte Anlässe stehen oben, alle anderen weiter unten.</p>`
-      + Object.keys(FARBE).map((k) =>
-      `<button type="button" class="kat-knopf" data-kat="${esc(k)}" aria-pressed="${auswahl.has(k)}"><span class="haken" aria-hidden="true">${auswahl.has(k) ? "✓" : "+"}</span><span class="punkt" style="background:${FARBE[k]}"></span>${esc(k)}${HINWEIS[k] ? `<small>${esc(HINWEIS[k])}</small>` : ""}</button>`).join("")
-      + `<div class="auswahl-knoepfe"><button type="button" class="knopf-link" data-alle>Alle wählen</button><button type="button" class="knopf-link" data-standard>Zurücksetzen</button></div>`
-      + (favoriten.size ? `<p class="auswahl-text">★ Immer oben: ${[...favoriten].map(esc).join(", ")}</p>` : "");
-    document.getElementById("kat-auf-text").textContent = `Meine Auswahl: ${auswahl.size} von ${Object.keys(FARBE).length}${favoriten.size ? ` · ★ ${favoriten.size}` : ""}`;
+    const vorhanden = new Set(alle.map((a) => a.kategorie).filter(Boolean));
+    const liste = [...Object.keys(FARBE), ...[...vorhanden].filter((k) => !(k in FARBE)).sort((x, y) => x.localeCompare(y, "de"))];
+    document.getElementById("kategorien").innerHTML = ["", ...liste].map((k) =>
+      `<button type="button" class="kat-knopf" data-kat="${esc(k)}" aria-pressed="${k === zustand.kategorie}">${k
+        ? `<span class="punkt" style="background:${FARBE[k] || "#8a8a8a"}"></span>${esc(k)}` : "Alle"}</button>`).join("");
   }
   function zeigeAktivenVerein() {
     document.getElementById("aktiver-verein").innerHTML = zustand.verein
@@ -126,19 +113,19 @@
   }
 
   // ---------- Karten ----------
-  function karte(a, klein) {
+  function karte(a) {
     const d = parse(a.datum);
     const n = Math.round((d - parse(heute)) / 864e5);
     const wt = n === 0 ? "Heute" : n === 1 ? "Morgen" : WOCHENTAGE[d.getDay()];
     const zt = a.zeit ? (a.zeitBis ? `${a.zeit}–${a.zeitBis} Uhr` : `${a.zeit} Uhr`) : "ganztägig";
     const bis = a.bis ? ` · bis ${parse(a.bis).getDate()}. ${MONATE[parse(a.bis).getMonth()]}` : "";
-    return `<li><button class="karte${klein ? " klein" : ""}" data-id="${esc(a.id)}" style="--kat:${farbe(a)}">
+    return `<li><button class="karte" data-id="${esc(a.id)}" style="--kat:${farbe(a)}">
       <div class="datum-block${a.datum === heute ? " heute" : ""}"><div class="wt">${wt}</div><div class="tg">${d.getDate()}</div><div class="mo">${MONATE[d.getMonth()].slice(0, 3)}</div></div>
       <div>
-        ${klein ? "" : vlogo(a)}
+        ${vlogo(a)}
         <h3>${esc(a.titel)}</h3>
         <div class="zeile"><span class="nowrap">${esc(zt)}${esc(bis)} ·</span> ${esc(a.gemeinde === "Rehetobel" ? a.ort || "Rehetobel" : ortText(a))}</div>
-        ${a.veranstalter ? `<div class="verein-zeile">${favoriten.has(a.veranstalter) ? "★ " : ""}${esc(a.veranstalter)}</div>` : ""}
+        ${a.veranstalter ? `<div class="verein-zeile">${esc(a.veranstalter)}</div>` : ""}
         ${a.kategorie ? `<span class="kat-etikett">${esc(a.kategorie)}</span>` : ""}
         ${a.nurMitglieder ? `<span class="etikett">Nur für Mitglieder</span>` : ""}
         ${a.status === "provisorisch" ? `<span class="etikett provisorisch">provisorisch</span>` : ""}
@@ -154,29 +141,23 @@
   // «Diese Woche im Dorf», «Nächste Woche», danach nach Monat. Zuerst 20 Anlässe, beim Suchen alle.
   function zeigeListe() {
     const el = document.getElementById("ansicht-liste");
-    const kommend = gefiltert().filter((a) => (a.bis || a.datum) >= heute);
-    if (!kommend.length) { el.innerHTML = `<p class="leer">Keine bevorstehenden Anlässe gefunden.</p>`; return; }
-    const planung = !!window.KALENDER_PLANUNG;   // Planungskalender: alles, nach Monat, ohne Auswahl
-    const alles = zustand.suche.trim() || zustand.verein || planung;
-    const fenster = alles ? kommend : kommend.slice(0, zustand.anzahl);
+    const alleKommenden = gefiltert().filter((a) => (a.bis || a.datum) >= heute);
+    if (!alleKommenden.length) { el.innerHTML = `<p class="leer">Keine bevorstehenden Anlässe gefunden.</p>`; return; }
+    const alles = zustand.suche.trim() || zustand.verein || window.KALENDER_PLANUNG;
+    const liste = alles ? alleKommenden : alleKommenden.slice(0, zustand.anzahl);
     const h = parse(heute), montag = plusTage(h, -mo0(h));
-    const nm = iso(plusTage(montag, 7)), um = iso(plusTage(montag, 14));
-    const gruppe = (liste, klein) => {
-      let html = "", abschnitt = "";
-      for (const a of liste) {
-        const d = parse(a.datum), b = a.datum < heute ? heute : a.datum;
-        const ab = !planung && b < nm ? "Diese Woche im Dorf" : !planung && b < um ? "Nächste Woche" : `${MONATE[d.getMonth()]} ${d.getFullYear()}`;
-        if (ab !== abschnitt) { html += (abschnitt ? "</ul>" : "") + `<h3 class="${klein ? "unter-abschnitt" : "abschnitt"}">${ab}</h3><ul class="karten">`; abschnitt = ab; }
-        html += karte(a, klein);
-      }
-      return html + (abschnitt ? "</ul>" : "");
-    };
-    const o = planung ? fenster : fenster.filter(oben), u = planung ? [] : fenster.filter((a) => !oben(a));
-    let html = o.length ? gruppe(o, false) : `<p class="leer">In Ihrer Auswahl ist in dieser Zeit nichts los.</p>`;
-    if (u.length) html += `<div class="trenner"><span>Weitere Anlässe im Dorf</span><small>${u.length} Anlässe, die nicht in Ihrer Auswahl sind</small></div>
-      <div class="unten">${gruppe(u, true)}</div>`;
-    if (fenster.length < kommend.length)
-      html += `<button class="mehr" data-mehr>Weitere Anlässe anzeigen (${kommend.length - fenster.length})</button>`;
+    const naechsterMontag = iso(plusTage(montag, 7)), uebernaechster = iso(plusTage(montag, 14));
+    let html = "", abschnitt = "";
+    for (const a of liste) {
+      const d = parse(a.datum), beginn = a.datum < heute ? heute : a.datum;
+      const ab = window.KALENDER_PLANUNG ? `${MONATE[d.getMonth()]} ${d.getFullYear()}`
+        : beginn < naechsterMontag ? "Diese Woche im Dorf" : beginn < uebernaechster ? "Nächste Woche" : `${MONATE[d.getMonth()]} ${d.getFullYear()}`;
+      if (ab !== abschnitt) { html += (abschnitt ? "</ul>" : "") + `<h2 class="abschnitt">${ab}</h2><ul class="karten">`; abschnitt = ab; }
+      html += karte(a);
+    }
+    html += "</ul>";
+    if (liste.length < alleKommenden.length)
+      html += `<button class="mehr" data-mehr>Weitere Anlässe anzeigen (${alleKommenden.length - liste.length})</button>`;
     el.innerHTML = html;
   }
 
@@ -285,48 +266,34 @@
       <div class="knoepfe">
         <button class="knopf knopf-rot" data-ics="${esc(a.id)}">📅 In meinen Kalender</button>
         ${a.link ? `<a class="knopf knopf-rand" href="${esc(a.link)}" target="_blank" rel="noopener">Mehr Infos</a>` : ""}
-      </div>
-      ${a.veranstalter ? `<div class="verein-box"><strong>${esc(a.veranstalter)}</strong>
-        <div class="verein-knoepfe">
-          <button class="mini-knopf${favoriten.has(a.veranstalter) ? " an" : ""}" data-favorit="${esc(a.veranstalter)}">${favoriten.has(a.veranstalter) ? "★ Immer oben" : "☆ Immer oben"}</button>
-          <button class="mini-knopf" data-abo="${esc(a.veranstalter)}">📅 Alle in meinen Kalender</button>
-          <button class="mini-knopf" data-verein="${esc(a.veranstalter)}">Alle anzeigen</button>
-        </div></div>` : ""}
-      <div>
-      </div>
-      <div class="abo-info" id="abo-info" hidden></div>
-      <div>
+        ${a.veranstalter ? `<button class="knopf knopf-rand" data-verein="${esc(a.veranstalter)}">Alle Anlässe von ${esc(a.veranstalter)}</button>` : ""}
       </div></div>`;
-    detail.dataset.id = id; if (!detail.open) detail.showModal();
+    detail.showModal();
   }
 
   // ---------- iCal-Export ----------
-  function ics(liste, name) {
-    if (!Array.isArray(liste)) liste = [liste];
+  function ics(a) {
     const kompakt = (s) => s.replace(/-/g, "");
     const zt = (z) => z.replace(":", "") + "00";
     const text = (s) => String(s || "").replace(/\\/g, "\\\\").replace(/\n/g, "\\n").replace(/[,;]/g, (c) => "\\" + c);
+    let start, ende;
+    if (a.zeit) {
+      start = `DTSTART;TZID=Europe/Zurich:${kompakt(a.datum)}T${zt(a.zeit)}`;
+      const endZeit = a.zeitBis || (() => { const [h, m] = a.zeit.split(":").map(Number);
+        return `${String(Math.min(h + 2, 23)).padStart(2, "0")}:${String(m).padStart(2, "0")}`; })();
+      ende = `DTEND;TZID=Europe/Zurich:${kompakt(a.bis || a.datum)}T${zt(endZeit)}`;
+    } else {
+      start = `DTSTART;VALUE=DATE:${kompakt(a.datum)}`;
+      ende = `DTEND;VALUE=DATE:${kompakt(iso(plusTage(parse(a.bis || a.datum), 1)))}`;
+    }
     const jetzt = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d+/, "");
-    const ereignis = (a) => {
-      let start, ende;
-      if (a.zeit) {
-        start = `DTSTART;TZID=Europe/Zurich:${kompakt(a.datum)}T${zt(a.zeit)}`;
-        const endZeit = a.zeitBis || (() => { const [h, m] = a.zeit.split(":").map(Number);
-          return `${String(Math.min(h + 2, 23)).padStart(2, "0")}:${String(m).padStart(2, "0")}`; })();
-        ende = `DTEND;TZID=Europe/Zurich:${kompakt(a.bis || a.datum)}T${zt(endZeit)}`;
-      } else {
-        start = `DTSTART;VALUE=DATE:${kompakt(a.datum)}`;
-        ende = `DTEND;VALUE=DATE:${kompakt(iso(plusTage(parse(a.bis || a.datum), 1)))}`;
-      }
-      return ["BEGIN:VEVENT", `UID:${a.id}-${kompakt(a.datum)}@dorfkalender-rehetobel`, `DTSTAMP:${jetzt}`, start, ende,
-        `SUMMARY:${text(a.titel)}`, `LOCATION:${text(ortText(a))}`, a.beschreibung ? `DESCRIPTION:${text(a.beschreibung)}` : null,
-        "END:VEVENT"].filter(Boolean).join("\r\n");
-    };
     const inhalt = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Verkehrsverein Rehetobel//Dorfkalender//DE",
-      ...liste.map(ereignis), "END:VCALENDAR"].join("\r\n");
+      "BEGIN:VEVENT", `UID:${a.id}@dorfkalender-rehetobel`, `DTSTAMP:${jetzt}`, start, ende,
+      `SUMMARY:${text(a.titel)}`, `LOCATION:${text(ortText(a))}`,
+      a.beschreibung ? `DESCRIPTION:${text(a.beschreibung)}` : null,
+      "END:VEVENT", "END:VCALENDAR"].filter(Boolean).join("\r\n");
     const url = URL.createObjectURL(new Blob([inhalt], { type: "text/calendar" }));
-    const datei = (name || liste[0].titel).replace(/[^\wäöüÄÖÜ -]/g, "");
-    const link = Object.assign(document.createElement("a"), { href: url, download: `${datei}.ics` });
+    const link = Object.assign(document.createElement("a"), { href: url, download: `${a.titel.replace(/[^\wäöüÄÖÜ -]/g, "")}.ics` });
     document.body.appendChild(link); link.click(); link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
@@ -390,29 +357,20 @@
   }
 
   document.addEventListener("click", (e) => {
-    const z = e.target.closest("[data-ansicht],[data-monat],[data-jahr],[data-tag],[data-id],[data-ics],[data-schliessen],[data-kat],[data-alle],[data-standard],[data-favorit],[data-abo],[data-verein],[data-verein-weg],[data-mehr],#kat-auf,a[href='#melden']");
+    const z = e.target.closest("[data-ansicht],[data-monat],[data-jahr],[data-tag],[data-id],[data-ics],[data-schliessen],[data-kat],[data-verein],[data-verein-weg],[data-mehr],#kat-auf,a[href='#melden']");
     if (!z) return;
     if (z.id === "kat-auf") {
       const auf = z.getAttribute("aria-expanded") !== "true";
       z.setAttribute("aria-expanded", auf); document.getElementById("kategorien").classList.toggle("offen", auf);
     }
     else if (z.dataset.kat !== undefined) {
-      const k = z.dataset.kat; auswahl.has(k) ? auswahl.delete(k) : auswahl.add(k);
-      speichere("dk-auswahl", auswahl); fuelleKategorien(); zeichne();
-    }
-    else if ("alle" in z.dataset) { Object.keys(FARBE).forEach((k) => auswahl.add(k)); speichere("dk-auswahl", auswahl); fuelleKategorien(); zeichne(); }
-    else if ("standard" in z.dataset) { auswahl.clear(); STANDARD.forEach((k) => auswahl.add(k)); speichere("dk-auswahl", auswahl); fuelleKategorien(); zeichne(); }
-    else if (z.dataset.favorit !== undefined) {
-      const v = z.dataset.favorit; favoriten.has(v) ? favoriten.delete(v) : favoriten.add(v);
-      speichere("dk-favoriten", favoriten); fuelleKategorien(); zeichne(); zeigeDetail(z.closest("dialog").dataset.id);
-    }
-    else if (z.dataset.abo !== undefined) {
-      // Alle kommenden Anlässe dieses Vereins in einer Kalender-Datei (einmalig; ein Abo mit späteren Anlässen folgt evtl.)
-      const liste = alle.filter((a) => a.veranstalter === z.dataset.abo && (a.bis || a.datum) >= heute);
-      ics(liste, z.dataset.abo);
-      const info = document.getElementById("abo-info"); info.hidden = false;
-      info.innerHTML = `${liste.length} Anlässe von ${esc(z.dataset.abo)} werden in Ihren Kalender übernommen.
-        Anlässe, die später dazukommen, bitte wieder hier holen.`;
+      zustand.kategorie = z.dataset.kat; zustand.anzahl = PRO_SEITE;
+      document.querySelectorAll("#kategorien .kat-knopf").forEach((b) => b.setAttribute("aria-pressed", b === z));
+      // Handy: wieder zuklappen und die Wahl auf dem Knopf zeigen
+      document.getElementById("kat-auf").setAttribute("aria-expanded", "false");
+      document.getElementById("kategorien").classList.remove("offen");
+      document.getElementById("kat-auf-text").textContent = zustand.kategorie ? `Kategorie: ${zustand.kategorie}` : "Nach Kategorie filtern";
+      zeichne();
     }
     else if (z.dataset.verein !== undefined) {
       detail.close(); zustand.verein = z.dataset.verein; zustand.ansicht = "liste"; zeigeAktivenVerein(); zeichne();

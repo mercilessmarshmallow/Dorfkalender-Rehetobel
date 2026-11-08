@@ -251,32 +251,3 @@ body.eingebettet .such { margin-top: 0; }
   .druck-tabelle tr { break-inside: avoid; }
   .druck-tabelle tr.konflikt td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
-/* ===== Meine Auswahl, zweigeteilte Liste, Verein «immer oben» (8.11.2026) ===== */
-.auswahl-text { flex-basis: 100%; margin: 2px 0 2px; color: var(--leise); font-size: .95rem; }
-.kat-knopf { display: inline-flex; align-items: center; gap: 2px; flex-wrap: wrap; text-align: left; }
-.kat-knopf small { flex-basis: 100%; font-size: .75rem; color: var(--leise); padding-left: 20px; line-height: 1.2; }
-.kat-knopf .haken { width: 16px; font-weight: 800; color: var(--leise); }
-.kat-knopf[aria-pressed="true"] { background: #f3faf5; border-color: var(--gruen); color: var(--text); }
-.kat-knopf[aria-pressed="true"] .haken { color: var(--gruen); }
-.kat-knopf[aria-pressed="true"] .punkt { box-shadow: none; }
-.kat-knopf[aria-pressed="true"] small { color: var(--leise); }
-.kat-knopf[aria-pressed="false"] { background: #fff; border-style: dashed; color: #5b635e; }
-.auswahl-knoepfe { flex-basis: 100%; display: flex; gap: 16px; margin-top: 4px; }
-.knopf-link { background: none; border: 0; padding: 4px 0; font: inherit; color: var(--gruen); text-decoration: underline; cursor: pointer; }
-.trenner { margin: 34px 0 6px; padding-top: 14px; border-top: 3px solid #cfd6cf; }
-.trenner span { display: block; font-size: 1.2rem; font-weight: 800; color: #4a524d; }
-.trenner small { color: var(--leise); }
-.unter-abschnitt { margin: 14px 0 6px; font-size: .95rem; text-transform: uppercase; letter-spacing: .04em; color: var(--leise); }
-.karte.klein { padding: 8px 12px; box-shadow: none; border: 1px solid var(--linie); border-left-width: 6px; background: #fbfbf9; }
-.karte.klein .datum-block { padding: 3px 0; }
-.karte.klein .datum-block .tg { font-size: 1.2rem; }
-.karte.klein h3 { font-size: 1rem; }
-.karte.klein .kat-etikett { font-size: .78rem; padding: 1px 8px; margin-top: 4px; }
-.karte.klein .zeile, .karte.klein .verein-zeile { font-size: .9rem; }
-.abo-info { background: var(--gruen-hell); border-radius: 10px; padding: 10px 12px; margin-top: 10px; font-size: .95rem; }
-@media (min-width: 720px) { .kat-auf.vorschau-laptop { display: none; } }
-.kat-knopf { white-space: normal; max-width: 100%; }
-.verein-box { margin-top: 14px; padding: 12px; border: 1px solid var(--linie); border-radius: 12px; background: #fbfbf9; }
-.verein-knoepfe { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-.mini-knopf { border: 1px solid #c9cec9; background: #fff; border-radius: 999px; padding: 8px 12px; min-height: 40px; font: inherit; font-size: .92rem; cursor: pointer; color: var(--text); }
-.mini-knopf.an { background: #fff6d6; border-color: #c99400; }

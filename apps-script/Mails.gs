@@ -32,25 +32,6 @@ const BLATT_ANTWORTEN = "Formularantworten 1";
 // Steht unter jedem Mail an die Veranstalter.
 const FUSS = "Dies ist eine automatisch verschickte Nachricht. Bitte nicht auf dieses Mail antworten.";
 
-// ---------- Themen (Kategorien) ----------
-// Bei diesen Arten soll es möglichst nicht zwei Anlässe am gleichen Tag geben (Hinweis im Prüf-Mail und an den Verein).
-const HAUPT_ARTEN = ["Musik & Kultur", "Feste & Märkte", "Sport & Natur"];
-// Vorschlag, welches Thema ein Anlass hat (Stichwort im Titel → Thema). Wird ergänzt durch alle schon angenommenen
-// Anlässe mit gleichem Titel. Weicht eine Meldung ab, steht im Prüf-Mail eine Warnung.
-const ZUORDNUNG = [
-  ["samariterübung", "Vereinsleben"], ["übung", "Vereinsleben"], ["probe", "Vereinsleben"], ["hauptversammlung", "Vereinsleben"],
-  ["vereinshöck", "Vereinsleben"], ["höck", "Vereinsleben"], ["nistkasten", "Vereinsleben"],
-  ["gottesdienst", "Kirche"], ["andacht", "Kirche"], ["saxophongebet", "Kirche"], ["besinnung", "Kirche"],
-  ["abstimmung", "Gemeinde & Politik"], ["gemeindeversammlung", "Gemeinde & Politik"], ["voranschlag", "Gemeinde & Politik"],
-  ["rechtsberatung", "Gemeinde & Politik"], ["podium", "Gemeinde & Politik"],
-  ["seniorenzmittag", "Senioren & Treffpunkt"], ["mittagstisch", "Senioren & Treffpunkt"], ["kaffeekränzli", "Senioren & Treffpunkt"],
-  ["jugendraum", "Kinder & Familie"], ["jugendtreff", "Kinder & Familie"], ["spielgruppe", "Kinder & Familie"], ["krippenspiel", "Kinder & Familie"],
-  ["konzert", "Musik & Kultur"], ["ständli", "Musik & Kultur"], ["lesung", "Musik & Kultur"], ["theater", "Musik & Kultur"],
-  ["adventsmarkt", "Feste & Märkte"], ["jahrmarkt", "Feste & Märkte"], ["vo bis", "Feste & Märkte"]   /* «Vo 11 bis 11» (Zahlen werden beim Vergleich weggelassen) */, ["dorffest", "Feste & Märkte"],
-  ["grümpelturnier", "Sport & Natur"], ["august wanderung", "Sport & Natur"], ["wanderung", "Sport & Natur"],
-  ["nothilfekurs", "Kurse & Weiteres"], ["kurs", "Kurse & Weiteres"],
-];
-
 // Spalten, die das Programm selbst verwaltet (erscheinen nicht im Prüf-Mail)
 const INTERN = ["freigegeben", "begründung", "mail-status", "id"];
 
@@ -107,9 +88,6 @@ function beiMeldung(e) {
       { link: planungsLink_(), text: `Planungskalender ${j} ansehen`,
         hinweis: `Hier sehen Sie, was andere Vereine für ${j} schon vorgemerkt haben (provisorisch, bitte nicht weitergeben).` },
     ] : []),
-    ...gleicheArt_(blatt, zeile, a).slice(0, 3).map((b) =>
-      `Hinweis: Am gleichen Tag findet bereits «${b.titel}» (${b.veranstalter || "ein anderer Verein"}) statt – ebenfalls ` +
-      `«${a.kategorie}». Falls Ihr Datum noch flexibel ist, schauen Sie bitte im ${art === "planung" ? "Planungskalender" : "Dorfkalender"} nach einem freien Tag.`),
     { angaben: a, titel: "Ihre Angaben" },
   ]);
   setzeStatus_(blatt, zeile, "Eingang bestätigt " + heute_());
@@ -392,19 +370,15 @@ function mailAnVorstand_(blatt, zeile, a, id, art) {
   const gleichHtml = gleich.length
     ? `<p style="background:#fff4e5;padding:10px 12px;border-radius:6px"><b>⚠ Am gleichen Tag schon eingetragen:</b><br>${gleich.map((x) => "– " + esc_(x)).join("<br>")}</p>`
     : `<p style="color:#2e7d32">✓ An diesem Tag ist noch nichts eingetragen.</p>`;
-  const warnungen = hinweise_(blatt, zeile, a);
-  const warnHtml = warnungen.map((w) =>
-    `<p style="background:#fde8e8;border-left:4px solid #c62828;padding:10px 12px;border-radius:6px"><b>⚠ ${esc_(w)}</b></p>`).join("");
   const html = `<div style="font-family:Arial,sans-serif;font-size:15px;color:#222">
     <p><b>${esc_(artText)}</b></p>
-    ${warnHtml}
     ${gleichHtml}
     <table style="border-collapse:collapse;margin-bottom:16px">${tabelle}</table>
     ${knopf("✓ Annehmen", "#2e7d32", ja) + knopf("✕ Ablehnen", "#c62828", nein)}
     <p style="color:#666;font-size:13px">Ein Tipp genügt: Der Verein bekommt sofort das passende Mail.</p>
     ${art === "planung" ? `<p style="color:#666;font-size:13px">Planungskalender ${jahr}: <a href="${planungsLink_()}">öffnen</a></p>` : ""}
   </div>`;
-  const text = artText + "\n\n" + warnungen.map((w) => "⚠ " + w + "\n").join("") + gleichText + "\n\n" + zeilen.map(([h, w]) => `${h}: ${w}`).join("\n") +
+  const text = artText + "\n\n" + gleichText + "\n\n" + zeilen.map(([h, w]) => `${h}: ${w}`).join("\n") +
     `\n\nAnnehmen: ${ja}\nAblehnen: ${nein}`;
   MailApp.sendEmail({
     to: an.join(","), subject: `Dorfkalender: ${art === "planung" ? "Planung " + jahr : "neue Meldung"} «${a.titel}» (${a.datum})`,
@@ -417,61 +391,16 @@ function gleicherTag_(blatt, zeile, a) {
   const von = datumNum_(a.datum), bis = datumNum_(a.bis) || von;
   if (!von) return [];
   const treffer = [];
-  for (const { zeile: z, a: b } of alleAnlaesse_(blatt)) {
+  for (let z = 2; z <= blatt.getLastRow(); z++) {
     if (z === zeile) continue;
+    const b = anlass_(blatt, z);
     if (b.freigegeben !== "ja" && b.freigegeben !== "vorgemerkt") continue;
     const bVon = datumNum_(b.datum), bBis = datumNum_(b.bis) || bVon;
     if (!bVon || bVon > bis || bBis < von) continue;
     treffer.push(`${b.titel} (${b.veranstalter || "?"}), ${b.datum}${b.zeit ? " " + b.zeit : ""}` +
-      ` – ${b.freigegeben === "ja" ? "öffentlich" : "vorgemerkt"}` + (b.verschiebbar ? `, verschiebbar: ${b.verschiebbar}` : "") +
-      (b.kategorie ? ` · ${b.kategorie}` : ""));
+      ` – ${b.freigegeben === "ja" ? "öffentlich" : "vorgemerkt"}` + (b.verschiebbar ? `, verschiebbar: ${b.verschiebbar}` : ""));
   }
   return treffer;
-}
-
-// Anlässe der gleichen Hauptart (Musik & Kultur, Feste & Märkte, Sport & Natur) an einem gemeinsamen Tag
-function gleicheArt_(blatt, zeile, a) {
-  const k = String(a.kategorie || "").trim();
-  if (HAUPT_ARTEN.indexOf(k) < 0) return [];
-  const von = datumNum_(a.datum), bis = datumNum_(a.bis) || von;
-  if (!von) return [];
-  const treffer = [];
-  for (const { zeile: z, a: b } of alleAnlaesse_(blatt)) {
-    if (z === zeile) continue;
-    if (b.freigegeben !== "ja" && b.freigegeben !== "vorgemerkt") continue;
-    if (String(b.kategorie || "").trim() !== k) continue;
-    const bVon = datumNum_(b.datum), bBis = datumNum_(b.bis) || bVon;
-    if (!bVon || bVon > bis || bBis < von) continue;
-    treffer.push(b);
-  }
-  return treffer;
-}
-
-// Welches Thema hätte man erwartet? Zuerst gleiche Titel bei schon angenommenen Anlässen, sonst die Stichwort-Liste.
-function themaVorschlag_(blatt, zeile, a) {
-  const norm = (t) => String(t || "").toLowerCase().replace(/\d+\.?/g, "").replace(/[«»"',.:–-]/g, " ").replace(/\s+/g, " ").trim();
-  const t = norm(a.titel), zaehler = {};
-  for (const { zeile: z, a: b } of alleAnlaesse_(blatt)) {
-    if (z === zeile) continue;
-    if ((b.freigegeben === "ja" || b.freigegeben === "vorgemerkt") && b.kategorie && norm(b.titel) === t)
-      zaehler[b.kategorie] = (zaehler[b.kategorie] || 0) + 1;
-  }
-  const bisher = Object.keys(zaehler).sort((x, y) => zaehler[y] - zaehler[x])[0];
-  if (bisher) return { thema: bisher, grund: `«${a.titel}» war bisher immer «${bisher}»` };
-  const treffer = ZUORDNUNG.find(([wort]) => t.indexOf(wort) >= 0);
-  return treffer ? { thema: treffer[1], grund: `Anlässe mit «${treffer[0]}» im Titel sind normalerweise «${treffer[1]}»` } : null;
-}
-
-// Warnungen fürs Prüf-Mail
-function hinweise_(blatt, zeile, a) {
-  const w = [];
-  const v = themaVorschlag_(blatt, zeile, a);
-  if (v && a.kategorie && v.thema !== String(a.kategorie).trim())
-    w.push(`Kategorie prüfen: gemeldet ist «${a.kategorie}». ${v.grund}.`);
-  const gleich = gleicheArt_(blatt, zeile, a);
-  if (gleich.length) w.push(`Gleiche Art am gleichen Tag (${a.kategorie}): ` +
-    gleich.map((b) => `«${b.titel}» (${b.veranstalter || "?"})`).join(", ") + ".");
-  return w;
 }
 
 // ---------- Hilfsfunktionen ----------
@@ -504,21 +433,8 @@ function findeZeile_(blatt, id) {
 
 function anlass_(blatt, zeile) {
   const breite = blatt.getLastColumn();
-  const kopf = blatt.getRange(1, 1, 1, breite).getDisplayValues()[0];
-  return anlassAus_(kopf, blatt.getRange(zeile, 1, 1, breite).getDisplayValues()[0]);
-}
-
-// Alle Zeilen auf einmal lesen (schnell, auch bei vielen hundert Meldungen): [{zeile, a}, …]
-function alleAnlaesse_(blatt) {
-  const breite = blatt.getLastColumn(), n = blatt.getLastRow();
-  if (n < 2) return [];
-  const werte = blatt.getRange(1, 1, n, breite).getDisplayValues();
-  return werte.slice(1).map((w, i) => ({ zeile: i + 2, a: anlassAus_(werte[0], w) }));
-}
-
-function anlassAus_(kopfRoh, werteRoh) {
-  const kopf = kopfRoh.map((h) => String(h).trim().toLowerCase());
-  const werte = werteRoh.map((w) => String(w).trim());
+  const kopf = blatt.getRange(1, 1, 1, breite).getDisplayValues()[0].map((h) => h.trim().toLowerCase());
+  const werte = blatt.getRange(zeile, 1, 1, breite).getDisplayValues()[0].map((w) => String(w).trim());
   const feld = (...namen) => {
     const i = kopf.findIndex((h) => namen.some((n) => h === n || h.startsWith(n + " (")));
     return i >= 0 ? werte[i] : "";
