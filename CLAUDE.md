@@ -21,6 +21,13 @@ und hat hier nichts zu suchen.
 - Ziel der Projektleitung: alles Wichtige **mit einem Tipp in der Gmail-App**, ohne Computer.
   Aufgaben am PC bündeln, damit sie möglichst selten nötig sind.
 
+## Gesprächsverlauf aufräumen («/clear»)
+- Lange Gespräche werden unübersichtlich. Wenn ein Thema abgeschlossen ist (gebaut, geprüft, veröffentlicht oder
+  bewusst vertagt), **STAND.md nachführen** («Hier weitermachen …») und dann der Projektleitung vorschlagen:
+  «Guter Moment für /clear – alles Wichtige steht in STAND.md.»
+- Nicht mitten in einer offenen Frage oder Fehlersuche vorschlagen, und höchstens einmal pro Thema.
+- Nach /clear zuerst STAND.md, KONZEPT.md und ENTSCHEIDE.md lesen (siehe «Zuerst lesen»).
+
 ## Ideen und Entscheide festhalten
 - Neue Idee oder neuer Wunsch → in KONZEPT.md einordnen (mit 📋 geplant), Auswirkungen auf Bestehendes nennen.
 - Entscheid → in ENTSCHEIDE.md mit Datum und Grund (neueste zuoberst).

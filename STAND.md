@@ -1,6 +1,6 @@
 # Stand Dorfkalender
 
-Stand: 7.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
+Stand: 8.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
 
 ## Läuft (eingerichtet am 6.11.2026, mit dem Handy getestet)
 - Webseite mit Liste, Monat und Terminplanung (seit 7.11. im neuen Design, siehe unten); Planungskalender über `?planung=…`.
@@ -45,6 +45,14 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **PC-Aufgabe (zuerst erklären):** Kategorie-Auswahl im Formular ohne «Verkehrsverein», neue Reihenfolge.
   Ideenspeicher: Veranstalter als Auswahlliste (für die Logos).
 - **Später besprechen:** Was gehört überhaupt in den Dorfkalender (z. B. Proben, Übungen, Sitzungen)?
+
+## Hier weitermachen (8.11.2026)
+- **iPhone-Test «aufs Handy» läuft:** Webseite öffnet, «App herunterladen» geht nicht. Ursache noch NICHT geklärt –
+  Frage an die Projektleitung offen: Wo bleibt sie stecken (Teilen-Knopf nicht gefunden / «Zum Home-Bildschirm» fehlt /
+  kein Symbol)? Link in Safari geöffnet oder aus WhatsApp/Gmail? Nicht raten.
+- **Vorschau Themen + «Meine Auswahl»** ist für den Vorstand online (…/vorschau/), Projektleitung schickt sie weiter.
+  Live schalten erst nach Okay des Vorstands (Schritte siehe unten).
+- Arbeitszweig `claude/pensive-thompson-br689r` enthält die neue Seite + Programm (nicht live); main = jetziger Kalender + vorschau/.
 
 ## Noch offen
 - **Themen + «Meine Auswahl» + Warnungen im Prüf-Mail (8.11.): gebaut auf dem Arbeitszweig, NICHT live.**
