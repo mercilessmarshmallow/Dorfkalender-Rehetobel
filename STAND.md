@@ -74,7 +74,9 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Vor dem Ersetzen des alten Kalenders:** kommende Anlässe aus dem alten Kalender übernehmen (iCal-Export vom Vorstand).
 - **Anlässe 2027 eingetragen (8.11.):** 212 Anlässe (inkl. 12 auswärtige von Rehetobler Vereinen) aus der Liste der Koordinationssitzung direkt in die Tabelle (Freigegeben = ja,
   ohne Mailadressen → keine Mails). Tabelle ist dafür mit dem privaten Google-Konto der Projektleitung geteilt (Claude schreibt darüber).
-  Offen (Details in der privaten Vorstandsablage `kalender/anlaesse-2027/`): 75× Veranstalter, 44× Zeit, Orte; ohne Datum; 2028-Konzerte.
+  Zwei Konzerte 2028 als «vorgemerkt». Vorstandssitzungen gelöscht.
+  **Offen** (Details in der privaten Vorstandsablage `kalender/anlaesse-2027/`): Veranstalter (klärt Projektleitung mit dem Vorstand),
+  fehlende Zeiten und Orte, Anlässe ohne Datum. Nachträge macht Claude direkt in der Tabelle (geteilt mit dem privaten Konto).
 - Bestätigungsnachricht im Formular: «Bitte auch im Spam-Ordner nachsehen.»
 - Google-Benachrichtigung «neue Antworten» behalten oder ausschalten (Prüf-Mail ersetzt sie).
 - Einbindung in die ClubDesk-Webseite (Code in KONZEPT.md / README.md).
