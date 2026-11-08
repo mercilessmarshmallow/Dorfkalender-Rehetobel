@@ -163,6 +163,10 @@ Musik & Kultur 10, je 4 Sport & Natur / Senioren / Gemeinde / Kinder, Entsorgung
 - Vorschau zum Anschauen: Vorstandsablage `ideen/originale/dorfkalender-vorschau-auswahl/`.
 
 ## Ideenspeicher (6.11.2026, noch nicht entschieden) 📋
+- **Anlässe 2027 übernehmen und Parallelbetrieb (Projektleitung, 8.11.):** Liste der Koordinationssitzung (Excel vom Vorstand)
+  ordnet Claude den Spalten und Themen zu; Übernahme in die Tabelle direkt als öffentlich. Dann laufen alter und neuer Kalender
+  eine Zeit lang parallel; der alte bekommt später einen Hinweis «umgezogen» mit Link, danach wird er abgeschaltet.
+  Excel und Kontaktdaten nie in diese Ablage. 📋
 - **Entsorgung als Kategorie (8.11.):** Grüngut, Altmetall und Papiersammlung (eigentlich Abfallkalender der Gemeinde) als
   eigene Kategorie «Entsorgung». Vorerst nicht umsetzen, nur Idee (Projektleitung 8.11.).
 - **Eigene Adresse statt «mercilessmarshmallow»:** Ablage in eine GitHub-Organisation des Vereins (gehört dem Vereins-Gmail)
