@@ -22,7 +22,7 @@ Google kommt durcheinander, wenn im Browser mehrere Google-Konten angemeldet sin
 
 ## A. Programm erneuern (wenn es schon eingerichtet ist)
 1. Im selben privaten Fenster einen neuen Tab öffnen und diese Adresse aufrufen:
-   https://raw.githubusercontent.com/mercilessmarshmallow/Dorfkalender-Rehetobel/main/apps-script/Mails.gs
+   https://raw.githubusercontent.com/verkehrsvereinrehetobel-collab/Dorfkalender-Rehetobel/main/apps-script/Mails.gs
    → **Ctrl + A**, **Ctrl + C**.
 2. In Apps Script ins Textfeld klicken → **Ctrl + A** → **Ctrl + V** → **💾 Speichern**.
 3. **Bereitstellen → Bereitstellungen verwalten → Stift ✏ → Version: «Neue Version» → Bereitstellen → Fertig.**

@@ -1,6 +1,6 @@
 # Stand Dorfkalender
 
-Stand: 8.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
+Stand: 9.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
 
 ## Läuft (eingerichtet am 6.11.2026, mit dem Handy getestet)
 - Webseite mit Liste, Monat und Terminplanung (seit 7.11. im neuen Design, siehe unten); Planungskalender über `?planung=…`.
@@ -60,6 +60,16 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Verbandswettschiessen (5./6.3. oder 12.3.?), rund 25 fehlende Uhrzeiten, Anfangszeit Vollmondschwimmen.
   **Liste zum Nachfragen liegt in der privaten Vorstandsablage** (`kalender/anlaesse-2027/README.md`, 8.11.) – Projektleitung klärt mit Vorstand/Vereinen, Claude trägt Antworten in der Tabelle nach.
 
+## Umzug auf das Vereinskonto (9.11.2026, läuft)
+- Ablage zieht auf das GitHub-Konto `verkehrsvereinrehetobel-collab`. Neue Adresse:
+  https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/ (alte leitet nicht weiter).
+- Alle Links in der Ablage schon umgestellt (auch `Mails.gs`) und auf main.
+- **Reihenfolge:** Umzug auf GitHub → Vereinskonto bestätigt → GitHub Pages prüfen (neue Adresse zeigt die Seite) →
+  **Programm erneuern nötig (Anleitung Teil A)**, sonst führen Knöpfe in neuen Mails auf die alte Adresse →
+  Claude-Zugriff (GitHub-App) fürs Vereinskonto freigeben, eigenes Konto als Mitarbeiter behalten.
+- Danach: Vorschau-Link neu an den Vorstand; «Dorfkalender aufs Handy» auf Android und iPhone neu hinzufügen;
+  Prüf-Mails, die schon im Postfach liegen, führen auf die alte Adresse (diese Anlässe in der Tabelle freigeben).
+
 ## Hier weitermachen (8.11.2026)
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
   (Symbol wie bei Android). Ursache des Problems: Der Hinweis-Kasten ist auf dem iPhone nur Text (Apple erlaubt keinen
@@ -71,7 +81,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Themen + «Meine Auswahl» live (8.11., Entscheid Projektleitung, ohne auf den Vorstand zu warten).** Webseite auf main. Alte Gruppen «Vereine»/«Gewerbe» bekommen auf der Webseite vorläufig ein Thema
   aus dem Titel (sonst «Kurse & Weiteres»). Zweig und main sind jetzt wieder gleich.
   **Notfall zurück zu den alten Kategorien:** `anleitungen/notfall-alte-kategorien.md` (alt/neu, alter Stand `8b595f2`).
-- **Vorschau für den Vorstand (8.11.):** https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/vorschau/ – Kalender mit
+- **Vorschau für den Vorstand (8.11.):** https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/vorschau/ – Kalender mit
   Beispiel-Anlässen (aus dem alten Kalender, Nov. 2026–Jan. 2027) und **Probe-Formular** (`vorschau/melden.html`) mit den neuen
   Themen; verschickt nichts, Probe-Anlass erscheint nur im eigenen Browser. Projektleitung schickt Link + Bilder weiter,
   Vorstand gibt Rückmeldung. Excel 2027 und Vereinswebseite (ClubDesk) kommen erst danach.

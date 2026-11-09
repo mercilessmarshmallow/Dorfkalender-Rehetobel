@@ -3,6 +3,12 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 9.11.2026 (Umzug auf das Vereinskonto)
+- **Ablage zieht auf das GitHub-Konto des Vereins `verkehrsvereinrehetobel-collab`** (Projektleitung, am PC).
+  Grund: Der Kalender soll dem Verein gehören, nicht einem privaten Konto; erleichtert eine spätere Übergabe.
+  Neue Adresse: https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/ (die alte leitet nicht weiter).
+  Eigene Adresse (kalender.rehetobel-tourismus.ch) bleibt geplant.
+
 ## 8.11.2026 (Feuerwehrverein-Logo)
 - **«Feuerwehrverein Rehetobel» bekommt das Feuerwehr-Logo** (Projektleitung: «Mit»). Schreibweise in `js/logos.js` ergänzt.
   «Lesegesellschaft Kaien» bleibt ohne Logo (anderer Verein als die Lesegesellschaft Dorf).

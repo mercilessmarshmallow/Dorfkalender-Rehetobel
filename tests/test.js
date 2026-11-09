@@ -70,7 +70,7 @@ function server() {
   }).listen(8765);
 }
 
-const lokal = (u) => u.replace("https://mercilessmarshmallow.github.io", "http://localhost:8765");
+const lokal = (u) => u.replace("https://verkehrsvereinrehetobel-collab.github.io", "http://localhost:8765");
 const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || [])[1];
 
 (async () => {
@@ -100,7 +100,7 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   pruefe(/Anlass neu melden/.test(absage.htmlBody) && begruendungsText && !/docs\.google\.com/.test(begruendungsText),
     "automatische Absage: Knopf «Anlass neu melden» statt langem Link");
   const konzertJa = linkAus(pruef[0].body, "Annehmen");
-  pruefe(/^https:\/\/mercilessmarshmallow\.github\.io\/Dorfkalender-Rehetobel\/entscheid\.html\?a=ja/.test(konzertJa), "Knopf führt auf die Prüfseite");
+  pruefe(/^https:\/\/verkehrsvereinrehetobel-collab\.github\.io\/Dorfkalender-Rehetobel\/entscheid\.html\?a=ja/.test(konzertJa), "Knopf führt auf die Prüfseite");
 
   console.log("2. Planung 2028");
   g.melde("Turnfest", "12.06.2028", "turnverein@example.ch", "Nein", "Turnverein");

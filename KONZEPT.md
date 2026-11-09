@@ -41,7 +41,7 @@ ohne das laufende System zu ändern.
 ## Die Bausteine
 | Baustein | Wo | Wozu |
 |---|---|---|
-| Webseite | https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/ (diese Ablage, GitHub Pages) | Kalender für alle: Liste, Monat, Terminplanung. Eingebettet in ClubDesk mit `?einbetten=1`. ✅ |
+| Webseite | https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/ (diese Ablage, GitHub Pages) | Kalender für alle: Liste, Monat, Terminplanung. Eingebettet in ClubDesk mit `?einbetten=1`. ✅ |
 | Formular «Anlass melden» | Google-Konto des Vereins | Vereine melden ihre Anlässe. ✅ |
 | Tabelle «Dorfkalender Rehetobel» | Google-Konto des Vereins | Alle Meldungen. Das Blatt «Kalender» enthält nur freigegebene Anlässe ohne Kontaktdaten und ist als CSV veröffentlicht. ✅ |
 | Programm «Dorfkalender Mails» | Apps Script in der Tabelle, Quelltext in `apps-script/Mails.gs` | Mails an Vereine und Prüf-Mails, Annehmen/Ablehnen. ✅ / 🔧 |
@@ -169,8 +169,8 @@ Musik & Kultur 10, je 4 Sport & Natur / Senioren / Gemeinde / Kinder, Entsorgung
   Excel und Kontaktdaten nie in diese Ablage. 📋
 - **Entsorgung als Kategorie (8.11.):** Grüngut, Altmetall und Papiersammlung (eigentlich Abfallkalender der Gemeinde) als
   eigene Kategorie «Entsorgung». Vorerst nicht umsetzen, nur Idee (Projektleitung 8.11.).
-- **Eigene Adresse statt «mercilessmarshmallow»:** Ablage in eine GitHub-Organisation des Vereins (gehört dem Vereins-Gmail)
-  umziehen und Adresse **kalender.rehetobel-tourismus.ch** (DNS-Eintrag bei green.ch). Löst auch die Übergabe.
+- **Eigene Adresse statt «mercilessmarshmallow»:** ✅ 9.11.2026 Ablage auf das GitHub-Konto des Vereins `verkehrsvereinrehetobel-collab` umgezogen
+  (gehört dem Vereins-Gmail). 📋 Später noch eigene Adresse **kalender.rehetobel-tourismus.ch** (DNS-Eintrag bei green.ch). Löst auch die Übergabe.
   Projektleitung 8.11.: Konto/Organisation «Verkehrsverein» anlegen, mit dem eigenen Konto verknüpft. ⚠ Beim Umzug ändert sich die
   Adresse der Webseite (alte github.io-Adresse leitet nicht weiter) → **vor** QR-Plakaten und breiter Bekanntmachung umziehen,
   am besten gleich mit eigener Adresse. Claude-Zugriff (GitHub-App) für das neue Konto freigeben.
@@ -189,7 +189,7 @@ Musik & Kultur 10, je 4 Sport & Natur / Senioren / Gemeinde / Kinder, Entsorgung
 - **Anlässe aus dem alten Kalender übernehmen:** alle kommenden Anlässe als iCal-Datei aus dem alten Kalender exportieren
   (Vorstand) → Claude liest sie ein. Nötig vor der Umstellung, sonst fehlen Nov./Dez. 2026. 📋
 - **Übergabe-Anleitung** (wenn die Projektleitung wechselt): Google-Konto (Passwort, Wiederherstellung, Telefon, Passkey),
-  GitHub-Ablage, Skripteigenschaft `PRUEF_MAILS_AUCH_AN`. Wird angelegt, sobald die GitHub-Frage entschieden ist.
+  GitHub-Ablage, Skripteigenschaft `PRUEF_MAILS_AUCH_AN`. GitHub-Frage entschieden (9.11.2026: Vereinskonto) – Anleitung kann jetzt angelegt werden.
 
 ## Grundsätze
 - **Einfach für die Projektleitung:** alles Wichtige mit einem Tipp in der Gmail-App, ohne Computer.

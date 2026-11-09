@@ -3,10 +3,10 @@
 Öffentlicher Veranstaltungskalender fürs ganze Dorf Rehetobel, betrieben vom Verkehrsverein Rehetobel.
 Vereine melden ihre Anlässe über ein Google-Formular, der Verkehrsverein prüft und gibt sie frei.
 
-- **Kalender:** https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/
-- **Eingebettet** (ohne Kopf, z. B. für die Vereinswebseite): https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/?einbetten=1
+- **Kalender:** https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/
+- **Eingebettet** (ohne Kopf, z. B. für die Vereinswebseite): https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/?einbetten=1
 - **Einbindung in ClubDesk** (HTML-Block):
-  `<iframe src="https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/?einbetten=1" title="Dorfkalender Rehetobel" style="width:100%; height:1400px; border:0;" loading="lazy"></iframe>`
+  `<iframe src="https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/?einbetten=1" title="Dorfkalender Rehetobel" style="width:100%; height:1400px; border:0;" loading="lazy"></iframe>`
 
 ## Was liegt wo
 | Datei / Ordner | Inhalt |

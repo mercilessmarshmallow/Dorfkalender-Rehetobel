@@ -19,11 +19,11 @@ const VORSTAND = ["verkehrsverein.rehetobel@gmail.com"];
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzuNZ27F1NhpYGpJ4i1sGFxalk1lCvedJ943s-_EhoT6aOph1VdG5FNRp30H94sS6ykEQ/exec";
 const ABSENDER_NAME = "Verkehrsverein Rehetobel";
 const ANTWORT_AN = "verkehrsverein.rehetobel@gmail.com";
-const KALENDER_LINK = "https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/";
+const KALENDER_LINK = "https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/";
 const LOGO = KALENDER_LINK + "bilder/logo.png";   // Logo oben in den Mails an die Vereine
 const FARBE = "#bd1521";                          // Knöpfe in den Mails: Rot wie «+ Anlass melden» auf der Webseite
 // Seite auf der Kalender-Webseite, zu der die Knöpfe im Prüf-Mail führen (funktioniert ohne Google-Anmeldung, auch in der Gmail-App)
-const ENTSCHEID_SEITE = "https://mercilessmarshmallow.github.io/Dorfkalender-Rehetobel/entscheid.html";
+const ENTSCHEID_SEITE = "https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/entscheid.html";
 const FORMULAR_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSeKT9Vj2d2BhPkuX7gYlE9mK_gae2x-f5uYJN-bJc8TcsTbYQ/viewform";
 const BLATT_ANTWORTEN = "Formularantworten 1";
 // Bis zu welchem Jahr ist der Kalender freigegeben? Steht in der Skripteigenschaft FREIGEGEBEN_BIS (setzt «Jahr freigeben»).

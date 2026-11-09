@@ -34,7 +34,7 @@ oben **Erweiterungen → Apps Script**.
 
 **Schritt 7 – Neues Programm kopieren**
 Neuer Tab → diese Adresse öffnen:
-https://raw.githubusercontent.com/mercilessmarshmallow/Dorfkalender-Rehetobel/main/apps-script/Mails.gs
+https://raw.githubusercontent.com/verkehrsvereinrehetobel-collab/Dorfkalender-Rehetobel/main/apps-script/Mails.gs
 → **Ctrl + A**, dann **Ctrl + C**.
 
 **Schritt 8 – Einfügen**
