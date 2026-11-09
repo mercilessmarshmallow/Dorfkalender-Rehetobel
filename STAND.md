@@ -77,8 +77,9 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 ## Kompaktere Themen-Knöpfe (9.11.2026, gebaut, nur auf dem Arbeitszweig – noch nicht auf main)
 - Wunsch Projektleitung: auf dem Laptop Anlässe sehen, ohne hinunterzuscrollen, Schrift nicht kleiner.
 - Laptop: Text und «Alle wählen / Zurücksetzen» in einer Zeile, Knöpfe mit weniger Leerraum, Erklärungen bei Vereinsleben /
-  Kurse & Weiteres als Hinweis beim Zeigen mit der Maus. Handy unverändert. Erster Anlass bei 1280×720: vorher 931 px, neu 782 px
-  (reicht noch nicht). Titelbild niedriger: **abgelehnt** (Projektleitung: «schlechte Lösung»).
+  Kurse & Weiteres als Hinweis beim Zeigen mit der Maus. Handy unverändert. Titelbild niedriger: **abgelehnt** («schlechte Lösung»);
+  «Meine Auswahl» auf dem Laptop zuklappen: **abgelehnt** («doof»). Wunsch: höchstens 3 Zeilen → Text-Zeile + 2 Zeilen Knöpfe
+  («Kirche» rückt auf dem Laptop in die erste Zeile, vor «Senioren & Treffpunkt»). Erster Anlass bei 1280×720: vorher 931 px, neu 738 px.
 - **Wartet auf das Okay der Projektleitung für main.** Vorher `kalender-pruefer` und `handy-anschauer` laufen lassen.
 
 ## Hier weitermachen (8.11.2026)

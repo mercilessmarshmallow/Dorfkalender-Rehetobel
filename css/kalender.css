@@ -290,9 +290,15 @@ body.eingebettet .such { margin-top: 0; }
 .auswahl-kopf .auswahl-text { flex: 1 1 320px; }
 .auswahl-kopf .auswahl-knoepfe { flex-basis: auto; margin-top: 0; }
 @media (min-width: 720px) {
-  .kategorien { gap: 6px; padding-top: 8px; }
-  .kat-knopf { min-height: 38px; padding: 5px 12px; }
+  .kategorien { gap: 6px 5px; padding-top: 8px; }
+  .kat-knopf { min-height: 38px; padding: 5px 9px; gap: 0; }
+  .kat-knopf .haken { width: 14px; }
+  .kat-knopf .punkt { margin-right: 5px; }
   .kat-knopf small { display: none; }
+  /* Zwei Zeilen Knöpfe: «Kirche» (kurz) kommt in die erste Zeile, «Senioren & Treffpunkt» (lang) in die zweite */
+  .kat-knopf[data-kat="Senioren & Treffpunkt"], .kat-knopf[data-kat="Gemeinde & Politik"],
+  .kat-knopf[data-kat="Vereinsleben"], .kat-knopf[data-kat="Kurse & Weiteres"] { order: 1; }
+  .kategorien > p.auswahl-text { order: 2; }
 }
 .verein-box { margin-top: 14px; padding: 12px; border: 1px solid var(--linie); border-radius: 12px; background: #fbfbf9; }
 .verein-knoepfe { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
