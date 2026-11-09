@@ -293,8 +293,6 @@ body.eingebettet .such { margin-top: 0; }
   .kategorien { gap: 6px; padding-top: 8px; }
   .kat-knopf { min-height: 38px; padding: 5px 12px; }
   .kat-knopf small { display: none; }
-  .kopf { min-height: 330px; }   /* Titelbild etwas niedriger (vorher 380 bzw. 420 px) … */
-  .herbst .kopf, .sommer:not(.baum) .kopf { background-position: center, center 16%; }   /* … Kirchturm trotzdem ganz sichtbar */
 }
 .verein-box { margin-top: 14px; padding: 12px; border: 1px solid var(--linie); border-radius: 12px; background: #fbfbf9; }
 .verein-knoepfe { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
