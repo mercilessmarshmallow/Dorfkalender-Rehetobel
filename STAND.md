@@ -87,6 +87,12 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Bildschirmen in die Bildmitte) und `handy-anschauer`. Projektleitung hat die zwei Spalten am eigenen PC angeschaut: sieht gut aus ✓ (9.11.).
 
 ## Hier weitermachen (8.11.2026)
+- **⚠️ Themen nochmals angehen (Projektleitung 9.11.: «mit den Kategorien so nicht zufrieden»).** Bald in einem eigenen Gespräch.
+  Ausgangspunkt: Frage «Warum heisst es Senioren & Treffpunkt?» – Name stammt aus der Durchsicht des alten Kalenders
+  (Seniorenzmittag, Mittagstisch, Kaffeekränzli, Frauenverein-Nachmittage, Frauenfrühstück = Anlässe, wo man sich trifft;
+  meist für Ältere, nicht nur). Schwäche: sagt «für wen», nicht «was macht man dort». Vorschlag im Gespräch: «Treffpunkt & Geselligkeit».
+  **Bis dahin: Formular am PC-Termin (Schritt 1 unten) noch nicht umstellen**, damit es nicht zweimal geändert werden muss.
+  Webseite bleibt vorerst wie sie ist (Notfall-Weg zurück: `anleitungen/notfall-alte-kategorien.md`).
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
   (Symbol wie bei Android). Ursache des Problems: Der Hinweis-Kasten ist auf dem iPhone nur Text (Apple erlaubt keinen
   Installieren-Knopf), sieht aber antippbar aus; und neuere iOS-Safari (iOS 26) hat unten keinen Teilen-Knopf mehr.
