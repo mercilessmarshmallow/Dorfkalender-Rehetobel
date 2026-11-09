@@ -64,7 +64,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - ✅ Umzug, Webseite unter neuer Adresse, Formular «Kategorie» → neun Themen + Beschreibung «Was macht man dort als Besucher?»,
   Bestätigungsnachricht mit Spam-Hinweis, Programm erneuert (693 Zeilen, neue Version). Test: Prüf-Mail mit Knöpfen auf die
   neue Adresse ✓, «Ablehnen» ✓, Absage-Mail mit Logo ✓. Spam-Hinweis nach dem Absenden erscheint ✓ (zweiter Test 9.11.).
-  Damit ist der PC-Termin (Punkte 1, 2, 4) erledigt. Test-Meldung vom 9.11. ablehnen bzw. in der Tabelle löschen.
+  Damit ist der PC-Termin (Punkte 1, 2, 4) erledigt. Beide Test-Meldungen vom 9.11. («test», «asdasds») abgelehnt ✓; die zwei Zeilen (Formularantworten 1, Zeilen 12 und 13) löscht die Projektleitung von Hand (Claude darf hier nicht in die Tabelle schreiben – Sperre der Sicherheitsprüfung).
 - Ablage zieht auf das GitHub-Konto `verkehrsvereinrehetobel-collab`. Neue Adresse:
   https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/ (alte leitet nicht weiter).
 - Alle Links in der Ablage schon umgestellt (auch `Mails.gs`) und auf main.
