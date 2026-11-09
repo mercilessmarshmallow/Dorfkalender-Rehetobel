@@ -74,6 +74,13 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - Danach: Vorschau-Link neu an den Vorstand; «Dorfkalender aufs Handy» auf Android und iPhone neu hinzufügen;
   Prüf-Mails, die schon im Postfach liegen, führen auf die alte Adresse (diese Anlässe in der Tabelle freigeben).
 
+## Kompaktere Themen-Knöpfe (9.11.2026, gebaut, nur auf dem Arbeitszweig – noch nicht auf main)
+- Wunsch Projektleitung: auf dem Laptop Anlässe sehen, ohne hinunterzuscrollen, Schrift nicht kleiner.
+- Laptop: Text und «Alle wählen / Zurücksetzen» in einer Zeile, Knöpfe mit weniger Leerraum, Erklärungen bei Vereinsleben /
+  Kurse & Weiteres als Hinweis beim Zeigen mit der Maus, Titelbild 330 statt 420 px hoch (Kirchenbilder etwas höher
+  ausgeschnitten, damit der Turm ganz zu sehen ist). Handy unverändert. Erster Anlass bei 1280×720: vorher 931 px, neu 692 px.
+- **Wartet auf das Okay der Projektleitung für main.** Vorher `kalender-pruefer` und `handy-anschauer` laufen lassen.
+
 ## Hier weitermachen (8.11.2026)
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
   (Symbol wie bei Android). Ursache des Problems: Der Hinweis-Kasten ist auf dem iPhone nur Text (Apple erlaubt keinen

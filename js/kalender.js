@@ -129,10 +129,11 @@
   // ---------- Kategorie-Knöpfe ----------
   function fuelleKategorien() {
     const el = document.getElementById("kategorien");
-    el.innerHTML = `<p class="auswahl-text">Was interessiert Sie? Ausgewählte Anlässe stehen oben, alle anderen weiter unten.</p>`
+    // Text und «Alle wählen / Zurücksetzen» in einer Zeile, damit man auf dem Laptop ohne Hinunterscrollen Anlässe sieht (9.11.2026)
+    el.innerHTML = `<div class="auswahl-kopf"><p class="auswahl-text">Was interessiert Sie? Ausgewähltes steht oben, alles andere weiter unten.</p>`
+      + `<div class="auswahl-knoepfe"><button type="button" class="knopf-link" data-alle>Alle wählen</button><button type="button" class="knopf-link" data-standard>Zurücksetzen</button></div></div>`
       + Object.keys(FARBE).map((k) =>
-      `<button type="button" class="kat-knopf" data-kat="${esc(k)}" aria-pressed="${auswahl.has(k)}"><span class="haken" aria-hidden="true">${auswahl.has(k) ? "✓" : "+"}</span><span class="punkt" style="background:${FARBE[k]}"></span>${esc(k)}${HINWEIS[k] ? `<small>${esc(HINWEIS[k])}</small>` : ""}</button>`).join("")
-      + `<div class="auswahl-knoepfe"><button type="button" class="knopf-link" data-alle>Alle wählen</button><button type="button" class="knopf-link" data-standard>Zurücksetzen</button></div>`
+      `<button type="button" class="kat-knopf" data-kat="${esc(k)}" aria-pressed="${auswahl.has(k)}"${HINWEIS[k] ? ` title="${esc(HINWEIS[k])}"` : ""}><span class="haken" aria-hidden="true">${auswahl.has(k) ? "✓" : "+"}</span><span class="punkt" style="background:${FARBE[k]}"></span>${esc(k)}${HINWEIS[k] ? `<small>${esc(HINWEIS[k])}</small>` : ""}</button>`).join("")
       + (favoriten.size ? `<p class="auswahl-text">★ Immer oben: ${[...favoriten].map(esc).join(", ")}</p>` : "");
     document.getElementById("kat-auf-text").textContent = `Meine Auswahl: ${auswahl.size} von ${Object.keys(FARBE).length}${favoriten.size ? ` · ★ ${favoriten.size}` : ""}`;
   }

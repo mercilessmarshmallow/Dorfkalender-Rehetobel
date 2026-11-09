@@ -284,6 +284,18 @@ body.eingebettet .such { margin-top: 0; }
 .abo-info { background: var(--gruen-hell); border-radius: 10px; padding: 10px 12px; margin-top: 10px; font-size: .95rem; }
 @media (min-width: 720px) { .kat-auf.vorschau-laptop { display: none; } }
 .kat-knopf { white-space: normal; max-width: 100%; }
+/* Kompakter (9.11.2026, Wunsch Projektleitung): gleiche Schriftgrösse, weniger Leerraum – auf dem Laptop sieht man so
+   Anlässe ohne Hinunterscrollen. Erklärungen bei Vereinsleben / Kurse & Weiteres auf dem Laptop als Hinweis beim Zeigen mit der Maus. */
+.auswahl-kopf { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 16px; }
+.auswahl-kopf .auswahl-text { flex: 1 1 320px; }
+.auswahl-kopf .auswahl-knoepfe { flex-basis: auto; margin-top: 0; }
+@media (min-width: 720px) {
+  .kategorien { gap: 6px; padding-top: 8px; }
+  .kat-knopf { min-height: 38px; padding: 5px 12px; }
+  .kat-knopf small { display: none; }
+  .kopf { min-height: 330px; }   /* Titelbild etwas niedriger (vorher 380 bzw. 420 px) … */
+  .herbst .kopf, .sommer:not(.baum) .kopf { background-position: center, center 16%; }   /* … Kirchturm trotzdem ganz sichtbar */
+}
 .verein-box { margin-top: 14px; padding: 12px; border: 1px solid var(--linie); border-radius: 12px; background: #fbfbf9; }
 .verein-knoepfe { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 .mini-knopf { border: 1px solid #c9cec9; background: #fff; border-radius: 999px; padding: 8px 12px; min-height: 40px; font: inherit; font-size: .92rem; cursor: pointer; color: var(--text); }
