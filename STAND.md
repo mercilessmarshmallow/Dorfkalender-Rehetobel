@@ -71,7 +71,8 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **Reihenfolge:** Umzug auf GitHub → Vereinskonto bestätigt → GitHub Pages prüfen (neue Adresse zeigt die Seite) →
   **Programm erneuern nötig (Anleitung Teil A)**, sonst führen Knöpfe in neuen Mails auf die alte Adresse →
   Claude-Zugriff (GitHub-App) fürs Vereinskonto freigeben, eigenes Konto als Mitarbeiter behalten.
-- Danach: Vorschau-Link neu an den Vorstand; «Dorfkalender aufs Handy» auf Android und iPhone neu hinzufügen;
+- Danach: Vorschau-Link neu an den Vorstand; «Dorfkalender aufs Handy» auf Android und iPhone neu hinzufügen
+  (9.11.: alte Verknüpfung auf dem Handy geht nicht mehr – erwartet, sie zeigt auf die alte Adresse; löschen und neu hinzufügen);
   Prüf-Mails, die schon im Postfach liegen, führen auf die alte Adresse (diese Anlässe in der Tabelle freigeben).
 
 ## Kompaktere Themen-Knöpfe und zwei Spalten (9.11.2026, live auf main, Okay Projektleitung)
@@ -83,7 +84,7 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   («Kirche» rückt in die erste Zeile), Zusätze bei Vereinsleben / Kurse & Weiteres in zwei kurzen Zeilen im Knopf (vorher zu breit).
 - Handy: gleich wie bisher, nur stehen «Alle wählen / Zurücksetzen» im aufgeklappten Bereich jetzt oben beim Text. Tests bestanden, alle Titelbilder angeschaut (Kirche frei), Monat und Terminplanung geprüft.
 - Geprüft von `kalender-pruefer` (Fehler gefunden und behoben: Schrift rutschte bei winter3/fruehling2 auf sehr grossen
-  Bildschirmen in die Bildmitte) und `handy-anschauer`. **Noch anschauen:** Projektleitung am eigenen PC (zwei Spalten).
+  Bildschirmen in die Bildmitte) und `handy-anschauer`. Projektleitung hat die zwei Spalten am eigenen PC angeschaut: sieht gut aus ✓ (9.11.).
 
 ## Hier weitermachen (8.11.2026)
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
