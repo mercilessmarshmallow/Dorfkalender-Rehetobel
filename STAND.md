@@ -63,8 +63,8 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 ## Umzug auf das Vereinskonto (9.11.2026, erledigt am PC)
 - ✅ Umzug, Webseite unter neuer Adresse, Formular «Kategorie» → neun Themen + Beschreibung «Was macht man dort als Besucher?»,
   Bestätigungsnachricht mit Spam-Hinweis, Programm erneuert (693 Zeilen, neue Version). Test: Prüf-Mail mit Knöpfen auf die
-  neue Adresse ✓, «Ablehnen» ✓, Absage-Mail mit Logo ✓. **Noch prüfen:** Spam-Hinweis nach dem Absenden erschien beim Test nicht
-  (Formular evtl. vor dem Speichern geöffnet) – beim nächsten Test anschauen. Damit ist der PC-Termin (Punkte 1, 2, 4) erledigt.
+  neue Adresse ✓, «Ablehnen» ✓, Absage-Mail mit Logo ✓. Spam-Hinweis nach dem Absenden erscheint ✓ (zweiter Test 9.11.).
+  Damit ist der PC-Termin (Punkte 1, 2, 4) erledigt. Test-Meldung vom 9.11. ablehnen bzw. in der Tabelle löschen.
 - Ablage zieht auf das GitHub-Konto `verkehrsvereinrehetobel-collab`. Neue Adresse:
   https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/ (alte leitet nicht weiter).
 - Alle Links in der Ablage schon umgestellt (auch `Mails.gs`) und auf main.
@@ -105,7 +105,6 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Zwei Konzerte 2028 als «vorgemerkt». Vorstandssitzungen gelöscht.
   **Offen** (Details in der privaten Vorstandsablage `kalender/anlaesse-2027/`): Veranstalter (klärt Projektleitung mit dem Vorstand),
   fehlende Zeiten und Orte, Anlässe ohne Datum. Nachträge macht Claude direkt in der Tabelle (geteilt mit dem privaten Konto).
-- Bestätigungsnachricht im Formular: «Bitte auch im Spam-Ordner nachsehen.»
 - Google-Benachrichtigung «neue Antworten» behalten oder ausschalten (Prüf-Mail ersetzt sie).
 - Einbindung in die ClubDesk-Webseite (Code in KONZEPT.md / README.md).
 - Offene Fragen: Anlässe aus dem alten Kalender übernehmen?
