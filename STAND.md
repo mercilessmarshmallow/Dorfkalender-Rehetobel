@@ -60,7 +60,11 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Verbandswettschiessen (5./6.3. oder 12.3.?), rund 25 fehlende Uhrzeiten, Anfangszeit Vollmondschwimmen.
   **Liste zum Nachfragen liegt in der privaten Vorstandsablage** (`kalender/anlaesse-2027/README.md`, 8.11.) – Projektleitung klärt mit Vorstand/Vereinen, Claude trägt Antworten in der Tabelle nach.
 
-## Umzug auf das Vereinskonto (9.11.2026, läuft)
+## Umzug auf das Vereinskonto (9.11.2026, erledigt am PC)
+- ✅ Umzug, Webseite unter neuer Adresse, Formular «Kategorie» → neun Themen + Beschreibung «Was macht man dort als Besucher?»,
+  Bestätigungsnachricht mit Spam-Hinweis, Programm erneuert (693 Zeilen, neue Version). Test: Prüf-Mail mit Knöpfen auf die
+  neue Adresse ✓, «Ablehnen» ✓, Absage-Mail mit Logo ✓. **Noch prüfen:** Spam-Hinweis nach dem Absenden erschien beim Test nicht
+  (Formular evtl. vor dem Speichern geöffnet) – beim nächsten Test anschauen. Damit ist der PC-Termin (Punkte 1, 2, 4) erledigt.
 - Ablage zieht auf das GitHub-Konto `verkehrsvereinrehetobel-collab`. Neue Adresse:
   https://verkehrsvereinrehetobel-collab.github.io/Dorfkalender-Rehetobel/ (alte leitet nicht weiter).
 - Alle Links in der Ablage schon umgestellt (auch `Mails.gs`) und auf main.
