@@ -74,15 +74,16 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - Danach: Vorschau-Link neu an den Vorstand; «Dorfkalender aufs Handy» auf Android und iPhone neu hinzufügen;
   Prüf-Mails, die schon im Postfach liegen, führen auf die alte Adresse (diese Anlässe in der Tabelle freigeben).
 
-## Kompaktere Themen-Knöpfe und zwei Spalten (9.11.2026, gebaut, nur auf dem Arbeitszweig – noch nicht auf main)
+## Kompaktere Themen-Knöpfe und zwei Spalten (9.11.2026, live auf main, Okay Projektleitung)
 - Wunsch Projektleitung: auf dem Laptop Anlässe sehen, ohne hinunterzuscrollen; Schrift nicht kleiner, Titelbild nicht kleiner
   (niedrigeres Titelbild: abgelehnt, «schlechte Lösung»; Auswahl auf dem Laptop zuklappen: abgelehnt, «doof»).
 - **Grosse Bildschirme (ab 1200 px Breite):** zwei Spalten – links Suche und Themen untereinander (mit Zusätzen, bleiben beim
   Scrollen stehen), rechts gleich die Anlässe. Titel bündig mit den Spalten. Gilt nicht für `?einbetten=1`.
 - **Mittlere Bildschirme (720–1199 px):** Text + «Alle wählen / Zurücksetzen» in einer Zeile, Knöpfe in zwei Zeilen
   («Kirche» rückt in die erste Zeile), Zusätze bei Vereinsleben / Kurse & Weiteres in zwei kurzen Zeilen im Knopf (vorher zu breit).
-- Handy unverändert. Tests bestanden, alle Titelbilder angeschaut (Kirche frei), Monat und Terminplanung geprüft.
-- **Wartet auf das Okay der Projektleitung für main.** Vorher `kalender-pruefer` und `handy-anschauer` laufen lassen.
+- Handy: gleich wie bisher, nur stehen «Alle wählen / Zurücksetzen» im aufgeklappten Bereich jetzt oben beim Text. Tests bestanden, alle Titelbilder angeschaut (Kirche frei), Monat und Terminplanung geprüft.
+- Geprüft von `kalender-pruefer` (Fehler gefunden und behoben: Schrift rutschte bei winter3/fruehling2 auf sehr grossen
+  Bildschirmen in die Bildmitte) und `handy-anschauer`. **Noch anschauen:** Projektleitung am eigenen PC (zwei Spalten).
 
 ## Hier weitermachen (8.11.2026)
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓

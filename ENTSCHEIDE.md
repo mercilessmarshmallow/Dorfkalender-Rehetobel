@@ -3,6 +3,13 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 9.11.2026 (Laptop: Anlässe ohne Hinunterscrollen)
+- **Grosse Bildschirme (ab 1200 px Breite): zwei Spalten** – links Suche und Themen (mit Zusätzen, bleiben beim Scrollen stehen),
+  rechts die Anlässe. **Kleinere Laptops:** Themen-Knöpfe kompakter in zwei Zeilen, Zusätze im Knopf. Handy bleibt zugeklappt.
+  Grund: Auf dem Laptop sah man erst nach dem Hinunterscrollen einen Anlass (Projektleitung).
+- **Abgelehnt:** Titelbild niedriger machen («schlechte Lösung») und «Meine Auswahl» auf dem Laptop zuklappen («doof»).
+  Schrift und Titelbild bleiben gleich gross.
+
 ## 9.11.2026 (Umzug auf das Vereinskonto)
 - **Ablage zieht auf das GitHub-Konto des Vereins `verkehrsvereinrehetobel-collab`** (Projektleitung, am PC).
   Grund: Der Kalender soll dem Verein gehören, nicht einem privaten Konto; erleichtert eine spätere Übergabe.
