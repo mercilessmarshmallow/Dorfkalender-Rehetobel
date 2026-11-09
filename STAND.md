@@ -110,6 +110,8 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   4. Gleich mit: Formular-Bestätigung «Bitte auch im Spam-Ordner nachsehen». (Test-Einträge und die zwei Vorstandssitzungen sind seit 8.11. gelöscht.)
 
 ## Noch offen
+- **In der Hinterhand: Entsorgung** (Grüngut, Altmetall, Papiersammlung) könnte man theoretisch als eigenes Thema in den Kalender nehmen.
+  Vorerst nicht (Projektleitung 9.11., bestätigt Entscheid 8.11.); Idee steht in KONZEPT.md (Ideenspeicher).
 - **Hinweis:** Der alte Kalender (rehetobel-tourismus.ch) läuft weiter; der neue ersetzt ihn erst, wenn er so weit ist (siehe Vision im KONZEPT).
 - **Vor dem Ersetzen des alten Kalenders:** kommende Anlässe aus dem alten Kalender übernehmen (iCal-Export vom Vorstand).
 - **Anlässe 2027 eingetragen (8.11.):** 212 Anlässe (inkl. 12 auswärtige von Rehetobler Vereinen) aus der Liste der Koordinationssitzung direkt in die Tabelle (Freigegeben = ja,
