@@ -74,12 +74,14 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - Danach: Vorschau-Link neu an den Vorstand; «Dorfkalender aufs Handy» auf Android und iPhone neu hinzufügen;
   Prüf-Mails, die schon im Postfach liegen, führen auf die alte Adresse (diese Anlässe in der Tabelle freigeben).
 
-## Kompaktere Themen-Knöpfe (9.11.2026, gebaut, nur auf dem Arbeitszweig – noch nicht auf main)
-- Wunsch Projektleitung: auf dem Laptop Anlässe sehen, ohne hinunterzuscrollen, Schrift nicht kleiner.
-- Laptop: Text und «Alle wählen / Zurücksetzen» in einer Zeile, Knöpfe mit weniger Leerraum, Erklärungen bei Vereinsleben /
-  Kurse & Weiteres als Hinweis beim Zeigen mit der Maus. Handy unverändert. Titelbild niedriger: **abgelehnt** («schlechte Lösung»);
-  «Meine Auswahl» auf dem Laptop zuklappen: **abgelehnt** («doof»). Wunsch: höchstens 3 Zeilen → Text-Zeile + 2 Zeilen Knöpfe
-  («Kirche» rückt auf dem Laptop in die erste Zeile, vor «Senioren & Treffpunkt»). Erster Anlass bei 1280×720: vorher 931 px, neu 738 px.
+## Kompaktere Themen-Knöpfe und zwei Spalten (9.11.2026, gebaut, nur auf dem Arbeitszweig – noch nicht auf main)
+- Wunsch Projektleitung: auf dem Laptop Anlässe sehen, ohne hinunterzuscrollen; Schrift nicht kleiner, Titelbild nicht kleiner
+  (niedrigeres Titelbild: abgelehnt, «schlechte Lösung»; Auswahl auf dem Laptop zuklappen: abgelehnt, «doof»).
+- **Grosse Bildschirme (ab 1200 px Breite):** zwei Spalten – links Suche und Themen untereinander (mit Zusätzen, bleiben beim
+  Scrollen stehen), rechts gleich die Anlässe. Titel bündig mit den Spalten. Gilt nicht für `?einbetten=1`.
+- **Mittlere Bildschirme (720–1199 px):** Text + «Alle wählen / Zurücksetzen» in einer Zeile, Knöpfe in zwei Zeilen
+  («Kirche» rückt in die erste Zeile), Zusätze bei Vereinsleben / Kurse & Weiteres in zwei kurzen Zeilen im Knopf (vorher zu breit).
+- Handy unverändert. Tests bestanden, alle Titelbilder angeschaut (Kirche frei), Monat und Terminplanung geprüft.
 - **Wartet auf das Okay der Projektleitung für main.** Vorher `kalender-pruefer` und `handy-anschauer` laufen lassen.
 
 ## Hier weitermachen (8.11.2026)

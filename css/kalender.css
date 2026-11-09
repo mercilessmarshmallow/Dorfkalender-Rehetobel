@@ -290,15 +290,31 @@ body.eingebettet .such { margin-top: 0; }
 .auswahl-kopf .auswahl-text { flex: 1 1 320px; }
 .auswahl-kopf .auswahl-knoepfe { flex-basis: auto; margin-top: 0; }
 @media (min-width: 720px) {
-  .kategorien { gap: 6px 5px; padding-top: 8px; }
-  .kat-knopf { min-height: 38px; padding: 5px 9px; gap: 0; }
+  .kategorien { gap: 6px 5px; padding-top: 8px; align-items: center; }
+  /* Knopf nur so breit wie nötig (vorher machten die Zusätze die Knöpfe sehr breit); Zusatz in zwei kurzen Zeilen */
+  .kat-knopf { display: inline-grid; grid-template-columns: auto auto 1fr; align-items: center;
+    min-height: 38px; padding: 5px 9px; gap: 0; }
   .kat-knopf .haken { width: 14px; }
   .kat-knopf .punkt { margin-right: 5px; }
-  .kat-knopf small { display: none; }
+  .kat-knopf small { grid-column: 1 / -1; padding-left: 19px; max-width: 21ch; line-height: 1.15; }
   /* Zwei Zeilen Knöpfe: «Kirche» (kurz) kommt in die erste Zeile, «Senioren & Treffpunkt» (lang) in die zweite */
   .kat-knopf[data-kat="Senioren & Treffpunkt"], .kat-knopf[data-kat="Gemeinde & Politik"],
   .kat-knopf[data-kat="Vereinsleben"], .kat-knopf[data-kat="Kurse & Weiteres"] { order: 1; }
   .kategorien > p.auswahl-text { order: 2; }
+}
+/* Grosse Bildschirme (9.11.2026, Wunsch Projektleitung): zwei Spalten – links Suche und Themen (bleiben beim Scrollen
+   stehen), rechts die Anlässe. So sieht man die Anlässe sofort, ohne dass Titelbild oder Schrift kleiner werden. */
+@media (min-width: 1200px) {
+  body:not(.eingebettet) .seite { max-width: 1180px; display: grid; grid-template-columns: 290px minmax(0, 1fr);
+    column-gap: 28px; align-items: start; }
+  body:not(.eingebettet) .planung-hinweis { grid-column: 1 / -1; }
+  body:not(.eingebettet) .such { position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow-y: auto; }
+  body:not(.eingebettet) .kategorien { flex-direction: column; flex-wrap: nowrap; align-items: stretch; }
+  body:not(.eingebettet) .kat-knopf { order: 0; width: 100%; }
+  body:not(.eingebettet) .kat-knopf small { max-width: none; }
+  body:not(.eingebettet) .auswahl-kopf .auswahl-text { flex-basis: 100%; }
+  body:not(.eingebettet) .inhalt { padding-top: 4px; }
+  body:not(.eingebettet) .kopf-innen { max-width: 1180px; }   /* Titel bündig mit den Spalten darunter */
 }
 .verein-box { margin-top: 14px; padding: 12px; border: 1px solid var(--linie); border-radius: 12px; background: #fbfbf9; }
 .verein-knoepfe { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
