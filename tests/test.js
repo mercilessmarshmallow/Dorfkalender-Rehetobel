@@ -209,6 +209,17 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
     await n.goto(`http://localhost:8765/index.html?monat=${monat}`);
     pruefe(await n.evaluate((k) => document.documentElement.classList.contains(k), klasse), `Titelbild im Monat ${monat}: ${klasse}`);
   }
+  {
+    const lp = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+    let immerBaum = true;
+    for (let tag = 1; tag <= 4; tag++) {
+      await lp.clock.setFixedTime(new Date(`2027-07-0${tag}T10:00:00`));
+      await lp.goto("http://localhost:8765/index.html?monat=7");
+      immerBaum = immerBaum && await lp.evaluate(() => document.documentElement.classList.contains("baum"));
+    }
+    pruefe(immerBaum, "Laptop im Sommer: immer der Baum (Kirche wirkt dort abgeschnitten, Entscheid 10.11.2026)");
+    await lp.close();
+  }
   const bilder = await n.evaluate(() => [...document.styleSheets[0].cssRules].map((r) => r.cssText).join(" ").match(/bilder\/titel\/[\w-]+\.jpg/g));
   pruefe(bilder.every((b) => fs.existsSync(path.join(ROOT, b))), "alle Titelbilder vorhanden");
   const logoDateien = fs.readFileSync(path.join(ROOT, "js/logos.js"), "utf8").match(/datei: "([^"]+)"/g).map((s) => s.slice(8, -1));

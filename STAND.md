@@ -102,8 +102,11 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - **📷 Bessere Titelbilder – offen, Projektleitung kümmert sich (10.11.2026):** «Die Webseite ist ein Prozess.»
   - Alle Laptop-Bilder sind nur 1600 px breit → auf grossen und guten Laptop-Bildschirmen leicht unscharf. Ideal: mind. 3000 px.
   - Herbst und Kirche (Appenzellerland Tourismus): Originale in voller Grösse anfragen.
-  - Baum: Motiv lebt vom Hochformat (Baum rahmt das Dorf) – auf dem Laptop ein Kompromiss; evtl. später anderes Sommerbild fürs Laptop.
-  - Winter: diesen Winter neue Rehetobel-Winterbilder (Nachbar der Projektleitung fotografiert).
+  - Sommer auf dem Laptop nur noch der Baum (Kirche wirkt dort abgeschnitten, Entscheid 10.11.); Kirche bleibt auf dem Handy.
+    Ein zweites, breites Sommerbild für den Laptop wäre schön.
+  - Neue Bilder vom Nachbarn der Projektleitung (Hobbyfotograf, gute Kamera): diesen Winter Winterbilder, im Frühling Frühlingsbilder.
+    Die Projektleitung sagt ihm jeweils, wofür es ein Bild braucht. Breite Bilder (Querformat) für den Laptop, möglichst gross.
+    Bildnachweis in der Fusszeile ergänzen, sobald Bilder von ihm drin sind (Name nur mit seinem Einverständnis).
   - Professionelle Fotos allgemein (auch Broschüre, Briefköpfe): Traktandum Vorstandssitzung 17.2.2027 (Vorstandsablage, Pendenz 20).
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
   (Symbol wie bei Android). Ursache des Problems: Der Hinweis-Kasten ist auf dem iPhone nur Text (Apple erlaubt keinen

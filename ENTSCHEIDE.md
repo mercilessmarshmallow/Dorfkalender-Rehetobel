@@ -3,6 +3,14 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 10.11.2026 (Titelbilder auf dem Laptop)
+- **Jedes Titelbild mit eigenem Ausschnitt**, auf grossen Bildschirmen höher (Projektleitung: «gute Bilder, aber nicht gut in Szene gesetzt»).
+- **Sommer auf dem Laptop nur der Baum**, die Kirche nur auf dem Handy (Projektleitung: Kirche wirkt auf dem Laptop «abgehackt»,
+  Baum «recht cool, weil es auch ein bisschen anders ist»).
+- **Bilder werden Stück für Stück besser** («Die Webseite ist ein Prozess»): neue Bilder von einem Nachbarn der Projektleitung
+  (Hobbyfotograf mit guter Kamera; Name im Bildnachweis als Dank), zuerst Winter, dann Frühling; eigene Bilder neu mit besserem Handy.
+  Professionelle Fotos: Traktandum Vorstand 17.2.2027.
+
 ## 10.11.2026 (Themen überarbeitet, Wechsel auf Neujahr)
 - **Zehn Themen** (Projektleitung: «Senioren & Treffpunkt» am wenigsten gut – als Junger will man die Senioren ausblenden,
   aber nicht die Treffpunkte): Musik & Kultur · Feste & Märkte · Sport & Natur · Kinder & Familie · **Senioren** · **Begegnung** ·
