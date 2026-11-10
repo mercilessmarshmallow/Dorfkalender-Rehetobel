@@ -87,6 +87,11 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Bildschirmen in die Bildmitte) und `handy-anschauer`. Projektleitung hat die zwei Spalten am eigenen PC angeschaut: sieht gut aus ✓ (9.11.).
 
 ## Hier weitermachen (10.11.2026) – Reihenfolge der Projektleitung
+- **Erledigt 10.11.2026:** 59 Anlässe vom 12.11. bis 31.12.2026 aus dem alten Kalender (Stand 8.11., `vorschau/js/beispiel.js`) in «Formularantworten 1» nachgetragen
+  (Freigegeben = ja, Mail-Status «Übernommen aus altem Kalender 2026 (kein Mail)», alte Kategorienamen wie bei 2027). Bereinigt: Ortsnamen wie 2027
+  (Gemeindezentrum, Krone, Katholische Kirche), Zimmerschützen Dorf/Sägholz, «Adventsfenster», Lobenschwendi-Höcks. Das private Konto der
+  Projektleitung kann die Tabelle bearbeiten (Freigabe «Bearbeiter»), Schreiben über die Google-Verbindung klappt.
+- **Mail an den Vorstand:** Entwurf im Gmail der Projektleitung; Webseiten-Vorschau (claude.ai) am 10.11. neu hochgeladen mit Kalender direkt in der Seite.
 1. **Mail an den Vorstand** schreiben (Entwurf in der privaten Vorstandsablage, `NAECHSTE_SCHRITTE.md`), Projektleitung schickt es ab.
    Themen und «neuer Kalender ab Neujahr» sind darin **Vorschläge** – den Vorstand nicht vor vollendete Tatsachen stellen.
 2. **Erst danach** Zweig auf main bringen (Okay Projektleitung): zehn Themen + Titelbilder Laptop. Die Adresse der Seite bleibt gleich.
