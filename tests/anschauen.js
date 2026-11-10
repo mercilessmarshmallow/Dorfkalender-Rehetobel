@@ -155,7 +155,7 @@ async function geraetPruefen(browser, name, geraet) {
 // Alle Titelbilder (?monat= und ?foto=, siehe js/titelbild.js) – zum Anschauen: Ist die Kirche/das Hauptmotiv frei? Schrift lesbar?
 async function titelbilder(browser) {
   console.log("\nTitelbilder (zum Anschauen)");
-  const alle = [["4", "fruehling1"], ["4", "fruehling2"], ["7", "kirche"], ["7", "baum"], ["10", ""], ["1", "winter1"], ["1", "winter2"], ["1", "winter3"]];
+  const alle = [["4", "fruehling1"], ["4", "fruehling2"], ["7", "baum"], ["10", ""], ["1", "winter1"], ["1", "winter2"], ["1", "winter3"]];
   for (const [name, geraet] of [["iphone", devices["iPhone 13"]], ["laptop", { viewport: { width: 1280, height: 800 } }]]) {
     const kontext = await neuerKontext(browser, geraet);
     for (const [monat, f] of alle) {

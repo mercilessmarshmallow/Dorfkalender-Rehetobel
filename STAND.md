@@ -21,7 +21,7 @@ Stand: 10.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
 ## Neues Design (gebaut und auf main veröffentlicht am 7.11.2026, Okay der Projektleitung – auch für Schwimmbad-Symbol und gedrehtes Lesegesellschaft-Logo)
 - **Noch von Hand anschauen:** Seite auf dem Handy öffnen (GitHub braucht ein paar Minuten).
 Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`), Entscheide siehe ENTSCHEIDE.md (7.11., Design).
-- **Titelbild je nach Jahreszeit** (`js/titelbild.js`, Bilder in `bilder/titel/`, Handy quadratisch): Frühling (2), Sommer (2), Herbst (1),
+- **Titelbild je nach Jahreszeit** (`js/titelbild.js`, Bilder in `bilder/titel/`, Handy quadratisch): Frühling (2), Sommer (1, Baum), Herbst (1),
   Winter (3), täglich abwechselnd. Schrift immer auf der Seite ohne Kirche/Hauptmotiv. Kein Logo und kein Bildnachweis im Bild,
   Nachweis in der Fusszeile «Fotos: Appenzellerland Tourismus, Verkehrsverein Rehetobel» (ohne Namen).
 - **Liste:** «Diese Woche im Dorf», «Nächste Woche», dann Monate; 20 Anlässe, dann «Weitere anzeigen» (beim Suchen alle).
@@ -114,11 +114,13 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   **Projektleitung:** kurz auf dem eigenen Laptop anschauen.
 - **📷 Bessere Titelbilder – offen, Projektleitung kümmert sich (10.11.2026):** «Die Webseite ist ein Prozess.»
   - Alle Laptop-Bilder sind nur 1600 px breit → auf grossen und guten Laptop-Bildschirmen leicht unscharf. Ideal: mind. 3000 px.
-  - Herbst und Kirche (Appenzellerland Tourismus): Originale in voller Grösse anfragen.
-  - Sommer auf dem Laptop nur noch der Baum (Kirche wirkt dort abgeschnitten, Entscheid 10.11.); Kirche bleibt auf dem Handy.
-    Ein zweites, breites Sommerbild für den Laptop wäre schön, ebenso ein zweites Herbstbild.
+  - Herbst (Appenzellerland Tourismus): Original in voller Grösse anfragen.
+  - Sommerbild «Kirche» ganz entfernt (10.11.) → im Sommer nur noch der Baum. Ein zweites Sommerbild und ein zweites Herbstbild wären schön.
+  - Überarbeitet (10.11., auf dem Zweig): «Hügel» heller, «Langlauf» besserer Ausschnitt (Handy: neues Bild, Schrift rechts).
+    Für gut befunden: Baum, Hütte, Wiese mit Säntis, Tannen. Herbst: noch keine Rückmeldung.
   - Frühling «Hütte»: Foto ist gerade (Hütte senkrecht), wirkt aber schräg, weil die Wiese am Hang ansteigt →
     ersetzen durch ein Frühlingsbild mit geradem Horizont (z. B. Blick übers Dorf oder Richtung Säntis).
+    (10.11.: Projektleitung findet es «okay» – eilt also nicht.)
   - Neue Bilder vom Nachbarn der Projektleitung (Hobbyfotograf, gute Kamera): diesen Winter Winterbilder, im Frühling Frühlingsbilder.
     Die Projektleitung sagt ihm jeweils, wofür es ein Bild braucht. Breite Bilder (Querformat) für den Laptop, möglichst gross.
     Bildnachweis in der Fusszeile ergänzen, sobald Bilder von ihm drin sind (Name nur mit seinem Einverständnis).

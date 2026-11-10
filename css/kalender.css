@@ -27,7 +27,6 @@ h1, h2, h3 { line-height: 1.2; }
 
 /* ---------- Titelbild (je nach Jahreszeit, siehe js/titelbild.js) ---------- */
 :root { --foto: url("../bilder/titel/herbst.jpg"); }
-.sommer     { --foto: url("../bilder/titel/sommer.jpg"); }
 .baum       { --foto: url("../bilder/titel/baum.jpg"); }
 .winter1    { --foto: url("../bilder/titel/winter.jpg"); }
 .winter2    { --foto: url("../bilder/titel/winter2.jpg"); }
@@ -36,7 +35,6 @@ h1, h2, h3 { line-height: 1.2; }
 .fruehling2 { --foto: url("../bilder/titel/fruehling2.jpg"); }
 @media (max-width: 719px) {   /* Handy: quadratische Fotos */
   :root       { --foto: url("../bilder/titel/herbst-handy.jpg"); }
-  .sommer     { --foto: url("../bilder/titel/sommer-handy.jpg"); }
   .baum       { --foto: url("../bilder/titel/baum-handy.jpg"); }
   .winter1    { --foto: url("../bilder/titel/winter-handy.jpg"); }
   .winter2    { --foto: url("../bilder/titel/winter2-handy.jpg"); }
@@ -53,20 +51,23 @@ h1, h2, h3 { line-height: 1.2; }
   .kopf { background-position: center 30%; }
   .baum .kopf { background-size: cover, 175% auto; background-position: center, left 62%; }
   .fruehling2 .kopf { background-position: center, center 100%; }   /* Hütte über der Schrift */
+  .winter1 .kopf { background-position: center, center 62%; }        /* Langläufer links, Hof und Wald sichtbar */
+  .winter1 .kopf-innen { text-align: right; }                       /* Schrift rechts, Langläufer bleibt frei */
 }
 @media (min-width: 720px) { .kopf { min-height: 380px; } }
 @media (min-width: 900px) { .kopf { background-position: center 30%; min-height: 420px; } }
 /* Laptop (10.11.2026, Wunsch Projektleitung «Bilder gut in Szene setzen»): Titelbild wächst mit der Bildschirmbreite
    (sonst nur ein dünner Streifen), und jedes Bild hat seinen eigenen Ausschnitt mit dem Hauptmotiv
-   (ganze Kirche mit Turmspitze, Langläufer, mehr vom Dorf beim Baum). Handy bleibt unverändert. */
+   (ganze Kirche mit Turmspitze, Langläufer, mehr vom Dorf beim Baum). Handy unverändert, ausser Langlauf (neues Bild, Schrift rechts). */
 @media (min-width: 900px) {
   .kopf { min-height: clamp(420px, 30vw, 580px); }
   .herbst .kopf { background-position: center 8%; }
-  .sommer:not(.baum) .kopf { background-position: center 12%; }
   .baum .kopf { background-position: center 60%; }
-  .winter1 .kopf { background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.1) 50%, rgba(0,0,0,.55) 100%), var(--foto);
-    background-position: center 70%; }
-  .winter2 .kopf { background-position: center 25%; }
+  /* Langlauf: Wald, Hof und beide Langläufer sichtbar; Hügel: Gipfel mit Baum und Schlittler (Wunsch Projektleitung 10.11.2026) */
+  .winter1 .kopf, .winter2 .kopf { background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.1) 50%, rgba(0,0,0,.55) 100%), var(--foto); }
+  .winter1 .kopf { background-position: center, center 52%; }
+  .winter2 .kopf { background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.05) 50%, rgba(0,0,0,.4) 100%), var(--foto);
+    background-position: center, center 32%; }
   .winter3 .kopf { background-position: center 35%; }
   .fruehling1 .kopf { background-position: center 45%; }
   .fruehling2 .kopf { background-position: center 40%; }
@@ -83,7 +84,7 @@ h1, h2, h3 { line-height: 1.2; }
   .kopf .knopf { font-size: 1.1rem; padding: 13px 22px; }
 }
 /* Die Kirche (bzw. das Hauptmotiv) nie verdecken: Schrift auf die freie Seite */
-.herbst .kopf-innen, .sommer:not(.baum) .kopf-innen, .winter3 .kopf-innen, .fruehling2 .kopf-innen { text-align: right; }
+.herbst .kopf-innen, .winter3 .kopf-innen, .fruehling2 .kopf-innen { text-align: right; }
 @media (min-width: 720px) {
   .baum .kopf-innen, .fruehling1 .kopf-innen { max-width: none; margin: 0; padding-left: max(24px, 4vw); }
   .winter3 .kopf-innen, .fruehling2 .kopf-innen { max-width: none; margin: 0; padding-right: max(24px, 4vw); }

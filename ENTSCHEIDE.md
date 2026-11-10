@@ -3,9 +3,17 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 10.11.2026 (Titelbilder überarbeitet, nach Übersicht aller Bilder)
+- **Sommerbild «Kirche» ganz entfernt** (auch auf dem Handy; Projektleitung: «nicht gut»). Im Sommer immer der Baum,
+  bis ein zweites Sommerbild da ist. Ersetzt «Kirche nur auf dem Handy» (unten).
+- **Winter «Hügel» heller** (dunkle Stellen aufgehellt, weniger abgedunkelt), Ausschnitt mit Gipfel, Baum und Schlittlern.
+- **Winter «Langlauf» anderer Ausschnitt:** Laptop mit ganzem Wald, Hof und beiden Langläufern; Handy neues Bild
+  (Langläufer links, Schrift rechts).
+- **Gut so (Projektleitung):** Baum, Hütte, Wiese mit Säntis, Tannen.
+
 ## 10.11.2026 (Titelbilder auf dem Laptop)
 - **Jedes Titelbild mit eigenem Ausschnitt**, auf grossen Bildschirmen höher (Projektleitung: «gute Bilder, aber nicht gut in Szene gesetzt»).
-- **Sommer auf dem Laptop nur der Baum**, die Kirche nur auf dem Handy (Projektleitung: Kirche wirkt auf dem Laptop «abgehackt»,
+- ~~**Sommer auf dem Laptop nur der Baum**, die Kirche nur auf dem Handy~~ (ersetzt: Kirche ganz entfernt, siehe oben) (Projektleitung: Kirche wirkt auf dem Laptop «abgehackt»,
   Baum «recht cool, weil es auch ein bisschen anders ist»).
 - **Bilder werden Stück für Stück besser** («Die Webseite ist ein Prozess»): neue Bilder von einem Nachbarn der Projektleitung
   (Hobbyfotograf mit guter Kamera; Name im Bildnachweis als Dank), zuerst Winter, dann Frühling; eigene Bilder neu mit besserem Handy.
@@ -113,7 +121,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 - **Kasten unten: «Den Verkehrsverein unterstützen und Mitglied werden»** – vorerst per Mail an info@rehetobel-tourismus.ch
   (Knopf «Mail schreiben» mit Betreff «Mitglied werden», Adresse auch sichtbar). Vereinsadresse, keine Privatadresse.
 - **Vier Jahreszeiten im Titelbild:** März–Mai Frühling (zwei eigene Fotos: Löwenzahnwiese mit Säntis, Hütte), Juni–August Sommer
-  (Kirche, Baum), September–November Herbst, Dezember–Februar Winter (drei Fotos). Mehrere Fotos wechseln täglich.
+  (Kirche, Baum – Kirche entfernt 10.11.2026, siehe oben), September–November Herbst, Dezember–Februar Winter (drei Fotos). Mehrere Fotos wechseln täglich.
   **Ändert** «März bis August Sommerfoto» oben.
 - **Winterfotos (Dezember bis Februar):** drei eigene Fotos des VVR (Langlauf, Schlittelhang, verschneite Tannen), täglich abwechselnd; Herbstfoto
   nur noch September bis November. Schrift jeweils auf der Seite ohne Hauptmotiv, unten stärker abgedunkelt wegen weissem Schnee.
@@ -138,7 +146,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
   **Appenzellerland Tourismus**, die sie dem VVR zur Verfügung gestellt haben.
   Kleiner Bildnachweis «Foto: Appenzellerland Tourismus» oben rechts im Titelbild.
   **Titelbild je nach Jahreszeit:** März bis August Sommerfoto (blauer Himmel), September bis Februar Herbstfoto (beide von Appenzellerland Tourismus).
-  **Zwei Sommerfotos abwechselnd:** Kirchen-Foto und Baum-Foto wechseln sich täglich ab (ein Tag das eine, am nächsten das andere).
+  ~~**Zwei Sommerfotos abwechselnd:** Kirchen-Foto und Baum-Foto wechseln sich täglich ab~~ (ersetzt 10.11.2026: nur noch Baum).
 - **Grundsatz Titelbild: Das Wichtigste im Bild wird nicht verdeckt** – vor allem die **Kirche** (das Wahrzeichen des Dorfes).
   Schrift und Knöpfe kommen auf die Seite, wo die Kirche nicht ist; bei jedem neuen Foto auf Handy und Laptop prüfen.
 - **Knopf «In meinen Kalender» statt «Erinnere mich»:** Wichtig ist, dass der Anlass in den eigenen Kalender kommt.
