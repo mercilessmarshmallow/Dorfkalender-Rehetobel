@@ -95,6 +95,16 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   (Word-Liste in der privaten Vorstandsablage, `kalender/anlaesse-2027/`, Claude führt sie nach, bis abgesegnet).
   In der Tabelle anders einzutragen (Vorschlag): Tag der Begegnung und die zwei Gottesdienste in der Krone → Senioren.
   **Ziel: alter Kalender bis Ende 2026, neuer ab Neujahr 2027, kein Parallelbetrieb.**
+- **Titelbilder auf dem Laptop (10.11.2026, auf dem Zweig, noch nicht auf main):** Titelbild wächst ab 900 px mit der Breite
+  (1366 px: 420 px hoch wie bisher, 1920 px: 576 px), jedes Bild mit eigenem Ausschnitt (ganze Kirche mit Spitze, Langläufer,
+  mehr Dorf beim Baum), Winterbild «Langlauf» heller. Handy unverändert. `handy-anschauer` ✓ (alle Grössen 1024–1920).
+  **Projektleitung:** kurz auf dem eigenen Laptop anschauen.
+- **📷 Bessere Titelbilder – offen, Projektleitung kümmert sich (10.11.2026):** «Die Webseite ist ein Prozess.»
+  - Alle Laptop-Bilder sind nur 1600 px breit → auf grossen und guten Laptop-Bildschirmen leicht unscharf. Ideal: mind. 3000 px.
+  - Herbst und Kirche (Appenzellerland Tourismus): Originale in voller Grösse anfragen.
+  - Baum: Motiv lebt vom Hochformat (Baum rahmt das Dorf) – auf dem Laptop ein Kompromiss; evtl. später anderes Sommerbild fürs Laptop.
+  - Winter: diesen Winter neue Rehetobel-Winterbilder (Nachbar der Projektleitung fotografiert).
+  - Professionelle Fotos allgemein (auch Broschüre, Briefköpfe): Traktandum Vorstandssitzung 17.2.2027 (Vorstandsablage, Pendenz 20).
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
   (Symbol wie bei Android). Ursache des Problems: Der Hinweis-Kasten ist auf dem iPhone nur Text (Apple erlaubt keinen
   Installieren-Knopf), sieht aber antippbar aus; und neuere iOS-Safari (iOS 26) hat unten keinen Teilen-Knopf mehr.
