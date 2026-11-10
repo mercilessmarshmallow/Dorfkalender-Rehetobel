@@ -52,7 +52,6 @@ h1, h2, h3 { line-height: 1.2; }
   .baum .kopf { background-size: cover, 175% auto; background-position: center, left 62%; }
   .fruehling2 .kopf { background-position: center, center 100%; }   /* Hütte über der Schrift */
   .winter1 .kopf { background-position: center, center 62%; }        /* Langläufer links, Hof und Wald sichtbar */
-  .winter1 .kopf-innen { text-align: right; }                       /* Schrift rechts, Langläufer bleibt frei */
 }
 @media (min-width: 720px) { .kopf { min-height: 380px; } }
 @media (min-width: 900px) { .kopf { background-position: center 30%; min-height: 420px; } }
@@ -84,11 +83,11 @@ h1, h2, h3 { line-height: 1.2; }
   .kopf .knopf { font-size: 1.1rem; padding: 13px 22px; }
 }
 /* Die Kirche (bzw. das Hauptmotiv) nie verdecken: Schrift auf die freie Seite */
-.herbst .kopf-innen, .winter3 .kopf-innen, .fruehling2 .kopf-innen { text-align: right; }
+.herbst .kopf-innen, .winter1 .kopf-innen, .winter3 .kopf-innen, .fruehling2 .kopf-innen { text-align: right; }
 @media (min-width: 720px) {
   .baum .kopf-innen, .fruehling1 .kopf-innen { max-width: none; margin: 0; padding-left: max(24px, 4vw); }
-  .winter3 .kopf-innen, .fruehling2 .kopf-innen { max-width: none; margin: 0; padding-right: max(24px, 4vw); }
-  .baum .kopf h1, .winter3 .kopf h1 { font-size: clamp(2rem, 4.6vw, 4.2rem); }
+  .winter1 .kopf-innen, .winter3 .kopf-innen, .fruehling2 .kopf-innen { max-width: none; margin: 0; padding-right: max(24px, 4vw); }
+  .baum .kopf h1, .winter1 .kopf h1, .winter3 .kopf h1 { font-size: clamp(2rem, 4.6vw, 4.2rem); }
 }
 
 /* ---------- Knöpfe ---------- */
@@ -331,8 +330,8 @@ body.eingebettet .such { margin-top: 0; }
   body:not(.eingebettet) .inhalt { padding-top: 4px; }
   body:not(.eingebettet) .kopf-innen { padding-bottom: 40px; }   /* «Anlass melden» nicht zu dicht über der linken Spalte */
   body:not(.eingebettet) .kat-knopf .haken { width: 18px; }
-  /* Titel bündig mit den Spalten darunter – nur bei Fotos, deren Schrift nicht ganz am Rand steht (baum, fruehling1, winter3, fruehling2 bleiben am Rand) */
-  html:not(.baum):not(.fruehling1):not(.winter3):not(.fruehling2) body:not(.eingebettet) .kopf-innen { max-width: 1180px; }
+  /* Titel bündig mit den Spalten darunter – nur bei Fotos, deren Schrift nicht ganz am Rand steht (baum, fruehling1, winter1, winter3, fruehling2 bleiben am Rand) */
+  html:not(.baum):not(.fruehling1):not(.winter1):not(.winter3):not(.fruehling2) body:not(.eingebettet) .kopf-innen { max-width: 1180px; }
 }
 .verein-box { margin-top: 14px; padding: 12px; border: 1px solid var(--linie); border-radius: 12px; background: #fbfbf9; }
 .verein-knoepfe { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }

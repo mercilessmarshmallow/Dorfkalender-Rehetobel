@@ -7,8 +7,8 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 - **Sommerbild «Kirche» ganz entfernt** (auch auf dem Handy; Projektleitung: «nicht gut»). Im Sommer immer der Baum,
   bis ein zweites Sommerbild da ist. Ersetzt «Kirche nur auf dem Handy» (unten).
 - **Winter «Hügel» heller** (dunkle Stellen aufgehellt, weniger abgedunkelt), Ausschnitt mit Gipfel, Baum und Schlittlern.
-- **Winter «Langlauf» anderer Ausschnitt:** Laptop mit ganzem Wald, Hof und beiden Langläufern; Handy neues Bild
-  (Langläufer links, Schrift rechts).
+- **Winter «Langlauf» anderer Ausschnitt:** Laptop mit ganzem Wald, Hof und beiden Langläufern; Handy neues Bild.
+  Schrift überall rechts (Laptop am Rand), damit die Langläufer frei bleiben.
 - **Gut so (Projektleitung):** Baum, Hütte, Wiese mit Säntis, Tannen.
 
 ## 10.11.2026 (Titelbilder auf dem Laptop)
