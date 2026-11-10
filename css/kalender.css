@@ -290,16 +290,15 @@ body.eingebettet .such { margin-top: 0; }
 .auswahl-kopf .auswahl-text { flex: 1 1 320px; }
 .auswahl-kopf .auswahl-knoepfe { flex-basis: auto; margin-top: 0; }
 @media (min-width: 720px) {
-  .kategorien { gap: 6px 5px; padding-top: 8px; align-items: center; }
+  .kategorien { gap: 6px 4px; padding-top: 8px; align-items: center; }
   /* Knopf nur so breit wie nötig (vorher machten die Zusätze die Knöpfe sehr breit); Zusatz in zwei kurzen Zeilen */
   .kat-knopf { display: inline-grid; grid-template-columns: auto auto 1fr; align-items: center;
-    min-height: 38px; padding: 5px 9px; gap: 0; }
+    min-height: 38px; padding: 5px 7px; gap: 0; }
   .kat-knopf .haken { width: 14px; }
   .kat-knopf .punkt { margin-right: 5px; }
-  .kat-knopf small { grid-column: 1 / -1; padding-left: 19px; max-width: 21ch; line-height: 1.15; }
-  /* Zwei Zeilen Knöpfe: «Senioren» und «Kirche» (kurz) in die erste Zeile, die längeren in die zweite */
-  .kat-knopf[data-kat="Begegnung"], .kat-knopf[data-kat="Gemeinde & Politik"],
-  .kat-knopf[data-kat="Vereinsleben"], .kat-knopf[data-kat="Vorträge & Weiteres"] { order: 1; }
+  .kat-knopf small { grid-column: 1 / -1; padding-left: 19px; max-width: 20ch; line-height: 1.15; }
+  /* Zwei Zeilen zu je 5 Knöpfen in der Reihenfolge der Themen (10.11.2026: etwas weniger Abstand, damit 10 Knöpfe passen) */
+  .kat-knopf { order: 1; }
   .kategorien > p.auswahl-text { order: 2; }
 }
 /* Grosse Bildschirme (9.11.2026, Wunsch Projektleitung): zwei Spalten – links Suche und Themen (bleiben beim Scrollen
