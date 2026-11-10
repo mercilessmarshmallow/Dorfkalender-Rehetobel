@@ -21,8 +21,8 @@ function ladeWebseitenTeile() {
   return { ...ctx.window._kalenderIntern, logos: ctx.window.KALENDER_LOGOS || [] };
 }
 
-const THEMEN = ["Musik & Kultur", "Feste & Märkte", "Sport & Natur", "Kinder & Familie", "Senioren & Treffpunkt",
-  "Kirche", "Gemeinde & Politik", "Vereinsleben", "Kurse & Weiteres"];
+const THEMEN = ["Musik & Kultur", "Feste & Märkte", "Sport & Natur", "Kinder & Familie", "Senioren", "Begegnung",
+  "Kirche", "Gemeinde & Politik", "Vereinsleben", "Vorträge & Weiteres"];
 // Gleiche Hauptart am gleichen Tag – wie die Warnung im Prüf-Mail (apps-script/Mails.gs)
 const HAUPTARTEN = ["Musik & Kultur", "Feste & Märkte", "Sport & Natur"];
 

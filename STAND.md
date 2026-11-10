@@ -1,6 +1,6 @@
 # Stand Dorfkalender
 
-Stand: 9.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
+Stand: 10.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
 
 ## Läuft (eingerichtet am 6.11.2026, mit dem Handy getestet)
 - Webseite mit Liste, Monat und Terminplanung (seit 7.11. im neuen Design, siehe unten); Planungskalender über `?planung=…`.
@@ -87,12 +87,14 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Bildschirmen in die Bildmitte) und `handy-anschauer`. Projektleitung hat die zwei Spalten am eigenen PC angeschaut: sieht gut aus ✓ (9.11.).
 
 ## Hier weitermachen (8.11.2026)
-- **⚠️ Themen nochmals angehen (Projektleitung 9.11.: «mit den Kategorien so nicht zufrieden»).** Bald in einem eigenen Gespräch.
-  Ausgangspunkt: Frage «Warum heisst es Senioren & Treffpunkt?» – Name stammt aus der Durchsicht des alten Kalenders
-  (Seniorenzmittag, Mittagstisch, Kaffeekränzli, Frauenverein-Nachmittage, Frauenfrühstück = Anlässe, wo man sich trifft;
-  meist für Ältere, nicht nur). Schwäche: sagt «für wen», nicht «was macht man dort». Vorschlag im Gespräch: «Treffpunkt & Geselligkeit».
-  **Bis dahin: Formular am PC-Termin (Schritt 1 unten) noch nicht umstellen**, damit es nicht zweimal geändert werden muss.
-  Webseite bleibt vorerst wie sie ist (Notfall-Weg zurück: `anleitungen/notfall-alte-kategorien.md`).
+- **Themen überarbeitet (10.11.2026, Entscheid Projektleitung, siehe ENTSCHEIDE.md):** zehn Themen – Musik & Kultur, Feste & Märkte,
+  Sport & Natur, Kinder & Familie, **Senioren**, **Begegnung**, Kirche, Gemeinde & Politik, Vereinsleben, **Vorträge & Weiteres**.
+  Webseite und Programm umgebaut, **auf dem Zweig, noch nicht auf main** (wartet auf Okay der Projektleitung). Die Webseite übersetzt
+  alte Einträge selbst (Seniorenzmittag/Unterhaltungsnachmittag/Krone → Senioren, sonst Begegnung; Kurse → Vorträge).
+  Tests, `kalender-pruefer` ✓. **Tabelle eilt nicht:** Die Projektleitung geht alle Anlässe mit zwei Vorstandsmitgliedern durch
+  (Word-Liste in der privaten Vorstandsablage, `kalender/anlaesse-2027/`, Claude führt sie nach, bis abgesegnet).
+  In der Tabelle anders einzutragen (Vorschlag): Tag der Begegnung und die zwei Gottesdienste in der Krone → Senioren.
+  **Ziel: alter Kalender bis Ende 2026, neuer ab Neujahr 2027, kein Parallelbetrieb.**
 - **iPhone «aufs Handy» (8.11.): funktioniert** über Safari unten rechts **•••** → «Teilen» → «Zum Home-Bildschirm» ✓
   (Symbol wie bei Android). Ursache des Problems: Der Hinweis-Kasten ist auf dem iPhone nur Text (Apple erlaubt keinen
   Installieren-Knopf), sieht aber antippbar aus; und neuere iOS-Safari (iOS 26) hat unten keinen Teilen-Knopf mehr.
@@ -109,9 +111,11 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Vorstand gibt Rückmeldung. Excel 2027 und Vereinswebseite (ClubDesk) kommen erst danach.
   Text zum Weiterschicken (8.11.) mit Vergleich zum alten Kalender (rehetobel-tourismus.ch/wp/veranstaltungen/). **Wartet auf Rückmeldungen des Vorstands.**
 - **PC-Termin der Projektleitung (Schritte einzeln geben, zuerst Termin abmachen):**
-  1. Formular: Auswahl «Kategorie» → die neun Themen (Frage muss weiterhin **«Kategorie»** heissen – das Programm findet die Spalte über die Überschrift) (Musik & Kultur, Feste & Märkte, Sport & Natur, Kinder & Familie,
-     Senioren & Treffpunkt, Kirche, Gemeinde & Politik, Vereinsleben, Kurse & Weiteres), Hilfstext «Was macht man dort als Besucher?».
-  2. Programm in Apps Script erneuern (`anleitungen/programm-einrichten.md`, Teil A) – erst dann Warnungen im Prüf-Mail.
+  1. **(neu, offen)** Formular: Auswahl «Kategorie» → die **zehn** Themen vom 10.11.2026 (Frage muss weiterhin **«Kategorie»** heissen –
+     das Programm findet die Spalte über die Überschrift): Musik & Kultur, Feste & Märkte, Sport & Natur, Kinder & Familie, Senioren,
+     Begegnung, Kirche, Gemeinde & Politik, Vereinsleben, Vorträge & Weiteres. Hilfstext bleibt «Was macht man dort als Besucher?».
+  2. **(neu, offen)** Gleich danach Programm in Apps Script erneuern (`anleitungen/programm-einrichten.md`, Teil A) – erst wenn die
+     Webseite mit den zehn Themen auf main ist. Formular und Programm zusammen, sonst passen die Hinweise im Prüf-Mail nicht.
   3. ~~Tabelle: Einträge mit alten Gruppen auf Themen umstellen.~~ Nicht mehr nötig: Anlass-Prüfer 8.11. – alle Anlässe haben schon ein Thema.
   4. Gleich mit: Formular-Bestätigung «Bitte auch im Spam-Ordner nachsehen». (Test-Einträge und die zwei Vorstandssitzungen sind seit 8.11. gelöscht.)
 

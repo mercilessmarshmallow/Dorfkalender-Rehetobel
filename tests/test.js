@@ -179,16 +179,16 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   await n.click("[data-mehr]");
   pruefe(await n.locator(".karte").count() === 28, "«Weitere» zeigt den Rest");
   const kats = await n.$$eval("#kategorien .kat-knopf", (b) => b.map((x) => x.dataset.kat));
-  pruefe(kats.join(",") === "Musik & Kultur,Feste & Märkte,Sport & Natur,Kinder & Familie,Senioren & Treffpunkt,Kirche,Gemeinde & Politik,Vereinsleben,Kurse & Weiteres",
-    "neun Themen in der richtigen Reihenfolge");
-  pruefe(!(await n.isVisible("#kategorien")) && /Meine Auswahl: 8 von 9/.test(await n.innerText("#kat-auf")), "Handy: «Meine Auswahl» zugeklappt, Vereinsleben zu Beginn nicht gewählt");
+  pruefe(kats.join(",") === "Musik & Kultur,Feste & Märkte,Sport & Natur,Kinder & Familie,Senioren,Begegnung,Kirche,Gemeinde & Politik,Vereinsleben,Vorträge & Weiteres",
+    "zehn Themen in der richtigen Reihenfolge");
+  pruefe(!(await n.isVisible("#kategorien")) && /Meine Auswahl: 9 von 10/.test(await n.innerText("#kat-auf")), "Handy: «Meine Auswahl» zugeklappt, Vereinsleben zu Beginn nicht gewählt");
   await n.click("#kat-auf"); await n.click('.kat-knopf[data-kat="Vereinsleben"]');
-  pruefe(!/Weitere Anlässe im Dorf/.test(await n.innerText("#ansicht-liste")) && /9 von 9/.test(await n.innerText("#kat-auf")), "Vereinsleben gewählt → alles oben, kein Strich");
+  pruefe(!/Weitere Anlässe im Dorf/.test(await n.innerText("#ansicht-liste")) && /10 von 10/.test(await n.innerText("#kat-auf")), "Vereinsleben gewählt → alles oben, kein Strich");
   await n.click('.kat-knopf[data-kat="Musik & Kultur"]');
   const liste2 = await n.innerText("#ansicht-liste");
   pruefe(/Probe Chor[\s\S]*Weitere Anlässe im Dorf[\s\S]*Anlass 1\b/.test(liste2), "Musik & Kultur abgewählt → rutscht unter den Strich, verschwindet nicht");
   await n.reload(); await n.waitForSelector(".karte");
-  pruefe(/8 von 9/.test(await n.innerText("#kat-auf")), "Auswahl bleibt auf dem Handy gespeichert");
+  pruefe(/9 von 10/.test(await n.innerText("#kat-auf")), "Auswahl bleibt auf dem Handy gespeichert");
   pruefe(await n.locator('.karte:has-text("HV Verkehrsverein") .vlogo img[src="bilder/logos/verkehrsverein.png"]').count() === 1
     && await n.locator('.karte:has-text("Anlass 1") .vlogo').count() === 0, "Vereinslogo nur bei Vereinen mit Logo");
   await n.locator('.karte:has-text("Anlass 1")').first().click();
@@ -239,14 +239,26 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
       "Adventsmarkt,10.12.2026,,10:00,,Dorfplatz,Gewerbeverein,Gewerbe,,,",
       "Samariterübung,11.12.2026,,20:00,,Schulhaus,Samariterverein,Vereine,,,",
       "Kegelabend,12.12.2026,,19:00,,Krone,Testverein,Vereine,,,",
-      "Sternsingen,13.12.2026,,nachmittags,,Rundgang im Dorf,Katholische Kirche,Kirche,,,"].join("\n") + "\n" }));
+      "Sternsingen,13.12.2026,,nachmittags,,Rundgang im Dorf,Katholische Kirche,Kirche,,,",
+      "Seniorenzmittag im Dorf,14.12.2026,,12:00,,Dorfhus Gupf,,Senioren & Treffpunkt,,,",
+      "Stobe + Bar offen,15.12.2026,,17:00,,Haus zur Stickerei,Haus zur Stickerei,Senioren & Treffpunkt,,,",
+      "Tag der Begegnung,16.12.2026,,10:00,,Krone,,Senioren & Treffpunkt,,,",
+      "Rechtobler Tagung,17.12.2026,,09:00,,Gemeindezentrum,,Kurse & Weiteres,,,"].join("\n") + "\n" }));
+    // Gespeicherte Auswahl mit alten Namen (bis 10.11.2026) wird übernommen
+    await c.addInitScript(() => localStorage.setItem("dk-auswahl", JSON.stringify(["Musik & Kultur", "Senioren & Treffpunkt", "Kurse & Weiteres"])));
     const pg = await c.newPage(); await pg.clock.setFixedTime(new Date("2026-12-07T10:00:00"));
     await pg.goto("http://localhost:8765/index.html"); await pg.waitForSelector(".karte", { timeout: 5000 });
     const text = await pg.innerText("#ansicht-liste");
-    pruefe(/Adventsmarkt[\s\S]*Feste & Märkte/.test(text) && /Samariterübung[\s\S]*Vereinsleben/.test(text) && /Kegelabend[\s\S]*Kurse & Weiteres/.test(text)
-      && !/\bGewerbe\b|\bVereine\b/.test(text), "alte Gruppen «Vereine»/«Gewerbe» bekommen ein Thema (Stichwort im Titel, sonst «Kurse & Weiteres»)");
+    pruefe(/Adventsmarkt[\s\S]*Feste & Märkte/.test(text) && /Samariterübung[\s\S]*Vereinsleben/.test(text) && /Kegelabend[\s\S]*Vorträge & Weiteres/.test(text)
+      && !/\bGewerbe\b|\bVereine\b/.test(text), "alte Gruppen «Vereine»/«Gewerbe» bekommen ein Thema (Stichwort im Titel, sonst «Vorträge & Weiteres»)");
     const stern = await pg.locator('.karte:has-text("Sternsingen")').innerText();
     pruefe(/nachmittags/.test(stern) && !/ganztägig/.test(stern), "Zeit in Worten («nachmittags») wird statt «ganztägig» angezeigt");
+    const thema = async (t) => (await pg.locator(`.karte:has-text("${t}") .kat-etikett`).first().innerText()).trim();
+    pruefe(await thema("Seniorenzmittag") === "Senioren" && await thema("Stobe + Bar") === "Begegnung" && await thema("Tag der Begegnung") === "Senioren"
+      && await thema("Rechtobler Tagung") === "Vorträge & Weiteres" && !/Senioren & Treffpunkt|Kurse & Weiteres/.test(await pg.innerText("body")),
+      "alte Themen (bis 10.11.2026): «Senioren & Treffpunkt» → Senioren (Krone, Seniorenzmittag) bzw. Begegnung; «Kurse & Weiteres» → «Vorträge & Weiteres»");
+    const gewaehlt = await pg.$$eval('.kat-knopf[aria-pressed="true"]', (b) => b.map((x) => x.dataset.kat).join(","));
+    pruefe(gewaehlt === "Musik & Kultur,Senioren,Begegnung,Vorträge & Weiteres", "gespeicherte Auswahl mit alten Namen wird übernommen (" + gewaehlt + ")");
     await c.close();
   }
   pruefe(nFehler.length === 0, "keine Fehler im neuen Design " + nFehler.join("; "));
@@ -354,13 +366,16 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
   pruefe(/Gleiche Art am gleichen Tag \(Feste &amp; Märkte\): «Adventsmarkt» \(Gewerbeverein\)/.test(pm.htmlBody), "Prüf-Mail warnt: gleiche Art am gleichen Tag");
   const best = kk.mails.filter((m) => m.to === "wm@example.ch").at(-1);
   pruefe(/Hinweis: Am gleichen Tag findet bereits «Adventsmarkt»/.test(best.body), "Verein bekommt Hinweis in der Eingangsbestätigung");
-  kk.melde("Seniorenzmittag", "28.11.2026", "sz@example.ch", "Ja", "Pro Senectute", "Senioren & Treffpunkt");
+  kk.melde("Seniorenzmittag", "28.11.2026", "sz@example.ch", "Ja", "Pro Senectute", "Senioren");
   pm = kk.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1);
   pruefe(!/Gleiche Art/.test(pm.body) && !/Kategorie prüfen/.test(pm.body) && /Am gleichen Tag schon eingetragen/.test(pm.body),
     "andere Art am gleichen Tag: keine Warnung, nur der normale Hinweis");
   kk.melde("Vo 11 bis 11", "20.06.2027", "vvr@example.ch", "Nein", "Verkehrsverein Rehetobel", "Sport & Natur");
   pm = kk.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1);
   pruefe(/normalerweise «Feste &amp; Märkte»/.test(pm.htmlBody), "Stichwort-Liste: «Vo 11 bis 11» ist Feste & Märkte");
+  kk.melde("Vo 11 bis 11 of em Stobetebüel", "21.06.2027", "vvr@example.ch", "Nein", "Verkehrsverein Rehetobel", "Begegnung");
+  pm = kk.mails.filter((m) => m.subject.startsWith("Dorfkalender:")).at(-1);
+  pruefe(/normalerweise «Feste &amp; Märkte»/.test(pm.htmlBody), "«Stobetebüel» im Titel macht «Vo 11 bis 11» nicht zu Begegnung (Stichwort «stobe» steht zuletzt)");
 
   const x = google(); x.ctx.einrichten();
   x.melde('<script>alert(1)</script>', "13.12.2026", "x@example.ch");

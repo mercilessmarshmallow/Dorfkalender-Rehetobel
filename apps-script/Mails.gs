@@ -43,12 +43,13 @@ const ZUORDNUNG = [
   ["gottesdienst", "Kirche"], ["andacht", "Kirche"], ["saxophongebet", "Kirche"], ["besinnung", "Kirche"],
   ["abstimmung", "Gemeinde & Politik"], ["gemeindeversammlung", "Gemeinde & Politik"], ["voranschlag", "Gemeinde & Politik"],
   ["rechtsberatung", "Gemeinde & Politik"], ["podium", "Gemeinde & Politik"],
-  ["seniorenzmittag", "Senioren & Treffpunkt"], ["mittagstisch", "Senioren & Treffpunkt"], ["kaffeekränzli", "Senioren & Treffpunkt"],
+  ["seniorenzmittag", "Senioren"], ["mittagstisch", "Senioren"], ["kaffeekränzli", "Senioren"], ["unterhaltungsnachmittag", "Senioren"], ["senior", "Senioren"],
   ["jugendraum", "Kinder & Familie"], ["jugendtreff", "Kinder & Familie"], ["spielgruppe", "Kinder & Familie"], ["krippenspiel", "Kinder & Familie"],
   ["konzert", "Musik & Kultur"], ["ständli", "Musik & Kultur"], ["lesung", "Musik & Kultur"], ["theater", "Musik & Kultur"],
   ["adventsmarkt", "Feste & Märkte"], ["jahrmarkt", "Feste & Märkte"], ["vo bis", "Feste & Märkte"]   /* «Vo 11 bis 11» (Zahlen werden beim Vergleich weggelassen) */, ["dorffest", "Feste & Märkte"],
   ["grümpelturnier", "Sport & Natur"], ["august wanderung", "Sport & Natur"], ["wanderung", "Sport & Natur"],
-  ["nothilfekurs", "Kurse & Weiteres"], ["kurs", "Kurse & Weiteres"],
+  ["nothilfekurs", "Vorträge & Weiteres"], ["kurs", "Vorträge & Weiteres"], ["vortrag", "Vorträge & Weiteres"],
+  ["stobe", "Begegnung"], ["frühstück", "Begegnung"],   /* zuletzt, damit «Vo 11 bis 11 of em Stobetebüel» bei Feste & Märkte bleibt */
 ];
 
 // Spalten, die das Programm selbst verwaltet (erscheinen nicht im Prüf-Mail)

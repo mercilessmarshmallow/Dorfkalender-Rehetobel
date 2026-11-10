@@ -120,7 +120,14 @@ Titel · Datum · Bis · Zeit (Beginn) · Zeit (Ende) · Ort · Veranstalter · 
 **Kann das Datum verschoben werden? (Ja/Nein)** 📋 (ersetzt «Status fix/provisorisch»; nur wichtig für Planungsmeldungen) · Name der Kontaktperson · E-Mail (Pflicht).
 Kontaktname und E-Mail erscheinen nie im öffentlichen Kalender.
 
-## Themen und «Meine Auswahl» (entschieden 8.11.2026; Webseite live seit 8.11. ✅, Formular und Programm folgen 🔧)
+## Themen und «Meine Auswahl» (entschieden 8.11.2026, überarbeitet 10.11.2026; Webseite live seit 8.11. ✅, Formular und Programm folgen 🔧)
+**Stand 10.11.2026 – zehn Themen:** Musik & Kultur · Feste & Märkte · Sport & Natur · Kinder & Familie · Senioren · Begegnung ·
+Kirche · Gemeinde & Politik · Vereinsleben · Vorträge & Weiteres (Entsorgung weiter nur Idee). Siehe ENTSCHEIDE.md 10.11.2026.
+**Regel:** Geht man wegen einer bestimmten Gruppe hin (Kinder & Familie, Senioren), zählt die Gruppe; sonst: Was macht man dort
+hauptsächlich? Jeder Anlass hat **ein** Thema. Zahlen Anlässe 2027 (Vorschlag, 212): Vereinsleben 57, Musik & Kultur 39, Kirche 33,
+Senioren 18, Feste & Märkte 18, Sport & Natur 18, Begegnung 13, Gemeinde & Politik 7, Kinder & Familie 5, Vorträge & Weiteres 4.
+Der Text darunter ist der Stand vom 8.11.2026.
+
 Grundlage: alle 457 Anlässe 2025 und die kommenden Anlässe im alten Kalender; andere Kalender
 (Zürich Tourismus: Highlights, Musik, Traditionen, Sport; Appenzell: Brauchtum, Kultur, Sport; Familienportale: nach Alter;
 Gemeinden wie Köniz oder Rüti: Agenda + Vereinsverzeichnis). Gemeinsam ist: Man sucht nach **Thema** («was?»), nicht nach
@@ -166,7 +173,12 @@ Musik & Kultur 10, je 4 Sport & Natur / Senioren / Gemeinde / Kinder, Entsorgung
 - **Anlässe 2027 übernehmen und Parallelbetrieb (Projektleitung, 8.11.):** Liste der Koordinationssitzung (Excel vom Vorstand)
   ordnet Claude den Spalten und Themen zu; Übernahme in die Tabelle direkt als öffentlich. Dann laufen alter und neuer Kalender
   eine Zeit lang parallel; der alte bekommt später einen Hinweis «umgezogen» mit Link, danach wird er abgeschaltet.
+  **Geändert 10.11.2026:** kein Parallelbetrieb – alter Kalender bis Ende 2026, ab Neujahr 2027 der neue (ENTSCHEIDE.md 10.11.).
   Excel und Kontaktdaten nie in diese Ablage. 📋
+- **Zweites Thema im Hintergrund (10.11.):** Einzelne Anlässe zusätzlich unter einem zweiten Thema zeigen (z. B. Schulschlusssingen:
+  Kinder & Familie, aber auch bei Musik & Kultur; Farbe bleibt die des Hauptthemas). Vorerst nicht: Ausblenden würde löchrig
+  (Kinder weggeklickt, aber über Musik doch sichtbar), Nachtragen nur von Hand am PC, betrifft 2–3 Anlässe im Jahr.
+  Wieder aufnehmen, wenn Besucher oder Vorstand Anlässe nicht finden. 📋
 - **Entsorgung als Kategorie (8.11.):** Grüngut, Altmetall und Papiersammlung (eigentlich Abfallkalender der Gemeinde) als
   eigene Kategorie «Entsorgung». Vorerst nicht umsetzen, nur Idee (Projektleitung 8.11.).
 - **Eigene Adresse statt «mercilessmarshmallow»:** ✅ 9.11.2026 Ablage auf das GitHub-Konto des Vereins `verkehrsvereinrehetobel-collab` umgezogen

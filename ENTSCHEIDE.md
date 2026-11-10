@@ -3,6 +3,25 @@
 Neueste zuoberst. Jeder Entscheid mit Datum und kurzer Begründung. Wird ein Entscheid geändert,
 den alten nicht löschen, sondern als «ersetzt durch …» markieren.
 
+## 10.11.2026 (Themen überarbeitet, Wechsel auf Neujahr)
+- **Zehn Themen** (Projektleitung: «Senioren & Treffpunkt» am wenigsten gut – als Junger will man die Senioren ausblenden,
+  aber nicht die Treffpunkte): Musik & Kultur · Feste & Märkte · Sport & Natur · Kinder & Familie · **Senioren** · **Begegnung** ·
+  Kirche · Gemeinde & Politik · Vereinsleben · **Vorträge & Weiteres**. «Begegnung» statt «Treffpunkt» (sagt, was man dort macht).
+  «Kurse & Weiteres» heisst «Vorträge & Weiteres» (2027 nur Vorträge, aber Platz für alles, was sonst nirgends passt).
+  **Ersetzt** die Themenliste vom 8.11.2026.
+- **Regel:** Geht man wegen einer bestimmten Gruppe hin (Kinder & Familie, Senioren), zählt die Gruppe, sonst: Was macht man dort
+  hauptsächlich? Beispiele: Schulschlusssingen und Märlikonzert → Kinder & Familie (man geht wegen der Kinder);
+  Anlässe in der Krone (Altersheim: Tag der Begegnung, Gottesdienste) → Senioren (dort geht nur hin, wer im Altersheim ist);
+  Grümpelturnier → Sport & Natur; Stobete, Stobe + Bar offen → Begegnung.
+- **Ein Thema pro Anlass**, nicht mehrere (Ausblenden bliebe sonst löchrig, Vereine würden alles ankreuzen, eine Farbe pro Karte).
+  «Zweites Thema im Hintergrund» als Idee vertagt (KONZEPT, Ideenspeicher). Senioren / Kinder & Familie bleiben Themen,
+  kein eigenes Merkmal «Für wen» (einfacher für Vereine, kein PC-Aufwand).
+- **Übergang:** Die Webseite übersetzt alte Einträge selbst («Senioren & Treffpunkt» → Senioren bzw. Begegnung, «Kurse & Weiteres»
+  → «Vorträge & Weiteres»); gespeicherte «Meine Auswahl» wird übernommen. Die Projektleitung geht alle Anlässe 2027 mit zwei
+  Vorstandsmitgliedern durch und fragt bei einzelnen Vereinen nach (Liste als Word in der privaten Vorstandsablage).
+- **Kein Parallelbetrieb:** alter Kalender bis Ende 2026, **ab Neujahr 2027 der neue** an der gleichen Stelle (die ganze Seite wird
+  sowieso neu; wer sucht, kommt auf die gleiche Seite). **Ändert** die Idee «alter und neuer laufen eine Zeit lang parallel» (8.11.).
+
 ## 9.11.2026 (Laptop: Anlässe ohne Hinunterscrollen)
 - **Grosse Bildschirme (ab 1200 px Breite): zwei Spalten** – links Suche und Themen (mit Zusätzen, bleiben beim Scrollen stehen),
   rechts die Anlässe. **Kleinere Laptops:** Themen-Knöpfe kompakter in zwei Zeilen, Zusätze im Knopf. Handy bleibt zugeklappt.

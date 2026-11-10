@@ -9,7 +9,7 @@ unbedingt zurück muss. Alles Alte ist aufbewahrt und kann wieder hergestellt we
 | | Alt (bis 8.11.2026) | Neu (ab 8.11.2026) |
 |---|---|---|
 | Idee | **Wer** macht den Anlass? | **Was** mache ich dort als Besucher? |
-| Auswahl im Formular | Gemeinde Rehetobel, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Andere | Musik & Kultur, Feste & Märkte, Sport & Natur, Kinder & Familie, Senioren & Treffpunkt, Kirche, Gemeinde & Politik, Vereinsleben, Kurse & Weiteres |
+| Auswahl im Formular | Gemeinde Rehetobel, Vereine, Schule, Kirche, Gewerbe, Parteien, Kommissionen, Andere | Musik & Kultur, Feste & Märkte, Sport & Natur, Kinder & Familie, Senioren, Begegnung, Kirche, Gemeinde & Politik, Vereinsleben, Vorträge & Weiteres |
 | Auf der Webseite | Knöpfe «Nach Kategorie filtern» | «Meine Auswahl» (Häkchen pro Thema, auf dem Handy gespeichert), «☆ Immer oben», «📅 Alle in meinen Kalender» |
 | Prüf-Mail | ohne Warnungen | Warnung bei abweichender Kategorie und bei gleicher Art am gleichen Tag |
 

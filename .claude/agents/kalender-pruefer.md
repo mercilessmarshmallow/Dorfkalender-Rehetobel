@@ -46,8 +46,8 @@ Prüfe in den geänderten Stellen die Texte, die jemand liest: Webseite (`index.
 - **Einfache Worte, kein Fachjargon** in Texten für Besucher, Vereine und die Projektleitung
   (z. B. nicht «CSV», «URL», «Web-App», «Deployment», «Cache», «Bug»). In Programm-Kommentaren ist Fachsprache erlaubt.
 - **Immer gleiche Namen:**
-  - die neun Themen genau so: Musik & Kultur · Feste & Märkte · Sport & Natur · Kinder & Familie · Senioren & Treffpunkt ·
-    Kirche · Gemeinde & Politik · Vereinsleben · Kurse & Weiteres
+  - die zehn Themen genau so (seit 10.11.2026): Musik & Kultur · Feste & Märkte · Sport & Natur · Kinder & Familie · Senioren ·
+    Begegnung · Kirche · Gemeinde & Politik · Vereinsleben · Vorträge & Weiteres
   - «📅 In meinen Kalender» (nicht «Erinnere mich»), «+ Anlass melden», «Meine Auswahl», «Dorfkalender aufs Handy»
   - «Für alle offen» / «Nur für Mitglieder» (nicht «öffentlich» / «vereinsintern»)
 - **Anrede «Sie»** auf der Webseite und in den Mails an die Vereine (nicht «du»).

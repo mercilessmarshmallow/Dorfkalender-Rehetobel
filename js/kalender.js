@@ -47,33 +47,42 @@
   // Der Verkehrsverein gehört zu den Vereinen; «Gemeinde Rehetobel» heisst kurz «Gemeinde».
   // ---------- Themen (Entscheid 8.11.2026): «Was mache ich dort als Besucher?» ----------
   // Wer einen Anlass macht, zeigt das Vereinslogo. Reihenfolge = Reihenfolge der Knöpfe.
+  // Neu 10.11.2026 (Entscheid Projektleitung): «Senioren & Treffpunkt» aufgeteilt in «Senioren» und «Begegnung»,
+  // «Kurse & Weiteres» heisst «Vorträge & Weiteres». Regel: Geht man wegen einer Gruppe hin (Kinder, Senioren) → diese Gruppe,
+  // sonst: Was macht man dort hauptsächlich?
   const FARBE = { "Musik & Kultur": "#7b4fa8", "Feste & Märkte": "#c25a0f", "Sport & Natur": "#0b7a34", "Kinder & Familie": "#b38600",
-    "Senioren & Treffpunkt": "#b5466e", "Kirche": "#6b5a3e", "Gemeinde & Politik": "#1f5fa8", "Vereinsleben": "#0e7c86",
-    "Kurse & Weiteres": "#7a7a7a" };
-  const HINWEIS = { "Vereinsleben": "Übungen, Proben, Versammlungen, Höcks", "Kurse & Weiteres": "Kurse, Vorträge, Tag der offenen Tür" };
-  // Alte Veranstalter-Gruppen (Formular bis Ende 2026) so gut wie möglich übersetzen
+    "Senioren": "#b5466e", "Begegnung": "#b23a3a", "Kirche": "#6b5a3e", "Gemeinde & Politik": "#1f5fa8", "Vereinsleben": "#0e7c86",
+    "Vorträge & Weiteres": "#7a7a7a" };
+  const HINWEIS = { "Vereinsleben": "Übungen, Proben, Versammlungen, Höcks", "Vorträge & Weiteres": "Vorträge, Kurse, Tag der offenen Tür" };
+  // Alte Namen aus der Tabelle (Formular bis Ende 2026) so gut wie möglich übersetzen
   const ALT = { "gemeinde": "Gemeinde & Politik", "gemeinde rehetobel": "Gemeinde & Politik", "parteien": "Gemeinde & Politik",
-    "kommissionen": "Gemeinde & Politik", "schule": "Kinder & Familie", "kirche": "Kirche", "andere": "Kurse & Weiteres" };
+    "kommissionen": "Gemeinde & Politik", "schule": "Kinder & Familie", "kirche": "Kirche", "andere": "Vorträge & Weiteres",
+    "kurse & weiteres": "Vorträge & Weiteres" };
+  // «Senioren & Treffpunkt» (bis 10.11.2026): für Ältere → «Senioren», sonst «Begegnung». Die Krone ist ein Altersheim.
+  const SENIOREN = /senior|zmittag|mittagstisch|kaffeekränzli|unterhaltungsnachmittag/;
   // Alte Gruppen ohne klares Thema (z. B. «Vereine», «Gewerbe»): Thema aus dem Titel erraten (ähnliche, etwas breitere
-  // Stichwörter als im Prüf-Mail, apps-script/Mails.gs), sonst «Kurse & Weiteres». Nur Übergang, bis die Einträge in der Tabelle umgestellt sind.
+  // Stichwörter als im Prüf-Mail, apps-script/Mails.gs), sonst «Vorträge & Weiteres». Nur Übergang, bis die Einträge in der Tabelle umgestellt sind.
   const STICHWORT = [
     ["übung", "Vereinsleben"], ["probe", "Vereinsleben"], ["hauptversammlung", "Vereinsleben"], ["höck", "Vereinsleben"], ["nistkasten", "Vereinsleben"],
     ["gottesdienst", "Kirche"], ["andacht", "Kirche"], ["gebet", "Kirche"], ["besinnung", "Kirche"],
     ["abstimmung", "Gemeinde & Politik"], ["gemeindeversammlung", "Gemeinde & Politik"], ["voranschlag", "Gemeinde & Politik"],
     ["rechtsberatung", "Gemeinde & Politik"], ["podium", "Gemeinde & Politik"],
-    ["senioren", "Senioren & Treffpunkt"], ["mittagstisch", "Senioren & Treffpunkt"], ["kaffeekränzli", "Senioren & Treffpunkt"],
+    ["senioren", "Senioren"], ["mittagstisch", "Senioren"], ["kaffeekränzli", "Senioren"],
     ["jugend", "Kinder & Familie"], ["spielgruppe", "Kinder & Familie"], ["krippenspiel", "Kinder & Familie"], ["kinder", "Kinder & Familie"],
     ["konzert", "Musik & Kultur"], ["ständli", "Musik & Kultur"], ["lesung", "Musik & Kultur"], ["theater", "Musik & Kultur"],
     ["markt", "Feste & Märkte"], ["vo bis", "Feste & Märkte"], ["fest", "Feste & Märkte"],
-    ["turnier", "Sport & Natur"], ["wanderung", "Sport & Natur"], ["kurs", "Kurse & Weiteres"],
+    ["turnier", "Sport & Natur"], ["wanderung", "Sport & Natur"], ["vortrag", "Vorträge & Weiteres"], ["kurs", "Vorträge & Weiteres"],
   ];
-  function kategorieVon(k, titel) {
-    const t = String(k || "").trim();
-    const bekannt = Object.keys(FARBE).find((n) => n.toLowerCase() === t.toLowerCase());
-    if (bekannt || ALT[t.toLowerCase()]) return bekannt || ALT[t.toLowerCase()];
+  function kategorieVon(k, titel, ort) {
+    const t = String(k || "").trim().toLowerCase();
+    if (t === "senioren & treffpunkt") {
+      return SENIOREN.test(String(titel || "").toLowerCase()) || /\bkrone\b/i.test(String(ort || "").trim()) ? "Senioren" : "Begegnung";
+    }
+    const bekannt = Object.keys(FARBE).find((n) => n.toLowerCase() === t);
+    if (bekannt || ALT[t]) return bekannt || ALT[t];
     const ti = String(titel || "").toLowerCase().replace(/[0-9.]/g, " ").replace(/\s+/g, " ").trim();
     const treffer = STICHWORT.find(([w]) => ti.includes(w));
-    return treffer ? treffer[1] : "Kurse & Weiteres";
+    return treffer ? treffer[1] : "Vorträge & Weiteres";
   }
   const farbe = (a) => FARBE[a.kategorie] || "#8a8a8a";
 
@@ -95,7 +104,9 @@
   const lies = (k, std) => { try { const v = JSON.parse(localStorage.getItem(k)); return Array.isArray(v) ? v : std; } catch (e) { return std; } };
   const speichere = (k, v) => { try { localStorage.setItem(k, JSON.stringify([...v])); } catch (e) { /* ohne Speicher geht es auch */ } };
   const STANDARD = Object.keys(FARBE).filter((k) => k !== "Vereinsleben");   // zu Beginn: alles ausser Vereinsleben
-  const auswahl = new Set(lies("dk-auswahl", STANDARD));
+  // Gespeicherte Auswahl mit alten Namen (bis 10.11.2026) übernehmen
+  const UMBENANNT = { "Senioren & Treffpunkt": ["Senioren", "Begegnung"], "Kurse & Weiteres": ["Vorträge & Weiteres"] };
+  const auswahl = new Set(lies("dk-auswahl", STANDARD).flatMap((k) => UMBENANNT[k] || [k]).filter((k) => k in FARBE));
   const favoriten = new Set(lies("dk-favoriten", []));
   // Oben: gewählte Themen, Vereine mit ★ und Anlässe mit (noch) unbekanntem Thema
   const oben = (a) => auswahl.has(a.kategorie) || favoriten.has(a.veranstalter) || !(a.kategorie in FARBE);
@@ -496,7 +507,7 @@
   document.getElementById("ansicht-liste").innerHTML = `<p class="leer">Anlässe werden geladen …</p>`;
   window.ladeAnlaesse()
     .then((liste) => {
-      alle = sortiere(liste).map((a) => ({ ...a, kategorie: kategorieVon(a.kategorie, a.titel) }));
+      alle = sortiere(liste).map((a) => ({ ...a, kategorie: kategorieVon(a.kategorie, a.titel, a.ort) }));
       if (window.KALENDER_PLANUNG) richtePlanungEin();
       fuelleKategorien();
       zeichne();
