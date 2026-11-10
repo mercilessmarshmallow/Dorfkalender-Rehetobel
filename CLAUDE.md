@@ -18,6 +18,8 @@ und hat hier nichts zu suchen.
 - Schritte **einzeln** geben, die Projektleitung antwortet mit «ok». Nicht mehrere Blöcke auf einmal.
 - **Nicht raten.** Bei einem Fehler zuerst die Ursache klären (z. B. Apps Script → «Ausführungen»), dann handeln.
   Nicht nacheinander verschiedene Vermutungen ausprobieren lassen.
+- **Angaben von Anlässen nie aus Annahme ändern** (Veranstalter, Ort, Zeit, Kategorie), auch wenn es «wie 2027» aussieht.
+  Erlaubt: nur Tippfehler und gleiche Orte gleich schreiben. Alles andere als Frage an die Projektleitung (Wunsch 10.11.2026).
 - Ziel der Projektleitung: alles Wichtige **mit einem Tipp in der Gmail-App**, ohne Computer.
   Aufgaben am PC bündeln, damit sie möglichst selten nötig sind.
 
