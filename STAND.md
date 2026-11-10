@@ -86,6 +86,13 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - Geprüft von `kalender-pruefer` (Fehler gefunden und behoben: Schrift rutschte bei winter3/fruehling2 auf sehr grossen
   Bildschirmen in die Bildmitte) und `handy-anschauer`. Projektleitung hat die zwei Spalten am eigenen PC angeschaut: sieht gut aus ✓ (9.11.).
 
+## Hier weitermachen (10.11.2026) – Reihenfolge der Projektleitung
+1. **Mail an den Vorstand** schreiben (Entwurf in der privaten Vorstandsablage, `NAECHSTE_SCHRITTE.md`), Projektleitung schickt es ab.
+   Themen und «neuer Kalender ab Neujahr» sind darin **Vorschläge** – den Vorstand nicht vor vollendete Tatsachen stellen.
+2. **Erst danach** Zweig auf main bringen (Okay Projektleitung): zehn Themen + Titelbilder Laptop. Die Adresse der Seite bleibt gleich.
+3. Dann PC-Termin: Formular «Kategorie» auf zehn Themen + Programm erneuern (Punkte 1–2 unten).
+4. Rückmeldungen des Vorstands einarbeiten (Frist im Mail: eine Woche).
+
 ## Hier weitermachen (8.11.2026)
 - **Themen überarbeitet (10.11.2026, Entscheid Projektleitung, siehe ENTSCHEIDE.md):** zehn Themen – Musik & Kultur, Feste & Märkte,
   Sport & Natur, Kinder & Familie, **Senioren**, **Begegnung**, Kirche, Gemeinde & Politik, Vereinsleben, **Vorträge & Weiteres**.
@@ -103,7 +110,9 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   - Alle Laptop-Bilder sind nur 1600 px breit → auf grossen und guten Laptop-Bildschirmen leicht unscharf. Ideal: mind. 3000 px.
   - Herbst und Kirche (Appenzellerland Tourismus): Originale in voller Grösse anfragen.
   - Sommer auf dem Laptop nur noch der Baum (Kirche wirkt dort abgeschnitten, Entscheid 10.11.); Kirche bleibt auf dem Handy.
-    Ein zweites, breites Sommerbild für den Laptop wäre schön.
+    Ein zweites, breites Sommerbild für den Laptop wäre schön, ebenso ein zweites Herbstbild.
+  - Frühling «Hütte»: Foto ist gerade (Hütte senkrecht), wirkt aber schräg, weil die Wiese am Hang ansteigt →
+    ersetzen durch ein Frühlingsbild mit geradem Horizont (z. B. Blick übers Dorf oder Richtung Säntis).
   - Neue Bilder vom Nachbarn der Projektleitung (Hobbyfotograf, gute Kamera): diesen Winter Winterbilder, im Frühling Frühlingsbilder.
     Die Projektleitung sagt ihm jeweils, wofür es ein Bild braucht. Breite Bilder (Querformat) für den Laptop, möglichst gross.
     Bildnachweis in der Fusszeile ergänzen, sobald Bilder von ihm drin sind (Name nur mit seinem Einverständnis).

@@ -11,7 +11,7 @@ den alten nicht löschen, sondern als «ersetzt durch …» markieren.
   (Hobbyfotograf mit guter Kamera; Name im Bildnachweis als Dank), zuerst Winter, dann Frühling; eigene Bilder neu mit besserem Handy.
   Professionelle Fotos: Traktandum Vorstand 17.2.2027.
 
-## 10.11.2026 (Themen überarbeitet, Wechsel auf Neujahr)
+## 10.11.2026 (Themen überarbeitet, Wechsel auf Neujahr) – Vorschlag der Projektleitung, Vorstand wird per Mail gefragt
 - **Zehn Themen** (Projektleitung: «Senioren & Treffpunkt» am wenigsten gut – als Junger will man die Senioren ausblenden,
   aber nicht die Treffpunkte): Musik & Kultur · Feste & Märkte · Sport & Natur · Kinder & Familie · **Senioren** · **Begegnung** ·
   Kirche · Gemeinde & Politik · Vereinsleben · **Vorträge & Weiteres**. «Begegnung» statt «Treffpunkt» (sagt, was man dort macht).
