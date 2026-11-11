@@ -92,8 +92,11 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   «Vorträge & Weiteres» → «Kurse & Weiteres». Sie zeigt weiter neun Themen. Anlass-Prüfer kennt die neuen Namen auch.
 - **Tabelle umgestellt (11.11.):** 35 Einträge in «Formularantworten 1», Spalte «Kategorie» – 17× Senioren, 14× Begegnung, 4× Vorträge & Weiteres
   (genau wie die Webseite sie schon zeigte). Kein alter Name mehr im Blatt «Kalender». Weihnachtsfeier Frauenverein 1.12.2026 → Begegnung (für die Liste mit Käthy und Brigitte).
-- **Als Nächstes: PC-Termin** (Punkte 1–2 unten). Geht jetzt schon, ohne auf den Vorstand zu warten: Die Live-Seite versteht die neuen Namen.
-  Programm: neue Fassung `apps-script/Mails.gs` **vom Zweig** nehmen (nicht von main).
+- **PC-Termin erledigt (11.11.):** Formular «Kategorie» mit den zehn Themen (Reihenfolge im Formular etwas anders, egal; «Sport und Natur» → «Sport & Natur» korrigiert),
+  Programm vom Zweig eingefügt und als neue Version bereitgestellt (laut Projektleitung). Noch nicht mit einer Test-Meldung geprüft –
+  bei der nächsten echten Meldung im Prüf-Mail darauf achten, dass keine falsche Warnung «Kategorie prüfen» kommt.
+  **Achtung:** Bis die zehn Themen auf main sind, liegt die gültige Fassung von `Mails.gs` nur auf dem Zweig. Nicht die Fassung von main einfügen.
+- **Offen:** Rückmeldungen des Vorstands (Frist 17.11.) → danach zehn Themen + Titelbilder auf main (Okay Projektleitung).
 
 ## Hier weitermachen (10.11.2026) – Reihenfolge der Projektleitung
 - **Erledigt 10.11.2026:** 59 Anlässe vom 12.11. bis 31.12.2026 aus dem alten Kalender (Stand 8.11., `vorschau/js/beispiel.js`) in «Formularantworten 1» nachgetragen
@@ -150,10 +153,10 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
   Vorstand gibt Rückmeldung. Excel 2027 und Vereinswebseite (ClubDesk) kommen erst danach.
   Text zum Weiterschicken (8.11.) mit Vergleich zum alten Kalender (rehetobel-tourismus.ch/wp/veranstaltungen/). **Wartet auf Rückmeldungen des Vorstands.**
 - **PC-Termin der Projektleitung (Schritte einzeln geben, zuerst Termin abmachen):**
-  1. **(neu, offen)** Formular: Auswahl «Kategorie» → die **zehn** Themen vom 10.11.2026 (Frage muss weiterhin **«Kategorie»** heissen –
+  1. **(erledigt 11.11.)** Formular: Auswahl «Kategorie» → die **zehn** Themen vom 10.11.2026 (Frage muss weiterhin **«Kategorie»** heissen –
      das Programm findet die Spalte über die Überschrift): Musik & Kultur, Feste & Märkte, Sport & Natur, Kinder & Familie, Senioren,
      Begegnung, Kirche, Gemeinde & Politik, Vereinsleben, Vorträge & Weiteres. Hilfstext bleibt «Was macht man dort als Besucher?».
-  2. **(neu, offen)** Gleich danach Programm in Apps Script erneuern (`anleitungen/programm-einrichten.md`, Teil A) – erst wenn die
+  2. **(erledigt 11.11.)** Gleich danach Programm in Apps Script erneuern (`anleitungen/programm-einrichten.md`, Teil A) – erst wenn die
      Webseite mit den zehn Themen auf main ist. Formular und Programm zusammen, sonst passen die Hinweise im Prüf-Mail nicht.
   3. ~~Tabelle: Einträge mit alten Gruppen auf Themen umstellen.~~ Nicht mehr nötig: Anlass-Prüfer 8.11. – alle Anlässe haben schon ein Thema.
   4. Gleich mit: Formular-Bestätigung «Bitte auch im Spam-Ordner nachsehen». (Test-Einträge und die zwei Vorstandssitzungen sind seit 8.11. gelöscht.)
