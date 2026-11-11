@@ -1,6 +1,6 @@
 # Stand Dorfkalender
 
-Stand: 10.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
+Stand: 11.11.2026. Bei jedem Arbeitsbeginn lesen, am Ende nachführen.
 
 ## Läuft (eingerichtet am 6.11.2026, mit dem Handy getestet)
 - Webseite mit Liste, Monat und Terminplanung (seit 7.11. im neuen Design, siehe unten); Planungskalender über `?planung=…`.
@@ -85,6 +85,15 @@ Vorschau dazu in der Vorstandsablage (`ideen/originale/dorfkalender-vorschau/`),
 - Handy: gleich wie bisher, nur stehen «Alle wählen / Zurücksetzen» im aufgeklappten Bereich jetzt oben beim Text. Tests bestanden, alle Titelbilder angeschaut (Kirche frei), Monat und Terminplanung geprüft.
 - Geprüft von `kalender-pruefer` (Fehler gefunden und behoben: Schrift rutschte bei winter3/fruehling2 auf sehr grossen
   Bildschirmen in die Bildmitte) und `handy-anschauer`. Projektleitung hat die zwei Spalten am eigenen PC angeschaut: sieht gut aus ✓ (9.11.).
+
+## Hier weitermachen (11.11.2026)
+- Mail an den Vorstand ist verschickt (Frist Di 17.11.). **Zehn Themen und neue Titelbilder bleiben auf dem Zweig**, bis der Vorstand geantwortet hat (kein Okay für main).
+- **Live-Seite versteht die neuen Namen (11.11., auf main, Okay Projektleitung):** «Senioren» und «Begegnung» → «Senioren & Treffpunkt»,
+  «Vorträge & Weiteres» → «Kurse & Weiteres». Sie zeigt weiter neun Themen. Anlass-Prüfer kennt die neuen Namen auch.
+- **Tabelle umgestellt (11.11.):** 35 Einträge in «Formularantworten 1», Spalte «Kategorie» – 17× Senioren, 14× Begegnung, 4× Vorträge & Weiteres
+  (genau wie die Webseite sie schon zeigte). Kein alter Name mehr im Blatt «Kalender». Weihnachtsfeier Frauenverein 1.12.2026 → Begegnung (für die Liste mit Käthy und Brigitte).
+- **Als Nächstes: PC-Termin** (Punkte 1–2 unten). Geht jetzt schon, ohne auf den Vorstand zu warten: Die Live-Seite versteht die neuen Namen.
+  Programm: neue Fassung `apps-script/Mails.gs` **vom Zweig** nehmen (nicht von main).
 
 ## Hier weitermachen (10.11.2026) – Reihenfolge der Projektleitung
 - **Erledigt 10.11.2026:** 59 Anlässe vom 12.11. bis 31.12.2026 aus dem alten Kalender (Stand 8.11., `vorschau/js/beispiel.js`) in «Formularantworten 1» nachgetragen
