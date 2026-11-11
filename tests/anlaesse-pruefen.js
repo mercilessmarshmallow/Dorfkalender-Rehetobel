@@ -22,7 +22,8 @@ function ladeWebseitenTeile() {
 }
 
 const THEMEN = ["Musik & Kultur", "Feste & Märkte", "Sport & Natur", "Kinder & Familie", "Senioren & Treffpunkt",
-  "Kirche", "Gemeinde & Politik", "Vereinsleben", "Kurse & Weiteres"];
+  "Kirche", "Gemeinde & Politik", "Vereinsleben", "Kurse & Weiteres",
+  "Senioren", "Begegnung", "Vorträge & Weiteres"];   // Namen der zehn Themen (10.11.2026) gelten schon in der Tabelle
 // Gleiche Hauptart am gleichen Tag – wie die Warnung im Prüf-Mail (apps-script/Mails.gs)
 const HAUPTARTEN = ["Musik & Kultur", "Feste & Märkte", "Sport & Natur"];
 

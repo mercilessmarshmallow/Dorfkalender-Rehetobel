@@ -239,12 +239,18 @@ const linkAus = (text, wort) => (text.match(new RegExp(wort + ": (\\S+)")) || []
       "Adventsmarkt,10.12.2026,,10:00,,Dorfplatz,Gewerbeverein,Gewerbe,,,",
       "Samariterübung,11.12.2026,,20:00,,Schulhaus,Samariterverein,Vereine,,,",
       "Kegelabend,12.12.2026,,19:00,,Krone,Testverein,Vereine,,,",
-      "Sternsingen,13.12.2026,,nachmittags,,Rundgang im Dorf,Katholische Kirche,Kirche,,,"].join("\n") + "\n" }));
+      "Sternsingen,13.12.2026,,nachmittags,,Rundgang im Dorf,Katholische Kirche,Kirche,,,",
+      "Stobe + Bar offen,14.12.2026,,17:00,,Haus zur Stickerei,Haus zur Stickerei,Begegnung,,,",
+      "Unterhaltungsnachmittag,15.12.2026,,14:15,,Krone,Frauenverein,Senioren,,,",
+      "Vortrag und Gesprächsrunde,16.12.2026,,19:30,,Restaurant Dorf 5,Lesegesellschaft,Vorträge & Weiteres,,,"].join("\n") + "\n" }));
     const pg = await c.newPage(); await pg.clock.setFixedTime(new Date("2026-12-07T10:00:00"));
     await pg.goto("http://localhost:8765/index.html"); await pg.waitForSelector(".karte", { timeout: 5000 });
     const text = await pg.innerText("#ansicht-liste");
     pruefe(/Adventsmarkt[\s\S]*Feste & Märkte/.test(text) && /Samariterübung[\s\S]*Vereinsleben/.test(text) && /Kegelabend[\s\S]*Kurse & Weiteres/.test(text)
       && !/\bGewerbe\b|\bVereine\b/.test(text), "alte Gruppen «Vereine»/«Gewerbe» bekommen ein Thema (Stichwort im Titel, sonst «Kurse & Weiteres»)");
+    pruefe(/Stobe \+ Bar offen[\s\S]*Senioren & Treffpunkt/.test(text) && /Unterhaltungsnachmittag[\s\S]*Senioren & Treffpunkt/.test(text)
+      && /Vortrag und Gesprächsrunde[\s\S]*Kurse & Weiteres/.test(text) && !/\bBegegnung\b|Vorträge & Weiteres/.test(text),
+      "neue Namen aus der Tabelle (Senioren, Begegnung, Vorträge & Weiteres) werden den neun Themen zugeordnet");
     const stern = await pg.locator('.karte:has-text("Sternsingen")').innerText();
     pruefe(/nachmittags/.test(stern) && !/ganztägig/.test(stern), "Zeit in Worten («nachmittags») wird statt «ganztägig» angezeigt");
     await c.close();

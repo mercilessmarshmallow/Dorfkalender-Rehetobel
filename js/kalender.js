@@ -53,7 +53,9 @@
   const HINWEIS = { "Vereinsleben": "Übungen, Proben, Versammlungen, Höcks", "Kurse & Weiteres": "Kurse, Vorträge, Tag der offenen Tür" };
   // Alte Veranstalter-Gruppen (Formular bis Ende 2026) so gut wie möglich übersetzen
   const ALT = { "gemeinde": "Gemeinde & Politik", "gemeinde rehetobel": "Gemeinde & Politik", "parteien": "Gemeinde & Politik",
-    "kommissionen": "Gemeinde & Politik", "schule": "Kinder & Familie", "kirche": "Kirche", "andere": "Kurse & Weiteres" };
+    "kommissionen": "Gemeinde & Politik", "schule": "Kinder & Familie", "kirche": "Kirche", "andere": "Kurse & Weiteres",
+    // Neue Namen (zehn Themen, 10.11.2026) schon verstehen, solange hier noch die neun Themen gelten
+    "senioren": "Senioren & Treffpunkt", "begegnung": "Senioren & Treffpunkt", "vorträge & weiteres": "Kurse & Weiteres" };
   // Alte Gruppen ohne klares Thema (z. B. «Vereine», «Gewerbe»): Thema aus dem Titel erraten (ähnliche, etwas breitere
   // Stichwörter als im Prüf-Mail, apps-script/Mails.gs), sonst «Kurse & Weiteres». Nur Übergang, bis die Einträge in der Tabelle umgestellt sind.
   const STICHWORT = [
