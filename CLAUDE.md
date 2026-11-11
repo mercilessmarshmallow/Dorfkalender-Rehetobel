@@ -5,10 +5,11 @@ Diese Ablage ist **öffentlich** (GitHub Pages) und der **einzige Ort** für all
 Die interne Vorstandsarbeit des VVR (Protokolle, HV-Vorbereitung usw.) liegt in einer anderen, privaten Ablage
 und hat hier nichts zu suchen.
 
-## Zuerst lesen
-1. [STAND.md](STAND.md) – was läuft, was gebaut, was offen ist.
-2. [KONZEPT.md](KONZEPT.md) – der Plan (Jahresablauf, Mails, Formular, Grundsätze).
-3. [ENTSCHEIDE.md](ENTSCHEIDE.md) – was schon entschieden ist. Nicht neu aufrollen.
+## Zuerst lesen (Tokens sparen, Wunsch Projektleitung 11.11.2026)
+1. [STAND.md](STAND.md) – kurz: was offen ist, hier weitermachen. Immer lesen.
+2. [KONZEPT.md](KONZEPT.md) (der Plan) und [ENTSCHEIDE.md](ENTSCHEIDE.md) (was entschieden ist – nicht neu aufrollen):
+   **nicht ganz lesen**, sondern gezielt nach dem Thema suchen (z. B. `grep -n -i "titelbild" ENTSCHEIDE.md`), bevor etwas geändert wird.
+3. [STAND-archiv.md](STAND-archiv.md) – Erledigtes, nur bei Bedarf gezielt suchen.
 
 ## Sprache und Umgang
 - Immer **Deutsch (Schweiz)**: «ss» statt «ß».
@@ -28,7 +29,7 @@ und hat hier nichts zu suchen.
   bewusst vertagt), **STAND.md nachführen** («Hier weitermachen …») und dann der Projektleitung vorschlagen:
   «Guter Moment für /clear – alles Wichtige steht in STAND.md.»
 - Nicht mitten in einer offenen Frage oder Fehlersuche vorschlagen, und höchstens einmal pro Thema.
-- Nach /clear zuerst STAND.md, KONZEPT.md und ENTSCHEIDE.md lesen (siehe «Zuerst lesen»).
+- Nach /clear zuerst STAND.md lesen (siehe «Zuerst lesen»). STAND.md kurz halten, Erledigtes ins Archiv.
 
 ## Ideen und Entscheide festhalten
 - Neue Idee oder neuer Wunsch → in KONZEPT.md einordnen (mit 📋 geplant), Auswirkungen auf Bestehendes nennen.
@@ -43,9 +44,10 @@ und hat hier nichts zu suchen.
 
 ## Vor jeder Änderung veröffentlichen
 1. `node tests/test.js` – muss «Alle Prüfungen bestanden» melden. Neue Funktionen → Test ergänzen.
-2. Subagent **`kalender-pruefer`** einsetzen und sein Ergebnis berücksichtigen (prüft auch die Sprache).
-   Wurde an der Webseite (`index.html`, `css/`, `js/`, `bilder/`) etwas geändert: zusätzlich **`handy-anschauer`**
-   (Bildschirmfotos iPhone/Android/Laptop, `tests/anschauen.js`).
+2. **Grössere Änderungen** (neue Funktion, Programm `Mails.gs`, mehrere Dateien, Aufbau der Seite): Subagent **`kalender-pruefer`**
+   einsetzen und sein Ergebnis berücksichtigen. Bei grösseren Änderungen an der Webseite zusätzlich **`handy-anschauer`**.
+   **Kleine Änderungen** (ein Bild tauschen, Tippfehler, ein Satz): ohne Subagenten – selbst kurz prüfen (keine Personendaten,
+   «ss», ggf. ein Bildschirmfoto). Spart viele Tokens (Wunsch Projektleitung 11.11.2026).
 3. Was auf `main` landet, ist sofort live (Webseite). Auf `main` nur mit Okay der Projektleitung.
 4. Änderungen am Programm (`apps-script/Mails.gs`) wirken erst, wenn die Projektleitung es in Apps Script
    erneuert (`anleitungen/programm-einrichten.md`, Teil A). Darum Programmänderungen sammeln.
